@@ -1,6 +1,4 @@
-# Pixel Point Next.js Tailwind Starter
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Neon Developer Days Next.js
 
 ## Table of Contents
 
@@ -16,10 +14,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-1. Clone this repository or hit "Use this template" button
+1. Clone this repository
 
 ```bash
-git clone git@github.com:pixel-point/nextjs-tailwind-starter.git
+git clone git@github.com:neondatabase/website.git
 ```
 
 2. Install dependencies
@@ -36,7 +34,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `src/app/page.jsx`. The page auto-updates as you edit the file.
 
 ### Learn More
 
@@ -56,14 +54,18 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Project Structure
 
 ```text
+├── content
 ├── public
 ├── src
+│   ├── app
 │   ├── components
 │   │  ├── pages — React components that are being used specifically on a certain page
 │   │  └── shared — React components that are being used across the whole website
 │   ├── hooks
+│   ├── icons
 │   ├── images
-│   ├── pages
+│   ├── lib
+│   ├── scripts
 │   ├── styles
 │   ├── utils
 ├── next.config.js — Main configuration file for a Next.js site. Read more about it [here](https://nextjs.org/docs/api-reference/next.config.js/introduction)

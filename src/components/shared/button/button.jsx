@@ -1,24 +1,32 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import Link from 'components/shared/link';
 
-// Example of the code — https://user-images.githubusercontent.com/20713191/144215307-35538500-b9f0-486d-abed-1a14825bb75c.png
 const styles = {
-  // TODO: Add base styles
-  base: '',
-  // TODO: Add sizes. Better to write down all sizes and go from higher to lower, e.g. "xl", "lg", "md", "sm", "xs"
-  //       The name of the size cannot be lower than the font size that being used, e.g. "sm" size cannot have font-size "xs"
-  //       Check out an example by a link above for better understanding
-  size: {},
-  // TODO: Add themes. Better to name the theme using this pattern: "${color-name}-${theme-type}", e.g. "black-filled"
-  //       If there is no dividing between theme types, then feel free to use just color names, e.g. "black"
-  //       Check out an example by a link above for better understanding
-  theme: {},
+  base: 'inline-flex items-center justify-center font-bold !leading-none text-center whitespace-nowrap rounded-full transition-colors duration-200 outline-none',
+  size: {
+    md: 't-2xl py-7 px-11 2xl:py-[26px] xl:py-[21px] xl:px-9 md:py-5 md:px-8',
+    sm: 't-xl py-[26px] px-11 2xl:py-[21px] 2xl:px-9 xl:py-5 xl:px-8',
+    xs: 't-base py-[14px] px-[26px]',
+    xxs: 'px-3 py-1.5 text-xs uppercase tracking-wider',
+  },
+  theme: {
+    primary: 'bg-primary-1 text-black hover:bg-[#00e5bf]',
+    secondary: 'bg-black text-white hover:bg-[#292929] disabled:bg-[#292929]',
+    tertiary: 'bg-black text-white border-2 border-white hover:border-primary-2',
+    quaternary: 'bg-white text-black border-2 border-black hover:border-primary-2',
+  },
 };
 
-const Button = ({ className: additionalClassName, to, size, theme, children, ...otherProps }) => {
+const Button = ({
+  className: additionalClassName = null,
+  to = null,
+  size,
+  theme,
+  children,
+  ...otherProps
+}) => {
   const className = clsx(styles.base, styles.size[size], styles.theme[theme], additionalClassName);
 
   const Tag = to ? Link : 'button';
@@ -36,11 +44,6 @@ Button.propTypes = {
   size: PropTypes.oneOf(Object.keys(styles.size)).isRequired,
   theme: PropTypes.oneOf(Object.keys(styles.theme)).isRequired,
   children: PropTypes.node.isRequired,
-};
-
-Button.defaultProps = {
-  className: null,
-  to: null,
 };
 
 export default Button;

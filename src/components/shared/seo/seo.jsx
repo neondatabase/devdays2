@@ -11,7 +11,6 @@ const SEO = ({ title = defaultTitle, description = defaultDescription }) => (
     <meta property="og:description" content={description} />
     <meta property="og:image" content="https://example.com/images/cool-page.jpg" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    {/*  generate your favicons using the tool https://github.com/pixel-point/favpie */}
     <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="48x48" href="/favicon/favicon-48x48.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/favicon/favicon-72x72.png" />

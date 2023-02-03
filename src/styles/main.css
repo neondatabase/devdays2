@@ -1,16 +1,20 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@layer base {
+  body {
+    @apply relative min-w-[320px] font-sans text-black antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
 
-/* Base */
-@import './fonts.css';
-@import './global.css';
-@import './grid-gap.css';
+@layer components {
+  .label-secondary-2 {
+    @apply rounded-[40px] bg-secondary-2 py-2 px-4 text-xs font-bold uppercase leading-none text-black;
+  }
+}
 
-/* Components */
-@import './container.css';
-
-/* Utilities */
-@import './remove-autocomplete-styles.css';
-@import './safe-paddings.css';
-@import './scrollbar-hidden.css';
+@layer utilities {
+  .with-link-primary {
+    a {
+      @apply border-b border-transparent text-primary-1 transition-[border-color] duration-200 hover:border-primary-1;
+    }
+  }
+}

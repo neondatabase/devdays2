@@ -1,0 +1,12 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './fonts.css';
+@import './main.css';
+@import './text.css';
+@import './safe-paddings.css';
+@import './grid-gap.css';
+@import './print-grid.css';
+@import './remove-autocomplete-styles.css';
+@import './skeleton.css';
