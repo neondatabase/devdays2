@@ -1,18 +1,29 @@
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 
 import Container from 'components/shared/container';
 import Link from 'components/shared/link';
 import Logo from 'components/shared/logo';
 import MENUS from 'constants/menus.js';
 
-const Footer = () => (
-    <footer className="safe-paddings mt-auto overflow-hidden dark:bg-black dark:text-white">
+import ThemeSelect from './theme-select';
+
+const Footer = ({ theme = 'white' }) => {
+  const isDarkTheme = theme === 'black';
+  return (
+    <footer
+      className={clsx(
+        'safe-paddings mt-auto overflow-hidden border-t border-gray-7 dark:border-gray-2 dark:bg-black dark:text-white',
+        isDarkTheme ? 'bg-black text-white' : 'bg-white text-black'
+      )}
+    >
       <Container className="flex justify-between py-10 xl:py-8" size="lg">
         <div className="flex flex-col items-start justify-between md:w-full md:space-y-8 sm:space-y-6">
           <div className="mb-7 flex flex-col xl:mb-5 md:mb-0 md:w-full md:flex-row md:items-center md:justify-between">
             <Link className="block" to="/">
               <span className="sr-only">Neon</span>
-              <Logo className="w-auto sm:h-6" isThemeBlack={false} />
+              <Logo className="w-auto sm:h-6" isThemeBlack={isDarkTheme} />
+              <ThemeSelect className="mt-10 xl:mt-11 md:mt-0" />
             </Link>
           </div>
           <div className="space-y-[18px] leading-none">
@@ -34,7 +45,7 @@ const Footer = () => (
                       <Link
                         className="relative whitespace-nowrap leading-none"
                         to={to}
-                        theme="white"
+                        theme={isDarkTheme ? 'white' : 'black'}
                         target={isExternalUrl ? '_blank' : null}
                         rel={isExternalUrl ? 'noopener noreferrer' : null}
                       >
@@ -50,5 +61,10 @@ const Footer = () => (
       </Container>
     </footer>
   );
+};
+
+Footer.propTypes = {
+  theme: PropTypes.oneOf(['white', 'black']),
+};
 
 export default Footer;

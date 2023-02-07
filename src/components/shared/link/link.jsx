@@ -3,21 +3,42 @@ import clsx from 'clsx';
 import NextLink from 'next/link';
 import PropTypes from 'prop-types';
 
-// Example of the code — https://user-images.githubusercontent.com/20713191/144221096-1939c382-4ab8-4d28-b0e6-7bbe3a8f8556.png
+import ArrowRightIcon from 'icons/arrow-right.inline.svg';
+
+const underlineCommonStyles =
+  'relative transition-colors duration-500 before:absolute before:-bottom-1.5 before:left-0 before:h-1.5 before:w-full before:transition-all before:duration-500 hover:before:bottom-full hover:before:opacity-0 before:pointer-events-none';
+
 const styles = {
-  // TODO: Add base styles
-  base: '',
-  // TODO: Add sizes. Better to write down all sizes and go from higher to lower, e.g. "xl", "lg", "md", "sm", "xs"
-  //       The name of the size cannot be lower than the font size that being used, e.g. "sm" size cannot have font-size "xs"
-  //       Check out an example by a link above for better understanding
-  size: {},
-  // TODO: Add themes. Better to name the theme using this pattern: "${color-name}-${theme-type}", e.g. "black-filled"
-  //       If there is no dividing between theme types, then feel free to use just color names, e.g. "black"
-  //       Check out an example by a link above for better understanding
-  theme: {},
+  base: 'inline-flex !leading-none items-center',
+  size: {
+    lg: 't-2xl font-semibold',
+    md: 't-xl font-semibold',
+    sm: 't-lg',
+    xs: 't-base',
+    '2xs': 't-sm',
+  },
+  theme: {
+    black:
+      'text-black transition-colors duration-200 hover:text-primary-2 dark:text-white dark:hover:text-primary-2',
+    'black-no-hover': 'text-black',
+    white: 'text-white transition-colors duration-200 hover:text-primary-2',
+    'black-primary-1': `${underlineCommonStyles} before:bg-primary-1 hover:text-primary-1 dark:before:bg-primary-1 dark:text-white dark:hover:text-primary-1`,
+    'black-secondary-3': `${underlineCommonStyles} before:bg-secondary-3 hover:text-secondary-3`,
+    'black-secondary-5': `${underlineCommonStyles} before:bg-secondary-5 hover:text-secondary-5`,
+    'underline-primary-1':
+      'text-primary-1 border-b-2 border-primary-1 transition-colors duration-200 hover:border-transparent',
+  },
 };
 
-const Link = ({ className: additionalClassName, size, theme, to, children, ...props }) => {
+const Link = ({
+  className: additionalClassName = null,
+  size = null,
+  theme = null,
+  to = null,
+  withArrow = false,
+  children,
+  ...props
+}) => {
   const className = clsx(
     size && theme && styles.base,
     styles.size[size],
@@ -25,17 +46,24 @@ const Link = ({ className: additionalClassName, size, theme, to, children, ...pr
     additionalClassName
   );
 
+  const content = (
+    <>
+      {withArrow ? <span>{children}</span> : children}
+      {withArrow && <ArrowRightIcon className={clsx('ml-2 shrink-0')} />}
+    </>
+  );
+
   if (to.startsWith('/')) {
     return (
       <NextLink className={className} href={to} {...props}>
-        {children}
+        {content}
       </NextLink>
     );
   }
 
   return (
     <a className={className} href={to} {...props}>
-      {children}
+      {content}
     </a>
   );
 };
@@ -46,13 +74,7 @@ Link.propTypes = {
   size: PropTypes.oneOf(Object.keys(styles.size)),
   theme: PropTypes.oneOf(Object.keys(styles.theme)),
   children: PropTypes.node.isRequired,
-};
-
-Link.defaultProps = {
-  className: null,
-  to: null,
-  size: null,
-  theme: null,
+  withArrow: PropTypes.bool,
 };
 
 export default Link;

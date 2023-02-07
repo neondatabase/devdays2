@@ -35,7 +35,7 @@ const links = [
   },
 ];
 
-const MobileMenu = ({ isOpen }) => {
+const MobileMenu = ({ isOpen = false }) => {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -75,10 +75,6 @@ const MobileMenu = ({ isOpen }) => {
 
 MobileMenu.propTypes = {
   isOpen: PropTypes.bool,
-};
-
-MobileMenu.defaultProps = {
-  isOpen: false,
 };
 
 export default MobileMenu;

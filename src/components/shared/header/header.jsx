@@ -10,7 +10,6 @@ import Link from 'components/shared/link';
 import Logo from 'components/shared/logo';
 import LINKS from 'constants/links';
 import MENUS from 'constants/menus.js';
-import SearchIcon from 'icons/search.inline.svg';
 
 import Burger from './burger';
 // import DiscordIcon from './images/header-discord.inline.svg';
@@ -35,8 +34,6 @@ const Header = forwardRef(
       isSignIn = false,
       isSticky = false,
       withBottomBorder = false,
-      isDocPage = false,
-      onSearchClick = null,
     },
     ref
   ) => {
@@ -149,16 +146,6 @@ const Header = forwardRef(
             )}
           </div>
           <div className=" hidden items-center lg:flex">
-            {isDocPage && (
-              <button
-                className="mr-5 flex h-5 w-5 items-center"
-                type="button"
-                onClick={onSearchClick}
-              >
-                <SearchIcon className="mb-[5px] dark:text-white" />
-              </button>
-            )}
-
             <Burger
               className={clsx(isThemeBlack ? 'text-white' : 'text-black dark:text-white')}
               isToggled={isMobileMenuOpen}
@@ -178,8 +165,6 @@ Header.propTypes = {
   onBurgerClick: PropTypes.func.isRequired,
   isSignIn: PropTypes.bool,
   isSticky: PropTypes.bool,
-  isDocPage: PropTypes.bool,
-  onSearchClick: PropTypes.func,
 };
 
 export default Header;

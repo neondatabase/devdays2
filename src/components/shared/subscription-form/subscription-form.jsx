@@ -136,7 +136,7 @@ const SubscriptionForm = ({
         )}
         name="email"
         type="email"
-        placeholder="Your email..."
+        placeholder="Your email address..."
         autoComplete="email"
         value={email}
         readOnly={formState !== 'default'}

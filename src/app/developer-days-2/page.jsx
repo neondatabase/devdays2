@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { signIn, useSession } from 'next-auth/react';
 import PropTypes from 'prop-types';
@@ -11,6 +12,7 @@ import Container from 'components/shared/container';
 import Github from 'components/shared/header/images/header-github.inline.svg';
 import Heading from 'components/shared/heading';
 import SubscriptionForm from 'components/shared/subscription-form';
+import Illustration from 'images/hero-elephant.png';
 
 const FUNNEL_STATES = {
   INITIAL: 'initial',
@@ -42,24 +44,28 @@ const TicketCTA = ({ handleGitBtnClick }) => (
   </Container>
 );
 
-const Initial = ({ onSuccess }) => (
-  <Container
-    className="relative z-10 flex min-h-[100vh] !max-w-[521px] flex-col items-center justify-center"
-    size="sm"
-  >
-    <Heading className="text-center leading-snug" tag="h2" size="sm">
-      Register for Neon Developer Days!
-    </Heading>
-    <SubscriptionForm
-      className="mt-8"
-      successText="Thanks for registering!"
-      submitButtonText="Register"
-      size="sm"
-      localStorageKey="submittedEmailDeveloperDays2Form"
-      onSuccess={onSuccess}
-      // formId={HUBSPOT_DEVELOPER_DAYS_1_FORM_ID}
-    />
-  </Container>
+const Initial = ({ onSuccessCallback }) => (
+  <>
+    <div className="w-[740px]">
+      <h2 className="text-[120px] font-semibold leading-none text-black dark:text-white">
+        Neon Dev Days 2023
+      </h2>
+      <p className="mt-8 font-mono text-xl font-light text-black dark:text-white">
+        Join us at 10:30AM PT, March 26 to hear more about latest updates from our dev team.
+      </p>
+      <SubscriptionForm
+        className="mt-8"
+        successText="Thanks for registering!"
+        submitButtonText="Register"
+        size="sm"
+        localStorageKey="submittedEmailDeveloperDays2Form"
+        onSuccess={onSuccessCallback}
+      />
+    </div>
+    <div className="w-2/3">
+      <Image src={Illustration} alt="Elephant illustration" />
+    </div>
+  </>
 );
 
 // @TODO:
@@ -91,9 +97,14 @@ const DeveloperDays2Page = () => {
       break;
     case FUNNEL_STATES.INITIAL:
     default:
-      content = <Initial onSuccess={handleSubmitSuccess} />;
+      content = <Initial onSuccessCallback={handleSubmitSuccess} />;
   }
-  return <div className="relative overflow-hidden bg-black text-white">{content}</div>;
+
+  return (
+    <Container className="relative flex min-h-[100vh] items-center gap-4" size="lg">
+      {content}
+    </Container>
+  );
 };
 
 export default DeveloperDays2Page;
@@ -103,5 +114,5 @@ TicketCTA.propTypes = {
 };
 
 Initial.propTypes = {
-  onSuccess: PropTypes.func,
+  onSuccessCallback: PropTypes.func,
 };

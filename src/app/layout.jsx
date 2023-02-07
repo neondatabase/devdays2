@@ -9,6 +9,8 @@ import Footer from 'components/shared/footer';
 import Header from 'components/shared/header';
 import MobileMenu from 'components/shared/mobile-menu';
 
+import ThemeProvider from './provider';
+
 // eslint-disable-next-line react/prop-types
 const RootLayout = ({ children }) => {
   const headerRef = useRef(null);
@@ -37,20 +39,24 @@ const RootLayout = ({ children }) => {
             }}
           />
         )}
-        <div className="relative flex min-h-[100vh] flex-col">
-          <Header
-            ref={headerRef}
-            isMobileMenuOpen={isMobileMenuOpen}
-            onBurgerClick={handleHeaderBurgerClick}
-          />
-          <main className="flex flex-1 flex-col dark:bg-black">{children}</main>
-          <Footer />
-          <MobileMenu
-            isOpen={isMobileMenuOpen}
-            headerRef={headerRef}
-            onOutsideClick={handleMobileMenuOutsideClick}
-          />
-        </div>
+        <ThemeProvider>
+          <div className="relative flex min-h-[100vh] flex-col">
+            <Header
+              ref={headerRef}
+              theme="white"
+              isMobileMenuOpen={isMobileMenuOpen}
+              isSignIn={false}
+              onBurgerClick={handleHeaderBurgerClick}
+            />
+            <main className="flex flex-1 flex-col dark:bg-black">{children}</main>
+            <Footer />
+            <MobileMenu
+              isOpen={isMobileMenuOpen}
+              headerRef={headerRef}
+              onOutsideClick={handleMobileMenuOutsideClick}
+            />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
