@@ -18,11 +18,12 @@ const appearAndExitAnimationVariants = {
   animate: { opacity: 1, transition: { duration: 0.2 } },
   exit: { opacity: 0, transition: { duration: 0.2 } },
 };
+
 const sizeClassNames = {
   sm: {
-    form: 'before:-bottom-2 before:-left-2',
-    input: 'max-w-[552px] h-[72px] text-lg pl-5 border-[3px]',
-    button: '!text-lg !px-8 !py-[19px] right-2 md:!p-0',
+    form: 'form',
+    input: 'h-[64px] text-lg pl-5 border bg-white dark:bg-black',
+    button: '!text-base !px-8 !py-[15px] right-2 md:!p-0',
     loading: 'right-2',
     success: 'right-2',
     stateIcon: 'w-14 h-14',
@@ -38,6 +39,7 @@ const sizeClassNames = {
     stateIcon: '2xl:w-[60px] xl:w-[56px]',
   },
 };
+
 const SubscriptionForm = ({
   className = null,
   formId,
@@ -119,18 +121,14 @@ const SubscriptionForm = ({
 
   return (
     <form
-      className={clsx(
-        'relative ml-[14px] before:absolute before:h-full before:w-full before:rounded-full before:bg-secondary-2 2xl:ml-2.5 xl:ml-2 xl:before:-bottom-2 xl:before:-left-2 lg:mx-auto lg:max-w-[584px] md:before:w-[calc(100%+8px)]',
-        className,
-        sizeClassNames[size].form
-      )}
+      className={clsx('', className, sizeClassNames[size].form)}
       noValidate
       onSubmit={handleSubmit}
     >
       {/* Input */}
       <input
         className={clsx(
-          'remove-autocomplete-styles relative block w-full rounded-full border-black bg-white pr-[218px] font-semibold leading-none text-black placeholder-black outline-none transition-colors duration-200 lg:w-full lg:pl-5 md:pr-20',
+          'remove-autocomplete-styles relative block w-full rounded-full border-primary-3 bg-transparent pr-[218px] font-semibold leading-none text-black placeholder-black outline-none transition-colors duration-200 dark:text-white dark:placeholder-white lg:w-full lg:pl-5 md:pr-20',
           errorMessage && 'border-secondary-1',
           sizeClassNames[size].input
         )}
@@ -174,7 +172,7 @@ const SubscriptionForm = ({
               )}
               size="sm"
               type="submit"
-              theme="primary"
+              theme="quaternary"
               disabled={formState !== 'default'}
             >
               <span className="md:sr-only">{submitButtonText}</span>
