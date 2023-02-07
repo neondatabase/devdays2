@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation';
 import { signIn, useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
-import EmailStep from 'components/pages/dev-days-2/email-step';
-import GithubStep from 'components/pages/dev-days-2/github-step';
+import EmailRegistrationStep from 'components/pages/dev-days-2/email-registration-step';
+import GithubRegistrationStep from 'components/pages/dev-days-2/github-registration-step';
 import Container from 'components/shared/container';
 
 const FUNNEL_STATES = {
@@ -38,16 +38,16 @@ const DeveloperDays2Page = () => {
   let content = null;
   switch (funnelState) {
     case FUNNEL_STATES.TICKET_CTA:
-      content = <GithubStep handleGitBtnClick={handleGitAuth} />;
+      content = <GithubRegistrationStep handleGitBtnClick={handleGitAuth} />;
       break;
     case FUNNEL_STATES.INITIAL:
     default:
-      content = <EmailStep onSuccessCallback={handleSubmitSuccess} />;
+      content = <EmailRegistrationStep onSuccessCallback={handleSubmitSuccess} />;
   }
 
   return (
     <Container
-      className="relative flex min-h-[100vh] items-center gap-4 py-4 lg:flex-wrap lg:justify-center lg:gap-8"
+      className="relative flex min-h-[100vh] items-center gap-12 py-4 lg:flex-wrap lg:justify-center lg:gap-8"
       size="lg"
     >
       {content}
