@@ -22,7 +22,7 @@ const appearAndExitAnimationVariants = {
 const sizeClassNames = {
   sm: {
     form: 'form',
-    input: 'h-[64px] text-lg pl-5 border bg-white dark:bg-black',
+    input: 'h-[64px] text-lg pl-5 border',
     button: '!text-base !px-8 !py-[15px] right-2 md:!p-0',
     loading: 'right-2',
     success: 'right-2',
@@ -128,7 +128,7 @@ const SubscriptionForm = ({
       {/* Input */}
       <input
         className={clsx(
-          'remove-autocomplete-styles relative block w-full rounded-full border-primary-3 bg-transparent pr-[218px] font-semibold leading-none text-black placeholder-black outline-none transition-colors duration-200 dark:text-white dark:placeholder-white lg:w-full lg:pl-5 md:pr-20',
+          'remove-autocomplete-styles relative block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-white outline-none transition-colors duration-200 lg:w-full lg:pl-5 md:pr-20',
           errorMessage && 'border-secondary-1',
           sizeClassNames[size].input
         )}

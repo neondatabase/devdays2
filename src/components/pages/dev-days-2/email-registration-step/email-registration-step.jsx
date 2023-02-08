@@ -8,10 +8,10 @@ import ElephantIllustration from 'images/ticket-hero-elephant.png';
 const EmailRegistrationStep = ({ onSuccessCallback }) => (
   <>
     <div className="w-[580px] xl:w-1/2 lg:w-2/3 md:w-full">
-      <h2 className="text-[120px] font-semibold leading-none tracking-tighter text-black dark:text-white xl:text-8xl md:text-6xl">
+      <h2 className="text-[120px] font-semibold leading-none tracking-tighter text-white xl:text-8xl md:text-6xl">
         Neon Dev Days 2023
       </h2>
-      <p className="mt-4 font-mono text-xl font-light tracking-tighter text-black dark:text-white">
+      <p className="mt-4 font-mono text-xl font-light tracking-tighter text-white">
         Join us at 10:30AM PT, March 26 to hear more about latest updates from our dev team.
       </p>
       <SubscriptionForm

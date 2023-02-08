@@ -83,6 +83,9 @@ module.exports = {
       lineHeight: {
         dense: '1.125',
       },
+      boxShadow: {
+        social: 'inset 0px -2px 10px rgba(255, 255, 255, 0.15);',
+      },
       keyframes: (theme) => ({
         'text-blink': {
           '0%': {

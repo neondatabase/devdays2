@@ -1,30 +1,14 @@
 'use client';
 
 import Script from 'next/script';
-import { useRef, useState } from 'react';
 
 import 'styles/globals.css';
 
 import Footer from 'components/shared/footer';
 import Header from 'components/shared/header';
-import MobileMenu from 'components/shared/mobile-menu';
-
-import ThemeProvider from './provider';
 
 // eslint-disable-next-line react/prop-types
-const RootLayout = ({ children }) => {
-  const headerRef = useRef(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const handleMobileMenuOutsideClick = () => {
-    if (isMobileMenuOpen) setIsMobileMenuOpen(false);
-  };
-
-  const handleHeaderBurgerClick = () => {
-    setIsMobileMenuOpen((isMobileMenuOpen) => !isMobileMenuOpen);
-  };
-
-  return (
+const RootLayout = ({ children }) => (
     <html lang="en">
       <head>
         {process.env.NODE_ENV === 'production' && (
@@ -39,27 +23,13 @@ const RootLayout = ({ children }) => {
             }}
           />
         )}
-        <ThemeProvider>
-          <div className="relative flex min-h-[100vh] flex-col">
-            <Header
-              ref={headerRef}
-              theme="white"
-              isMobileMenuOpen={isMobileMenuOpen}
-              isSignIn={false}
-              onBurgerClick={handleHeaderBurgerClick}
-            />
-            <main className="flex flex-1 flex-col dark:bg-black">{children}</main>
-            <Footer />
-            <MobileMenu
-              isOpen={isMobileMenuOpen}
-              headerRef={headerRef}
-              onOutsideClick={handleMobileMenuOutsideClick}
-            />
-          </div>
-        </ThemeProvider>
+        <div className="relative flex min-h-[100vh] flex-col">
+          <Header />
+          <main className="flex flex-1 flex-col bg-black">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
-};
 
 export default RootLayout;

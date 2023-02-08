@@ -1,67 +1,44 @@
-// import { useRouter } from 'next/navigation';
+import { notFound } from 'next/navigation';
 
-import Button from 'components/shared/button';
+import DynamicTicket from 'components/pages/dev-days-2/dynamic-ticket';
 import Container from 'components/shared/container';
-import Heading from 'components/shared/heading';
-import Link from 'components/shared/link';
+import SocialShare from 'components/shared/social-share';
 import prisma from 'utils/prisma';
 
 const TicketPage = async ({ params }) => {
   const data = await getTicketData(params.handle);
-  // const router = useRouter();
-  // if (!Object.length(data)) router?.push('/developer-days-2');
-  const { id: number, name, email, image, handle } = data;
+
+  if (!data) return notFound();
+
+  const shareUrl = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/developer-days-2/tickets/${data.githubHandle}`;
+
   return (
-    <div className="relative overflow-hidden bg-black text-white">
-      <Container
-        className="spacing-x-8 relative z-10 flex min-h-[100vh] items-center justify-around space-x-16"
-        size="sm"
-      >
-        <div className="max-w-[500px] space-y-4">
-          <Heading className="text-center leading-snug" tag="h2" size="sm">
-            {name === 'Your Name' ? 'It could be your' : `${name}'s`} ticket to Neon Develop Days
-          </Heading>
-          <div className="mt-8 flex border border-white p-4">
-            <img
-              src={image}
-              className="h-[80px] w-[80px] rounded-sm"
-              alt={`${name}'s profile picture`}
-            />
-            <div className="ml-4 flex-col">
-              <p className="text-lg">{`${number}`.padStart(5, '0')}</p>
-              <p>{name}</p>
-              <p>{email}</p>
-              <p>{handle}</p>
-              <p>NEON DEV DAYS SPRING PERSONAL TICKET</p>
-            </div>
-          </div>
-          {name !== 'Your Name' ? (
-            <div className="flex space-x-2">
-              <Link theme="black" to="/">
-                Share Twiter
-              </Link>
-              <Link theme="black" to="/">
-                Share LinkedIn
-              </Link>
-              <Link theme="black" to="/">
-                Copy link
-              </Link>
-            </div>
-          ) : (
-            <Button size="md" theme="primary" to="/developer-days-2">
-              Register Now
-            </Button>
-          )}
-        </div>
-      </Container>
-    </div>
+    <Container
+      className="relative flex min-h-[100vh] items-center gap-12 py-4 xl:flex-wrap xl:justify-center xl:gap-8"
+      size="lg"
+    >
+      <div className="xl:w-full">
+        <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white md:text-6xl [@media(max-width:1360px)]:text-7xl">
+          You’re In. <br />
+          Make it Unique.
+        </h2>
+        <p className="mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white">
+          Generate a unique ticket image with your GitHub profile.
+        </p>
+        <SocialShare url={shareUrl} />
+      </div>
+      <div className="w-[790px] xl:w-full ">
+        <DynamicTicket data={data} />
+      </div>
+    </Container>
   );
 };
 
 export default TicketPage;
 
 async function getTicketData(handle) {
-  let userData;
+  let userData = null;
+
   if (handle) {
     try {
       userData = await prisma.user.findFirstOrThrow({
@@ -82,13 +59,5 @@ async function getTicketData(handle) {
     }
   }
 
-  const anonymValues = {
-    name: 'Your Name',
-    email: 'your@email.com',
-    githubHandle: 'gitprofile',
-    image:
-      'https://i.guim.co.uk/img/static/sys-images/Guardian/About/General/2013/8/30/1377862460433/Kick-Ass-2-010.jpg?width=465&quality=85&dpr=1&s=none',
-    id: 0,
-  };
-  return userData || anonymValues;
+  return userData;
 }

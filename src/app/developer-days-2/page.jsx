@@ -32,7 +32,7 @@ const DeveloperDays2Page = () => {
   };
 
   const handleGitAuth = () => {
-    signIn();
+    signIn('github');
   };
 
   let content = null;
