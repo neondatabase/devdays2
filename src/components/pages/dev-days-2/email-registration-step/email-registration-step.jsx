@@ -2,6 +2,7 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 
 import SubscriptionForm from 'components/shared/subscription-form';
+import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
 import ElephantIllustration from 'images/ticket-hero-elephant.png';
 
 const EmailRegistrationStep = ({ onSuccessCallback }) => (
@@ -20,8 +21,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => (
         theme="transparent"
         size="sm"
         localStorageKey="submittedEmailDeveloperDays2Form"
+        formId={HUBSPOT_DEVELOPER_DAYS_2_FORM_ID}
         onSuccess={onSuccessCallback}
-        // formId={HUBSPOT_DEVELOPER_DAYS_1_FORM_ID}
       />
     </div>
     <div className="w-7/12 xl:w-1/2 lg:my-4 md:w-full">
