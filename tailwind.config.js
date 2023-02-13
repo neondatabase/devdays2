@@ -86,6 +86,12 @@ module.exports = {
       boxShadow: {
         social: 'inset 0px -2px 10px rgba(255, 255, 255, 0.15);',
       },
+      backgroundImage: {
+        'ticket-variant-1': 'linear-gradient(225deg, #4CFFFF 31.6%, #00E660 74.65%);',
+        'ticket-variant-2': 'linear-gradient(225deg, #BDF471 35.94%, #00CC33 100%);',
+        'ticket-variant-3': 'linear-gradient(225deg, #FF66FF 13.02%, #421CFF 92.19%);',
+        'ticket-variant-4': 'linear-gradient(226.74deg, #E8EFFC 28.6%, #99B3E6 80.81%);',
+      },
       keyframes: (theme) => ({
         'text-blink': {
           '0%': {
