@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { signIn, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
 import EmailRegistrationStep from 'components/pages/dev-days-2/email-registration-step';
@@ -31,14 +31,10 @@ const DeveloperDays2Page = () => {
     setFunnelState(FUNNEL_STATES.TICKET_CTA);
   };
 
-  const handleGitAuth = () => {
-    signIn('github');
-  };
-
   let content = null;
   switch (funnelState) {
     case FUNNEL_STATES.TICKET_CTA:
-      content = <GithubRegistrationStep handleGitBtnClick={handleGitAuth} />;
+      content = <GithubRegistrationStep />;
       break;
     case FUNNEL_STATES.INITIAL:
     default:

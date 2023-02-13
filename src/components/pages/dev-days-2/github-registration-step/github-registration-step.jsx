@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import PropTypes from 'prop-types';
+import { signIn } from 'next-auth/react';
 
 import Button from 'components/shared/button';
 import GithubIcon from 'components/shared/header/images/header-github.inline.svg';
 import TicketIllustration from 'images/ticket-placeholder.png';
 
-const GithubRegistrationStep = ({ handleGitBtnClick }) => (
+const GithubRegistrationStep = () => (
   <>
     <div className="w-6/12 xl:w-1/2 lg:w-2/3 sm:w-full">
       <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-6xl">
@@ -22,7 +22,7 @@ const GithubRegistrationStep = ({ handleGitBtnClick }) => (
           theme="tertiary"
           rel="noopener noreferrer"
           target="_blank"
-          onClick={handleGitBtnClick}
+          onClick={() => signIn('github')}
         >
           <GithubIcon
             className="absolute top-1/2 left-4 -translate-y-1/2 text-black"
@@ -41,9 +41,5 @@ const GithubRegistrationStep = ({ handleGitBtnClick }) => (
     </div>
   </>
 );
-
-GithubRegistrationStep.propTypes = {
-  handleGitBtnClick: PropTypes.func,
-};
 
 export default GithubRegistrationStep;
