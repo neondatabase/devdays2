@@ -47,7 +47,7 @@ const DeveloperDays2Page = () => {
 
   return (
     <Container
-      className="relative flex min-h-[100vh] items-center gap-12 py-4 lg:flex-wrap lg:justify-center lg:gap-8"
+      className="relative flex min-h-[100vh] items-center gap-12 py-4 lg:flex-wrap lg:justify-center lg:gap-0"
       size="lg"
     >
       {content}

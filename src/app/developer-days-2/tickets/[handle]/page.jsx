@@ -10,15 +10,15 @@ const TicketPage = async ({ params }) => {
 
   if (!data) return notFound();
 
-  const shareUrl = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/developer-days-2/tickets/${data.githubHandle}`;
+  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days-2/tickets/${data.githubHandle}`;
 
   return (
     <Container
-      className="relative flex min-h-[100vh] items-center gap-12 py-4 xl:flex-wrap xl:justify-center xl:gap-8"
+      className="relative flex min-h-[100vh] items-center gap-12 py-4 lg:flex-wrap lg:justify-center lg:gap-0"
       size="lg"
     >
-      <div className="xl:w-full">
-        <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white md:text-6xl [@media(max-width:1360px)]:text-7xl">
+      <div className="w-6/12 xl:w-1/2 lg:w-2/3 sm:w-full">
+        <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-6xl">
           You’re In. <br />
           Make it Unique.
         </h2>
@@ -27,7 +27,7 @@ const TicketPage = async ({ params }) => {
         </p>
         <SocialShare url={shareUrl} />
       </div>
-      <div className="w-[790px] xl:w-full ">
+      <div className="w-7/12 xl:w-1/2 lg:mt-2 lg:mb-10 lg:w-2/3 sm:w-full">
         <DynamicTicket data={data} />
       </div>
     </Container>

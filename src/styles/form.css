@@ -1,9 +1,0 @@
-.form {
-  @apply relative before:absolute before:h-[200%] before:w-full before:rounded-full;
-
-  &:before {
-    background: linear-gradient(180deg, #00e599 41.43%, rgba(0, 229, 153, 0) 71.43%);
-    opacity: 0.5;
-    filter: blur(22px);
-  }
-}
