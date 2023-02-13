@@ -5,14 +5,15 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
+import variant1 from 'images/developer-days-2/ticket-variant-1.png';
+import variant2 from 'images/developer-days-2/ticket-variant-2.png';
+import variant3 from 'images/developer-days-2/ticket-variant-3.png';
+import variant4 from 'images/developer-days-2/ticket-variant-4.png';
+
 import ellipse1 from './images/variant-1-light.svg';
-import variant1 from './images/variant-1.png';
 import ellipse2 from './images/variant-2-light.svg';
-import variant2 from './images/variant-2.png';
 import ellipse3 from './images/variant-3-light.svg';
-import variant3 from './images/variant-3.png';
 import ellipse4 from './images/variant-4-light.svg';
-import variant4 from './images/variant-4.png';
 
 const colorVariants = [
   {
@@ -60,14 +61,14 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
 
           return (
             currentTab === `${id}` && (
-              <>
+              <div key={i}>
                 <Image
                   className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[160%] w-[130%] max-w-[130%] -translate-x-1/2 -translate-y-1/2"
                   src={ellipse}
                   width={790}
                   height={388}
                   loading="eager"
-                  alt="background light."
+                  alt="color variant background image"
                 />
 
                 <Image
@@ -77,9 +78,8 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
                   height={388}
                   loading="eager"
                   alt="color variant image"
-                  key={i}
                 />
-              </>
+              </div>
             )
           );
         })}

@@ -1,47 +1,132 @@
 import { ImageResponse } from '@vercel/og';
 
+import { image1 } from 'constants/og-images';
+
 export const config = {
   // runtime: 'edge',
   runtime: 'experimental-edge',
 };
 
 export default async function handler(req) {
-  // const { searchParams } = new URL(req.url);
   const { searchParams } = req.nextUrl;
   const name = searchParams.get('name');
   const id = searchParams.get('id');
-  const email = searchParams.get('email');
-  const handle = searchParams.get('handle');
+  const handle = searchParams.get('githubHandle');
   const image = searchParams.get('image');
 
   return new ImageResponse(
     (
       <div
         style={{
+          position: 'relative',
           display: 'flex',
-          fontSize: 60,
-          color: 'black',
-          background: '#f6f6f6',
           width: '100%',
           height: '100%',
-          paddingTop: 50,
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
+          backgroundColor: '#080808',
         }}
       >
-        <img
-          width="256"
-          height="256"
-          src={image}
+        <img width="100%" height="100%" src={image1} />
+
+        <div
           style={{
-            borderRadius: 128,
+            position: 'absolute',
+            top: '80px',
+            left: '60px',
+            display: 'flex',
+            alignItems: 'center',
           }}
-        />
-        <p>{name}</p>
-        <p>{handle}</p>
-        <p>{email}</p>
-        <p>{`${id}`.padStart(6, '0')}</p>
+        >
+          <div
+            style={{
+              borderRadius: '100%',
+              overflow: 'hidden',
+              display: 'flex',
+            }}
+          >
+            <img
+              width="90"
+              height="90"
+              src={image}
+              style={{
+                borderRadius: '100%',
+              }}
+            />
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              marginLeft: '25px',
+            }}
+          >
+            <p
+              style={{
+                margin: '0',
+                color: '#fff',
+                fontSize: '34px',
+                fontWeight: 600,
+              }}
+            >
+              {name}
+            </p>
+            <p
+              style={{
+                margin: '0',
+                color: '#fff',
+                fontSize: '22px',
+                lineHeight: '22px',
+                letterSpacing: '0.06em',
+                fontFamily: 'monospace',
+              }}
+            >
+              /{handle}
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '50px',
+            left: '60px',
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <p
+              style={{
+                margin: '0',
+                color: '#fff',
+                fontSize: '44px',
+                fontWeight: 300,
+              }}
+            >
+              #{`${id}`.padStart(6, '0')} /
+            </p>
+            <p
+              style={{
+                margin: '0 0 0 14px',
+                color: '#fff',
+                fontSize: '16px',
+                display: 'flex',
+                gap: '4px',
+                flexDirection: 'column',
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                fontFamily: 'monospace',
+              }}
+            >
+              <span>10:30AM PT,</span>
+              <span>March 26, 2023</span>
+            </p>
+          </div>
+        </div>
       </div>
     ),
     {
