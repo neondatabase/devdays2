@@ -49,7 +49,7 @@ const colorVariants = [
 
 const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
   const { data } = useSession();
-  const [currentColorSchema, setCurrentColorSchema] = useState(null);
+  const [currentColorSchema, setCurrentColorSchema] = useState('1');
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
 
   useEffect(() => {
@@ -131,31 +131,33 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
           </div>
         </div>
       </div>
-      <div className="mt-8 flex items-center gap-3">
-        <p className="text-sm font-thin text-gray-7">Pick a color:</p>
-        <div className="flex gap-5">
-          {colorVariants.map((item, i) => {
-            const { id, tabTitle, bgVariant } = item;
-            const isActive = currentColorSchema === `${id}`;
+      {data?.colorSchema && (
+        <div className="mt-8 flex items-center gap-3">
+          <p className="text-sm font-thin text-gray-7">Pick a color:</p>
+          <div className="flex gap-5">
+            {colorVariants.map((item, i) => {
+              const { id, tabTitle, bgVariant } = item;
+              const isActive = currentColorSchema === `${id}`;
 
-            return (
-              <button
-                className={clsx(
-                  'relative flex h-9 w-9 items-center justify-center rounded-full border before:h-4 before:w-4 before:rounded-full',
-                  isActive ? 'border-gray-8' : 'border-gray-4',
-                  bgVariant
-                )}
-                key={i}
-                id={id}
-                disabled={isActive}
-                onClick={handleTabClick}
-              >
-                <span className="sr-only">{tabTitle}</span>
-              </button>
-            );
-          })}
+              return (
+                <button
+                  className={clsx(
+                    'relative flex h-9 w-9 items-center justify-center rounded-full border before:h-4 before:w-4 before:rounded-full',
+                    isActive ? 'border-gray-8' : 'border-gray-4',
+                    bgVariant
+                  )}
+                  key={i}
+                  id={id}
+                  disabled={isActive}
+                  onClick={handleTabClick}
+                >
+                  <span className="sr-only">{tabTitle}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
