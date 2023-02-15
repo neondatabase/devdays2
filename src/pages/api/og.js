@@ -1,6 +1,6 @@
 import { ImageResponse } from '@vercel/og';
 
-import { image1 } from 'constants/og-images';
+import { image1, image2, image3, image4 } from 'constants/og-images';
 
 export const config = {
   // runtime: 'edge',
@@ -13,6 +13,7 @@ export default async function handler(req) {
   const id = searchParams.get('id');
   const handle = searchParams.get('githubHandle');
   const image = searchParams.get('image');
+  const color = searchParams.get('colorSchema');
 
   return new ImageResponse(
     (
@@ -25,7 +26,13 @@ export default async function handler(req) {
           backgroundColor: '#080808',
         }}
       >
-        <img width="100%" height="100%" src={image1} />
+        <img
+          width="100%"
+          height="100%"
+          /* eslint-disable-next-line no-nested-ternary */
+          src={color === '1' ? image1 : color === '2' ? image2 : color === '3' ? image3 : image4}
+          alt="Ticket layout"
+        />
 
         <div
           style={{
@@ -50,6 +57,7 @@ export default async function handler(req) {
               style={{
                 borderRadius: '100%',
               }}
+              alt="User avatar"
             />
           </div>
           <div
