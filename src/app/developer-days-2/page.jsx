@@ -1,8 +1,8 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import EmailRegistrationStep from 'components/pages/dev-days-2/email-registration-step';
 import GithubRegistrationStep from 'components/pages/dev-days-2/github-registration-step';
@@ -17,21 +17,13 @@ const FUNNEL_STATES = {
 // deal with router: to and from tickets pages
 const DeveloperDays2Page = () => {
   const [funnelState, setFunnelState] = useState(FUNNEL_STATES.INITIAL);
-  const { data } = useSession();
-  const router = useRouter();
-
-  // if the session is active, move user to his ticket
-  useEffect(() => {
-    if (router && data?.githubHandle) {
-      router.push(`/developer-days-2/tickets/${data.githubHandle}`);
-    }
-  }, [router, data?.githubHandle]);
+  const { data, status } = useSession();
 
   const handleSubmitSuccess = () => {
     setFunnelState(FUNNEL_STATES.TICKET_CTA);
   };
 
-  let content = null;
+  let content;
   switch (funnelState) {
     case FUNNEL_STATES.TICKET_CTA:
       content = <GithubRegistrationStep />;
@@ -41,14 +33,22 @@ const DeveloperDays2Page = () => {
       content = <EmailRegistrationStep onSuccessCallback={handleSubmitSuccess} />;
   }
 
-  return (
-    <Container
-      className="relative flex min-h-[100vh] items-center gap-12 py-4 lg:flex-wrap lg:justify-center lg:gap-0"
-      size="lg"
-    >
-      {content}
-    </Container>
-  );
+  if (status !== 'loading') {
+    if (status === 'authenticated' && data?.githubHandle) {
+      return redirect(`/developer-days-2/tickets/${data.githubHandle}`);
+    }
+
+    return (
+      <Container
+        className="relative flex min-h-[100vh] items-center gap-12 py-4 lg:flex-wrap lg:justify-center lg:gap-0"
+        size="lg"
+      >
+        {content}
+      </Container>
+    );
+  }
+
+  return null;
 };
 
 export default DeveloperDays2Page;
