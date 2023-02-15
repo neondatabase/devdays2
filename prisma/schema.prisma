@@ -45,6 +45,7 @@ model User {
   emailVerified Boolean?  @map("email_verified")
   githubHandle  String?   @unique @map("github_handle")
   image         String?
+  colorSchema   String?   @default("1")
   accounts      Account[]
   sessions      Session[]
 

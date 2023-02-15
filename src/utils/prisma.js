@@ -16,11 +16,22 @@ if (process.env.NODE_ENV === 'production') {
 // required to alter prisma adapter
 export const PrismaAdapter = (p) => ({
   ..._PrismaAdapter(p),
-  getUser: (id) => p.user.findUnique({ where: { id: +id } }),
+  getUser: (id) =>
+    p.user.findUnique({
+      where: { id: +id },
+      include: {
+        user: {
+          include: {
+            colorSchema: true,
+          },
+        },
+      },
+    }),
   createUser: async (data) => {
     const userId = data?.image.split('/').slice(-1)[0].split('?')[0];
     let githubHandle;
     // @TODO: beware of rate limits
+    // fetch user-data using the github app
     try {
       let userData = await fetch(`https://api.github.com/user/${userId}`, {
         headers: {
@@ -33,6 +44,7 @@ export const PrismaAdapter = (p) => ({
     } catch (err) {
       console.log(err);
     }
+
     return p.user.create({
       data: {
         ...data,

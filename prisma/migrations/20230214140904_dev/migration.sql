@@ -34,6 +34,7 @@ CREATE TABLE "users" (
     "email_verified" BOOLEAN,
     "github_handle" TEXT,
     "image" TEXT,
+    "colorSchema" TEXT DEFAULT '1',
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );

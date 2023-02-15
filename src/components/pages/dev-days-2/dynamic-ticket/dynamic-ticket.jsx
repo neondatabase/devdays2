@@ -2,8 +2,9 @@
 
 import clsx from 'clsx';
 import Image from 'next/image';
+import { useSession } from 'next-auth/react';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import variant1 from 'images/developer-days-2/ticket-variant-1.png';
 import variant2 from 'images/developer-days-2/ticket-variant-2.png';
@@ -47,10 +48,34 @@ const colorVariants = [
 ];
 
 const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
-  const [currentTab, setCurrentTab] = useState('1');
+  const { data } = useSession();
+  const [currentColorSchema, setCurrentColorSchema] = useState(null);
+  const [selectedColorSchema, setSelectedColorSchema] = useState(null);
 
-  const handleTabClick = (e) => {
-    setCurrentTab(e.target.id);
+  useEffect(() => {
+    setCurrentColorSchema((prevTab) =>
+      data?.colorSchema && data?.colorSchema !== prevTab ? data?.colorSchema : prevTab
+    );
+  }, [data?.colorSchema]);
+
+  useEffect(() => {
+    if (!selectedColorSchema) return;
+    const { userId, colorSchema } = data;
+
+    const fetchDataTimer = setTimeout(async () => {
+      await fetch(`/api/update/user?id=${userId}&colorSchema=${colorSchema}`);
+      await fetch(`/api/auth/session?colorSchema=${selectedColorSchema}`);
+    }, 1000);
+
+    return () => clearTimeout(fetchDataTimer);
+    // eslint-disable-next-line
+  }, [selectedColorSchema]);
+
+  const handleTabClick = async (e) => {
+    data.colorSchema = e.target.id;
+
+    setCurrentColorSchema(e.target.id);
+    setSelectedColorSchema(e.target.id);
   };
 
   return (
@@ -60,7 +85,7 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
           const { id, image, ellipse } = item;
 
           return (
-            currentTab === `${id}` && (
+            currentColorSchema === `${id}` && (
               <div key={i}>
                 <Image
                   className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[160%] w-[130%] max-w-[130%] -translate-x-1/2 -translate-y-1/2"
@@ -111,7 +136,7 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
         <div className="flex gap-5">
           {colorVariants.map((item, i) => {
             const { id, tabTitle, bgVariant } = item;
-            const isActive = currentTab === `${id}`;
+            const isActive = currentColorSchema === `${id}`;
 
             return (
               <button
