@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import SubscriptionForm from 'components/shared/subscription-form';
 import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
-import ElephantIllustration from 'images/ticket-hero-elephant.png';
+import ElephantIllustration from 'images/developer-days-2/ticket-hero-elephant.png';
 
 const EmailRegistrationStep = ({ onSuccessCallback }) => (
   <>

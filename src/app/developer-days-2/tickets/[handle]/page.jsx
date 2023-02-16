@@ -18,10 +18,10 @@ const TicketPage = async ({ params }) => {
       size="lg"
     >
       <div className="lg:flex lg:w-full lg:flex-col lg:items-center">
-        <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-6xl lg:text-center lg:text-[78px] md:text-[58px] sm:text-[52px]">
+        <h1 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-6xl lg:text-center lg:text-[78px] md:text-[58px] sm:text-[52px]">
           You’re In. <br className="lg:hidden sm:block" />
           Make it Unique.
-        </h2>
+        </h1>
         <p className="mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
           Join us at <time dateTime="2023-03-26 10:30">10:30AM PT, March 26</time>
         </p>

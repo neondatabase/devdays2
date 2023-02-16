@@ -93,4 +93,23 @@
     line-gap-override: 0%;
     size-adjust: 99.98%;
   }
+
+  @font-face {
+    font-family: 'Kallisto';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/fonts/kallisto/kallisto-light.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Kallisto Fallback';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Arial');
+    ascent-override: 79.95%;
+    descent-override: 18.36%;
+    line-gap-override: 0%;
+    size-adjust: 117.8%;
+  }
 }

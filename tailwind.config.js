@@ -64,6 +64,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
+        kallisto: ['Kallisto', 'Kallisto Fallback', ...defaultTheme.fontFamily.sans],
         sans: ['IBM Plex Sans', 'IBM Plex Sans Fallback', ...defaultTheme.fontFamily.sans],
         mono: ['IBM Plex Mono', 'IBM Plex Mono Fallback', ...defaultTheme.fontFamily.mono],
       },
