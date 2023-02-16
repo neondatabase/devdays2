@@ -21,7 +21,7 @@ const links = [
 ];
 
 const SocialShare = ({ className = null, url }) => (
-  <div className={clsx('mt-12 flex items-center', className)}>
+  <div className={clsx('flex items-center', className)}>
     <div className="flex gap-4">
       {links.map(({ icon: Icon, tag: Tag, title }, index) => (
         <Tag url={url} key={index}>
@@ -32,7 +32,7 @@ const SocialShare = ({ className = null, url }) => (
         </Tag>
       ))}
     </div>
-    <h2 className="ml-6 font-sans text-sm font-light text-white sm:hidden">
+    <h2 className="ml-6 shrink-0 font-sans text-sm font-light text-white xl:hidden">
       Share with <br /> your friends
     </h2>
   </div>

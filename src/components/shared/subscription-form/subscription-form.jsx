@@ -23,7 +23,7 @@ const sizeClassNames = {
   sm: {
     form: 'gradient-background',
     input: 'h-[64px] text-lg pl-5 border',
-    button: '!text-base !px-8 !py-[15px] right-2 md:!p-0',
+    button: '!text-base !px-8 !py-[15px] right-2 sm:!p-0',
     loading: 'right-2',
     success: 'right-2',
     stateIcon: 'w-14 h-14',
@@ -128,7 +128,7 @@ const SubscriptionForm = ({
       {/* Input */}
       <input
         className={clsx(
-          'remove-autocomplete-styles relative block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 lg:w-full lg:pl-5 md:pr-20',
+          'remove-autocomplete-styles relative block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 lg:w-full lg:pl-5 sm:pr-20',
           errorMessage && 'border-secondary-1',
           sizeClassNames[size].input
         )}
@@ -167,7 +167,7 @@ const SubscriptionForm = ({
           >
             <Button
               className={clsx(
-                'absolute top-1/2 -translate-y-1/2 md:h-14 md:w-14 md:rounded-full md:p-0',
+                'absolute top-1/2 -translate-y-1/2 sm:h-14 sm:w-14 sm:rounded-full sm:p-0',
                 sizeClassNames[size].button
               )}
               size="sm"
@@ -175,8 +175,8 @@ const SubscriptionForm = ({
               theme="quaternary"
               disabled={formState !== 'default'}
             >
-              <span className="md:sr-only">{submitButtonText}</span>
-              <SendIcon className="hidden md:ml-1.5 md:block" aria-hidden />
+              <span className="sm:sr-only">{submitButtonText}</span>
+              <SendIcon className="hidden sm:ml-1.5 sm:block" aria-hidden />
             </Button>
           </motion.div>
         )}

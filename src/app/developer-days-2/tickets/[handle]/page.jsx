@@ -14,20 +14,20 @@ const TicketPage = async ({ params }) => {
 
   return (
     <Container
-      className="relative flex min-h-[100vh] items-center gap-12 py-4 lg:flex-wrap lg:justify-center lg:gap-0"
+      className="relative flex min-h-[100vh] items-center gap-12 py-4 lg:flex-wrap lg:justify-center lg:gap-4"
       size="lg"
     >
-      <div className="w-6/12 xl:w-1/2 lg:w-2/3 sm:w-full">
-        <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-6xl">
-          You’re In. <br />
+      <div className="lg:flex lg:w-full lg:flex-col lg:items-center">
+        <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-6xl lg:text-center lg:text-[78px] md:text-[58px] sm:text-[52px]">
+          You’re In. <br className="lg:hidden sm:block" />
           Make it Unique.
         </h2>
-        <p className="mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white">
-          Generate a unique ticket image with your GitHub profile.
+        <p className="mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
+          Join us at <time dateTime="2023-03-26 10:30">10:30AM PT, March 26</time>
         </p>
-        <SocialShare url={shareUrl} />
+        <SocialShare className="mt-12 sm:mt-6" url={shareUrl} />
       </div>
-      <div className="w-7/12 xl:w-1/2 lg:mt-2 lg:mb-10 lg:w-2/3 sm:w-full">
+      <div className="shrink-0 lg:mt-6 lg:max-w-[95%] sm:mt-4 sm:flex sm:flex-col-reverse">
         <DynamicTicket data={data} />
       </div>
     </Container>

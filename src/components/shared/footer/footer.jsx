@@ -3,11 +3,11 @@ import Container from 'components/shared/container';
 const Footer = () => (
   <footer className="safe-paddings mt-auto overflow-hidden border-t border-gray-2 text-white">
     <Container
-      className="flex justify-between gap-3 py-10 font-sans text-[15px] leading-tight text-gray-5 xl:py-8"
+      className="flex justify-between gap-3 py-10 font-sans text-[15px] leading-tight text-gray-5 xl:py-8 lg:text-[12px] sm:flex-col sm:items-center"
       size="lg"
     >
       <p className="text-gray-8">Neon 2023 Ⓒ All rights reserved</p>
-      <p className="">
+      <p className="sm:max-w-[80%] sm:text-center">
         By entering your email, you agree to our{' '}
         <a
           className="text-white transition duration-200 hover:text-primary-2"
