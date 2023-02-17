@@ -63,9 +63,18 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
       </motion.div>
       <motion.div
         className="w-7/12 xl:w-1/2 lg:my-4 lg:w-full"
-        initial={{ opacity: 0, scale: 1.5 }}
+        initial={{ opacity: 0, scale: 1.2 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, ease: 'linear' }}
+        transition={{
+          opacity: {
+            duration: 1,
+            ease: 'linear',
+          },
+          scale: {
+            duration: 2,
+            ease: [0, 0.35, 0.35, 1],
+          },
+        }}
       >
         <Image src={ElephantIllustration} alt="Elephant illustration" />
       </motion.div>

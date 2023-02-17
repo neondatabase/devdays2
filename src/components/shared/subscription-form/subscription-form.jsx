@@ -126,7 +126,16 @@ const SubscriptionForm = ({
       className={clsx('', className, sizeClassNames[size].form)}
       initial={{ opacity: 0, width: 0 }}
       animate={{ opacity: 1, width: `100%` }}
-      transition={{ delay: 0.1, duration: 0.5, ease: 'easeOut' }}
+      transition={{
+        opacity: {
+          duration: 0.5,
+          ease: 'linear',
+        },
+        width: {
+          duration: 1,
+          ease: [0, 0.35, 0.35, 1],
+        },
+      }}
       noValidate
       onSubmit={handleSubmit}
     >
