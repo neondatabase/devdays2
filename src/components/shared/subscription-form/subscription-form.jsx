@@ -8,10 +8,12 @@ import { useCookie, useLocation } from 'react-use';
 
 import Button from 'components/shared/button';
 import useLocalStorage from 'hooks/use-local-storage';
-import CheckIcon from 'icons/subscription-form-check.inline.svg';
-import ErrorIcon from 'icons/subscription-form-error.inline.svg';
-import SendIcon from 'icons/subscription-form-send.inline.svg';
 import { doNowOrAfterSomeTime, emailRegexp, sendHubspotFormData } from 'utils/forms';
+
+import LuminousBack from './icons/luminous-back.inline.svg';
+import CheckIcon from './icons/subscription-form-check.inline.svg';
+import ErrorIcon from './icons/subscription-form-error.inline.svg';
+import SendIcon from './icons/subscription-form-send.inline.svg';
 
 const appearAndExitAnimationVariants = {
   initial: { opacity: 0 },
@@ -21,7 +23,7 @@ const appearAndExitAnimationVariants = {
 
 const sizeClassNames = {
   sm: {
-    form: 'gradient-background',
+    form: 'relative max-w-[540px]', // gradient-background
     input: 'h-[64px] text-lg pl-5 border',
     button: '!text-base !px-8 !py-[15px] right-2 sm:!p-0',
     loading: 'right-2',
@@ -120,15 +122,17 @@ const SubscriptionForm = ({
   };
 
   return (
-    <form
+    <motion.form
       className={clsx('', className, sizeClassNames[size].form)}
+      initial={{ opacity: 0, width: 0 }}
+      animate={{ opacity: 1, width: `100%` }}
+      transition={{ delay: 0.1, duration: 0.5, ease: 'easeOut' }}
       noValidate
       onSubmit={handleSubmit}
     >
-      {/* Input */}
       <input
         className={clsx(
-          'remove-autocomplete-styles relative block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 lg:w-full lg:pl-5 sm:pr-20',
+          'remove-autocomplete-styles placeholder-font-normal relative z-20 block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 lg:w-full lg:pl-5 sm:pr-20',
           errorMessage && 'border-secondary-1',
           sizeClassNames[size].input
         )}
@@ -139,6 +143,11 @@ const SubscriptionForm = ({
         value={email}
         readOnly={formState !== 'default'}
         onChange={handleInputChange}
+      />
+
+      <LuminousBack
+        className="pointer-events-none absolute -top-10 left-1/2 z-10 h-auto w-[115%] -translate-x-1/2 xs:-top-4 xs:w-[120%]"
+        aria-hidden="true"
       />
 
       {/* Error message */}
@@ -167,7 +176,7 @@ const SubscriptionForm = ({
           >
             <Button
               className={clsx(
-                'absolute top-1/2 -translate-y-1/2 sm:h-14 sm:w-14 sm:rounded-full sm:p-0',
+                'absolute top-1/2 z-20 -translate-y-1/2 sm:h-14 sm:w-14 sm:rounded-full sm:p-0',
                 sizeClassNames[size].button
               )}
               size="sm"
@@ -187,7 +196,7 @@ const SubscriptionForm = ({
         {formState === 'loading' && (
           <motion.div
             className={clsx(
-              'absolute top-1/2 flex -translate-y-1/2 items-center justify-center rounded-full bg-black',
+              'absolute top-1/2 z-20 flex -translate-y-1/2 items-center justify-center rounded-full bg-black',
               sizeClassNames[size].loading
             )}
             initial="initial"
@@ -223,7 +232,7 @@ const SubscriptionForm = ({
       <AnimatePresence>
         {(formState === 'success' || formState === 'error') && (
           <motion.div
-            className={clsx('absolute top-1/2 -translate-y-1/2', sizeClassNames[size].success)}
+            className={clsx('absolute top-1/2 z-20 -translate-y-1/2', sizeClassNames[size].success)}
             initial="initial"
             animate="animate"
             exit="exit"
@@ -239,7 +248,7 @@ const SubscriptionForm = ({
           </motion.div>
         )}
       </AnimatePresence>
-    </form>
+    </motion.form>
   );
 };
 
