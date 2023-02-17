@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { signIn } from 'next-auth/react';
 
 import Button from 'components/shared/button';
+import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import GithubIcon from 'components/shared/header/images/header-github.inline.svg';
 import DesktopBlankTicketIllustration from 'images/developer-days-2/blank-ticket-desktop.png';
 import MobileBlankTicketIllustration from 'images/developer-days-2/blank-ticket-mobile.png';
@@ -38,11 +39,13 @@ const GithubRegistrationStep = () => (
       </div>
     </div>
     <div className="w-7/12 xl:w-1/2 lg:my-4 lg:w-[90%]">
-      <Image
-        className="sm:hidden"
-        src={DesktopBlankTicketIllustration}
-        alt="Blank ticket desktop illustration"
-      />
+      <CursorTrackingWrapper>
+        <Image
+          className="sm:hidden"
+          src={DesktopBlankTicketIllustration}
+          alt="Blank ticket desktop illustration"
+        />
+      </CursorTrackingWrapper>
       <Image
         className="hidden sm:block"
         src={MobileBlankTicketIllustration}
