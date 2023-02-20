@@ -15,7 +15,7 @@ const CursorTrackingWrapper = ({ children }) => {
     if (!innerWidth) setInnerWidth(innerWrapperRef?.current?.offsetWidth);
   }, [children, innerWidth]);
 
-  const handleMouse = (event) => {
+  const handleMouseMove = (event) => {
     const rect = event.currentTarget.getBoundingClientRect();
 
     x.set(event.clientX - rect.left);
@@ -27,7 +27,7 @@ const CursorTrackingWrapper = ({ children }) => {
       style={{
         perspective: innerWidth,
       }}
-      onMouseMove={handleMouse}
+      onMouseMove={handleMouseMove}
     >
       <motion.div ref={innerWrapperRef} style={{ rotateY }}>
         {children}
