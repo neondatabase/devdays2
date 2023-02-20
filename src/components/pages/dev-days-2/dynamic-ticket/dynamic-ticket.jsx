@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import PropTypes from 'prop-types';
@@ -55,7 +56,7 @@ const colorVariants = [
   },
 ];
 
-const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
+const DynamicTicket = ({ data: { id: number, name, image, githubHandle, colorSchema } }) => {
   const { data } = useSession();
   const [currentColorSchema, setCurrentColorSchema] = useState('1');
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
@@ -93,7 +94,7 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
           (item) =>
             currentColorSchema === `${item.id}` && (
               <Image
-                className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[160%] w-[130%] max-w-[130%] -translate-x-1/2 -translate-y-1/2"
+                className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[160%] w-[130%] max-w-[130%] -translate-x-1/2 -translate-y-1/2 xs:w-full xs:max-w-full"
                 src={item.backgroundImage}
                 width={790}
                 height={388}
@@ -103,7 +104,7 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
               />
             )
         )}
-        <CursorTrackingWrapper>
+        <CursorTrackingWrapper color={currentColorSchema}>
           {colorVariants.map((item) => {
             const { id, image, mobileImage } = item;
 
@@ -112,7 +113,7 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
                 <div key={id}>
                   <h2
                     className={clsx(
-                      'absolute left-16 top-36 z-20 text-5xl sm:left-6 sm:top-32 sm:text-4xl ',
+                      'absolute left-16 top-36 z-20 text-5xl sm:left-6 sm:top-32 sm:text-4xl xxs:left-2 ',
                       `color-text-variant-${id}`
                     )}
                   >
@@ -127,7 +128,7 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
                     alt="Ticket desktop variant illustration"
                   />
                   <Image
-                    className="pointer-events-none relative z-10 hidden max-w-[370px] sm:block"
+                    className="pointer-events-none relative z-10 hidden max-w-[370px] sm:block xs:max-w-full"
                     src={mobileImage}
                     width={700}
                     height={344}
@@ -138,7 +139,7 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
               )
             );
           })}
-          <div className="absolute top-8 left-8 z-10 flex 2xl:top-12 lg:top-8 sm:top-16 sm:left-6">
+          <div className="absolute top-8 left-8 z-10 flex 2xl:top-12 lg:top-8 sm:top-16 sm:left-6 xxs:left-2">
             <div className="h-[56px] w-[56px] overflow-hidden rounded-full sm:h-12 sm:w-12">
               <img className="rounded-full" src={image} alt={`${name}'s profile picture`} />
             </div>
@@ -147,11 +148,11 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
               <p className="font-mono text-base text-white">/{githubHandle}</p>
             </div>
           </div>
-          <div className="absolute bottom-8 left-8 z-10 flex items-center 2xl:bottom-12 lg:bottom-6 sm:left-6 sm:bottom-14">
-            <p className="font-kallisto text-[36px] font-light tracking-wider text-white sm:text-[28px]">
+          <div className="absolute bottom-8 left-8 z-10 flex items-center 2xl:bottom-12 lg:bottom-6 sm:left-6 sm:bottom-14 xxs:left-2">
+            <p className="font-kallisto text-[36px] font-light tracking-wider text-white sm:text-[28px] xxs:text-[26px]">
               #{`${number}`.padStart(6, '0')} /
             </p>
-            <div className="ml-4 flex flex-col font-mono text-sm uppercase leading-tight text-white sm:text-[12px]">
+            <div className="ml-4 flex flex-col font-mono text-sm uppercase leading-tight text-white sm:text-[12px] xxs:ml-2">
               <span className="">10:30AM PT,</span>
               <span className="">March 26, 2023</span>
             </div>
@@ -159,8 +160,8 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
         </CursorTrackingWrapper>
       </div>
 
-      {data?.colorSchema && (
-        <div className="mt-8 flex items-center gap-3 lg:justify-center sm:mt-0">
+      {colorSchema && (
+        <div className="mt-8 flex items-center gap-3 xl:justify-center sm:mt-0">
           <p className="text-sm font-thin text-gray-7">Pick a color:</p>
           <div className="flex gap-5">
             {colorVariants.map((item, i) => {
@@ -168,7 +169,7 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
               const isActive = currentColorSchema === `${id}`;
 
               return (
-                <button
+                <motion.button
                   className={clsx(
                     'relative flex h-9 w-9 items-center justify-center rounded-full border before:h-4 before:w-4 before:rounded-full',
                     isActive ? 'border-gray-8' : 'border-gray-4',
@@ -177,10 +178,11 @@ const DynamicTicket = ({ data: { id: number, name, image, githubHandle } }) => {
                   key={i}
                   id={id}
                   disabled={isActive}
+                  whileTap={{ scale: 0.9 }}
                   onClick={handleColorClick}
                 >
                   <span className="sr-only">{title}</span>
-                </button>
+                </motion.button>
               );
             })}
           </div>
@@ -197,6 +199,7 @@ DynamicTicket.propTypes = {
     image: PropTypes.string,
     name: PropTypes.string,
     githubHandle: PropTypes.string,
+    colorSchema: PropTypes.string,
   }).isRequired,
 };
 

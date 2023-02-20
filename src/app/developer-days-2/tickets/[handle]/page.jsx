@@ -14,11 +14,11 @@ const TicketPage = async ({ params }) => {
 
   return (
     <Container
-      className="relative flex min-h-[100vh] items-center gap-12 py-4 lg:flex-wrap lg:justify-center lg:gap-4"
+      className="relative flex min-h-[inherit] items-center gap-12 py-4 xl:flex-wrap xl:justify-center xl:gap-4"
       size="lg"
     >
-      <div className="lg:flex lg:w-full lg:flex-col lg:items-center">
-        <h1 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-6xl lg:text-center lg:text-[78px] md:text-[58px] sm:text-[52px]">
+      <div className="xl:flex xl:w-full xl:flex-col xl:items-center">
+        <h1 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-center xl:text-[78px] md:text-[58px] sm:text-[52px]">
           You’re In. <br className="lg:hidden sm:block" />
           Make it Unique.
         </h1>
@@ -49,6 +49,7 @@ async function getTicketData(handle) {
           name: true,
           email: true,
           githubHandle: true,
+          colorSchema: true,
           image: true,
           id: true,
         },

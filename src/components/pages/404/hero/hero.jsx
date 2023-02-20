@@ -11,7 +11,7 @@ import Link from 'components/shared/link';
 
 import illustration from './images/illustration.png';
 
-const CTA = ({ isDocsPage }) =>
+const CTA = ({ isDocsPage = false }) =>
   isDocsPage ? (
     <div className="flex w-full flex-col">
       <span className="h-px w-full bg-gray-4" />
@@ -27,10 +27,6 @@ const CTA = ({ isDocsPage }) =>
 
 CTA.propTypes = {
   isDocsPage: PropTypes.bool,
-};
-
-CTA.defaultProps = {
-  isDocsPage: false,
 };
 
 const Skeleton = () => (

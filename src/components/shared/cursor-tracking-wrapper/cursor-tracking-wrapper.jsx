@@ -1,15 +1,52 @@
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { motion, useAnimationControls, useMotionValue, useTransform } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { useEffect, useRef, useState } from 'react';
 
-const CursorTrackingWrapper = ({ children }) => {
+import usePrevious from 'hooks/use-previous';
+
+const appearAndExitGradientVariants = {
+  initial: {
+    translateX: '-100%',
+    opacity: 0,
+    // backgroundImage:
+    //   'linear-gradient(115deg, transparent, rgb(230, 233, 230) -100%, transparent -100%)',
+  },
+  visible: {
+    translateX: '100%',
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: 'linear',
+      opacity: {
+        duration: 0,
+      },
+    },
+    transitionEnd: {
+      opacity: 0,
+    },
+    // backgroundImage:
+    //   'linear-gradient(115deg, transparent, rgb(230, 233, 230) 150%, transparent 150%)',
+  },
+};
+
+const CursorTrackingWrapper = ({ children, color = '1' }) => {
   const [innerWidth, setInnerWidth] = useState(0);
+  const prevColor = usePrevious(color);
   const innerWrapperRef = useRef();
   const x = useMotionValue(200);
   // const y = useMotionValue(200);
+  const gradientControls = useAnimationControls();
 
-  // const rotateX = useTransform(y, [0, 400], [45, -45]);
-  const rotateY = useTransform(x, [0, innerWidth], [-20, 20]);
+  useEffect(() => {
+    if (prevColor !== color) {
+      gradientControls.start('visible').then(() => {
+        gradientControls.start('initial');
+      });
+    }
+  }, [prevColor, color, gradientControls]);
+
+  // const rotateX = useTransform(y, [0, innerWidth], [8, -8]);
+  const rotateY = useTransform(x, [0, innerWidth], [-8, 8]);
 
   useEffect(() => {
     if (!innerWidth) setInnerWidth(innerWrapperRef?.current?.offsetWidth);
@@ -23,21 +60,41 @@ const CursorTrackingWrapper = ({ children }) => {
   };
 
   return (
-    <motion.div
-      style={{
-        perspective: innerWidth,
-      }}
-      onMouseMove={handleMouseMove}
-    >
-      <motion.div ref={innerWrapperRef} style={{ rotateY }}>
-        {children}
+    <>
+      <motion.div
+        className="xl:hidden"
+        style={{
+          perspective: innerWidth,
+        }}
+        onMouseMove={handleMouseMove}
+      >
+        <motion.div className="overflow-hidden" ref={innerWrapperRef} style={{ rotateY }}>
+          {children}
+          <motion.span
+            initial="initial"
+            animate={gradientControls}
+            variants={appearAndExitGradientVariants}
+            style={{
+              position: 'absolute',
+              zIndex: '22',
+              width: '100%',
+              height: '100%',
+              top: 0,
+              left: 0,
+              backgroundImage:
+                'linear-gradient(106deg, transparent 30%, #fff 60%, transparent 60%)',
+            }}
+          />
+        </motion.div>
       </motion.div>
-    </motion.div>
+      <div className="hidden xl:block">{children}</div>
+    </>
   );
 };
 
 CursorTrackingWrapper.propTypes = {
   children: PropTypes.node.isRequired,
+  color: PropTypes.string,
 };
 
 export default CursorTrackingWrapper;
