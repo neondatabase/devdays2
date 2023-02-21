@@ -8,8 +8,6 @@ const appearAndExitGradientVariants = {
   initial: {
     translateX: '-100%',
     opacity: 0,
-    // backgroundImage:
-    //   'linear-gradient(115deg, transparent, rgb(230, 233, 230) -100%, transparent -100%)',
   },
   visible: {
     translateX: '100%',
@@ -24,8 +22,6 @@ const appearAndExitGradientVariants = {
     transitionEnd: {
       opacity: 0,
     },
-    // backgroundImage:
-    //   'linear-gradient(115deg, transparent, rgb(230, 233, 230) 150%, transparent 150%)',
   },
 };
 
@@ -64,7 +60,7 @@ const CursorTrackingWrapper = ({ children, color = '1' }) => {
       <motion.div
         className="xl:hidden"
         style={{
-          perspective: innerWidth,
+          perspective: innerWidth || 790,
         }}
         onMouseMove={handleMouseMove}
       >

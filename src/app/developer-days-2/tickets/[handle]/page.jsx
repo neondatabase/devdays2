@@ -6,11 +6,11 @@ import SocialShare from 'components/shared/social-share';
 import prisma from 'utils/prisma';
 
 const TicketPage = async ({ params }) => {
-  const data = await getTicketData(params.handle);
+  const userData = await getTicketData(params.handle);
 
-  if (!data) return notFound();
+  if (!userData) return notFound();
 
-  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days-2/tickets/${data.githubHandle}`;
+  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days-2/tickets/${userData.githubHandle}`;
 
   return (
     <Container
@@ -28,7 +28,7 @@ const TicketPage = async ({ params }) => {
         <SocialShare className="mt-12 sm:mt-6" url={shareUrl} />
       </div>
       <div className="shrink-0 lg:mt-6 lg:max-w-[95%] sm:mt-4 sm:flex sm:flex-col-reverse">
-        <DynamicTicket data={data} />
+        <DynamicTicket userData={userData} />
       </div>
     </Container>
   );
@@ -49,7 +49,6 @@ async function getTicketData(handle) {
           name: true,
           email: true,
           githubHandle: true,
-          colorSchema: true,
           image: true,
           id: true,
         },
