@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import PropTypes from 'prop-types';
@@ -165,17 +165,28 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
               return (
                 <motion.button
                   className={clsx(
-                    'relative flex h-9 w-9 items-center justify-center rounded-full border before:h-4 before:w-4 before:rounded-full',
-                    isActive ? 'border-gray-8' : 'border-gray-4',
+                    'relative flex h-9 w-9 items-center justify-center rounded-full outline outline-1 outline-gray-4 before:h-4 before:w-4 before:rounded-full',
                     buttonColorClass
                   )}
                   key={i}
                   id={id}
                   disabled={isActive}
-                  whileTap={{ scale: 0.9 }}
+                  // whileTap={{ scale: 0.9 }}
                   onClick={handleColorClick}
                 >
                   <span className="sr-only">{title}</span>
+                  <AnimatePresence>
+                    {isActive && (
+                      <motion.span
+                        className="absolute left-0 top-0 z-10 h-full w-full rounded-full outline outline-1 outline-gray-8"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{ duration: 0.5 }}
+                        aria-hidden
+                      />
+                    )}
+                  </AnimatePresence>
                 </motion.button>
               );
             })}

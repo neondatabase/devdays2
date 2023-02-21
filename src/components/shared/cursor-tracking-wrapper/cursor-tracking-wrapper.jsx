@@ -13,7 +13,7 @@ const appearAndExitGradientVariants = {
     opacity: 1,
     translateX: '100%',
     transition: {
-      duration: 0.7,
+      duration: 0.5,
       ease: 'linear',
       opacity: {
         duration: 0,
@@ -29,15 +29,15 @@ const scaleAndMoveTicketVariants = {
   initial: {
     scale: 1,
     transition: {
-      duration: 0.35,
-      ease: 'linear',
+      duration: 0.8,
+      ease: [0, 0.35, 0.35, 1],
     },
   },
   scaleOut: {
-    scale: 0.95,
+    scale: 0.9,
     transition: {
-      duration: 0.35,
-      ease: 'linear',
+      duration: 0.2,
+      ease: [0, 0.35, 0.35, 1],
     },
   },
 };
@@ -107,7 +107,7 @@ const CursorTrackingWrapper = ({ children, color = '1', withAnimations = false }
                 color === '1'
                   ? 'rgba(51, 255, 187, 0.8)'
                   : color === '2'
-                  ? 'rgba(230, 255, 102, 0.8)'
+                  ? 'rgba(189, 244, 113, 0.8)'
                   : color === '3'
                   ? 'rgba(255, 153, 221, 0.8)'
                   : 'rgba(204, 204, 255, 0.8)'
