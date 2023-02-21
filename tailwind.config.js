@@ -104,23 +104,27 @@ module.exports = {
       keyframes: (theme) => ({
         'text-blink': {
           '0%': {
+            opacity: 0,
             color: theme('colors.black'),
-            textShadow: `-1px -1px 0 ${theme('colors.gray.1')}, 1px -1px 0 ${theme(
-              'colors.gray.1'
-            )}, -1px 1px 0 ${theme('colors.gray.1')}, 1px 1px 0 ${theme('colors.gray.1')}`,
+            textShadow: `-1px -1px 0 ${theme('colors.primary.1')}, 1px -1px 0 ${theme(
+              'colors.primary.1'
+            )}, -1px 1px 0 ${theme('colors.primary.1')}, 1px 1px 0 ${theme('colors.primary.1')}`,
           },
           '25%': {
+            opacity: 0.25,
             color: 'currentColor',
             textShadow:
               '-1px -1px 0 transparent, 1px -1px 0 transparent, -1px 1px 0 transparent, 1px 1px 0 transparent',
           },
           '50%': {
+            opacity: 0.5,
             color: theme('colors.black'),
-            textShadow: `-1px -1px 0 ${theme('colors.gray.1')}, 1px -1px 0 ${theme(
-              'colors.gray.1'
-            )}, -1px 1px 0 ${theme('colors.gray.1')}, 1px 1px 0 ${theme('colors.gray.1')}`,
+            textShadow: `-1px -1px 0 ${theme('colors.primary.1')}, 1px -1px 0 ${theme(
+              'colors.primary.1'
+            )}, -1px 1px 0 ${theme('colors.primary.1')}, 1px 1px 0 ${theme('colors.primary.1')}`,
           },
           '100%': {
+            opacity: 1,
             color: 'currentColor',
             textShadow:
               '-1px -1px 0 transparent, 1px -1px 0 transparent, -1px 1px 0 transparent, 1px 1px 0 transparent',

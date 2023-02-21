@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
@@ -14,15 +13,11 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
 
   const titleContent = (
     <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
-      {'Neon Dev \n Days 2023'.split('').map((letter, index) =>
+      {'Neon Dev Days 2023'.split('').map((letter, index) =>
         index === 8 ? (
           <br className="lg:hidden" key={index} />
         ) : (
-          <span
-            className={clsx('animate-text-blink', letter === '/' && 'text-secondary-2')}
-            style={{ animationPlayState: 'paused' }}
-            key={index}
-          >
+          <span className="animate-text-blink" style={{ animationPlayState: 'paused' }} key={index}>
             {letter}
           </span>
         )
@@ -36,7 +31,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         className="w-5/12 xl:w-1/2 lg:flex lg:w-full lg:flex-col lg:items-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.3, ease: 'easeIn' }}
+        transition={{ duration: 2, ease: 'linear' }}
       >
         <span className="rounded-[50px] bg-secondary-2 py-1 px-3 text-sm font-semibold uppercase leading-snug dark:text-black sm:mt-0">
           Spring 2023

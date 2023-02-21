@@ -20,7 +20,7 @@ const BlinkingText = ({
           letter.style.cssText = 'animation-play-state: running';
         }, currentTimeout);
 
-        currentTimeout += 10;
+        currentTimeout += 50;
       });
     }
   }, [parentElement, shouldAnimationStart]);
