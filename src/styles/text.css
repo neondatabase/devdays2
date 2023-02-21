@@ -5,6 +5,7 @@
   min-height: 100px;
   font-family: 'Kallisto', 'Kallisto Fallback', sans-serif;
   font-weight: 300;
+  line-height: 1;
   opacity: 0.9;
   text-shadow: 0 13.9157px 55.6627px rgba(0, 229, 153, 0.4);
 }
