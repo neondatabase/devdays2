@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 import Script from 'next/script';
 import PropTypes from 'prop-types';
@@ -9,8 +9,28 @@ import SubscriptionForm from 'components/shared/subscription-form';
 import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
 import ElephantIllustration from 'images/developer-days-2/ticket-hero-elephant.png';
 
+const appearSceneVariants = {
+  initial: {
+    opacity: 0,
+    scale: 1.2,
+  },
+  appear: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1,
+      ease: 'linear',
+      scale: {
+        duration: 2,
+        ease: [0, 0.35, 0.35, 1],
+      },
+    },
+  },
+};
+
 const EmailRegistrationStep = ({ onSuccessCallback }) => {
   const [titleRef, isTitleInView, titleEntry] = useInView({ triggerOnce: true, threshold: 0.5 });
+  const sceneControls = useAnimationControls();
 
   const titleContent = (
     <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
@@ -59,18 +79,9 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
       </motion.div>
       <motion.div
         className="w-7/12 xl:w-1/2 lg:my-4 lg:w-full"
-        initial={{ opacity: 0, scale: 1.2 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          opacity: {
-            duration: 1,
-            ease: 'linear',
-          },
-          scale: {
-            duration: 2,
-            ease: [0, 0.35, 0.35, 1],
-          },
-        }}
+        initial="initial"
+        animate={sceneControls}
+        variants={appearSceneVariants}
       >
         <div className="relative min-h-[740px] w-[1010px] lg:hidden">
           <canvas className="webgl" />
@@ -81,7 +92,14 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
             height={740}
             alt="Tusks illustration"
           />
-          <Script src="/static/webgl.js" type="module" strategy="afterInteractive" />
+          <Script
+            src="/static/webgl.js"
+            type="module"
+            strategy="afterInteractive"
+            onReady={() => {
+              sceneControls.start('appear');
+            }}
+          />
         </div>
         <Image className="hidden lg:block" src={ElephantIllustration} alt="Elephant illustration" />
       </motion.div>
