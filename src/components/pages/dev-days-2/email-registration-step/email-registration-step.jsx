@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Script from 'next/script';
 import PropTypes from 'prop-types';
 import { useInView } from 'react-intersection-observer';
 
@@ -71,7 +72,18 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           },
         }}
       >
-        <Image src={ElephantIllustration} alt="Elephant illustration" />
+        <div className="relative min-h-[740px] w-[1010px] lg:hidden">
+          <canvas className="webgl" />
+          <Image
+            className="absolute inset-0 h-full w-full"
+            src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5bfb0610-39a7-4a9a-80ca-9f921f3b7611/Untitled.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230222%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230222T121203Z&X-Amz-Expires=86400&X-Amz-Signature=ce30c7d8ab0a85017a8eecd44370afe22876b3d073697a869ff8b6efc780d18e&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.webp%22&x-id=GetObject"
+            width={1010}
+            height={740}
+            alt="Tusks illustration"
+          />
+          <Script src="/static/webgl.js" type="module" strategy="afterInteractive" />
+        </div>
+        <Image className="hidden lg:block" src={ElephantIllustration} alt="Elephant illustration" />
       </motion.div>
     </>
   );
