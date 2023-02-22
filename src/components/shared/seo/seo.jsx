@@ -61,6 +61,28 @@ const SEO = ({
           key={index}
         />
       ))}
+
+      {[...Array(4)].map((_, index) => (
+        <link
+          rel="preload"
+          href={`/_next/image?url=/images/developer-days-2/ticket-variant-${
+            index + 1
+          }.png&w=1920&q=75`}
+          as="image"
+          crossOrigin="anonymous"
+        />
+      ))}
+
+      {[...Array(4)].map((_, index) => (
+        <link
+          rel="preload"
+          href={`/_next/image?url=/images/developer-days-2/ticket-variant-${
+            index + 1
+          }-mobile.png&w=1920&q=75`}
+          as="image"
+          crossOrigin="anonymous"
+        />
+      ))}
     </>
   );
 };

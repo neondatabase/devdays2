@@ -4,9 +4,4 @@
     @apply min-w-[320px] font-sans antialiased;
     -webkit-tap-highlight-color: transparent;
   }
-
-  img {
-    color: transparent;
-    clip-path: inset(0.5px);
-  }
 }

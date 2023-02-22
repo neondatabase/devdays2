@@ -37,7 +37,7 @@ const GithubRegistrationStep = () => (
             <span>Generate with GitHub</span>
           </Button>
           <LuminousBack
-            className="pointer-events-none absolute -top-2 left-1/2 z-10 h-auto w-[130%] -translate-x-1/2 xs:-top-4 xs:w-[120%]"
+            className="pointer-events-none absolute -top-2 left-1/2 z-10 h-[200%] w-[130%] -translate-x-1/2 xs:-top-4 xs:w-[120%]"
             aria-hidden="true"
           />
         </div>
