@@ -1,13 +1,52 @@
 'use client';
 
 import clsx from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
+import usePrevious from 'hooks/use-previous';
+
+const appearAndExitGradientVariants = {
+  initial: {
+    opacity: 0,
+    translateX: '-100%',
+  },
+  move: {
+    opacity: 1,
+    translateX: '100%',
+    transition: {
+      duration: 0.5,
+      ease: 'linear',
+      opacity: {
+        duration: 0,
+      },
+    },
+    transitionEnd: {
+      opacity: 0,
+    },
+  },
+};
+
+const scaleAndMoveTicketVariants = {
+  initial: {
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0, 0.35, 0.35, 1],
+    },
+  },
+  scaleOut: {
+    scale: 0.9,
+    transition: {
+      duration: 0.2,
+      ease: [0, 0.35, 0.35, 1],
+    },
+  },
+};
 
 const colorVariants = [
   {
@@ -48,6 +87,21 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
   const { data, status } = useSession();
   const [currentColorSchema, setCurrentColorSchema] = useState('1');
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
+  const prevColor = usePrevious(currentColorSchema);
+  const gradientControls = useAnimationControls();
+  const ticketControls = useAnimationControls();
+
+  useEffect(() => {
+    if (prevColor !== currentColorSchema) {
+      ticketControls.start('scaleOut').then(() => {
+        ticketControls.start('initial');
+      });
+
+      gradientControls.start('move').then(() => {
+        gradientControls.start('initial');
+      });
+    }
+  }, [prevColor, currentColorSchema, gradientControls, ticketControls]);
 
   useEffect(() => {
     setCurrentColorSchema((prevTab) =>
@@ -88,66 +142,96 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
           }
         )}
       >
-        <CursorTrackingWrapper color={currentColorSchema} withAnimations>
-          {colorVariants.map((item) => {
-            const { id, image, mobileImage } = item;
+        <motion.div
+          initial="initial"
+          animate={ticketControls}
+          variants={scaleAndMoveTicketVariants}
+        >
+          <CursorTrackingWrapper color={currentColorSchema} withAnimations>
+            {colorVariants.map((item) => {
+              const { id, image, mobileImage } = item;
 
-            return (
-              currentColorSchema === `${id}` && (
-                <div key={id}>
-                  <h2
-                    className={clsx(
-                      'absolute left-16 top-36 z-20 text-5xl sm:left-6 sm:top-32 sm:text-4xl xxs:left-2 ',
-                      `color-text-variant-${id}`
-                    )}
-                  >
-                    Neon Dev <br /> Days 2023
-                  </h2>
-                  <Image
-                    className="pointer-events-none relative z-10 min-h-[380px] max-w-full sm:hidden"
-                    src={image}
-                    width={790}
-                    height={388}
-                    loading="eager"
-                    alt="Ticket desktop variant illustration"
-                  />
-                  <Image
-                    className="pointer-events-none relative z-10 hidden max-w-[370px] sm:block xs:max-w-full"
-                    src={mobileImage}
-                    width={700}
-                    height={344}
-                    loading="eager"
-                    alt="Ticket mobile variant illustration"
-                  />
-                </div>
-              )
-            );
-          })}
-          <div className="absolute top-8 left-8 z-10 flex 2xl:top-12 lg:top-8 sm:top-16 sm:left-6 xxs:left-2">
-            <div className="h-[56px] w-[56px] overflow-hidden rounded-full sm:h-12 sm:w-12">
-              <Image
-                className="rounded-full"
-                width={62}
-                height={62}
-                src={image}
-                alt={`${name}'s profile picture`}
-              />
+              return (
+                currentColorSchema === `${id}` && (
+                  <div key={id}>
+                    <h2
+                      className={clsx(
+                        'absolute left-16 top-36 z-20 text-5xl sm:left-6 sm:top-32 sm:text-4xl xxs:left-2 ',
+                        `color-text-variant-${id}`
+                      )}
+                    >
+                      Neon Dev <br /> Days 2023
+                    </h2>
+                    <Image
+                      className="pointer-events-none relative z-10 min-h-[380px] max-w-full sm:hidden"
+                      src={image}
+                      width={790}
+                      height={388}
+                      loading="eager"
+                      alt="Ticket desktop variant illustration"
+                    />
+                    <Image
+                      className="pointer-events-none relative z-10 hidden max-w-[370px] sm:block xs:max-w-full"
+                      src={mobileImage}
+                      width={700}
+                      height={344}
+                      loading="eager"
+                      alt="Ticket mobile variant illustration"
+                    />
+                  </div>
+                )
+              );
+            })}
+            <motion.span
+              initial="initial"
+              animate={gradientControls}
+              variants={appearAndExitGradientVariants}
+              style={{
+                position: 'absolute',
+                zIndex: '22',
+                width: '100%',
+                height: '100%',
+                top: 0,
+                left: 0,
+                backgroundImage: `linear-gradient(106deg, transparent 30%, ${
+                  currentColorSchema === '1'
+                    ? 'rgba(51, 255, 187, 0.8)'
+                    : currentColorSchema === '2'
+                    ? 'rgba(189, 244, 113, 0.8)'
+                    : currentColorSchema === '3'
+                    ? 'rgba(255, 153, 221, 0.8)'
+                    : 'rgba(204, 204, 255, 0.8)'
+                } 60%, transparent 60%)`,
+              }}
+            />
+            <div className="absolute top-8 left-8 z-10 flex 2xl:top-12 lg:top-8 sm:top-16 sm:left-6 xxs:left-2">
+              <div className="h-[56px] w-[56px] overflow-hidden rounded-full sm:h-12 sm:w-12">
+                <Image
+                  className="rounded-full"
+                  width={62}
+                  height={62}
+                  src={image}
+                  alt={`${name}'s profile picture`}
+                />
+              </div>
+              <div className="ml-4 flex-col">
+                <p className="font-sans text-[26px] font-semibold leading-none text-white">
+                  {name}
+                </p>
+                <p className="font-mono text-base text-white">/{githubHandle}</p>
+              </div>
             </div>
-            <div className="ml-4 flex-col">
-              <p className="font-sans text-[26px] font-semibold leading-none text-white">{name}</p>
-              <p className="font-mono text-base text-white">/{githubHandle}</p>
+            <div className="absolute bottom-8 left-8 z-10 flex items-center 2xl:bottom-12 lg:bottom-6 sm:left-6 sm:bottom-14 xxs:left-2">
+              <p className="font-kallisto text-[36px] font-light tracking-wider text-white sm:text-[28px] xxs:text-[26px]">
+                #{`${number}`.padStart(6, '0')} /
+              </p>
+              <div className="ml-4 flex flex-col font-mono text-sm uppercase leading-tight text-white sm:text-[12px] xxs:ml-2">
+                <span className="">10:30AM PT,</span>
+                <span className="">March 26, 2023</span>
+              </div>
             </div>
-          </div>
-          <div className="absolute bottom-8 left-8 z-10 flex items-center 2xl:bottom-12 lg:bottom-6 sm:left-6 sm:bottom-14 xxs:left-2">
-            <p className="font-kallisto text-[36px] font-light tracking-wider text-white sm:text-[28px] xxs:text-[26px]">
-              #{`${number}`.padStart(6, '0')} /
-            </p>
-            <div className="ml-4 flex flex-col font-mono text-sm uppercase leading-tight text-white sm:text-[12px] xxs:ml-2">
-              <span className="">10:30AM PT,</span>
-              <span className="">March 26, 2023</span>
-            </div>
-          </div>
-        </CursorTrackingWrapper>
+          </CursorTrackingWrapper>
+        </motion.div>
       </div>
 
       {status === 'authenticated' && data?.colorSchema && (

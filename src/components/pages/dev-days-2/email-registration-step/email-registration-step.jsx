@@ -5,9 +5,10 @@ import PropTypes from 'prop-types';
 import { useInView } from 'react-intersection-observer';
 
 import BlinkingText from 'components/shared/blinking-text';
+import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import SubscriptionForm from 'components/shared/subscription-form';
 import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
-import ElephantTisksIllustration from 'images/developer-days-2/elephant-tusk.png';
+import ElephantTusksIllustration from 'images/developer-days-2/elephant-tusk.png';
 import ElephantIllustration from 'images/developer-days-2/ticket-hero-elephant.png';
 
 const appearSceneVariants = {
@@ -85,14 +86,16 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         variants={appearSceneVariants}
       >
         <div className="relative min-h-[700px] w-[1010px] lg:hidden">
-          <canvas className="webgl" />
-          <Image
-            className="absolute inset-0 z-30 h-full w-full"
-            src={ElephantTisksIllustration}
-            width={1010}
-            height={740}
-            alt="Tusks illustration"
-          />
+          <canvas className="webgl relative z-20" />
+          <CursorTrackingWrapper className="absolute inset-0 z-30" xMovement={1} yMovement={1}>
+            <Image
+              className="h-full min-h-[740px] w-full"
+              src={ElephantTusksIllustration}
+              width={1010}
+              height={740}
+              alt="Tusks illustration"
+            />
+          </CursorTrackingWrapper>
           <Script
             src="/static/webgl.js"
             type="module"
