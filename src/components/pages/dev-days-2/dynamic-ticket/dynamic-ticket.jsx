@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
-import v3 from 'images/developer-days-2/ticket-variant-3-mobile.png';
 
 const colorVariants = [
   {
@@ -31,7 +30,8 @@ const colorVariants = [
     id: 3,
     title: 'Color variant 3',
     image: '/_next/image?url=/images/developer-days-2/ticket-variant-3.png&w=1920&q=75',
-    mobileImage: v3,
+    mobileImage:
+      '/_next/image?url=/images/developer-days-2/ticket-variant-3-mobile.png&w=1920&q=75',
     buttonColorClass: 'before:bg-color-picker-variant-3',
   },
   {
