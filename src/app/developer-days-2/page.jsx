@@ -1,6 +1,6 @@
 'use client';
 
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
 
@@ -18,6 +18,7 @@ const FUNNEL_STATES = {
 const DeveloperDays2Page = () => {
   const [funnelState, setFunnelState] = useState(FUNNEL_STATES.INITIAL);
   const { data, status } = useSession();
+  const router = useRouter();
 
   const handleSubmitSuccess = () => {
     setFunnelState(FUNNEL_STATES.TICKET_CTA);
@@ -35,7 +36,7 @@ const DeveloperDays2Page = () => {
 
   if (status !== 'loading') {
     if (status === 'authenticated' && data?.githubHandle) {
-      return redirect(`/developer-days-2/tickets/${data.githubHandle}`);
+      return router.push(`/developer-days-2/tickets/${data.githubHandle}`);
     }
 
     return (
