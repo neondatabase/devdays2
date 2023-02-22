@@ -9,9 +9,9 @@ const settings = {
   xThreshold: 15,
   yThreshold: 15,
   originalImagePath:
-    'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/29e6ec28-7aa2-47af-8748-4435cb5f8dd5/Untitled.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230222%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230222T114052Z&X-Amz-Expires=86400&X-Amz-Signature=4d64865c82ca54d6e4c6f65defbebd5c4666aa2f072d4e50e6b643ef51f8eb20&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.jpeg%22&x-id=GetObject',
+    'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/69350471-de2a-417f-bc00-7c7ea7a108d7/elephant-defuse.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230222%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230222T161220Z&X-Amz-Expires=86400&X-Amz-Signature=38f8b4f6055cccda6338bcd31963bf8c4e40d517fb0393e1462365945db0e087&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22elephant-defuse.png%22&x-id=GetObject',
   depthImagePath:
-    'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0b5e0df2-3e85-4b6a-be2b-8bfdb682d15c/Untitled.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230222%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230222T114111Z&X-Amz-Expires=86400&X-Amz-Signature=330ddc9a74593b0a01e34346ed80927ea2dba1bc91afc8c6dec699f11c588c4d&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.jpeg%22&x-id=GetObject',
+    'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ab70e636-e0fd-4981-8993-4240b47a38ae/elephant-depth.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230222%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230222T161350Z&X-Amz-Expires=86400&X-Amz-Signature=e10f6eb6835d5c6a7b7b2e0f440bcce9ee4c729ab469876b4aa4061b5cdaf756&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22elephant-depth.png%22&x-id=GetObject',
 };
 
 // Sizes
@@ -217,6 +217,7 @@ const renderer = new THREE.WebGLRenderer({
   canvas,
   alpha: true,
 });
+
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setClearColor(0xffffff, 0);

@@ -7,6 +7,7 @@ import { useInView } from 'react-intersection-observer';
 import BlinkingText from 'components/shared/blinking-text';
 import SubscriptionForm from 'components/shared/subscription-form';
 import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
+import ElephantTisksIllustration from 'images/developer-days-2/elephant-tusk.png';
 import ElephantIllustration from 'images/developer-days-2/ticket-hero-elephant.png';
 
 const appearSceneVariants = {
@@ -83,11 +84,11 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         animate={sceneControls}
         variants={appearSceneVariants}
       >
-        <div className="relative min-h-[740px] w-[1010px] lg:hidden">
+        <div className="relative min-h-[700px] w-[1010px] lg:hidden">
           <canvas className="webgl" />
           <Image
-            className="absolute inset-0 h-full w-full"
-            src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5bfb0610-39a7-4a9a-80ca-9f921f3b7611/Untitled.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230222%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230222T121203Z&X-Amz-Expires=86400&X-Amz-Signature=ce30c7d8ab0a85017a8eecd44370afe22876b3d073697a869ff8b6efc780d18e&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.webp%22&x-id=GetObject"
+            className="absolute inset-0 z-30 h-full w-full"
+            src={ElephantTisksIllustration}
             width={1010}
             height={740}
             alt="Tusks illustration"
