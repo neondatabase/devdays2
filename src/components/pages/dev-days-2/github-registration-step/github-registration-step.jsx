@@ -4,6 +4,7 @@ import { signIn } from 'next-auth/react';
 import Button from 'components/shared/button';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import GithubIcon from 'components/shared/header/images/header-github.inline.svg';
+import LuminousBack from 'components/shared/subscription-form/icons/luminous-back.inline.svg';
 import DesktopBlankTicketIllustration from 'images/developer-days-2/blank-ticket-desktop.svg';
 import MobileBlankTicketIllustration from 'images/developer-days-2/blank-ticket-mobile.svg';
 
@@ -18,22 +19,29 @@ const GithubRegistrationStep = () => (
         Generate a unique ticket image with your GitHub profile.
       </p>
       <div className="mt-12 flex items-center lg:mt-10 lg:flex-col sm:mt-6">
-        <Button
-          className="gradient-background relative border-primary-4 !bg-primary-4 pl-[4.25rem] !text-xl tracking-tighter !text-black hover:bg-[#00e5bf] xl:pl-[4.25rem] md:pl-[4.25rem]"
-          size="md"
-          theme="tertiary"
-          rel="noopener noreferrer"
-          target="_blank"
-          onClick={() => signIn('github')}
-        >
-          <GithubIcon
-            className="absolute top-1/2 left-4 -translate-y-1/2 text-black"
-            width={40}
-            height={40}
+        <div className="relative">
+          <Button
+            className="relative z-20 border-primary-4 !bg-primary-4 pl-[4.25rem] !text-xl tracking-tighter !text-black hover:bg-[#00e5bf] xl:pl-[4.25rem] md:pl-[4.25rem]"
+            size="md"
+            theme="tertiary"
+            rel="noopener noreferrer"
+            target="_blank"
+            onClick={() => signIn('github')}
+          >
+            <GithubIcon
+              className="absolute top-1/2 left-4 -translate-y-1/2 text-black"
+              width={40}
+              height={40}
+              aria-hidden="true"
+            />
+            <span>Generate with GitHub</span>
+          </Button>
+          <LuminousBack
+            className="pointer-events-none absolute -top-2 left-1/2 z-10 h-auto w-[130%] -translate-x-1/2 xs:-top-4 xs:w-[120%]"
+            aria-hidden="true"
           />
-          <span>Generate with GitHub</span>
-        </Button>
-        <span className="ml-4 max-w-[130px] text-sm font-light leading-snug text-gray-8 lg:ml-0 lg:mt-2 lg:max-w-full">
+        </div>
+        <span className="relative z-10 ml-4 max-w-[130px] text-sm font-light leading-snug text-gray-8 lg:ml-0 lg:mt-2 lg:max-w-full">
           Only public data is going to be used.
         </span>
       </div>

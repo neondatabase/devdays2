@@ -23,7 +23,7 @@ const appearAndExitAnimationVariants = {
 
 const sizeClassNames = {
   sm: {
-    form: 'relative max-w-[540px]', // gradient-background
+    form: 'relative max-w-[540px]',
     input: 'h-[64px] text-lg pl-5 border',
     button: '!text-base !px-8 !py-[15px] right-2 sm:!p-0',
     loading: 'right-2',
