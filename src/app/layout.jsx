@@ -23,9 +23,9 @@ const RootLayout = ({ children }) => (
           }}
         />
       )}
-      <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-black">
+      <div className="relative flex min-h-screen flex-col bg-black">
         <Header />
-        <main className="flex min-h-[calc(100vh-68px)] flex-1 flex-col lg:min-h-[calc(100vh-56px)]">
+        <main className="flex min-h-[calc(100vh-68px)] flex-1 flex-col overflow-hidden lg:min-h-[calc(100vh-56px)]">
           {children}
         </main>
         <Footer />

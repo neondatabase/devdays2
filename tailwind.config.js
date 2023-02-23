@@ -132,19 +132,16 @@ module.exports = {
         },
         'webgl-brightness': {
           '0%': {
-            filter: 'brightness(0.3) saturate(0)',
-          },
-          '50%': {
-            filter: 'brightness(1.3) saturate(0.5)',
+            filter: 'saturate(0)',
           },
           '100%': {
-            filter: 'brightness(1) saturate(1)',
+            filter: 'saturate(1)',
           },
         },
       }),
       animation: {
         'text-blink': 'text-blink 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-        'webgl-brightness': 'webgl-brightness 3s cubic-bezier(0, 0.35, 0.35, 1)',
+        'webgl-brightness': 'webgl-brightness 3s linear',
       },
       typography: () => ({
         DEFAULT: {
