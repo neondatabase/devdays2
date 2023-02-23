@@ -124,7 +124,9 @@ const SubscriptionForm = ({
   return (
     <motion.form
       className={clsx('', className, sizeClassNames[size].form)}
-      initial={{ opacity: 0, width: 0 }}
+      initial={
+        window.innerWidth <= '1024' ? { opacity: 1, width: `100%` } : { opacity: 0, width: 0 }
+      }
       animate={{ opacity: 1, width: `100%` }}
       transition={{
         opacity: {

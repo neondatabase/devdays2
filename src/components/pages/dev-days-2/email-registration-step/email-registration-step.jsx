@@ -88,7 +88,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
     <>
       <motion.div
         className="w-5/12 xl:w-1/2 lg:flex lg:w-full lg:flex-col lg:items-center"
-        initial={{ opacity: 0 }}
+        initial={window.innerWidth <= '1024' ? { opacity: 1 } : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'linear' }}
       >
@@ -99,7 +99,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:text-center lg:text-[78px] md:text-[58px] sm:max-w-[80%] sm:text-[52px]"
           ref={titleRef}
         >
-          {titleContent}
+          {window.innerWidth <= '1024' ? 'Neon Dev Days 2023' : titleContent}
         </h1>
         <p className="mt-4 font-mono text-xl font-light tracking-tighter text-white lg:max-w-md lg:text-center lg:text-lg md:text-base sm:max-w-[80%]">
           Join us at <time dateTime="2023-03-26 10:30">10:30AM PT, March 26</time> to hear more
@@ -118,17 +118,21 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
       <motion.div
         className="w-7/12 xl:w-1/2 lg:my-4 lg:w-full"
         initial="initial"
-        animate={columnControls}
-        variants={appearColumnVariants}
+        animate={window.innerWidth <= '1024' ? false : columnControls}
+        variants={window.innerWidth <= '1024' ? null : appearColumnVariants}
       >
         <div className="relative min-h-[740px] w-[1010px] xl:hidden" style={{ perspective: 800 }}>
           <motion.canvas
-            className="webgl relative z-20"
+            className="webgl relative z-20 animate-webgl-brightness"
             initial="initial"
             animate={sceneControls}
             variants={appearSceneVariants}
           />
-          <CursorTrackingWrapper className="absolute inset-0 z-30" xMovement={2} yMovement={2}>
+          <CursorTrackingWrapper
+            className="absolute inset-0 z-30 animate-webgl-brightness"
+            xMovement={2}
+            yMovement={2}
+          >
             <Image
               className="h-full min-h-[740px] w-full"
               src={ElephantTusksIllustration}
