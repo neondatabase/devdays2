@@ -57,9 +57,9 @@ const GithubRegistrationStep = () => (
         />
       </CursorTrackingWrapper>
       <Image
-        className="hidden sm:block"
-        width={700}
-        height={344}
+        className="mx-auto hidden sm:block"
+        width={346}
+        height={702}
         src={MobileBlankTicketIllustration}
         alt="Blank ticket mobile illustration"
       />

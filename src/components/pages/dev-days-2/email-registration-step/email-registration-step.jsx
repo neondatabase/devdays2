@@ -119,7 +119,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         className="w-7/12 xl:w-1/2 lg:my-4 lg:w-full"
         initial="initial"
         animate={window.innerWidth <= '1024' ? false : columnControls}
-        variants={window.innerWidth <= '1024' ? null : appearColumnVariants}
+        variants={window.innerWidth <= '1024' ? false : appearColumnVariants}
       >
         <div className="relative min-h-[740px] w-[1010px] xl:hidden" style={{ perspective: 800 }}>
           <motion.canvas

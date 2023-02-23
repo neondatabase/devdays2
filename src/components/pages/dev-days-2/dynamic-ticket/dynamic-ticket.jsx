@@ -144,8 +144,18 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
       >
         <motion.div
           initial="initial"
-          animate={ticketControls}
-          variants={scaleAndMoveTicketVariants}
+          animate={
+            (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
+            status !== 'authenticated'
+              ? false
+              : ticketControls
+          }
+          variants={
+            (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
+            status !== 'authenticated'
+              ? false
+              : scaleAndMoveTicketVariants
+          }
         >
           <CursorTrackingWrapper>
             {colorVariants.map((item) => {
@@ -182,28 +192,31 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                 )
               );
             })}
-            <motion.span
-              initial="initial"
-              animate={gradientControls}
-              variants={appearAndExitGradientVariants}
-              style={{
-                position: 'absolute',
-                zIndex: '22',
-                width: '100%',
-                height: '100%',
-                top: 0,
-                left: 0,
-                backgroundImage: `linear-gradient(106deg, transparent 30%, ${
-                  currentColorSchema === '1'
-                    ? 'rgba(51, 255, 187, 0.8)'
-                    : currentColorSchema === '2'
-                    ? 'rgba(189, 244, 113, 0.8)'
-                    : currentColorSchema === '3'
-                    ? 'rgba(255, 153, 221, 0.8)'
-                    : 'rgba(204, 204, 255, 0.8)'
-                } 60%, transparent 60%)`,
-              }}
-            />
+            {status === 'authenticated' && (
+              <motion.span
+                className="lg:hidden"
+                initial="initial"
+                animate={gradientControls}
+                variants={appearAndExitGradientVariants}
+                style={{
+                  position: 'absolute',
+                  zIndex: '22',
+                  width: '100%',
+                  height: '100%',
+                  top: 0,
+                  left: 0,
+                  backgroundImage: `linear-gradient(106deg, transparent 30%, ${
+                    currentColorSchema === '1'
+                      ? 'rgba(51, 255, 187, 0.8)'
+                      : currentColorSchema === '2'
+                      ? 'rgba(189, 244, 113, 0.8)'
+                      : currentColorSchema === '3'
+                      ? 'rgba(255, 153, 221, 0.8)'
+                      : 'rgba(204, 204, 255, 0.8)'
+                  } 60%, transparent 60%)`,
+                }}
+              />
+            )}
             <div className="absolute top-8 left-8 z-10 flex 2xl:top-12 lg:top-8 sm:top-16 sm:left-6 xxs:left-2">
               <div className="h-[56px] w-[56px] overflow-hidden rounded-full sm:h-12 sm:w-12">
                 <Image
@@ -251,7 +264,6 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                   key={i}
                   id={id}
                   disabled={isActive}
-                  // whileTap={{ scale: 0.9 }}
                   onClick={handleColorClick}
                 >
                   <span className="sr-only">{title}</span>
