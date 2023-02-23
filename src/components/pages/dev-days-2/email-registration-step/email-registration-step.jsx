@@ -45,7 +45,7 @@ const appearSceneVariants = {
     originX: 0,
     transition: {
       delay: 0.5,
-      duration: 2,
+      duration: 3,
       ease: [0, 0.35, 0.35, 1],
     },
   },
@@ -67,7 +67,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
     window.addEventListener('storage', handleElephantTextureLoad);
 
     return () => {
-      removeEventListener('storage', handleElephantTextureLoad);
+      window.removeEventListener('storage', handleElephantTextureLoad);
     };
   }, [columnControls, sceneControls]);
 
