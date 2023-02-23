@@ -162,7 +162,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                     >
                       Neon Dev <br /> Days 2023
                     </h2>
-                    <Image
+                    <img
                       className="pointer-events-none relative z-10 min-h-[380px] max-w-full sm:hidden"
                       src={image}
                       width={790}
@@ -170,7 +170,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                       loading="eager"
                       alt="Ticket desktop variant illustration"
                     />
-                    <Image
+                    <img
                       className="pointer-events-none relative z-10 hidden max-w-[370px] sm:block xs:max-w-full"
                       src={mobileImage}
                       width={700}

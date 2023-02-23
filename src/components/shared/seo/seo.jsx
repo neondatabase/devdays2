@@ -18,6 +18,7 @@ const SEO = ({
   title = defaultTitle,
   description = defaultDescription,
   imagePath = defaultImagePath,
+  preloadAssets = [],
 }) => {
   const currentImagePath = imagePath.startsWith('http') ? imagePath : SITE_URL + imagePath;
 
@@ -62,26 +63,8 @@ const SEO = ({
         />
       ))}
 
-      {[...Array(4)].map((_, index) => (
-        <link
-          rel="preload"
-          href={`/_next/image?url=/images/developer-days-2/ticket-variant-${
-            index + 1
-          }.png&w=1920&q=75`}
-          as="image"
-          crossOrigin="anonymous"
-        />
-      ))}
-
-      {[...Array(4)].map((_, index) => (
-        <link
-          rel="preload"
-          href={`/_next/image?url=/images/developer-days-2/ticket-variant-${
-            index + 1
-          }-mobile.png&w=1920&q=75`}
-          as="image"
-          crossOrigin="anonymous"
-        />
+      {preloadAssets.map((item, index) => (
+        <link key={index} rel="preload" href={item} as="image" crossOrigin="anonymous" />
       ))}
     </>
   );
@@ -91,6 +74,7 @@ SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   imagePath: PropTypes.string,
+  preloadAssets: PropTypes.array,
 };
 
 export default SEO;

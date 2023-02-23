@@ -6,12 +6,12 @@ import * as THREE from 'https://cdn.skypack.dev/three@0.129.0';
 
 // Main Settings
 const settings = {
-  xThreshold: 15,
-  yThreshold: 15,
+  xThreshold: 10,
+  yThreshold: 10,
   originalImagePath:
-    'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/69350471-de2a-417f-bc00-7c7ea7a108d7/elephant-defuse.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230222%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230222T161220Z&X-Amz-Expires=86400&X-Amz-Signature=38f8b4f6055cccda6338bcd31963bf8c4e40d517fb0393e1462365945db0e087&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22elephant-defuse.png%22&x-id=GetObject',
+    'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/432eecef-c63a-4099-88b5-6626549046f5/elephant-defuse.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230223%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230223T091134Z&X-Amz-Expires=86400&X-Amz-Signature=d369311f5e53c0a98c1ec8ebc80f52ca20a0a1bcb71a95262d622c52f49a8ae7&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22elephant-defuse.jpg%22&x-id=GetObject',
   depthImagePath:
-    'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ab70e636-e0fd-4981-8993-4240b47a38ae/elephant-depth.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230222%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230222T161350Z&X-Amz-Expires=86400&X-Amz-Signature=e10f6eb6835d5c6a7b7b2e0f440bcce9ee4c729ab469876b4aa4061b5cdaf756&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22elephant-depth.png%22&x-id=GetObject',
+    'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/af00448b-936c-443e-a5e5-76af0fc9ebb4/elephant-depth.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230223%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230223T090723Z&X-Amz-Expires=86400&X-Amz-Signature=9eecff7a6db433c892a177939e0e2d6450627b6934feba0331dfc1624caea9aa&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22elephant-depth.jpg%22&x-id=GetObject',
 };
 
 // Sizes

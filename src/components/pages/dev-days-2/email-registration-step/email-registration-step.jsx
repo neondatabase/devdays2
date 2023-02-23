@@ -14,7 +14,7 @@ import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
 import ElephantTusksIllustration from 'images/developer-days-2/elephant-tusk.png';
 import ElephantIllustration from 'images/developer-days-2/ticket-hero-elephant.png';
 
-const appearSceneVariants = {
+const appearColumnVariants = {
   initial: {
     opacity: 0,
     scale: 1.2,
@@ -33,13 +33,35 @@ const appearSceneVariants = {
   },
 };
 
+const appearSceneVariants = {
+  initial: {
+    translateY: 30,
+    rotateX: 10,
+    originX: 0,
+  },
+  appear: {
+    translateY: -10,
+    rotateX: 0,
+    originX: 0,
+    transition: {
+      delay: 0.5,
+      duration: 2,
+      ease: [0, 0.35, 0.35, 1],
+    },
+  },
+};
+
 const EmailRegistrationStep = ({ onSuccessCallback }) => {
   const [titleRef, isTitleInView, titleEntry] = useInView({ triggerOnce: true, threshold: 0.5 });
+  const columnControls = useAnimationControls();
   const sceneControls = useAnimationControls();
 
   useEffect(() => {
     const handleElephantTextureLoad = () => {
-      if (window.localStorage.getItem('isTextureLoaded')) sceneControls.start('appear');
+      if (window.localStorage.getItem('isTextureLoaded')) {
+        columnControls.start('appear');
+        sceneControls.start('appear');
+      }
     };
 
     window.addEventListener('storage', handleElephantTextureLoad);
@@ -47,7 +69,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
     return () => {
       removeEventListener('storage', handleElephantTextureLoad);
     };
-  }, [sceneControls]);
+  }, [columnControls, sceneControls]);
 
   const titleContent = (
     <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
@@ -97,12 +119,17 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
       <motion.div
         className="w-7/12 xl:w-1/2 lg:my-4 lg:w-full"
         initial="initial"
-        animate={sceneControls}
-        variants={appearSceneVariants}
+        animate={columnControls}
+        variants={appearColumnVariants}
       >
-        <div className="relative min-h-[700px] w-[1010px] xl:hidden">
-          <canvas className="webgl relative z-20" />
-          <CursorTrackingWrapper className="absolute inset-0 z-30" xMovement={1} yMovement={1}>
+        <div className="relative min-h-[740px] w-[1010px] xl:hidden" style={{ perspective: 800 }}>
+          <motion.canvas
+            className="webgl relative z-20"
+            initial="initial"
+            animate={sceneControls}
+            variants={appearSceneVariants}
+          />
+          <CursorTrackingWrapper className="absolute inset-0 z-30" xMovement={2} yMovement={2}>
             <Image
               className="h-full min-h-[740px] w-full"
               src={ElephantTusksIllustration}
@@ -111,7 +138,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
               alt="Tusks illustration"
             />
           </CursorTrackingWrapper>
-          <Script src="/static/webgl.js" type="module" strategy="afterInteractive" />
+          <Script src="/static/elephant-webgl-scene.js" type="module" strategy="afterInteractive" />
         </div>
         <Image className="hidden xl:block" src={ElephantIllustration} alt="Elephant illustration" />
       </motion.div>
