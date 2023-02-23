@@ -1,7 +1,10 @@
+'use client';
+
 import { motion, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 import Script from 'next/script';
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import BlinkingText from 'components/shared/blinking-text';
@@ -33,6 +36,18 @@ const appearSceneVariants = {
 const EmailRegistrationStep = ({ onSuccessCallback }) => {
   const [titleRef, isTitleInView, titleEntry] = useInView({ triggerOnce: true, threshold: 0.5 });
   const sceneControls = useAnimationControls();
+
+  useEffect(() => {
+    const handleElephantTextureLoad = () => {
+      if (window.localStorage.getItem('isTextureLoaded')) sceneControls.start('appear');
+    };
+
+    window.addEventListener('storage', handleElephantTextureLoad);
+
+    return () => {
+      removeEventListener('storage', handleElephantTextureLoad);
+    };
+  }, [sceneControls]);
 
   const titleContent = (
     <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
@@ -85,7 +100,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         animate={sceneControls}
         variants={appearSceneVariants}
       >
-        <div className="relative min-h-[700px] w-[1010px] lg:hidden">
+        <div className="relative min-h-[700px] w-[1010px] xl:hidden">
           <canvas className="webgl relative z-20" />
           <CursorTrackingWrapper className="absolute inset-0 z-30" xMovement={1} yMovement={1}>
             <Image
@@ -96,16 +111,9 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
               alt="Tusks illustration"
             />
           </CursorTrackingWrapper>
-          <Script
-            src="/static/webgl.js"
-            type="module"
-            strategy="afterInteractive"
-            onReady={() => {
-              sceneControls.start('appear');
-            }}
-          />
+          <Script src="/static/webgl.js" type="module" strategy="afterInteractive" />
         </div>
-        <Image className="hidden lg:block" src={ElephantIllustration} alt="Elephant illustration" />
+        <Image className="hidden xl:block" src={ElephantIllustration} alt="Elephant illustration" />
       </motion.div>
     </>
   );

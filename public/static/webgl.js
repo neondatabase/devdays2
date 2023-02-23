@@ -69,7 +69,14 @@ const fovY = (camera.position.z * camera.getFilmHeight()) / camera.getFocalLengt
  * Images
  */
 
-const textureLoader = new THREE.TextureLoader();
+const manager = new THREE.LoadingManager();
+
+manager.onLoad = () => {
+  localStorage.setItem('isTextureLoaded', JSON.stringify('true'));
+  window.dispatchEvent(new Event('storage'));
+};
+
+const textureLoader = new THREE.TextureLoader(manager);
 
 const loadImages = () => {
   if (originalImage !== null || depthImage !== null || stableImage !== null) {

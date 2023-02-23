@@ -147,7 +147,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
           animate={ticketControls}
           variants={scaleAndMoveTicketVariants}
         >
-          <CursorTrackingWrapper color={currentColorSchema} withAnimations>
+          <CursorTrackingWrapper>
             {colorVariants.map((item) => {
               const { id, image, mobileImage } = item;
 
