@@ -7,7 +7,10 @@ import { useEffect, useState } from 'react';
 
 import Button from 'components/shared/button';
 import Container from 'components/shared/container';
+import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import Link from 'components/shared/link';
+import DesktopBlankTicketIllustration from 'images/developer-days-2/blank-ticket-desktop.svg';
+import MobileBlankTicketIllustration from 'images/developer-days-2/blank-ticket-mobile.svg';
 
 import illustration from './images/illustration.png';
 
@@ -37,7 +40,7 @@ const Skeleton = () => (
   </div>
 );
 
-const Hero = () => {
+const Hero = ({ isTicketPage = false }) => {
   const pathname = usePathname();
   const [isDocsPage, setIsDocsPage] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -48,12 +51,15 @@ const Hero = () => {
   }, [pathname]);
 
   return (
-    <section className="grow bg-black pt-16 pb-24 text-white lg:pt-0 md:py-14 xs:pt-10">
-      <Container className="grid grid-cols-12 items-start gap-x-8 md:gap-x-0 md:gap-y-4" size="md">
-        <div className="col-start-2 col-end-6 flex flex-col pt-48 2xl:col-start-1 xl:pt-20 lg:pt-10 md:col-span-full md:pt-0">
+    <section className="min-h-[inherit] text-white md:py-14 xs:pt-10">
+      <Container
+        className="grid min-h-[inherit] grid-cols-12 items-start gap-x-8 md:gap-x-0 md:gap-y-4"
+        size="md"
+      >
+        <div className="col-start-2 col-end-6 flex flex-col self-center 2xl:col-start-1 md:col-span-full">
           <h1 className="text-[58px] font-bold leading-none xl:text-5xl xl:leading-none md:text-4xl">
             Ooops!
-            <br /> Page not found...
+            <br /> {isTicketPage ? 'Ticket' : 'Page'} not found...
           </h1>
           <p className="t-xl mt-7 lg:mt-8">
             Sorry, the page you are looking for doesn’t exist or has been moved.
@@ -62,20 +68,45 @@ const Hero = () => {
           {isLoading ? <Skeleton /> : <CTA isDocsPage={isDocsPage} />}
         </div>
 
-        <div className="col-start-6 col-end-12 2xl:col-end-13 md:col-span-full">
-          <Image
-            className="w-full md:mx-auto md:max-w-xl"
-            width={860}
-            height={862}
-            src={illustration}
-            alt="Illustration"
-            loading="eager"
-            quality={75}
-          />
+        <div className="col-start-6 col-end-12 self-center 2xl:col-end-13 md:col-span-full">
+          {isTicketPage ? (
+            <>
+              <CursorTrackingWrapper>
+                <Image
+                  className="mx-auto sm:hidden"
+                  width={776}
+                  height={380}
+                  src={DesktopBlankTicketIllustration}
+                  alt="Blank ticket desktop illustration"
+                />
+              </CursorTrackingWrapper>
+              <Image
+                className="mx-auto hidden sm:block"
+                width={346}
+                height={702}
+                src={MobileBlankTicketIllustration}
+                alt="Blank ticket mobile illustration"
+              />
+            </>
+          ) : (
+            <Image
+              className="w-full md:mx-auto md:max-w-xl"
+              width={860}
+              height={862}
+              src={illustration}
+              alt="Illustration"
+              loading="eager"
+              quality={75}
+            />
+          )}
         </div>
       </Container>
     </section>
   );
+};
+
+Hero.propTypes = {
+  isTicketPage: PropTypes.bool,
 };
 
 export default Hero;
