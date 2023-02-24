@@ -122,7 +122,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         animate={window.innerWidth <= '1024' ? false : columnControls}
         variants={window.innerWidth <= '1024' ? false : appearColumnVariants}
       >
-        <div className="relative min-h-[740px] w-[1010px] xl:hidden" style={{ perspective: 800 }}>
+        <div className="relative min-h-[760px] w-[1010px] xl:hidden" style={{ perspective: 800 }}>
           <motion.canvas
             className="webgl relative z-20 animate-webgl-brightness"
             initial="initial"
@@ -131,8 +131,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           />
           <CursorTrackingWrapper
             className="absolute inset-0 z-30 animate-webgl-brightness"
-            xMovement={2}
-            yMovement={2}
+            xMovement={1}
+            yMovement={1}
           >
             <Image
               className="h-full min-h-[740px] w-full"
