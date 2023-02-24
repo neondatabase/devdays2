@@ -34,12 +34,14 @@ const appearColumnVariants = {
 
 const appearSceneVariants = {
   initial: {
+    translateX: -40,
     translateY: 30,
     rotateX: 10,
     originX: 0,
   },
   appear: {
-    translateY: -10,
+    translateX: -40,
+    translateY: 0,
     rotateX: 0,
     originX: 0,
     transition: {

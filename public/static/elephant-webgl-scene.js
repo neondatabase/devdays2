@@ -14,8 +14,8 @@ const settings = {
 
 // Sizes
 const sizes = {
-  width: 1010,
-  height: 720,
+  width: 1090,
+  height: 760,
 };
 
 // Image Details
