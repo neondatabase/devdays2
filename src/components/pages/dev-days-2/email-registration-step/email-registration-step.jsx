@@ -86,26 +86,26 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
   return (
     <>
       <motion.div
-        className="w-5/12 xl:w-1/2 lg:flex lg:w-full lg:flex-col lg:items-center"
+        className="w-5/12 xl:w-1/2 lg:mt-10 lg:flex lg:w-full lg:flex-col lg:items-center"
         initial={window.innerWidth <= '1024' ? { opacity: 1 } : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'linear' }}
       >
-        <span className="rounded-[50px] bg-secondary-2 py-1 px-3 text-sm font-semibold uppercase leading-snug dark:text-black sm:mt-0">
+        <span className="rounded-[50px] bg-secondary-2 py-1 px-3 text-sm font-semibold uppercase leading-snug dark:text-black sm:mt-0 sm:text-xs">
           Spring 2023
         </span>
         <h1
-          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:text-center lg:text-[78px] md:text-[58px] sm:max-w-[80%] sm:text-[52px]"
+          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:text-center lg:text-[78px] md:text-[58px] sm:mt-2 sm:max-w-[80%] sm:text-[52px]"
           ref={titleRef}
         >
           {window.innerWidth <= '1024' ? 'Neon Dev Days 2023' : titleContent}
         </h1>
-        <p className="mt-4 font-mono text-xl font-light tracking-tighter text-white lg:max-w-md lg:text-center lg:text-lg md:text-base sm:max-w-[80%]">
+        <p className="mt-4 max-w-xl font-mono text-xl font-light tracking-tighter text-white lg:text-center lg:text-lg md:text-base sm:max-w-[80%]">
           Join us at <time dateTime="2023-03-26 10:30">10:30AM PT, March 26</time> to hear more
           about latest updates from our dev team.
         </p>
         <SubscriptionForm
-          className="mt-12 lg:mt-8"
+          className="mt-12 lg:mt-8 xs:mt-4"
           successText="Thanks for registering!"
           submitButtonText="Register"
           size="sm"

@@ -176,7 +176,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                       alt="Ticket desktop variant illustration"
                     />
                     <img
-                      className="pointer-events-none relative z-10 hidden min-h-[736px] max-w-[370px] sm:block xs:max-w-full"
+                      className="remove-image-loading-visual pointer-events-none relative z-10 hidden min-h-[736px] max-w-[370px] sm:block xs:max-w-full"
                       src={mobileImage}
                       width={481}
                       height={976}

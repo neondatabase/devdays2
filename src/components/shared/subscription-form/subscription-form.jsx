@@ -134,7 +134,7 @@ const SubscriptionForm = ({
           ease: 'linear',
         },
         width: {
-          duration: 1,
+          duration: 2,
           ease: [0, 0.35, 0.35, 1],
         },
       }}
@@ -143,7 +143,7 @@ const SubscriptionForm = ({
     >
       <input
         className={clsx(
-          'remove-autocomplete-styles placeholder-font-normal relative z-20 block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 lg:w-full lg:pl-5 sm:pr-20',
+          'remove-autocomplete-styles relative z-20 block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 placeholder:font-normal lg:w-full lg:pl-5 sm:pr-20',
           errorMessage && 'border-secondary-1',
           sizeClassNames[size].input
         )}
@@ -216,9 +216,9 @@ const SubscriptionForm = ({
             variants={appearAndExitAnimationVariants}
             aria-hidden
           >
-            <div className="h-[58px] w-[58px] rounded-full border-[6px] border-gray-2 2xl:h-[48px] 2xl:w-[48px] xl:h-[42px] xl:w-[42px]" />
+            <div className="h-[48px] w-[48px] rounded-full border-[3px] border-gray-2 2xl:h-[40px] 2xl:w-[40px]" />
             <svg
-              className="absolute top-1/2 left-1/2 2xl:h-[48px] 2xl:w-[48px] xl:h-[42px] xl:w-[42px]"
+              className="absolute top-1/2 left-1/2 h-[48px] w-[48px] 2xl:h-[40px] 2xl:w-[40px]"
               width="58"
               height="58"
               viewBox="0 0 58 58"
@@ -230,7 +230,7 @@ const SubscriptionForm = ({
                 d="M3 29C3 43.3594 14.6406 55 29 55C43.3594 55 55 43.3594 55 29C55 14.6406 43.3594 3 29 3C14.6406 3 3 14.6406 3 29Z"
                 strokeLinecap="round"
                 stroke="#00e699"
-                strokeWidth="6"
+                strokeWidth="3"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1, transition: { duration: 2, delay: 0.2 } }}
               />
