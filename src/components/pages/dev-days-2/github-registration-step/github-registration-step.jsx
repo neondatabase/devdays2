@@ -4,7 +4,7 @@ import { signIn } from 'next-auth/react';
 import Button from 'components/shared/button';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import GithubIcon from 'components/shared/header/images/header-github.inline.svg';
-import LuminousBack from 'components/shared/subscription-form/icons/luminous-back.inline.svg';
+import LuminousBack from 'components/shared/subscription-form/icons/luminous-button-back.inline.svg';
 import DesktopBlankTicketIllustration from 'images/developer-days-2/blank-ticket-desktop.svg';
 import MobileBlankTicketIllustration from 'images/developer-days-2/blank-ticket-mobile.svg';
 
@@ -37,7 +37,7 @@ const GithubRegistrationStep = () => (
             <span>Generate with GitHub</span>
           </Button>
           <LuminousBack
-            className="pointer-events-none absolute -top-8 left-1/2 z-10 w-[110%] -translate-x-1/2"
+            className="pointer-events-none absolute -top-12 left-1/2 z-10 -translate-x-1/2 md:-top-8"
             aria-hidden="true"
           />
         </div>

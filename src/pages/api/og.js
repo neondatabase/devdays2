@@ -30,7 +30,6 @@ export default async function handler(req) {
         <img
           width="100%"
           height="100%"
-          /* eslint-disable-next-line no-nested-ternary */
           src={
             color === '1'
               ? image1

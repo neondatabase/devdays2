@@ -83,16 +83,16 @@ const colorVariants = [
   },
 ];
 
-const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) => {
+const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colorSchema } }) => {
   const { data, status } = useSession();
-  const [currentColorSchema, setCurrentColorSchema] = useState('1');
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
-  const prevColor = usePrevious(currentColorSchema);
+  const prevColor = usePrevious(selectedColorSchema);
+  const currentColorSchema = selectedColorSchema || colorSchema;
   const gradientControls = useAnimationControls();
   const ticketControls = useAnimationControls();
 
   useEffect(() => {
-    if (prevColor !== currentColorSchema) {
+    if (prevColor !== selectedColorSchema) {
       ticketControls.start('scaleOut').then(() => {
         ticketControls.start('initial');
       });
@@ -101,13 +101,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
         gradientControls.start('initial');
       });
     }
-  }, [prevColor, currentColorSchema, gradientControls, ticketControls]);
-
-  useEffect(() => {
-    setCurrentColorSchema((prevColor) =>
-      data?.colorSchema && data?.colorSchema !== prevColor ? data?.colorSchema : prevColor
-    );
-  }, [data?.colorSchema]);
+  }, [prevColor, selectedColorSchema, gradientControls, ticketControls]);
 
   useEffect(() => {
     if (!selectedColorSchema) return;
@@ -125,7 +119,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
   const handleColorClick = async (e) => {
     data.colorSchema = e.target.id;
 
-    setCurrentColorSchema(e.target.id);
+    // setCurrentColorSchema(e.target.id);
     setSelectedColorSchema(e.target.id);
   };
 
@@ -243,7 +237,12 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
       </div>
 
       {status === 'authenticated' && data?.colorSchema && (
-        <div className="mt-8 flex items-center gap-3 xl:justify-center sm:mt-0">
+        <motion.div
+          className="mt-8 flex items-center gap-3 xl:justify-center sm:mt-0"
+          initial={{ opacity: 0, translateY: 5 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          transition={{ duration: 0.5, ease: 'linear' }}
+        >
           <p className="text-sm font-thin text-gray-7">Pick a color:</p>
           <div className="flex gap-5">
             {colorVariants.map((item, i) => {
@@ -278,7 +277,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
               );
             })}
           </div>
-        </div>
+        </motion.div>
       )}
     </>
   );
@@ -291,6 +290,7 @@ DynamicTicket.propTypes = {
     image: PropTypes.string,
     name: PropTypes.string,
     githubHandle: PropTypes.string,
+    colorSchema: PropTypes.string,
   }).isRequired,
 };
 

@@ -11,25 +11,25 @@
 }
 
 .color-text-variant-1 {
-  background: -webkit-linear-gradient(215.67deg, #ffffff 41.51%, #66ffcc 79.11%);
+  background-image: -webkit-linear-gradient(256deg, #ffffff 41.51%, #66ffcc 79.11%);
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .color-text-variant-2 {
-  background: -webkit-linear-gradient(215.67deg, #ffffff 41.51%, #e6ff66 79.11%);
+  background-image: -webkit-linear-gradient(256deg, #ffffff 41.51%, #e6ff66 79.11%);
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .color-text-variant-3 {
-  background: -webkit-linear-gradient(215.67deg, #ffffff 41.51%, #ff99dd 79.11%);
+  background-image: -webkit-linear-gradient(256deg, #ffffff 41.51%, #ff99dd 79.11%);
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .color-text-variant-4 {
-  background: -webkit-linear-gradient(215.67deg, #ffffff 41.51%, #ccccff 79.11%);
+  background-image: -webkit-linear-gradient(256deg, #ffffff 41.51%, #ccccff 79.11%);
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
