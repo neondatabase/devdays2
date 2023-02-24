@@ -15,8 +15,10 @@ const Header = () => (
         <span className="sr-only">Neon</span>
         <Logo />
       </Link>
-
       <div className="flex items-center space-x-7">
+        <p className="font-mono text-base font-light text-white sm:hidden">
+          Join us at 10:30AM PT, March 26
+        </p>
         <Button
           className="relative border-white bg-black py-[11px] pl-11 text-white hover:border-primary-2"
           to={LINKS.github}
