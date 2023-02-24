@@ -13,7 +13,7 @@ module.exports = {
       md: { max: '768px' },
       sm: { max: '639px' },
       xs: { max: '414px' },
-      xxs: { max: '360px' },
+      xxs: { max: '374px' },
     },
     colors: {
       inherit: 'inherit',

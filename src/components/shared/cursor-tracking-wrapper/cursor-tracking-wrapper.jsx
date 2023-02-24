@@ -44,7 +44,7 @@ const CursorTrackingWrapper = ({
           {children}
         </motion.div>
       </motion.div>
-      <div className="hidden min-h-[740px] xl:block">{children}</div>
+      <div className="hidden xl:block">{children}</div>
     </>
   );
 };

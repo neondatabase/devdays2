@@ -29,12 +29,11 @@ const Head = async ({ params }) => {
   }
 
   userData = userData || {
-    name: 'Hundreds',
+    name: 'Your name',
     email: 'your@email.com',
-    githubHandle: 'gitprofile',
-    colorSchema: '1',
-    image:
-      'https://i.guim.co.uk/img/static/sys-images/Guardian/About/General/2013/8/30/1377862460433/Kick-Ass-2-010.jpg?width=465&quality=85&dpr=1&s=none',
+    githubHandle: 'github-account',
+    colorSchema: '0',
+    image: '',
     id: 0,
   };
   //* TODO: make proper default url

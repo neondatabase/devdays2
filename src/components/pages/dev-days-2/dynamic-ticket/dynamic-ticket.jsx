@@ -104,8 +104,8 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
   }, [prevColor, currentColorSchema, gradientControls, ticketControls]);
 
   useEffect(() => {
-    setCurrentColorSchema((prevTab) =>
-      data?.colorSchema && data?.colorSchema !== prevTab ? data?.colorSchema : prevTab
+    setCurrentColorSchema((prevColor) =>
+      data?.colorSchema && data?.colorSchema !== prevColor ? data?.colorSchema : prevColor
     );
   }, [data?.colorSchema]);
 
@@ -150,12 +150,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
               ? false
               : ticketControls
           }
-          variants={
-            (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
-            status !== 'authenticated'
-              ? false
-              : scaleAndMoveTicketVariants
-          }
+          variants={scaleAndMoveTicketVariants}
         >
           <CursorTrackingWrapper>
             {colorVariants.map((item) => {
@@ -181,10 +176,10 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                       alt="Ticket desktop variant illustration"
                     />
                     <img
-                      className="pointer-events-none relative z-10 hidden max-w-[370px] sm:block xs:max-w-full"
+                      className="pointer-events-none relative z-10 hidden min-h-[736px] max-w-[370px] sm:block xs:max-w-full"
                       src={mobileImage}
-                      width={700}
-                      height={344}
+                      width={481}
+                      height={976}
                       loading="eager"
                       alt="Ticket mobile variant illustration"
                     />
@@ -235,7 +230,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
               </div>
             </div>
             <div className="absolute bottom-8 left-8 z-10 flex items-center 2xl:bottom-12 lg:bottom-6 sm:left-6 sm:bottom-14 xxs:left-2">
-              <p className="font-kallisto text-[36px] font-light tracking-wider text-white sm:text-[28px] xxs:text-[26px]">
+              <p className="font-kallisto text-[36px] font-light tracking-wider text-white sm:text-[28px] xxs:text-[24px]">
                 #{`${number}`.padStart(6, '0')} /
               </p>
               <div className="ml-4 flex flex-col font-mono text-sm uppercase leading-tight text-white sm:text-[12px] xxs:ml-2">
@@ -258,7 +253,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
               return (
                 <motion.button
                   className={clsx(
-                    'relative flex h-9 w-9 items-center justify-center rounded-full outline outline-1 outline-gray-4 before:h-4 before:w-4 before:rounded-full',
+                    'relative flex h-9 w-9 items-center justify-center rounded-full shadow-[0_0_0_1px_rgba(255,255,255,0.1)] before:h-4 before:w-4 before:rounded-full',
                     buttonColorClass
                   )}
                   key={i}
@@ -270,7 +265,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                   <AnimatePresence>
                     {isActive && (
                       <motion.span
-                        className="absolute left-0 top-0 z-10 h-full w-full rounded-full outline outline-1 outline-gray-8"
+                        className="absolute left-0 top-0 z-10 h-full w-full rounded-full shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.9 }}
