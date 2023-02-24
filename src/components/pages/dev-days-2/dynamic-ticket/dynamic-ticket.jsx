@@ -84,7 +84,7 @@ const colorVariants = [
 ];
 
 const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) => {
-  const [currentColorSchema, setCurrentColorSchema] = useState('2');
+  const [currentColorSchema, setCurrentColorSchema] = useState('1');
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
   const prevColor = usePrevious(currentColorSchema);
   const gradientControls = useAnimationControls();
@@ -159,37 +159,43 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
 
   return (
     <div className="sm:flex sm:flex-col-reverse">
-      <motion.div
-        initial="initial"
-        animate={
-          (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
-          status !== 'authenticated'
-            ? false
-            : ticketControls
-        }
-        variants={
-          (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
-          status !== 'authenticated'
-            ? false
-            : scaleAndMoveTicketVariants
-        }
+      {/* TODO: fix back in Safari */}
+      <div
+        className={clsx(
+          'ticket-hover-aria z-0 before:z-20 after:top-1/2 after:left-1/2 after:z-10 after:hidden after:h-[10px] after:w-[20px] after:-translate-x-1/2 after:-translate-y-1/2 after:scale-[34] after:rounded-[50%] after:opacity-80 after:blur-[2px] xl:after:scale-[28] lg:after:scale-[32] md:after:scale-[28] sm:after:h-[22px] sm:after:w-[8px] sm:after:scale-[30]'
+        )}
+        ref={ticketRef}
+        onMouseMove={onMouseMove}
+        onMouseLeave={onMouseLeave}
       >
-        <div
-          className={clsx(
-            'ticket-hover-aria z-0 before:z-20 after:absolute after:top-1/2 after:left-1/2 after:z-10 after:h-[10px] after:w-[20px] after:-translate-x-1/2 after:-translate-y-1/2 after:scale-[34] after:rounded-[50%] after:opacity-80 after:blur-[2px] xl:after:scale-[28] lg:after:scale-[32] md:after:scale-[28] sm:after:h-[22px] sm:after:w-[8px] sm:after:scale-[30]',
-            {
-              'after:bg-ticket-variant-1-back': currentColorSchema === '1',
-              'after:bg-ticket-variant-2-back': currentColorSchema === '2',
-              'after:bg-ticket-variant-3-back': currentColorSchema === '3',
-              'after:bg-ticket-variant-4-back': currentColorSchema === '4',
-            }
-          )}
-          ref={ticketRef}
-          onMouseMove={onMouseMove}
-          onMouseLeave={onMouseLeave}
+        <motion.div
+          className="relative z-30"
+          initial="initial"
+          animate={
+            (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
+            status !== 'authenticated'
+              ? false
+              : ticketControls
+          }
+          variants={
+            (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
+            status !== 'authenticated'
+              ? false
+              : scaleAndMoveTicketVariants
+          }
         >
-          <div className="ticket-wrapper relative z-30 h-[388px] w-[790px] xl:h-[330px] xl:w-[670px] lg:h-[380px] lg:w-[776px] md:h-[330px] md:w-[670px] sm:h-[700px] sm:w-[334px]">
-            <section className="ticket flex h-full w-full flex-col items-start justify-between overflow-hidden bg-gray-3 p-7 text-white sm:justify-start sm:p-5">
+          <div className="ticket-wrapper relative z-30 h-[388px] w-[790px] 2xl:h-[330px] 2xl:w-[670px] md:h-[700px] md:w-[334px]">
+            <section
+              className={clsx(
+                'ticket flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-3xl p-7 text-white sm:justify-start sm:p-5',
+                {
+                  'variant-1': currentColorSchema === '1',
+                  'variant-2': currentColorSchema === '2',
+                  'variant-3': currentColorSchema === '3',
+                  'variant-4': currentColorSchema === '4',
+                }
+              )}
+            >
               {status === 'authenticated' && (
                 <motion.span
                   initial="initial"
@@ -213,7 +219,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                   }}
                 />
               )}
-              <header className="lg:mal-[44px] order-2 ml-[44px] xl:ml-[38px] md:ml-[38px] sm:mt-5 sm:ml-0">
+              <header className="lg:mal-[44px] relative order-2 ml-[44px] xl:ml-[38px] md:ml-[38px] sm:mt-5 sm:ml-0">
                 <h2
                   className={clsx('text-5xl sm:text-4xl', {
                     'color-text-variant-1': currentColorSchema === '1',
@@ -227,7 +233,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                   Days 2023
                 </h2>
               </header>
-              <p className="order-1 grid grid-cols-[56px_1fr] grid-rows-2 gap-x-4 gap-y-2 md:grid-cols-[48px_1fr] md:gap-x-3 sm:gap-x-2.5">
+              <p className="relative order-1 grid grid-cols-[56px_1fr] grid-rows-2 gap-x-4 gap-y-2 md:grid-cols-[48px_1fr] md:gap-x-3 sm:gap-x-2.5">
                 <img
                   src={image}
                   width={56}
@@ -242,7 +248,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                   /{githubHandle}
                 </span>
               </p>
-              <footer className="order-3 flex items-center gap-3 sm:mt-auto">
+              <footer className="relative order-3 flex items-center gap-3 sm:mt-auto">
                 <p className="trac whitespace-nowrap font-kallisto text-[36px] font-light leading-none text-white md:text-3xl sm:text-[28px] xxs:text-[26px]">
                   #{`${number}`.padStart(6, '0')} /
                 </p>
@@ -257,8 +263,8 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
               </footer>
             </section>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
 
       {status === 'authenticated' && data?.colorSchema && (
         <div className="mt-8 flex items-center gap-3 xl:justify-center sm:mt-0 sm:mb-7">

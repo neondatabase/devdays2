@@ -22,6 +22,7 @@
   perspective: 100px;
   transform: translateX(var(--translate));
   will-change: transform;
+  /* TODO: fix in Safari */
   transition: transform 0.3s;
 }
 
@@ -32,9 +33,43 @@
   );
   --scale: calc(1 - max(1 - var(--percent) / 50, -1 * (1 - var(--percent) / 50)) / 20);
 
+  @apply bg-transparent bg-no-repeat;
+
   transform: rotateY(var(--rotate)) scaleX(var(--scale));
   will-change: transform;
+  /* TODO: fix in Safari */
   transition: transform 0.3s;
+
+  background-size: 395px 388px, 768px 378px, 420px 388px, 420px 388px;
+  background-position: right center, center center, left center, right center;
+
+  &.variant-1 {
+    background-image: url('/images/developer-days-2/elephant-1.png'),
+      url('/images/developer-days-2/ticket-pattern-1.svg'),
+      url('/images/developer-days-2/ticket-plate-left.svg'),
+      url('/images/developer-days-2/ticket-plate-right.svg');
+  }
+
+  &.variant-2 {
+    background-image: url('/images/developer-days-2/elephant-2.png'),
+      url('/images/developer-days-2/ticket-pattern-2.svg'),
+      url('/images/developer-days-2/ticket-plate-left.svg'),
+      url('/images/developer-days-2/ticket-plate-right.svg');
+  }
+
+  &.variant-3 {
+    background-image: url('/images/developer-days-2/elephant-3.png'),
+      url('/images/developer-days-2/ticket-pattern-3.svg'),
+      url('/images/developer-days-2/ticket-plate-left.svg'),
+      url('/images/developer-days-2/ticket-plate-right.svg');
+  }
+
+  &.variant-4 {
+    background-image: url('/images/developer-days-2/elephant-4.png'),
+      url('/images/developer-days-2/ticket-pattern-4.svg'),
+      url('/images/developer-days-2/ticket-plate-left.svg'),
+      url('/images/developer-days-2/ticket-plate-right.svg');
+  }
 }
 
 .color-text-variant-1,

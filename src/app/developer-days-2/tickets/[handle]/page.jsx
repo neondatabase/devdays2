@@ -25,8 +25,8 @@ const TicketPage = async ({ params }) => {
       className="flex min-h-[inherit] items-center justify-between gap-12 py-4 lg:flex-col"
       size="lg"
     >
-      <div className="relative z-10 w-full max-w-[620px] lg:flex lg:flex-col lg:items-center">
-        <h1 className="text-[96px] font-semibold leading-none tracking-tighter text-white xl:text-6xl lg:text-center lg:text-[78px] md:text-[58px] sm:text-[52px]">
+      <div className="relative z-10 w-full max-w-[620px] pb-9 lg:flex lg:flex-col lg:items-center">
+        <h1 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-[64px] lg:text-center">
           You’re In. <br className="lg:hidden sm:block" />
           Make it Unique.
         </h1>

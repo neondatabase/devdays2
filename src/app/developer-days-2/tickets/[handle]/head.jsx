@@ -38,7 +38,15 @@ const Head = async ({ params }) => {
     id: 0,
   };
   //* TODO: make proper default url
-  return <SEO {...SEO_DATA.ticket(userData)} imagePath={buildOgImageUrl(userData)} />;
+  return (
+    <>
+      <link rel="preload" href="/images/developer-days-2/elephant-1.png" as="image" />
+      <link rel="preload" href="/images/developer-days-2/elephant-2.png" as="image" />
+      <link rel="preload" href="/images/developer-days-2/elephant-3.png" as="image" />
+      <link rel="preload" href="/images/developer-days-2/elephant-4.png" as="image" />
+      <SEO {...SEO_DATA.ticket(userData)} imagePath={buildOgImageUrl(userData)} />
+    </>
+  );
 };
 
 export default Head;
