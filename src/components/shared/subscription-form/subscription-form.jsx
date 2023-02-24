@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useCookie, useLocation } from 'react-use';
+import { Alignment, Fit, Layout, useRive } from 'rive-react';
 
 import Button from 'components/shared/button';
 import useLocalStorage from 'hooks/use-local-storage';
 import { doNowOrAfterSomeTime, emailRegexp, sendHubspotFormData } from 'utils/forms';
 
-import LuminousBack from './icons/luminous-back.inline.svg';
 import CheckIcon from './icons/subscription-form-check.inline.svg';
 import ErrorIcon from './icons/subscription-form-error.inline.svg';
 import SendIcon from './icons/subscription-form-send.inline.svg';
@@ -63,6 +63,16 @@ const SubscriptionForm = ({
     hutk: hubspotutk,
     pageUri: href,
   };
+
+  const { RiveComponent } = useRive({
+    src: '/animations/input-lines.riv',
+    autoplay: true,
+    stateMachines: 'State Machine 1',
+    layout: new Layout({
+      fit: Fit.FitWidth,
+      alignment: Alignment.TopCenter,
+    }),
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -156,10 +166,7 @@ const SubscriptionForm = ({
         onChange={handleInputChange}
       />
 
-      <LuminousBack
-        className="pointer-events-none absolute -top-10 left-1/2 z-10 h-auto w-[115%] -translate-x-1/2 xs:-top-4 xs:w-[120%]"
-        aria-hidden="true"
-      />
+      <RiveComponent className="pointer-events-none absolute -top-4 left-1/2 z-10 h-auto w-[120%] -translate-x-1/2 xs:-top-4 xs:top-0 [&>*]:!min-h-[360px]" />
 
       {/* Error message */}
       <AnimatePresence>

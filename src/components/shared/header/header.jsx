@@ -16,7 +16,7 @@ const Header = () => (
         <Logo />
       </Link>
       <div className="flex items-center space-x-7">
-        <p className="font-mono text-base font-light text-white sm:hidden">
+        <p className="font-mono text-[15px] font-light text-white sm:hidden">
           Join us at 10:30AM PT, March 26
         </p>
         <Button

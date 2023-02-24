@@ -144,7 +144,11 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           </CursorTrackingWrapper>
           <Script src="/static/elephant-webgl-scene.js" type="module" strategy="afterInteractive" />
         </div>
-        <Image className="hidden xl:block" src={ElephantIllustration} alt="Elephant illustration" />
+        <Image
+          className="remove-image-loading-visual hidden xl:block"
+          src={ElephantIllustration}
+          alt="Elephant illustration"
+        />
       </motion.div>
     </>
   );
