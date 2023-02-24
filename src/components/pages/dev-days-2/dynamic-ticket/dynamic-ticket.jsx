@@ -3,11 +3,11 @@
 import clsx from 'clsx';
 import { AnimatePresence, motion, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
-import { useSession } from 'next-auth/react';
+// TODO: uncomment
+// import { useSession } from 'next-auth/react';
 import PropTypes from 'prop-types';
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import usePrevious from 'hooks/use-previous';
 
 const appearAndExitGradientVariants = {
@@ -52,38 +52,28 @@ const colorVariants = [
   {
     id: 1,
     title: 'Color variant 1',
-    image: '/_next/image?url=/images/developer-days-2/ticket-variant-1.png&w=1920&q=75',
-    mobileImage:
-      '/_next/image?url=/images/developer-days-2/ticket-variant-1-mobile.png&w=1920&q=75',
     buttonColorClass: 'before:bg-color-picker-variant-1',
   },
   {
     id: 2,
     title: 'Color variant 2',
-    image: '/_next/image?url=/images/developer-days-2/ticket-variant-2.png&w=1920&q=75',
-    mobileImage:
-      '/_next/image?url=/images/developer-days-2/ticket-variant-2-mobile.png&w=1920&q=75',
     buttonColorClass: 'before:bg-color-picker-variant-2',
   },
   {
     id: 3,
     title: 'Color variant 3',
-    image: '/_next/image?url=/images/developer-days-2/ticket-variant-3.png&w=1920&q=75',
-    mobileImage:
-      '/_next/image?url=/images/developer-days-2/ticket-variant-3-mobile.png&w=1920&q=75',
     buttonColorClass: 'before:bg-color-picker-variant-3',
   },
   {
     id: 4,
     title: 'Color variant 4',
-    image: '/_next/image?url=/images/developer-days-2/ticket-variant-4.png&w=1920&q=75',
-    mobileImage:
-      '/_next/image?url=/images/developer-days-2/ticket-variant-4-mobile.png&w=1920&q=75',
     buttonColorClass: 'before:bg-color-picker-variant-4',
   },
 ];
 
 const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) => {
+  // TODO: uncomment
+  // const {data, status} = useSession();
   const [currentColorSchema, setCurrentColorSchema] = useState('1');
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
   const prevColor = usePrevious(currentColorSchema);
@@ -234,7 +224,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                 </h2>
               </header>
               <p className="relative order-1 grid grid-cols-[56px_1fr] grid-rows-2 gap-x-4 gap-y-2 md:grid-cols-[48px_1fr] md:gap-x-3 sm:gap-x-2.5">
-                <img
+                <Image
                   src={image}
                   width={56}
                   height={56}
