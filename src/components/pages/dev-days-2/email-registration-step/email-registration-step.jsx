@@ -11,7 +11,6 @@ import BlinkingText from 'components/shared/blinking-text';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import SubscriptionForm from 'components/shared/subscription-form';
 import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
-import ElephantTusksIllustration from 'images/developer-days-2/elephant-tusk.png';
 import ElephantIllustration from 'images/developer-days-2/ticket-hero-elephant.png';
 
 const appearColumnVariants = {
@@ -135,7 +134,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           >
             <Image
               className="h-full min-h-[740px] w-full"
-              src={ElephantTusksIllustration}
+              src="/images/developer-days-2/elephant-tusk.png"
               width={1010}
               height={740}
               alt="Tusks illustration"

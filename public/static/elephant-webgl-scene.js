@@ -8,10 +8,8 @@ import * as THREE from 'https://cdn.skypack.dev/three@0.129.0';
 const settings = {
   xThreshold: 8,
   yThreshold: 8,
-  originalImagePath:
-    'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/432eecef-c63a-4099-88b5-6626549046f5/elephant-defuse.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230223%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230223T091134Z&X-Amz-Expires=86400&X-Amz-Signature=d369311f5e53c0a98c1ec8ebc80f52ca20a0a1bcb71a95262d622c52f49a8ae7&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22elephant-defuse.jpg%22&x-id=GetObject',
-  depthImagePath:
-    'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/af00448b-936c-443e-a5e5-76af0fc9ebb4/elephant-depth.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230223%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230223T090723Z&X-Amz-Expires=86400&X-Amz-Signature=9eecff7a6db433c892a177939e0e2d6450627b6934feba0331dfc1624caea9aa&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22elephant-depth.jpg%22&x-id=GetObject',
+  originalImagePath: '/images/developer-days-2/elephant-defuse.jpg',
+  depthImagePath: '/images/developer-days-2/elephant-depth.jpg',
 };
 
 // Sizes
