@@ -1,7 +1,48 @@
+.ticket-hover-aria {
+  --percent: 50;
+  --translateGap: 70;
+
+  @apply relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: calc(var(--translateGap) * -1px);
+    bottom: 0;
+    left: calc(var(--translateGap) * -1px);
+  }
+}
+
+.ticket-wrapper {
+  --translate: calc(
+    ((var(--percent) * (var(--translateGap) * 2 / 100)) - var(--translateGap)) * 1px
+  );
+
+  perspective: 100px;
+  transform: translateX(var(--translate));
+  will-change: transform;
+  transition: transform 0.3s;
+}
+
+.ticket {
+  --rotateBorderValue: 1.5;
+  --rotate: calc(
+    ((var(--percent) * (var(--rotateBorderValue) * 2 / 100)) - var(--rotateBorderValue)) * 1deg
+  );
+  --scale: calc(1 - max(1 - var(--percent) / 50, -1 * (1 - var(--percent) / 50)) / 20);
+
+  transform: rotateY(var(--rotate)) scaleX(var(--scale));
+  will-change: transform;
+  transition: transform 0.3s;
+}
+
 .color-text-variant-1,
 .color-text-variant-2,
 .color-text-variant-3,
 .color-text-variant-4 {
+  @apply bg-clip-text text-transparent;
+
   min-height: 100px;
   font-family: 'Kallisto', 'Kallisto Fallback', sans-serif;
   font-weight: 300;
@@ -11,27 +52,19 @@
 }
 
 .color-text-variant-1 {
-  background: -webkit-linear-gradient(215.67deg, #ffffff 41.51%, #66ffcc 79.11%);
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-image: linear-gradient(215.67deg, #ffffff 41.51%, #66ffcc 79.11%);
 }
 
 .color-text-variant-2 {
-  background: -webkit-linear-gradient(215.67deg, #ffffff 41.51%, #e6ff66 79.11%);
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-image: linear-gradient(215.67deg, #ffffff 41.51%, #e6ff66 79.11%);
 }
 
 .color-text-variant-3 {
-  background: -webkit-linear-gradient(215.67deg, #ffffff 41.51%, #ff99dd 79.11%);
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-image: linear-gradient(215.67deg, #ffffff 41.51%, #ff99dd 79.11%);
 }
 
 .color-text-variant-4 {
-  background: -webkit-linear-gradient(215.67deg, #ffffff 41.51%, #ccccff 79.11%);
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-image: linear-gradient(215.67deg, #ffffff 41.51%, #ccccff 79.11%);
 }
 
 .t-sm {

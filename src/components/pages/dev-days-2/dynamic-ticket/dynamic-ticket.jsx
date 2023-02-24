@@ -5,7 +5,7 @@ import { AnimatePresence, motion, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import usePrevious from 'hooks/use-previous';
@@ -84,12 +84,17 @@ const colorVariants = [
 ];
 
 const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) => {
-  const { data, status } = useSession();
-  const [currentColorSchema, setCurrentColorSchema] = useState('1');
+  const [currentColorSchema, setCurrentColorSchema] = useState('2');
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
   const prevColor = usePrevious(currentColorSchema);
   const gradientControls = useAnimationControls();
   const ticketControls = useAnimationControls();
+
+  const status = 'authenticated';
+
+  const data = {
+    colorSchema: '1',
+  };
 
   useEffect(() => {
     if (prevColor !== currentColorSchema) {
@@ -129,126 +134,134 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
     setSelectedColorSchema(e.target.id);
   };
 
-  return (
-    <>
-      <div
-        className={clsx(
-          'relative max-w-full before:pointer-events-none before:absolute before:top-1/2 before:left-1/2 before:z-0 before:h-[90%] before:w-[90%] before:-translate-x-1/2 before:-translate-y-1/2 before:opacity-80 before:blur-[72px] sm:my-4 before:xs:w-full before:xs:max-w-full',
-          {
-            'before:bg-ticket-variant-1-back': currentColorSchema === '1',
-            'before:bg-ticket-variant-2-back': currentColorSchema === '2',
-            'before:bg-ticket-variant-3-back': currentColorSchema === '3',
-            'before:bg-ticket-variant-4-back': currentColorSchema === '4',
-          }
-        )}
-      >
-        <motion.div
-          initial="initial"
-          animate={
-            (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
-            status !== 'authenticated'
-              ? false
-              : ticketControls
-          }
-          variants={
-            (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
-            status !== 'authenticated'
-              ? false
-              : scaleAndMoveTicketVariants
-          }
-        >
-          <CursorTrackingWrapper>
-            {colorVariants.map((item) => {
-              const { id, image, mobileImage } = item;
+  const ticketRef = useRef(null);
+  const measurementRef = useRef({ x: 0, width: 0 });
 
-              return (
-                currentColorSchema === `${id}` && (
-                  <div key={id}>
-                    <h2
-                      className={clsx(
-                        'absolute left-16 top-36 z-20 text-5xl sm:left-6 sm:top-32 sm:text-4xl xxs:left-2 ',
-                        `color-text-variant-${id}`
-                      )}
-                    >
-                      Neon Dev <br /> Days 2023
-                    </h2>
-                    <img
-                      className="pointer-events-none relative z-10 min-h-[380px] max-w-full sm:hidden"
-                      src={image}
-                      width={790}
-                      height={388}
-                      loading="eager"
-                      alt="Ticket desktop variant illustration"
-                    />
-                    <img
-                      className="pointer-events-none relative z-10 hidden max-w-[370px] sm:block xs:max-w-full"
-                      src={mobileImage}
-                      width={700}
-                      height={344}
-                      loading="eager"
-                      alt="Ticket mobile variant illustration"
-                    />
-                  </div>
-                )
-              );
-            })}
-            {status === 'authenticated' && (
-              <motion.span
-                className="lg:hidden"
-                initial="initial"
-                animate={gradientControls}
-                variants={appearAndExitGradientVariants}
-                style={{
-                  position: 'absolute',
-                  zIndex: '22',
-                  width: '100%',
-                  height: '100%',
-                  top: 0,
-                  left: 0,
-                  backgroundImage: `linear-gradient(106deg, transparent 30%, ${
-                    currentColorSchema === '1'
-                      ? 'rgba(51, 255, 187, 0.8)'
-                      : currentColorSchema === '2'
-                      ? 'rgba(189, 244, 113, 0.8)'
-                      : currentColorSchema === '3'
-                      ? 'rgba(255, 153, 221, 0.8)'
-                      : 'rgba(204, 204, 255, 0.8)'
-                  } 60%, transparent 60%)`,
-                }}
-              />
-            )}
-            <div className="absolute top-8 left-8 z-10 flex 2xl:top-12 lg:top-8 sm:top-16 sm:left-6 xxs:left-2">
-              <div className="h-[56px] w-[56px] overflow-hidden rounded-full sm:h-12 sm:w-12">
-                <Image
-                  className="rounded-full"
-                  width={62}
-                  height={62}
-                  src={image}
-                  alt={`${name}'s profile picture`}
+  useEffect(() => {
+    const gap = getComputedStyle(ticketRef.current).getPropertyValue('--translateGap');
+
+    measurementRef.current = {
+      x: ticketRef.current.getBoundingClientRect().left,
+      width: ticketRef.current.clientWidth + gap * 2,
+    };
+  }, []);
+
+  const onMouseMove = useCallback((evt) => {
+    const percent = Math.floor(
+      Math.abs(evt.clientX - measurementRef.current.x) / (measurementRef.current.width / 100)
+    );
+    ticketRef.current.style.setProperty('--percent', percent);
+  }, []);
+
+  const onMouseLeave = useCallback(() => {
+    ticketRef.current.style.setProperty('--percent', 50);
+  }, []);
+
+  return (
+    <div className="sm:flex sm:flex-col-reverse">
+      <motion.div
+        initial="initial"
+        animate={
+          (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
+          status !== 'authenticated'
+            ? false
+            : ticketControls
+        }
+        variants={
+          (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
+          status !== 'authenticated'
+            ? false
+            : scaleAndMoveTicketVariants
+        }
+      >
+        <div
+          className={clsx(
+            'ticket-hover-aria z-0 before:z-20 after:absolute after:top-1/2 after:left-1/2 after:z-10 after:h-[10px] after:w-[20px] after:-translate-x-1/2 after:-translate-y-1/2 after:scale-[34] after:rounded-[50%] after:opacity-80 after:blur-[2px] xl:after:scale-[28] lg:after:scale-[32] md:after:scale-[28] sm:after:h-[22px] sm:after:w-[8px] sm:after:scale-[30]',
+            {
+              'after:bg-ticket-variant-1-back': currentColorSchema === '1',
+              'after:bg-ticket-variant-2-back': currentColorSchema === '2',
+              'after:bg-ticket-variant-3-back': currentColorSchema === '3',
+              'after:bg-ticket-variant-4-back': currentColorSchema === '4',
+            }
+          )}
+          ref={ticketRef}
+          onMouseMove={onMouseMove}
+          onMouseLeave={onMouseLeave}
+        >
+          <div className="ticket-wrapper relative z-30 h-[388px] w-[790px] xl:h-[330px] xl:w-[670px] lg:h-[380px] lg:w-[776px] md:h-[330px] md:w-[670px] sm:h-[700px] sm:w-[334px]">
+            <section className="ticket flex h-full w-full flex-col items-start justify-between overflow-hidden bg-gray-3 p-7 text-white sm:justify-start sm:p-5">
+              {status === 'authenticated' && (
+                <motion.span
+                  initial="initial"
+                  animate={gradientControls}
+                  variants={appearAndExitGradientVariants}
+                  style={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    top: 0,
+                    left: 0,
+                    backgroundImage: `linear-gradient(106deg, transparent 30%, ${
+                      currentColorSchema === '1'
+                        ? 'rgba(51, 255, 187, 0.8)'
+                        : currentColorSchema === '2'
+                        ? 'rgba(189, 244, 113, 0.8)'
+                        : currentColorSchema === '3'
+                        ? 'rgba(255, 153, 221, 0.8)'
+                        : 'rgba(204, 204, 255, 0.8)'
+                    } 60%, transparent 60%)`,
+                  }}
                 />
-              </div>
-              <div className="ml-4 flex-col">
-                <p className="font-sans text-[26px] font-semibold leading-none text-white">
+              )}
+              <header className="lg:mal-[44px] order-2 ml-[44px] xl:ml-[38px] md:ml-[38px] sm:mt-5 sm:ml-0">
+                <h2
+                  className={clsx('text-5xl sm:text-4xl', {
+                    'color-text-variant-1': currentColorSchema === '1',
+                    'color-text-variant-2': currentColorSchema === '2',
+                    'color-text-variant-3': currentColorSchema === '3',
+                    'color-text-variant-4': currentColorSchema === '4',
+                  })}
+                >
+                  Neon Dev
+                  <br />
+                  Days 2023
+                </h2>
+              </header>
+              <p className="order-1 grid grid-cols-[56px_1fr] grid-rows-2 gap-x-4 gap-y-2 md:grid-cols-[48px_1fr] md:gap-x-3 sm:gap-x-2.5">
+                <img
+                  src={image}
+                  width={56}
+                  height={56}
+                  alt={`${name}'s profile picture`}
+                  className="row-start-1 row-end-3 h-[56px] w-[56px] rounded-full md:h-[48px] md:w-[48px]"
+                />
+                <b className="font-sans text-[26px] font-semibold leading-none text-white md:text-xl">
                   {name}
-                </p>
-                <p className="font-mono text-base text-white">/{githubHandle}</p>
-              </div>
-            </div>
-            <div className="absolute bottom-8 left-8 z-10 flex items-center 2xl:bottom-12 lg:bottom-6 sm:left-6 sm:bottom-14 xxs:left-2">
-              <p className="font-kallisto text-[36px] font-light tracking-wider text-white sm:text-[28px] xxs:text-[26px]">
-                #{`${number}`.padStart(6, '0')} /
+                </b>
+                <span className="col-start-2 font-mono text-base leading-none text-white md:text-sm">
+                  /{githubHandle}
+                </span>
               </p>
-              <div className="ml-4 flex flex-col font-mono text-sm uppercase leading-tight text-white sm:text-[12px] xxs:ml-2">
-                <span className="">10:30AM PT,</span>
-                <span className="">March 26, 2023</span>
-              </div>
-            </div>
-          </CursorTrackingWrapper>
-        </motion.div>
-      </div>
+              <footer className="order-3 flex items-center gap-3 sm:mt-auto">
+                <p className="trac whitespace-nowrap font-kallisto text-[36px] font-light leading-none text-white md:text-3xl sm:text-[28px] xxs:text-[26px]">
+                  #{`${number}`.padStart(6, '0')} /
+                </p>
+                <time
+                  dateTime="2023-03-26T10:30:00-0800"
+                  className="whitespace-nowrap font-mono text-sm uppercase leading-dense tracking-wider text-white md:text-[12px] sm:text-[12px]"
+                >
+                  10:30AM PT,
+                  <br />
+                  March 26, 2023
+                </time>
+              </footer>
+            </section>
+          </div>
+        </div>
+      </motion.div>
 
       {status === 'authenticated' && data?.colorSchema && (
-        <div className="mt-8 flex items-center gap-3 xl:justify-center sm:mt-0">
+        <div className="mt-8 flex items-center gap-3 xl:justify-center sm:mt-0 sm:mb-7">
           <p className="text-sm font-thin text-gray-7">Pick a color:</p>
           <div className="flex gap-5">
             {colorVariants.map((item, i) => {
@@ -285,7 +298,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

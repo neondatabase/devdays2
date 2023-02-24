@@ -6,19 +6,27 @@ import SocialShare from 'components/shared/social-share';
 import prisma from 'utils/prisma';
 
 const TicketPage = async ({ params }) => {
-  const userData = await getTicketData(params.handle);
+  // const userData = await getTicketData(params.handle);
 
-  if (!userData) return notFound();
+  // if (!userData) return notFound();
+
+  const userData = {
+    id: 8,
+    email: 'please@no.spam',
+    image: 'https://i.pravatar.cc/128',
+    name: 'Mr. Tester',
+    githubHandle: 'mr-tester',
+  };
 
   const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days-2/tickets/${userData.githubHandle}`;
 
   return (
     <Container
-      className="relative flex min-h-[inherit] items-center gap-12 py-4 xl:flex-wrap xl:justify-center xl:gap-4"
+      className="flex min-h-[inherit] items-center justify-between gap-12 py-4 lg:flex-col"
       size="lg"
     >
-      <div className="xl:flex xl:w-full xl:flex-col xl:items-center">
-        <h1 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-center xl:text-[78px] md:text-[58px] sm:text-[52px]">
+      <div className="relative z-10 w-full max-w-[620px] lg:flex lg:flex-col lg:items-center">
+        <h1 className="text-[96px] font-semibold leading-none tracking-tighter text-white xl:text-6xl lg:text-center lg:text-[78px] md:text-[58px] sm:text-[52px]">
           You’re In. <br className="lg:hidden sm:block" />
           Make it Unique.
         </h1>
@@ -27,7 +35,7 @@ const TicketPage = async ({ params }) => {
         </p>
         <SocialShare className="mt-12 sm:mt-6" url={shareUrl} />
       </div>
-      <div className="shrink-0 lg:mt-6 lg:max-w-[95%] sm:mt-4 sm:flex sm:flex-col-reverse">
+      <div className="relative z-20 shrink-0">
         <DynamicTicket userData={userData} />
       </div>
     </Container>
