@@ -43,11 +43,23 @@
   background-size: 395px 388px, 768px 378px, 420px 388px, 420px 388px;
   background-position: right center, center center, left center, right center;
 
+  @media screen(md) {
+    background-size: 320px 340px, 334px 680px, 388px 420px, 388px 420px;
+    background-position: right top 250px, center center, center top -10px, center bottom -10px;
+  }
+
   &.variant-1 {
     background-image: url('/images/developer-days-2/elephant-1.png'),
       url('/images/developer-days-2/ticket-pattern-1.svg'),
       url('/images/developer-days-2/ticket-plate-left.svg'),
       url('/images/developer-days-2/ticket-plate-right.svg');
+
+    @media screen(md) {
+      background-image: url('/images/developer-days-2/elephant-1-vertical.png'),
+        url('/images/developer-days-2/ticket-pattern-1-vertical.svg'),
+        url('/images/developer-days-2/ticket-plate-top.svg'),
+        url('/images/developer-days-2/ticket-plate-bottom.svg');
+    }
   }
 
   &.variant-2 {
@@ -55,6 +67,13 @@
       url('/images/developer-days-2/ticket-pattern-2.svg'),
       url('/images/developer-days-2/ticket-plate-left.svg'),
       url('/images/developer-days-2/ticket-plate-right.svg');
+
+    @media screen(md) {
+      background-image: url('/images/developer-days-2/elephant-2-vertical.png'),
+        url('/images/developer-days-2/ticket-pattern-2-vertical.svg'),
+        url('/images/developer-days-2/ticket-plate-top.svg'),
+        url('/images/developer-days-2/ticket-plate-bottom.svg');
+    }
   }
 
   &.variant-3 {
@@ -62,6 +81,13 @@
       url('/images/developer-days-2/ticket-pattern-3.svg'),
       url('/images/developer-days-2/ticket-plate-left.svg'),
       url('/images/developer-days-2/ticket-plate-right.svg');
+
+    @media screen(md) {
+      background-image: url('/images/developer-days-2/elephant-3-vertical.png'),
+        url('/images/developer-days-2/ticket-pattern-3-vertical.svg'),
+        url('/images/developer-days-2/ticket-plate-top.svg'),
+        url('/images/developer-days-2/ticket-plate-bottom.svg');
+    }
   }
 
   &.variant-4 {
@@ -69,6 +95,13 @@
       url('/images/developer-days-2/ticket-pattern-4.svg'),
       url('/images/developer-days-2/ticket-plate-left.svg'),
       url('/images/developer-days-2/ticket-plate-right.svg');
+
+    @media screen(md) {
+      background-image: url('/images/developer-days-2/elephant-4-vertical.png'),
+        url('/images/developer-days-2/ticket-pattern-4-vertical.svg'),
+        url('/images/developer-days-2/ticket-plate-top.svg'),
+        url('/images/developer-days-2/ticket-plate-bottom.svg');
+    }
   }
 }
 

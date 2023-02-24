@@ -127,6 +127,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
   const ticketRef = useRef(null);
   const measurementRef = useRef({ x: 0, width: 0 });
 
+  // TODO: think about updating values by window resize
   useEffect(() => {
     const gap = getComputedStyle(ticketRef.current).getPropertyValue('--translateGap');
 
@@ -136,6 +137,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
     };
   }, []);
 
+  // TODO: think about pointer events
   const onMouseMove = useCallback((evt) => {
     const percent = Math.floor(
       Math.abs(evt.clientX - measurementRef.current.x) / (measurementRef.current.width / 100)
@@ -148,12 +150,21 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
   }, []);
 
   return (
-    <div className="sm:flex sm:flex-col-reverse">
+    /* TODO: fix blur in Safari */
+    <div
+      className={clsx(
+        'relative before:absolute before:-left-[10px] before:right-[5px] before:-top-[5px] before:bottom-[65px] before:rounded-[50%] before:opacity-50 before:blur-3xl sm:flex sm:flex-col-reverse',
+        {
+          'before:bg-ticket-back-variant-1': currentColorSchema === '1',
+          'before:bg-ticket-back-variant-2': currentColorSchema === '2',
+          'before:bg-ticket-back-variant-3': currentColorSchema === '3',
+          'before:bg-ticket-back-variant-4': currentColorSchema === '4',
+        }
+      )}
+    >
       {/* TODO: fix back in Safari */}
       <div
-        className={clsx(
-          'ticket-hover-aria z-0 before:z-20 after:top-1/2 after:left-1/2 after:z-10 after:hidden after:h-[10px] after:w-[20px] after:-translate-x-1/2 after:-translate-y-1/2 after:scale-[34] after:rounded-[50%] after:opacity-80 after:blur-[2px] xl:after:scale-[28] lg:after:scale-[32] md:after:scale-[28] sm:after:h-[22px] sm:after:w-[8px] sm:after:scale-[30]'
-        )}
+        className={clsx('ticket-hover-aria relative z-0 before:z-20')}
         ref={ticketRef}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
@@ -177,7 +188,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
           <div className="ticket-wrapper relative z-30 h-[388px] w-[790px] 2xl:h-[330px] 2xl:w-[670px] md:h-[700px] md:w-[334px]">
             <section
               className={clsx(
-                'ticket flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-3xl p-7 text-white sm:justify-start sm:p-5',
+                'ticket relative flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-3xl p-7 text-white before:absolute before:-top-[150px] before:left-[120px] before:h-[20px] before:w-[30px] before:scale-[15] before:rounded-[50%] before:bg-white before:opacity-20 before:blur-[4px] md:p-5 md:pt-16 md:pb-20 md:before:hidden sm:justify-start',
                 {
                   'variant-1': currentColorSchema === '1',
                   'variant-2': currentColorSchema === '2',
@@ -209,7 +220,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                   }}
                 />
               )}
-              <header className="lg:mal-[44px] relative order-2 ml-[44px] xl:ml-[38px] md:ml-[38px] sm:mt-5 sm:ml-0">
+              <header className="lg:mal-[44px] relative order-2 ml-[44px] xl:ml-[38px] md:mt-5 md:ml-0">
                 <h2
                   className={clsx('text-5xl sm:text-4xl', {
                     'color-text-variant-1': currentColorSchema === '1',
@@ -238,7 +249,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                   /{githubHandle}
                 </span>
               </p>
-              <footer className="relative order-3 flex items-center gap-3 sm:mt-auto">
+              <footer className="relative order-3 flex items-center gap-3 md:mt-auto">
                 <p className="trac whitespace-nowrap font-kallisto text-[36px] font-light leading-none text-white md:text-3xl sm:text-[28px] xxs:text-[26px]">
                   #{`${number}`.padStart(6, '0')} /
                 </p>
@@ -267,7 +278,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
               return (
                 <motion.button
                   className={clsx(
-                    'relative flex h-9 w-9 items-center justify-center rounded-full outline outline-1 outline-gray-4 before:h-4 before:w-4 before:rounded-full',
+                    'border-1 relative flex h-9 w-9 items-center justify-center rounded-full border border-gray-4 before:h-4 before:w-4 before:rounded-full',
                     buttonColorClass
                   )}
                   key={i}
@@ -279,7 +290,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                   <AnimatePresence>
                     {isActive && (
                       <motion.span
-                        className="absolute left-0 top-0 z-10 h-full w-full rounded-full outline outline-1 outline-gray-8"
+                        className="border-1 absolute left-0 top-0 z-10 h-full w-full rounded-full border border-gray-8"
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.9 }}
