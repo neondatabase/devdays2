@@ -7,9 +7,9 @@
   &::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: calc(var(--translateGap) * -1px);
     right: calc(var(--translateGap) * -1px);
-    bottom: 0;
+    bottom: calc(var(--translateGap) * -1px);
     left: calc(var(--translateGap) * -1px);
 
     @media screen(md) {
@@ -47,11 +47,11 @@
   transition: transform 0.1s linear;
 
   background-size: 395px 388px, 768px 378px, 420px 388px, 420px 388px;
-  background-position: right center, center center, left center, right center;
+  background-position: right center, right center, left center, right center;
 
   @media screen(md) {
     background-size: 320px 340px, 334px 680px, 388px 420px, 388px 420px;
-    background-position: right top 250px, center center, center top -10px, center bottom -10px;
+    background-position: right top 250px, right center, center top -10px, center bottom -10px;
   }
 
   &.variant-1 {

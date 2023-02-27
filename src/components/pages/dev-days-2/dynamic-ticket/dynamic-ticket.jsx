@@ -152,21 +152,14 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
   }, []);
 
   return (
-    /* TODO: fix blur in Safari */
-    <div
-      className={clsx(
-        'relative before:absolute before:-left-[10px] before:right-[5px] before:-top-[5px] before:bottom-[65px] before:rounded-[50%] before:opacity-50 before:blur-3xl sm:flex sm:flex-col-reverse',
-        {
+    <div className={clsx('relative sm:flex sm:flex-col-reverse')}>
+      <div
+        className={clsx('ticket-hover-aria relative z-0 before:z-20', {
           'before:bg-ticket-back-variant-1': currentColorSchema === '1',
           'before:bg-ticket-back-variant-2': currentColorSchema === '2',
           'before:bg-ticket-back-variant-3': currentColorSchema === '3',
           'before:bg-ticket-back-variant-4': currentColorSchema === '4',
-        }
-      )}
-    >
-      {/* TODO: fix back in Safari */}
-      <div
-        className={clsx('ticket-hover-aria relative z-0 before:z-20')}
+        })}
         ref={ticketRef}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
@@ -190,7 +183,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
           <div className="ticket-wrapper relative z-30 h-[388px] w-[790px] 2xl:h-[330px] 2xl:w-[670px] md:h-[700px] md:w-[334px]">
             <section
               className={clsx(
-                'ticket relative flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-3xl p-7 text-white before:absolute before:-top-[150px] before:left-[120px] before:h-[20px] before:w-[30px] before:scale-[15] before:rounded-[50%] before:bg-white before:opacity-20 before:blur-[4px] md:p-5 md:pt-16 md:pb-20 md:before:hidden sm:justify-start',
+                'ticket relative flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-3xl p-7 text-white md:p-5 md:pt-16 md:pb-20 md:before:hidden sm:justify-start',
                 {
                   'variant-1': currentColorSchema === '1',
                   'variant-2': currentColorSchema === '2',
