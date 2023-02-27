@@ -140,9 +140,10 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
               width={1010}
               height={740}
               alt="Tusks illustration"
+              priority
             />
           </CursorTrackingWrapper>
-          <Script src="/static/elephant-webgl-scene.js" type="module" strategy="afterInteractive" />
+          <Script src="/static/elephant-webgl-scene.js" type="module" strategy="lazyOnload" />
         </div>
         <Image
           className="remove-image-loading-visual hidden xl:block"
