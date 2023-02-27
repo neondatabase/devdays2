@@ -144,7 +144,7 @@ module.exports = {
       }),
       animation: {
         'text-blink': 'text-blink 1.5s cubic-bezier(0, 0.35, 0.35, 1)',
-        'webgl-brightness': 'webgl-brightness 5s cubic-bezier(0, 0.35, 0.35, 1)',
+        'webgl-brightness': 'webgl-brightness 3s cubic-bezier(0, 0.35, 0.35, 1)',
       },
       typography: () => ({
         DEFAULT: {
