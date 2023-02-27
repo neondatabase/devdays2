@@ -4,4 +4,8 @@
     radial-gradient(ellipse at top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)) border-box;
   border-radius: 6px;
   border: 1px solid transparent;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+  }
 }

@@ -85,7 +85,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
   return (
     <>
       <motion.div
-        className="w-5/12 xl:w-1/2 lg:mt-10 lg:flex lg:w-full lg:flex-col lg:items-center"
+        className="relative z-30 w-5/12 xl:w-1/2 lg:mt-10 lg:flex lg:w-full lg:flex-col lg:items-center"
         initial={window.innerWidth <= '1024' ? { opacity: 1 } : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'linear' }}
@@ -121,7 +121,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
       >
         <div className="relative min-h-[760px] w-[1010px] xl:hidden" style={{ perspective: 800 }}>
           <motion.canvas
-            className="webgl relative z-20 animate-webgl-brightness"
+            className="webgl relative z-20 animate-webgl-brightness mix-blend-lighten"
             initial="initial"
             animate={sceneControls}
             variants={appearSceneVariants}
