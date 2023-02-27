@@ -70,8 +70,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
 
   const titleContent = (
     <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
-      {'Neon Dev Days 2023'.split('').map((letter, index) =>
-        index === 8 ? (
+      {'Developer Days'.split('').map((letter, index) =>
+        index === 9 ? (
           <br className="lg:hidden" key={index} />
         ) : (
           <span className="animate-text-blink" style={{ animationPlayState: 'paused' }} key={index}>
@@ -91,17 +91,17 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         transition={{ duration: 2, ease: 'linear' }}
       >
         <span className="rounded-[50px] bg-secondary-2 py-1 px-3 text-sm font-semibold uppercase leading-snug dark:text-black sm:mt-0 sm:text-xs">
-          Spring 2023
+          March 2023
         </span>
         <h1
           className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:text-center lg:text-[78px] md:text-[58px] sm:mt-2 sm:max-w-[80%] sm:text-[52px] xxs:max-w-[100%]"
           ref={titleRef}
         >
-          {window.innerWidth <= '1024' ? 'Neon Dev Days 2023' : titleContent}
+          {window.innerWidth <= '1024' ? 'Developer Days' : titleContent}
         </h1>
         <p className="mt-4 max-w-xl font-mono text-xl font-light tracking-tighter text-white lg:text-center lg:text-lg md:text-base sm:max-w-[80%] xxs:max-w-[100%]">
-          Join us at <time dateTime="2023-03-26 10:30">10:30AM PT, March 26</time> to hear more
-          about latest updates from our dev team.
+          Join us on <time dateTime="2023-03-28 10:30">March 28th, 9 a.m. PT</time> to learn more
+          about latest of Serverless Postgres
         </p>
         <SubscriptionForm
           className="mt-12 lg:mt-8 xs:mt-4"
