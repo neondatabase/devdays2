@@ -252,7 +252,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colo
               );
             })}
           </div>
-        </motion.div>
+        </div>
       )}
     </div>
   );
