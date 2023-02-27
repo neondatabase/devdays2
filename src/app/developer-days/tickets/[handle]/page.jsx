@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import DynamicTicket from 'components/pages/dev-days-2/dynamic-ticket';
+import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
 import Container from 'components/shared/container';
 import SocialShare from 'components/shared/social-share';
 import prisma from 'utils/prisma';
@@ -10,7 +10,7 @@ const TicketPage = async ({ params }) => {
 
   if (!userData) return notFound();
 
-  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days-2/tickets/${userData.githubHandle}`;
+  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days/tickets/${userData.githubHandle}`;
 
   return (
     <Container

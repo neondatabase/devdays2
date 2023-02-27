@@ -5,8 +5,8 @@ import Button from 'components/shared/button';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import GithubIcon from 'components/shared/header/images/header-github.inline.svg';
 import LuminousBack from 'components/shared/subscription-form/icons/luminous-button-back.inline.svg';
-import DesktopBlankTicketIllustration from 'images/developer-days-2/blank-ticket-desktop.svg';
-import MobileBlankTicketIllustration from 'images/developer-days-2/blank-ticket-mobile.svg';
+import DesktopBlankTicketIllustration from 'images/developer-days/blank-ticket-desktop.svg';
+import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mobile.svg';
 
 const GithubRegistrationStep = () => (
   <>

@@ -52,33 +52,29 @@ const colorVariants = [
   {
     id: 1,
     title: 'Color variant 1',
-    image: '/_next/image?url=/images/developer-days-2/ticket-variant-1.png&w=1920&q=75',
-    mobileImage:
-      '/_next/image?url=/images/developer-days-2/ticket-variant-1-mobile.png&w=1920&q=75',
+    image: '/_next/image?url=/images/developer-days/ticket-variant-1.png&w=1920&q=75',
+    mobileImage: '/_next/image?url=/images/developer-days/ticket-variant-1-mobile.png&w=1920&q=75',
     buttonColorClass: 'before:bg-color-picker-variant-1',
   },
   {
     id: 2,
     title: 'Color variant 2',
-    image: '/_next/image?url=/images/developer-days-2/ticket-variant-2.png&w=1920&q=75',
-    mobileImage:
-      '/_next/image?url=/images/developer-days-2/ticket-variant-2-mobile.png&w=1920&q=75',
+    image: '/_next/image?url=/images/developer-days/ticket-variant-2.png&w=1920&q=75',
+    mobileImage: '/_next/image?url=/images/developer-days/ticket-variant-2-mobile.png&w=1920&q=75',
     buttonColorClass: 'before:bg-color-picker-variant-2',
   },
   {
     id: 3,
     title: 'Color variant 3',
-    image: '/_next/image?url=/images/developer-days-2/ticket-variant-3.png&w=1920&q=75',
-    mobileImage:
-      '/_next/image?url=/images/developer-days-2/ticket-variant-3-mobile.png&w=1920&q=75',
+    image: '/_next/image?url=/images/developer-days/ticket-variant-3.png&w=1920&q=75',
+    mobileImage: '/_next/image?url=/images/developer-days/ticket-variant-3-mobile.png&w=1920&q=75',
     buttonColorClass: 'before:bg-color-picker-variant-3',
   },
   {
     id: 4,
     title: 'Color variant 4',
-    image: '/_next/image?url=/images/developer-days-2/ticket-variant-4.png&w=1920&q=75',
-    mobileImage:
-      '/_next/image?url=/images/developer-days-2/ticket-variant-4-mobile.png&w=1920&q=75',
+    image: '/_next/image?url=/images/developer-days/ticket-variant-4.png&w=1920&q=75',
+    mobileImage: '/_next/image?url=/images/developer-days/ticket-variant-4-mobile.png&w=1920&q=75',
     buttonColorClass: 'before:bg-color-picker-variant-4',
   },
 ];
