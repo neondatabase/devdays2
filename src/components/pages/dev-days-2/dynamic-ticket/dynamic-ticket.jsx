@@ -145,6 +145,8 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
   }, []);
 
   const onMouseLeave = useCallback(() => {
+    // Note: movement is measuring by percents from 0 (left side) to 100 (right side).
+    // By default value is 50 percent - without move to any sides
     ticketRef.current.style.setProperty('--percent', 50);
   }, []);
 
