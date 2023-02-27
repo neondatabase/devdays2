@@ -220,7 +220,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colo
                 <p className="font-sans text-[26px] font-semibold leading-none text-white">
                   {name}
                 </p>
-                <p className="font-mono text-base text-white">/{githubHandle}</p>
+                <p className="font-mono text-base text-white">@{githubHandle}</p>
               </div>
             </div>
             <div className="absolute bottom-8 left-8 z-10 flex items-center 2xl:bottom-12 lg:bottom-6 sm:left-6 sm:bottom-14 xxs:left-2">
