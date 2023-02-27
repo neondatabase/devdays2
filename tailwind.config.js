@@ -19,7 +19,7 @@ module.exports = {
       inherit: 'inherit',
       current: 'currentColor',
       transparent: 'transparent',
-      black: '#080808',
+      black: '#000',
       white: '#ffffff',
       primary: {
         1: '#00e699',
@@ -132,16 +132,19 @@ module.exports = {
         },
         'webgl-brightness': {
           '0%': {
-            filter: 'saturate(0)',
+            filter: 'brightness(0.3) saturate(0)',
+          },
+          '33%': {
+            filter: 'brightness(1.3) saturate(0.3)',
           },
           '100%': {
-            filter: 'saturate(1)',
+            filter: 'brightness(1) saturate(1)',
           },
         },
       }),
       animation: {
-        'text-blink': 'text-blink 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-        'webgl-brightness': 'webgl-brightness 3s linear',
+        'text-blink': 'text-blink 1.5s cubic-bezier(0, 0.35, 0.35, 1)',
+        'webgl-brightness': 'webgl-brightness 3s cubic-bezier(0, 0.35, 0.35, 1)',
       },
       typography: () => ({
         DEFAULT: {

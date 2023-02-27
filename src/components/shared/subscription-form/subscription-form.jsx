@@ -271,7 +271,6 @@ const SubscriptionForm = ({
 SubscriptionForm.propTypes = {
   className: PropTypes.string,
   formId: PropTypes.string.isRequired,
-  formId: PropTypes.string,
   successText: PropTypes.string,
   submitButtonText: PropTypes.string,
   size: PropTypes.oneOf(['sm', 'md']),

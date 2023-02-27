@@ -25,7 +25,7 @@ const SocialShare = ({ className = null, url }) => (
     <div className="flex gap-4">
       {links.map(({ icon: Icon, tag: Tag, title }, index) => (
         <Tag url={url} key={index}>
-          <div className="social-share relative flex gap-3 py-4 px-7 shadow-social transition duration-200 hover:border-white xs:py-2 xs:px-3">
+          <div className="social-share relative flex gap-3 py-4 px-7 shadow-social transition duration-200 xs:py-2 xs:px-3">
             <Icon className="h-[27px]" />
             <p className="font-sans text-xl font-medium text-white">{title}</p>
           </div>
