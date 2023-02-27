@@ -53,7 +53,7 @@ const SubscriptionForm = ({
 }) => {
   const [email, setEmail] = useState('');
   const [formState, setFormState] = useState('default');
-  const [submittedEmail, setSubmittedEmail] = useLocalStorage(localStorageKey, []);
+  const [submittedEmails, setSubmittedEmails] = useLocalStorage(localStorageKey, []);
   const [errorMessage, setErrorMessage] = useState('');
   const [hubspotutk] = useCookie('hubspotutk');
   const { href } = useLocation();
@@ -81,19 +81,14 @@ const SubscriptionForm = ({
       setErrorMessage('Please enter your email');
     } else if (!emailRegexp.test(email)) {
       setErrorMessage('Please enter a valid email');
-    } else if (submittedEmail.includes(email)) {
-      setErrorMessage('You have already submitted this email');
+    } else if (submittedEmails.includes(email)) {
+      // show github cta right away
+      onSuccess();
     } else {
-      setSubmittedEmail([...submittedEmail, email]);
       setErrorMessage('');
       setFormState('loading');
 
       const loadingAnimationStartedTime = Date.now();
-      // @TODO: remove me
-      if (!formId) {
-        onSuccess(email);
-        return;
-      }
       sendHubspotFormData({
         formId,
         context,
@@ -106,6 +101,9 @@ const SubscriptionForm = ({
       })
         .then((response) => {
           if (response.ok) {
+            // preserve submitted email only on
+            // submission success
+            setSubmittedEmails([...submittedEmails, email]);
             doNowOrAfterSomeTime(() => {
               setFormState('success');
               setEmail(successText);
@@ -272,8 +270,7 @@ const SubscriptionForm = ({
 
 SubscriptionForm.propTypes = {
   className: PropTypes.string,
-  // @TODO: remove me
-  // formId: PropTypes.string.isRequired,
+  formId: PropTypes.string.isRequired,
   formId: PropTypes.string,
   successText: PropTypes.string,
   submitButtonText: PropTypes.string,
