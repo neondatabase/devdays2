@@ -113,8 +113,9 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
       await fetch(`/api/auth/session?colorSchema=${selectedColorSchema}`);
     }, 1000);
 
+    // eslint-disable-next-line consistent-return
     return () => clearTimeout(updateUserDataTimer);
-    // eslint-disable-next-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedColorSchema]);
 
   const handleColorClick = async (e) => {
