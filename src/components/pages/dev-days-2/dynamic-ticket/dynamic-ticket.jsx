@@ -214,7 +214,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                   {name}
                 </b>
                 <span className="col-start-2 font-mono text-base leading-none text-white md:text-sm">
-                  /{githubHandle}
+                  @{githubHandle}
                 </span>
               </p>
               <footer className="relative order-3 flex items-center gap-3 md:mt-auto">
