@@ -59,6 +59,11 @@ module.exports = {
       },
     });
 
+    config.module.rules.push({
+      test: /\.wasm$/,
+      use: ['url-loader'],
+    });
+
     return config;
   },
 };

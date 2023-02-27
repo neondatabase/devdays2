@@ -64,7 +64,7 @@ const SEO = ({
       ))}
 
       {preloadAssets.map((item, index) => (
-        <link key={index} rel="preload" href={item} as="image" crossOrigin="anonymous" />
+        <link key={index} rel="preload" href={item} as="image" crossOrigin="true" />
       ))}
     </>
   );
