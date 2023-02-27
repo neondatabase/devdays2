@@ -263,7 +263,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
       </div>
 
       {status === 'authenticated' && data?.colorSchema && (
-        <div className="mt-8 flex items-center gap-3 xl:justify-center sm:mt-0 sm:mb-7">
+        <div className="relative mt-8 flex items-center gap-3 xl:justify-center sm:mt-0 sm:mb-7">
           <p className="text-sm font-thin text-gray-7">Pick a color:</p>
           <div className="flex gap-5">
             {colorVariants.map((item, i) => {
