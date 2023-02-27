@@ -42,6 +42,10 @@
 
   @apply bg-transparent bg-no-repeat;
 
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-image-slice: 1;
+
   transform: rotateY(var(--rotate)) scaleX(var(--scale));
   will-change: transform;
   transition: transform 0.1s linear;
@@ -55,6 +59,8 @@
   }
 
   &.variant-1 {
+    border-image-source: linear-gradient(90deg, #000 5%, #00d1ff 50%, #000 95%);
+
     background-image: url('/images/developer-days-2/elephant-1.png'),
       url('/images/developer-days-2/ticket-pattern-1.svg'),
       url('/images/developer-days-2/ticket-plate-left.svg'),
@@ -69,6 +75,8 @@
   }
 
   &.variant-2 {
+    border-image-source: linear-gradient(90deg, #000 5%, #33ffbb 50%, #000 95%);
+
     background-image: url('/images/developer-days-2/elephant-2.png'),
       url('/images/developer-days-2/ticket-pattern-2.svg'),
       url('/images/developer-days-2/ticket-plate-left.svg'),
@@ -83,6 +91,8 @@
   }
 
   &.variant-3 {
+    border-image-source: linear-gradient(90deg, #000 5%, #7266ff 50%, #000 95%);
+
     background-image: url('/images/developer-days-2/elephant-3.png'),
       url('/images/developer-days-2/ticket-pattern-3.svg'),
       url('/images/developer-days-2/ticket-plate-left.svg'),
@@ -97,6 +107,8 @@
   }
 
   &.variant-4 {
+    border-image-source: linear-gradient(90deg, #000 5%, #ccccff 50%, #000 95%);
+
     background-image: url('/images/developer-days-2/elephant-4.png'),
       url('/images/developer-days-2/ticket-pattern-4.svg'),
       url('/images/developer-days-2/ticket-plate-left.svg'),
