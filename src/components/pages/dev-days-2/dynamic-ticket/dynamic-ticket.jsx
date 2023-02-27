@@ -3,8 +3,7 @@
 import clsx from 'clsx';
 import { AnimatePresence, motion, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
-// TODO: uncomment
-// import { useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import PropTypes from 'prop-types';
 import { useState, useEffect, useRef, useCallback } from 'react';
 
@@ -72,19 +71,12 @@ const colorVariants = [
 ];
 
 const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) => {
-  // TODO: uncomment
-  // const {data, status} = useSession();
+  const { data, status } = useSession();
   const [currentColorSchema, setCurrentColorSchema] = useState('1');
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
   const prevColor = usePrevious(currentColorSchema);
   const gradientControls = useAnimationControls();
   const ticketControls = useAnimationControls();
-
-  const status = 'authenticated';
-
-  const data = {
-    colorSchema: '1',
-  };
 
   useEffect(() => {
     if (prevColor !== currentColorSchema) {

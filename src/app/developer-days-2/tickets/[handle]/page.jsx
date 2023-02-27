@@ -5,19 +5,9 @@ import Container from 'components/shared/container';
 import SocialShare from 'components/shared/social-share';
 import prisma from 'utils/prisma';
 
-// TODO: uncomment
-// eslint-disable-next-line no-unused-vars
 const TicketPage = async ({ params }) => {
-  // TODO: uncomment
-  // const userData = await getTicketData(params.handle);
-
-  const userData = {
-    id: 8,
-    email: 'please@no.spam',
-    image: 'https://i.pravatar.cc/128',
-    name: 'Mr. Tester',
-    githubHandle: 'mr-tester',
-  };
+  // eslint-disable-next-line no-use-before-define
+  const userData = await getTicketData(params.handle);
 
   if (!userData) return notFound();
 
@@ -47,8 +37,6 @@ const TicketPage = async ({ params }) => {
 
 export default TicketPage;
 
-// TODO: uncomment
-// eslint-disable-next-line no-unused-vars
 async function getTicketData(handle) {
   let userData = null;
 
