@@ -35,7 +35,7 @@ const appearColumnVariants = {
 const appearSceneVariants = {
   initial: {
     translateX: -40,
-    translateY: 30,
+    translateY: 120,
     rotateX: 10,
     originX: 0,
   },
