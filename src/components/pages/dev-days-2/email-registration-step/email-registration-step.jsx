@@ -36,14 +36,10 @@ const appearSceneVariants = {
   initial: {
     translateX: -40,
     translateY: 50,
-    rotateX: 10,
-    originX: 0,
   },
   appear: {
     translateX: -40,
     translateY: 0,
-    rotateX: 0,
-    originX: 0,
     transition: {
       delay: 1,
       duration: 3,
