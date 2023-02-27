@@ -5,7 +5,7 @@ import SEO_DATA from 'constants/seo-data';
 const NotFoundPage = () => (
   <>
     <SEO {...SEO_DATA[404]} />
-    <Hero />
+    <Hero isTicketPage />
   </>
 );
 

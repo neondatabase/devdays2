@@ -70,16 +70,16 @@ const colorVariants = [
   },
 ];
 
-const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) => {
+const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colorSchema } }) => {
   const { data, status } = useSession();
-  const [currentColorSchema, setCurrentColorSchema] = useState('1');
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
-  const prevColor = usePrevious(currentColorSchema);
+  const prevColor = usePrevious(selectedColorSchema);
+  const currentColorSchema = selectedColorSchema || colorSchema;
   const gradientControls = useAnimationControls();
   const ticketControls = useAnimationControls();
 
   useEffect(() => {
-    if (prevColor !== currentColorSchema) {
+    if (prevColor !== selectedColorSchema) {
       ticketControls.start('scaleOut').then(() => {
         ticketControls.start('initial');
       });
@@ -88,13 +88,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
         gradientControls.start('initial');
       });
     }
-  }, [prevColor, currentColorSchema, gradientControls, ticketControls]);
-
-  useEffect(() => {
-    setCurrentColorSchema((prevTab) =>
-      data?.colorSchema && data?.colorSchema !== prevTab ? data?.colorSchema : prevTab
-    );
-  }, [data?.colorSchema]);
+  }, [prevColor, selectedColorSchema, gradientControls, ticketControls]);
 
   useEffect(() => {
     if (!selectedColorSchema) return;
@@ -113,7 +107,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
   const handleColorClick = async (e) => {
     data.colorSchema = e.target.id;
 
-    setCurrentColorSchema(e.target.id);
+    // setCurrentColorSchema(e.target.id);
     setSelectedColorSchema(e.target.id);
   };
 
@@ -170,12 +164,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
               ? false
               : ticketControls
           }
-          variants={
-            (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
-            status !== 'authenticated'
-              ? false
-              : scaleAndMoveTicketVariants
-          }
+          variants={scaleAndMoveTicketVariants}
         >
           <div className="ticket-wrapper h-[388px] w-[790px] 2xl:h-[330px] 2xl:w-[670px] md:h-[700px] md:w-[334px]">
             <section className="ticket-frame flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-3xl p-7 text-white md:p-5 md:pt-16 md:pb-20 md:before:hidden sm:justify-start">
@@ -238,7 +227,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
               return (
                 <motion.button
                   className={clsx(
-                    'border-1 relative flex h-9 w-9 items-center justify-center rounded-full border border-gray-4 before:h-4 before:w-4 before:rounded-full',
+                    'relative flex h-9 w-9 items-center justify-center rounded-full shadow-[0_0_0_1px_rgba(255,255,255,0.1)] before:h-4 before:w-4 before:rounded-full',
                     buttonColorClass
                   )}
                   key={i}
@@ -250,7 +239,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
                   <AnimatePresence>
                     {isActive && (
                       <motion.span
-                        className="border-1 absolute left-0 top-0 z-10 h-full w-full rounded-full border border-gray-8"
+                        className="absolute left-0 top-0 z-10 h-full w-full rounded-full shadow-[0_0_0_1px_rgba(255,255,255,0.5)]"
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.9 }}
@@ -263,7 +252,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
               );
             })}
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );
@@ -276,6 +265,7 @@ DynamicTicket.propTypes = {
     image: PropTypes.string,
     name: PropTypes.string,
     githubHandle: PropTypes.string,
+    colorSchema: PropTypes.string,
   }).isRequired,
 };
 

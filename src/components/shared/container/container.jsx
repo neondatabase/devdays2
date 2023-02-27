@@ -14,7 +14,7 @@ const styles = {
 
 const Container = forwardRef(({ className = null, size, children, ...otherProps }, ref) => (
   <div
-    className={clsx('relative mx-auto lg:max-w-none lg:px-8 md:px-4', styles.size[size], className)}
+    className={clsx('relative mx-auto px-14 lg:px-8 md:px-4', className)}
     {...otherProps}
     ref={ref}
   >

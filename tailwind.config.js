@@ -13,13 +13,13 @@ module.exports = {
       md: { max: '768px' },
       sm: { max: '639px' },
       xs: { max: '414px' },
-      xxs: { max: '360px' },
+      xxs: { max: '374px' },
     },
     colors: {
       inherit: 'inherit',
       current: 'currentColor',
       transparent: 'transparent',
-      black: '#080808',
+      black: '#000',
       white: '#ffffff',
       primary: {
         1: '#00e699',
@@ -127,8 +127,8 @@ module.exports = {
           '0%': {
             filter: 'brightness(0.3) saturate(0)',
           },
-          '50%': {
-            filter: 'brightness(1.3) saturate(0.5)',
+          '33%': {
+            filter: 'brightness(1.3) saturate(0.3)',
           },
           '100%': {
             filter: 'brightness(1) saturate(1)',
@@ -136,7 +136,7 @@ module.exports = {
         },
       }),
       animation: {
-        'text-blink': 'text-blink 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+        'text-blink': 'text-blink 1.5s cubic-bezier(0, 0.35, 0.35, 1)',
         'webgl-brightness': 'webgl-brightness 3s cubic-bezier(0, 0.35, 0.35, 1)',
       },
       typography: () => ({

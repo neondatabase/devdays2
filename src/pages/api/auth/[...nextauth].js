@@ -19,10 +19,6 @@ const createOptions = (req) => ({
         const providerAccountId = session.user.image.split('/').slice(-1)[0].split('?')[0];
 
         try {
-          // @TODO: how to shadow next auth types in js project?
-          // we need to extend type and work with it,
-          // not pull it manually
-          // @TODO: beware of rate limits
           userData = await fetch(`https://api.github.com/user/${providerAccountId}`, {
             headers: {
               Accept: 'application/vnd.github+json',

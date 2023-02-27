@@ -1,7 +1,3 @@
-import { redirect } from 'next/navigation';
-
-const HomePage = () => {
-  redirect('/developer-days-2');
-};
+const HomePage = () => null;
 
 export default HomePage;

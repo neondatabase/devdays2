@@ -50,6 +50,7 @@ async function getTicketData(handle) {
           name: true,
           email: true,
           githubHandle: true,
+          colorSchema: true,
           image: true,
           id: true,
         },

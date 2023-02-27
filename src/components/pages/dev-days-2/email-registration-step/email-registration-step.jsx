@@ -11,7 +11,6 @@ import BlinkingText from 'components/shared/blinking-text';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import SubscriptionForm from 'components/shared/subscription-form';
 import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
-import ElephantTusksIllustration from 'images/developer-days-2/elephant-tusk.png';
 import ElephantIllustration from 'images/developer-days-2/ticket-hero-elephant.png';
 
 const appearColumnVariants = {
@@ -35,17 +34,16 @@ const appearColumnVariants = {
 
 const appearSceneVariants = {
   initial: {
-    translateY: 30,
-    rotateX: 10,
-    originX: 0,
+    translateX: -40,
+    translateY: 50,
   },
   appear: {
-    translateY: -10,
-    rotateX: 0,
-    originX: 0,
+    translateX: -40,
+    translateY: 0,
     transition: {
+      delay: 1,
       duration: 3,
-      ease: [0, 0.35, 0.35, 1],
+      ease: [0.4, 0, 0, 1],
     },
   },
 };
@@ -72,8 +70,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
 
   const titleContent = (
     <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
-      {'Neon Dev Days 2023'.split('').map((letter, index) =>
-        index === 8 ? (
+      {'Developer Days'.split('').map((letter, index) =>
+        index === 9 ? (
           <br className="lg:hidden" key={index} />
         ) : (
           <span className="animate-text-blink" style={{ animationPlayState: 'paused' }} key={index}>
@@ -87,26 +85,26 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
   return (
     <>
       <motion.div
-        className="w-5/12 xl:w-1/2 lg:flex lg:w-full lg:flex-col lg:items-center"
+        className="relative z-30 w-5/12 xl:w-1/2 lg:mt-10 lg:flex lg:w-full lg:flex-col lg:items-center"
         initial={window.innerWidth <= '1024' ? { opacity: 1 } : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'linear' }}
       >
-        <span className="rounded-[50px] bg-secondary-2 py-1 px-3 text-sm font-semibold uppercase leading-snug dark:text-black sm:mt-0">
-          Spring 2023
+        <span className="rounded-[50px] bg-secondary-2 py-1 px-3 text-sm font-semibold uppercase leading-snug dark:text-black sm:mt-0 sm:text-xs">
+          March 2023
         </span>
         <h1
-          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:text-center lg:text-[78px] md:text-[58px] sm:max-w-[80%] sm:text-[52px]"
+          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:text-center lg:text-[78px] md:text-[58px] sm:mt-2 sm:max-w-[80%] sm:text-[52px] xxs:max-w-[100%]"
           ref={titleRef}
         >
-          {window.innerWidth <= '1024' ? 'Neon Dev Days 2023' : titleContent}
+          {window.innerWidth <= '1024' ? 'Developer Days' : titleContent}
         </h1>
-        <p className="mt-4 font-mono text-xl font-light tracking-tighter text-white lg:max-w-md lg:text-center lg:text-lg md:text-base sm:max-w-[80%]">
-          Join us at <time dateTime="2023-03-26 10:30">10:30AM PT, March 26</time> to hear more
-          about latest updates from our dev team.
+        <p className="mt-4 max-w-xl font-mono text-xl font-light tracking-tighter text-white lg:text-center lg:text-lg md:text-base sm:max-w-[80%] xxs:max-w-[100%]">
+          Join us on <time dateTime="2023-03-28 10:30">March 28th, 9 a.m. PT</time> to learn more
+          about latest of Serverless Postgres
         </p>
         <SubscriptionForm
-          className="mt-12 lg:mt-8"
+          className="mt-12 lg:mt-8 xs:mt-4"
           successText="Thanks for registering!"
           submitButtonText="Register"
           size="sm"
@@ -121,29 +119,34 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         animate={window.innerWidth <= '1024' ? false : columnControls}
         variants={window.innerWidth <= '1024' ? false : appearColumnVariants}
       >
-        <div className="relative min-h-[740px] w-[1010px] xl:hidden" style={{ perspective: 800 }}>
+        <div className="relative min-h-[760px] w-[1010px] xl:hidden" style={{ perspective: 800 }}>
           <motion.canvas
-            className="webgl relative z-20 animate-webgl-brightness"
+            className="webgl relative z-20 animate-webgl-brightness mix-blend-lighten"
             initial="initial"
             animate={sceneControls}
             variants={appearSceneVariants}
           />
           <CursorTrackingWrapper
             className="absolute inset-0 z-30 animate-webgl-brightness"
-            xMovement={2}
-            yMovement={2}
+            xMovement={1}
+            yMovement={1}
           >
             <Image
               className="h-full min-h-[740px] w-full"
-              src={ElephantTusksIllustration}
+              src="/images/developer-days-2/elephant-tusk.png"
               width={1010}
               height={740}
               alt="Tusks illustration"
+              priority
             />
           </CursorTrackingWrapper>
-          <Script src="/static/elephant-webgl-scene.js" type="module" strategy="afterInteractive" />
+          <Script src="/static/elephant-webgl-scene.js" type="module" strategy="lazyOnload" />
         </div>
-        <Image className="hidden xl:block" src={ElephantIllustration} alt="Elephant illustration" />
+        <Image
+          className="remove-image-loading-visual hidden xl:block"
+          src={ElephantIllustration}
+          alt="Elephant illustration"
+        />
       </motion.div>
     </>
   );

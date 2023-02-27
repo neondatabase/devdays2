@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useCookie, useLocation } from 'react-use';
+import { Alignment, Fit, Layout, useRive } from 'rive-react';
 
 import Button from 'components/shared/button';
 import useLocalStorage from 'hooks/use-local-storage';
 import { doNowOrAfterSomeTime, emailRegexp, sendHubspotFormData } from 'utils/forms';
 
-import LuminousBack from './icons/luminous-back.inline.svg';
 import CheckIcon from './icons/subscription-form-check.inline.svg';
 import ErrorIcon from './icons/subscription-form-error.inline.svg';
 import SendIcon from './icons/subscription-form-send.inline.svg';
@@ -53,7 +53,7 @@ const SubscriptionForm = ({
 }) => {
   const [email, setEmail] = useState('');
   const [formState, setFormState] = useState('default');
-  const [submittedEmail, setSubmittedEmail] = useLocalStorage(localStorageKey, []);
+  const [submittedEmails, setSubmittedEmails] = useLocalStorage(localStorageKey, []);
   const [errorMessage, setErrorMessage] = useState('');
   const [hubspotutk] = useCookie('hubspotutk');
   const { href } = useLocation();
@@ -64,6 +64,16 @@ const SubscriptionForm = ({
     pageUri: href,
   };
 
+  const { RiveComponent } = useRive({
+    src: '/animations/input-lines.riv',
+    autoplay: true,
+    stateMachines: 'State Machine 1',
+    layout: new Layout({
+      fit: Fit.FitWidth,
+      alignment: Alignment.TopCenter,
+    }),
+  });
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -71,19 +81,14 @@ const SubscriptionForm = ({
       setErrorMessage('Please enter your email');
     } else if (!emailRegexp.test(email)) {
       setErrorMessage('Please enter a valid email');
-    } else if (submittedEmail.includes(email)) {
-      setErrorMessage('You have already submitted this email');
+    } else if (submittedEmails.includes(email)) {
+      // show github cta right away
+      onSuccess();
     } else {
-      setSubmittedEmail([...submittedEmail, email]);
       setErrorMessage('');
       setFormState('loading');
 
       const loadingAnimationStartedTime = Date.now();
-      // @TODO: remove me
-      if (!formId) {
-        onSuccess(email);
-        return;
-      }
       sendHubspotFormData({
         formId,
         context,
@@ -96,6 +101,9 @@ const SubscriptionForm = ({
       })
         .then((response) => {
           if (response.ok) {
+            // preserve submitted email only on
+            // submission success
+            setSubmittedEmails([...submittedEmails, email]);
             doNowOrAfterSomeTime(() => {
               setFormState('success');
               setEmail(successText);
@@ -134,7 +142,7 @@ const SubscriptionForm = ({
           ease: 'linear',
         },
         width: {
-          duration: 1,
+          duration: 2,
           ease: [0, 0.35, 0.35, 1],
         },
       }}
@@ -143,7 +151,7 @@ const SubscriptionForm = ({
     >
       <input
         className={clsx(
-          'remove-autocomplete-styles placeholder-font-normal relative z-20 block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 lg:w-full lg:pl-5 sm:pr-20',
+          'remove-autocomplete-styles relative z-20 block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 placeholder:font-normal lg:w-full lg:pl-5 sm:pr-20',
           errorMessage && 'border-secondary-1',
           sizeClassNames[size].input
         )}
@@ -156,10 +164,7 @@ const SubscriptionForm = ({
         onChange={handleInputChange}
       />
 
-      <LuminousBack
-        className="pointer-events-none absolute -top-10 left-1/2 z-10 h-auto w-[115%] -translate-x-1/2 xs:-top-4 xs:w-[120%]"
-        aria-hidden="true"
-      />
+      <RiveComponent className="pointer-events-none absolute -top-8 left-1/2 z-10 w-[120%] -translate-x-1/2 xs:top-0 [&>*]:!min-h-[360px]" />
 
       {/* Error message */}
       <AnimatePresence>
@@ -216,9 +221,9 @@ const SubscriptionForm = ({
             variants={appearAndExitAnimationVariants}
             aria-hidden
           >
-            <div className="h-[58px] w-[58px] rounded-full border-[6px] border-gray-2 2xl:h-[48px] 2xl:w-[48px] xl:h-[42px] xl:w-[42px]" />
+            <div className="h-[48px] w-[48px] rounded-full border-[3px] border-gray-2 2xl:h-[40px] 2xl:w-[40px]" />
             <svg
-              className="absolute top-1/2 left-1/2 2xl:h-[48px] 2xl:w-[48px] xl:h-[42px] xl:w-[42px]"
+              className="absolute top-1/2 left-1/2 h-[48px] w-[48px] 2xl:h-[40px] 2xl:w-[40px]"
               width="58"
               height="58"
               viewBox="0 0 58 58"
@@ -230,7 +235,7 @@ const SubscriptionForm = ({
                 d="M3 29C3 43.3594 14.6406 55 29 55C43.3594 55 55 43.3594 55 29C55 14.6406 43.3594 3 29 3C14.6406 3 3 14.6406 3 29Z"
                 strokeLinecap="round"
                 stroke="#00e699"
-                strokeWidth="6"
+                strokeWidth="3"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1, transition: { duration: 2, delay: 0.2 } }}
               />
@@ -265,9 +270,7 @@ const SubscriptionForm = ({
 
 SubscriptionForm.propTypes = {
   className: PropTypes.string,
-  // @TODO: remove me
-  // formId: PropTypes.string.isRequired,
-  formId: PropTypes.string,
+  formId: PropTypes.string.isRequired,
   successText: PropTypes.string,
   submitButtonText: PropTypes.string,
   size: PropTypes.oneOf(['sm', 'md']),

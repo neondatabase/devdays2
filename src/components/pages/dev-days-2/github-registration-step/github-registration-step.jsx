@@ -4,18 +4,18 @@ import { signIn } from 'next-auth/react';
 import Button from 'components/shared/button';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import GithubIcon from 'components/shared/header/images/header-github.inline.svg';
-import LuminousBack from 'components/shared/subscription-form/icons/luminous-back.inline.svg';
+import LuminousBack from 'components/shared/subscription-form/icons/luminous-button-back.inline.svg';
 import DesktopBlankTicketIllustration from 'images/developer-days-2/blank-ticket-desktop.svg';
 import MobileBlankTicketIllustration from 'images/developer-days-2/blank-ticket-mobile.svg';
 
 const GithubRegistrationStep = () => (
   <>
-    <div className="w-6/12 xl:w-1/2 lg:flex lg:w-full lg:flex-col lg:items-center">
+    <div className="w-6/12 xl:w-1/2 lg:mt-10 lg:flex lg:w-full lg:flex-col lg:items-center">
       <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-6xl lg:text-center lg:text-[78px] md:text-[58px] sm:text-[52px]">
         You’re In. <br className="lg:hidden sm:block" />
         Make it Unique.
       </h2>
-      <p className="mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:mt-6 lg:text-center lg:text-lg md:text-base">
+      <p className="mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
         Generate a unique ticket image with your GitHub profile.
       </p>
       <div className="mt-12 flex items-center lg:mt-10 lg:flex-col sm:mt-6">
@@ -37,7 +37,7 @@ const GithubRegistrationStep = () => (
             <span>Generate with GitHub</span>
           </Button>
           <LuminousBack
-            className="pointer-events-none absolute -top-2 left-1/2 z-10 h-[200%] w-[130%] -translate-x-1/2 xs:-top-4 xs:w-[120%]"
+            className="pointer-events-none absolute -top-12 left-1/2 z-10 -translate-x-1/2 md:-top-8"
             aria-hidden="true"
           />
         </div>
@@ -50,14 +50,14 @@ const GithubRegistrationStep = () => (
       <CursorTrackingWrapper>
         <Image
           className="mx-auto sm:hidden"
-          width={776}
-          height={380}
+          width={792}
+          height={390}
           src={DesktopBlankTicketIllustration}
           alt="Blank ticket desktop illustration"
         />
       </CursorTrackingWrapper>
       <Image
-        className="mx-auto hidden sm:block"
+        className="remove-image-loading-visual mx-auto hidden min-h-[736px] sm:block"
         width={346}
         height={702}
         src={MobileBlankTicketIllustration}
