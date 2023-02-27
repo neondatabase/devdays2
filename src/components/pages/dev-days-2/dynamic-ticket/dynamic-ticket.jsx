@@ -137,7 +137,6 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
     };
   }, []);
 
-  // TODO: think about pointer events
   const onMouseMove = useCallback((evt) => {
     const percent = Math.floor(
       Math.abs(evt.clientX - measurementRef.current.x) / (measurementRef.current.width / 100)
