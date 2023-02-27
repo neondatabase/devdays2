@@ -25,7 +25,7 @@ const TicketPage = async ({ params }) => {
 
   return (
     <Container
-      className="flex min-h-[inherit] items-center justify-between gap-12 py-4 lg:flex-col lg:pb-24 lg:pt-16"
+      className="flex min-h-[inherit] items-center justify-between gap-12 py-4 lg:flex-col lg:justify-start lg:pb-24 lg:pt-16"
       size="lg"
     >
       <div className="relative z-10 w-full max-w-[620px] pb-9 lg:flex lg:flex-col lg:items-center">
