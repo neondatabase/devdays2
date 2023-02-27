@@ -21,8 +21,8 @@ const links = [
 ];
 
 const SocialShare = ({ className = null, url }) => (
-  <div className={clsx('flex items-center', className)}>
-    <div className="flex gap-4">
+  <div className={clsx('pointer-events-none relative z-50 flex items-center', className)}>
+    <div className="pointer-events-auto flex gap-4">
       {links.map(({ icon: Icon, tag: Tag, title }, index) => (
         <Tag url={url} key={index}>
           <div className="social-share relative flex gap-3 py-4 px-7 shadow-social transition duration-200 hover:border-white xs:py-2 xs:px-3">

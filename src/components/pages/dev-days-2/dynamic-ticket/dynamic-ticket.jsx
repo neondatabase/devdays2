@@ -12,11 +12,11 @@ import usePrevious from 'hooks/use-previous';
 
 const appearAndExitGradientVariants = {
   initial: {
-    opacity: 0,
+    display: 'none',
     translateX: '-100%',
   },
   move: {
-    opacity: 1,
+    display: 'block',
     translateX: '100%',
     transition: {
       duration: 0.5,
@@ -26,7 +26,7 @@ const appearAndExitGradientVariants = {
       },
     },
     transitionEnd: {
-      opacity: 0,
+      display: 'none',
     },
   },
 };
@@ -128,21 +128,24 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
   const ticketRef = useRef(null);
   const measurementRef = useRef({ x: 0, width: 0 });
 
-  // TODO: think about updating values by window resize
   useEffect(() => {
-    const gap = getComputedStyle(ticketRef.current).getPropertyValue('--translateGap');
+    const gap = getComputedStyle(ticketRef.current).getPropertyValue('--hoverGap');
 
     measurementRef.current = {
-      x: ticketRef.current.getBoundingClientRect().left,
+      x: ticketRef.current.getBoundingClientRect().left - gap,
       width: ticketRef.current.clientWidth + gap * 2,
     };
   }, []);
 
   const onMouseMove = useCallback((evt) => {
-    const percent = Math.floor(
-      Math.abs(evt.clientX - measurementRef.current.x) / (measurementRef.current.width / 100)
+    const percent = Math.round(
+      (evt.clientX - measurementRef.current.x) / (measurementRef.current.width / 100)
     );
-    ticketRef.current.style.setProperty('--percent', percent);
+    ticketRef.current.style.setProperty(
+      '--percent',
+      // eslint-disable-next-line no-nested-ternary
+      percent < 0 ? 0 : percent > 100 ? 100 : percent
+    );
   }, []);
 
   const onMouseLeave = useCallback(() => {
@@ -152,14 +155,16 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
   }, []);
 
   return (
-    <div className={clsx('relative sm:flex sm:flex-col-reverse')}>
+    <div
+      className={clsx('ticket sm:flex sm:flex-col-reverse', {
+        'ticket-variant-1': currentColorSchema === '1',
+        'ticket-variant-2': currentColorSchema === '2',
+        'ticket-variant-3': currentColorSchema === '3',
+        'ticket-variant-4': currentColorSchema === '4',
+      })}
+    >
       <div
-        className={clsx('ticket-hover-aria relative z-0 before:z-20', {
-          'before:bg-ticket-back-variant-1': currentColorSchema === '1',
-          'before:bg-ticket-back-variant-2': currentColorSchema === '2',
-          'before:bg-ticket-back-variant-3': currentColorSchema === '3',
-          'before:bg-ticket-back-variant-4': currentColorSchema === '4',
-        })}
+        className={clsx('ticket-hover-aria')}
         ref={ticketRef}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
@@ -180,50 +185,18 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
               : scaleAndMoveTicketVariants
           }
         >
-          <div className="ticket-wrapper relative z-30 h-[388px] w-[790px] 2xl:h-[330px] 2xl:w-[670px] md:h-[700px] md:w-[334px]">
-            <section
-              className={clsx(
-                'ticket relative flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-3xl p-7 text-white md:p-5 md:pt-16 md:pb-20 md:before:hidden sm:justify-start',
-                {
-                  'variant-1': currentColorSchema === '1',
-                  'variant-2': currentColorSchema === '2',
-                  'variant-3': currentColorSchema === '3',
-                  'variant-4': currentColorSchema === '4',
-                }
-              )}
-            >
+          <div className="ticket-wrapper h-[388px] w-[790px] 2xl:h-[330px] 2xl:w-[670px] md:h-[700px] md:w-[334px]">
+            <section className="ticket-frame flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-3xl p-7 text-white md:p-5 md:pt-16 md:pb-20 md:before:hidden sm:justify-start">
               {status === 'authenticated' && (
                 <motion.span
                   initial="initial"
                   animate={gradientControls}
                   variants={appearAndExitGradientVariants}
-                  style={{
-                    position: 'absolute',
-                    width: '100%',
-                    height: '100%',
-                    top: 0,
-                    left: 0,
-                    backgroundImage: `linear-gradient(106deg, transparent 30%, ${
-                      currentColorSchema === '1'
-                        ? 'rgba(51, 255, 187, 0.8)'
-                        : currentColorSchema === '2'
-                        ? 'rgba(189, 244, 113, 0.8)'
-                        : currentColorSchema === '3'
-                        ? 'rgba(255, 153, 221, 0.8)'
-                        : 'rgba(204, 204, 255, 0.8)'
-                    } 60%, transparent 60%)`,
-                  }}
+                  className="flare absolute top-0 left-0 h-full w-full translate-x-full"
                 />
               )}
               <header className="lg:mal-[44px] relative order-2 ml-[44px] xl:ml-[38px] md:mt-5 md:ml-0">
-                <h2
-                  className={clsx('text-5xl sm:text-4xl', {
-                    'color-text-variant-1': currentColorSchema === '1',
-                    'color-text-variant-2': currentColorSchema === '2',
-                    'color-text-variant-3': currentColorSchema === '3',
-                    'color-text-variant-4': currentColorSchema === '4',
-                  })}
-                >
+                <h2 className="ticket-text text-5xl sm:text-4xl">
                   Neon Dev
                   <br />
                   Days 2023
@@ -263,9 +236,9 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle } }) 
       </div>
 
       {status === 'authenticated' && data?.colorSchema && (
-        <div className="relative mt-8 flex items-center gap-3 xl:justify-center sm:mt-0 sm:mb-7">
-          <p className="text-sm font-thin text-gray-7">Pick a color:</p>
-          <div className="flex gap-5">
+        <div className="mt-8 flex items-center gap-3 xl:justify-center sm:mt-0 sm:mb-7">
+          <p className="relative z-50 text-sm font-thin text-gray-7">Pick a color:</p>
+          <div className="relative z-50 flex gap-5">
             {colorVariants.map((item, i) => {
               const { id, title, buttonColorClass } = item;
               const isActive = currentColorSchema === `${id}`;

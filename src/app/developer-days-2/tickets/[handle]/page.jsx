@@ -29,16 +29,16 @@ const TicketPage = async ({ params }) => {
       size="lg"
     >
       <div className="w-full max-w-[620px] pb-9 lg:flex lg:flex-col lg:items-center">
-        <h1 className="pointer-events-none relative z-30 text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-[64px] lg:text-center">
+        <h1 className="pointer-events-none relative z-50 text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-[64px] lg:text-center">
           You’re In. <br className="lg:hidden sm:block" />
           Make it Unique.
         </h1>
-        <p className="mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
+        <p className="pointer-events-none mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
           Join us at <time dateTime="2023-03-26 10:30">10:30AM PT, March 26</time>
         </p>
         <SocialShare className="mt-12 sm:mt-6" url={shareUrl} />
       </div>
-      <div className="relative z-10 shrink-0">
+      <div className="shrink-0">
         <DynamicTicket userData={userData} />
       </div>
     </Container>
