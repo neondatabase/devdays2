@@ -85,7 +85,8 @@
     &.variant-2 {
       border-image-source: linear-gradient(90deg, #080808 5%, #33ffbb 50%, #080808 95%);
 
-      background-image: url('/images/developer-days-2/elephant-2.png'),
+      background-image: radial-gradient(rgba(255, 255, 255, 0.25) 0%, transparent 70%),
+        url('/images/developer-days-2/elephant-2.png'),
         url('/images/developer-days-2/ticket-pattern-2.svg'),
         url('/images/developer-days-2/ticket-plate-left.svg'),
         url('/images/developer-days-2/ticket-plate-right.svg');
@@ -93,7 +94,8 @@
       @media screen(md) {
         border-image-source: linear-gradient(180deg, #080808 5%, #33ffbb 50%, #080808 95%);
 
-        background-image: url('/images/developer-days-2/elephant-2-vertical.png'),
+        background-image: radial-gradient(rgba(255, 255, 255, 0.25) 0%, transparent 70%),
+          url('/images/developer-days-2/elephant-2-vertical.png'),
           url('/images/developer-days-2/ticket-pattern-2-vertical.svg'),
           url('/images/developer-days-2/ticket-plate-top.svg'),
           url('/images/developer-days-2/ticket-plate-bottom.svg');
@@ -103,7 +105,8 @@
     &.variant-3 {
       border-image-source: linear-gradient(90deg, #080808 5%, #7266ff 50%, #080808 95%);
 
-      background-image: url('/images/developer-days-2/elephant-3.png'),
+      background-image: radial-gradient(rgba(255, 255, 255, 0.25) 0%, transparent 70%),
+        url('/images/developer-days-2/elephant-3.png'),
         url('/images/developer-days-2/ticket-pattern-3.svg'),
         url('/images/developer-days-2/ticket-plate-left.svg'),
         url('/images/developer-days-2/ticket-plate-right.svg');
@@ -111,7 +114,8 @@
       @media screen(md) {
         border-image-source: linear-gradient(180deg, #080808 5%, #7266ff 50%, #080808 95%);
 
-        background-image: url('/images/developer-days-2/elephant-3-vertical.png'),
+        background-image: radial-gradient(rgba(255, 255, 255, 0.25) 0%, transparent 70%),
+          url('/images/developer-days-2/elephant-3-vertical.png'),
           url('/images/developer-days-2/ticket-pattern-3-vertical.svg'),
           url('/images/developer-days-2/ticket-plate-top.svg'),
           url('/images/developer-days-2/ticket-plate-bottom.svg');
@@ -121,7 +125,8 @@
     &.variant-4 {
       border-image-source: linear-gradient(90deg, #080808 5%, #ccccff 50%, #080808 95%);
 
-      background-image: url('/images/developer-days-2/elephant-4.png'),
+      background-image: radial-gradient(rgba(255, 255, 255, 0.25) 0%, transparent 70%),
+        url('/images/developer-days-2/elephant-4.png'),
         url('/images/developer-days-2/ticket-pattern-4.svg'),
         url('/images/developer-days-2/ticket-plate-left.svg'),
         url('/images/developer-days-2/ticket-plate-right.svg');
@@ -129,7 +134,8 @@
       @media screen(md) {
         border-image-source: linear-gradient(180deg, #080808 5%, #ccccff 50%, #080808 95%);
 
-        background-image: url('/images/developer-days-2/elephant-4-vertical.png'),
+        background-image: radial-gradient(rgba(255, 255, 255, 0.25) 0%, transparent 70%),
+          url('/images/developer-days-2/elephant-4-vertical.png'),
           url('/images/developer-days-2/ticket-pattern-4-vertical.svg'),
           url('/images/developer-days-2/ticket-plate-top.svg'),
           url('/images/developer-days-2/ticket-plate-bottom.svg');
