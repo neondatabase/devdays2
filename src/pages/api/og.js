@@ -99,7 +99,7 @@ export default async function handler(req) {
                     fontFamily: 'monospace',
                   }}
                 >
-                  /{handle}
+                  @{handle}
                 </p>
               </div>
             </div>

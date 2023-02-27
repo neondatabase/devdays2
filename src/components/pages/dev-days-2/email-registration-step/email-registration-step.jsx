@@ -15,10 +15,12 @@ import ElephantIllustration from 'images/developer-days-2/ticket-hero-elephant.p
 
 const appearColumnVariants = {
   initial: {
+    translateX: -100,
     opacity: 0,
     scale: 1.2,
   },
   appear: {
+    translateX: -100,
     opacity: 1,
     scale: 1,
     transition: {
@@ -34,11 +36,9 @@ const appearColumnVariants = {
 
 const appearSceneVariants = {
   initial: {
-    translateX: -40,
     translateY: 50,
   },
   appear: {
-    translateX: -40,
     translateY: 0,
     transition: {
       delay: 1,
@@ -119,7 +119,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         animate={window.innerWidth <= '1024' ? false : columnControls}
         variants={window.innerWidth <= '1024' ? false : appearColumnVariants}
       >
-        <div className="relative min-h-[760px] w-[1010px] xl:hidden" style={{ perspective: 800 }}>
+        <div className="relative min-h-[760px] w-[1100px] xl:hidden" style={{ perspective: 900 }}>
           <motion.canvas
             className="webgl relative z-20 animate-webgl-brightness mix-blend-lighten"
             initial="initial"
