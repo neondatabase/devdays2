@@ -20,11 +20,12 @@ const TicketPage = async ({ params }) => {
     >
       <div className="w-full max-w-[620px] pb-9 lg:flex lg:flex-col lg:items-center">
         <h1 className="pointer-events-none relative z-50 text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-[64px] lg:text-center">
-          You’re In. <br className="lg:hidden sm:block" />
+          {userData.name}&apos;s <br className="lg:hidden sm:block" />
           Make it Unique.
         </h1>
         <p className="pointer-events-none mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
-          Join us at <time dateTime="2023-03-26 10:30">10:30AM PT, March 26</time>
+          Join {userData.name.split(' ')[0]} at Neon Developer Days on{' '}
+          <time dateTime="2023-03-28 09:00">March 28th, 9 a.m. PT</time>
         </p>
         <SocialShare className="mt-12 sm:mt-6" url={shareUrl} />
       </div>

@@ -15,7 +15,7 @@ export default {
   ticket({ name }) {
     return {
       title: `${name}'s ticket for Neon Developer Days - Neon`,
-      description: `Join ${name} at Developer Days virtually on March 28th to learn about Neon and how to build better with Serverless Postgres`,
+      description: `Join ${name} virtually at Developer Days on March 28th to learn about Neon and how to build better with Serverless Postgres`,
       preloadAssets: [
         '/_next/image?url=/images/developer-days-2/ticket-variant-1.png&w=1920&q=75',
         '/_next/image?url=/images/developer-days-2/ticket-variant-2.png&w=1920&q=75',
