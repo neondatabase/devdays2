@@ -97,12 +97,12 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           Spring 2023
         </span>
         <h1
-          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:text-center lg:text-[78px] md:text-[58px] sm:mt-2 sm:max-w-[80%] sm:text-[52px]"
+          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:text-center lg:text-[78px] md:text-[58px] sm:mt-2 sm:max-w-[80%] sm:text-[52px] xxs:max-w-[100%]"
           ref={titleRef}
         >
           {window.innerWidth <= '1024' ? 'Neon Dev Days 2023' : titleContent}
         </h1>
-        <p className="mt-4 max-w-xl font-mono text-xl font-light tracking-tighter text-white lg:text-center lg:text-lg md:text-base sm:max-w-[80%]">
+        <p className="mt-4 max-w-xl font-mono text-xl font-light tracking-tighter text-white lg:text-center lg:text-lg md:text-base sm:max-w-[80%] xxs:max-w-[100%]">
           Join us at <time dateTime="2023-03-26 10:30">10:30AM PT, March 26</time> to hear more
           about latest updates from our dev team.
         </p>

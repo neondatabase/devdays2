@@ -166,7 +166,7 @@ const SubscriptionForm = ({
         onChange={handleInputChange}
       />
 
-      <RiveComponent className="pointer-events-none absolute -top-4 left-1/2 z-10 h-auto w-[120%] -translate-x-1/2 xs:-top-4 xs:top-0 [&>*]:!min-h-[360px]" />
+      <RiveComponent className="pointer-events-none absolute -top-8 left-1/2 z-10 w-[120%] -translate-x-1/2 xs:top-0 [&>*]:!min-h-[360px]" />
 
       {/* Error message */}
       <AnimatePresence>
