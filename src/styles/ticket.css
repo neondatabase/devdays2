@@ -181,19 +181,19 @@
     text-shadow: 0 13.9157px 55.6627px rgba(0, 229, 153, 0.4);
 
     .ticket-variant-1 & {
-      background-image: linear-gradient(256deg, #ffffff 41.51%, #66ffcc 79.11%);
+      background-image: linear-gradient(215.67deg, #ffffff 41.51%, #66ffcc 79.11%);
     }
 
     .ticket-variant-2 & {
-      background-image: linear-gradient(256deg, #ffffff 41.51%, #e6ff66 79.11%);
+      background-image: linear-gradient(215.67deg, #ffffff 41.51%, #e6ff66 79.11%);
     }
 
     .ticket-variant-3 & {
-      background-image: linear-gradient(256deg, #ffffff 41.51%, #ff99dd 79.11%);
+      background-image: linear-gradient(215.67deg, #ffffff 41.51%, #ff99dd 79.11%);
     }
 
     .ticket-variant-4 & {
-      background-image: linear-gradient(256deg, #ffffff 41.51%, #ccccff 79.11%);
+      background-image: linear-gradient(215.67deg, #ffffff 41.51%, #ccccff 79.11%);
     }
   }
 
