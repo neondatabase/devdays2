@@ -14,22 +14,24 @@ import MobileBlankTicketIllustration from 'images/developer-days-2/blank-ticket-
 
 import illustration from './images/illustration.png';
 
-const CTA = ({ isDocsPage = false }) =>
+const CTA = ({ isDocsPage = false, message = 'Back to home', to = '/' }) =>
   isDocsPage ? (
     <div className="flex w-full flex-col">
       <span className="h-px w-full bg-gray-4" />
-      <Link className="mt-8 self-start" size="lg" theme="black-primary-1" to="/">
-        Back to home
+      <Link className="mt-8 self-start" size="lg" theme="black-primary-1" to={to}>
+        {message}
       </Link>
     </div>
   ) : (
-    <Button className="mt-11 self-start lg:mt-8 sm:w-full" size="md" theme="primary" to="/">
-      Back to Home
+    <Button className="mt-11 self-start lg:mt-8 sm:w-full" size="md" theme="primary" to={to}>
+      {message}
     </Button>
   );
 
 CTA.propTypes = {
   isDocsPage: PropTypes.bool,
+  message: PropTypes.string,
+  to: PropTypes.string,
 };
 
 const Skeleton = () => (
@@ -62,10 +64,20 @@ const Hero = ({ isTicketPage = false }) => {
             <br /> {isTicketPage ? 'Ticket' : 'Page'} not found...
           </h1>
           <p className="t-xl mt-7 lg:mt-8">
-            Sorry, the page you are looking for doesn’t exist or has been moved.
+            {isTicketPage
+              ? "Sorry, the ticket you are looking for doesn't exist."
+              : 'Sorry, the page you are looking for doesn’t exist.'}
           </p>
 
-          {isLoading ? <Skeleton /> : <CTA isDocsPage={isDocsPage} />}
+          {isLoading ? (
+            <Skeleton />
+          ) : (
+            <CTA
+              isDocsPage={isDocsPage}
+              message={isTicketPage ? 'Register' : undefined}
+              to={isTicketPage ? '/developer-days-2' : undefined}
+            />
+          )}
         </div>
 
         <div className="col-start-6 col-end-12 self-center 2xl:col-end-13 md:col-span-full">
