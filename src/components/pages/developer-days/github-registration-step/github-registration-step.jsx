@@ -5,18 +5,19 @@ import Button from 'components/shared/button';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import GithubIcon from 'components/shared/header/images/header-github.inline.svg';
 import LuminousBack from 'components/shared/subscription-form/icons/luminous-button-back.inline.svg';
-import DesktopBlankTicketIllustration from 'images/developer-days-2/blank-ticket-desktop.svg';
-import MobileBlankTicketIllustration from 'images/developer-days-2/blank-ticket-mobile.svg';
+import DesktopBlankTicketIllustration from 'images/developer-days/blank-ticket-desktop.svg';
+import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mobile.svg';
 
 const GithubRegistrationStep = () => (
   <>
     <div className="w-6/12 xl:w-1/2 lg:mt-10 lg:flex lg:w-full lg:flex-col lg:items-center">
       <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-6xl lg:text-center lg:text-[78px] md:text-[58px] sm:text-[52px]">
-        You’re In. <br className="lg:hidden sm:block" />
-        Make it Unique.
+        You’re invited. <br className="lg:hidden sm:block" />
+        Grab the ticket.
       </h2>
       <p className="mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
-        Generate a unique ticket image with your GitHub profile.
+        Generate a unique ticket image with your GitHub profile and participate in Neon's giveaway
+        right after the conference.
       </p>
       <div className="mt-12 flex items-center lg:mt-10 lg:flex-col sm:mt-6">
         <div className="relative">

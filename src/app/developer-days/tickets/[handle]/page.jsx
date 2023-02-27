@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import DynamicTicket from 'components/pages/dev-days-2/dynamic-ticket';
+import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
 import Container from 'components/shared/container';
 import SocialShare from 'components/shared/social-share';
 import prisma from 'utils/prisma';
@@ -10,7 +10,7 @@ const TicketPage = async ({ params }) => {
 
   if (!userData) return notFound();
 
-  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days-2/tickets/${userData.githubHandle}`;
+  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days/tickets/${userData.githubHandle}`;
 
   return (
     <Container
@@ -19,11 +19,13 @@ const TicketPage = async ({ params }) => {
     >
       <div className="xl:flex xl:w-full xl:flex-col xl:items-center">
         <h1 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-center xl:text-[78px] md:text-[58px] sm:text-[52px]">
-          You’re In. <br className="lg:hidden sm:block" />
-          Make it Unique.
+          {userData.name}&apos;s
+          <br className="lg:hidden sm:block" />
+          Ticket
         </h1>
         <p className="mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
-          Join us at <time dateTime="2023-03-26 10:30">10:30AM PT, March 26</time>
+          Join {userData.name.split(' ')[0]} at Neon Developer Days on{' '}
+          <time dateTime="2023-03-28 09:00">March 28th, 9 a.m. PT</time>
         </p>
         <SocialShare className="mt-12 sm:mt-6" url={shareUrl} />
       </div>

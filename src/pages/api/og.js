@@ -15,6 +15,9 @@ export default async function handler(req) {
   const image = searchParams.get('image');
   const color = searchParams.get('colorSchema');
 
+  // @TODO is any param is absent,
+  // return pre-made no-name ticket image
+
   return new ImageResponse(
     (
       <div
