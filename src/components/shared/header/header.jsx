@@ -17,7 +17,7 @@ const Header = () => (
       </Link>
       <div className="flex items-center space-x-7">
         <p className="font-mono text-[15px] font-light text-white sm:hidden">
-          Join us on March 28th, 9:00AM PT
+          Join us on March 28th, 9 a.m. PT
         </p>
         <Button
           className="relative border-white bg-black py-[11px] pl-11 text-white hover:border-primary-2"

@@ -100,7 +100,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           {window.innerWidth <= '1024' ? 'Developer Days' : titleContent}
         </h1>
         <p className="mt-4 max-w-xl font-mono text-xl font-light tracking-tighter text-white lg:text-center lg:text-lg md:text-base sm:max-w-[80%] xxs:max-w-[100%]">
-          Join us on <time dateTime="2023-03-28 10:30">March 28th, 9:00AM PT</time> to learn more
+          Join us on <time dateTime="2023-03-28 10:30">March 28th, 9 a.m. PT</time> to learn more
           about latest of Serverless Postgres
         </p>
         <SubscriptionForm
