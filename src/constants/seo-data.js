@@ -2,6 +2,10 @@ export default {
   404: {
     title: 'Page Not Found — Neon',
   },
+  '404-ticket': {
+    title: 'Ticket Not Found - Neon',
+    imagePath: '/images/social-previews/no-name-ticket.jpg',
+  },
   developerDays2: {
     title: 'Neon Developer Days — Neon',
     description:

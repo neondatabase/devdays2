@@ -2,7 +2,8 @@ import SEO from 'components/shared/seo';
 import SEO_DATA from 'constants/seo-data';
 import prisma from 'utils/prisma';
 
-const buildOgImageUrl = (data) => '/api/og?'.concat(new URLSearchParams(data));
+const buildOgImageUrl = (data) =>
+  data ? '/api/og?'.concat(new URLSearchParams(data)) : '/api/og?';
 
 const Head = async ({ params }) => {
   const { handle } = params;
@@ -28,16 +29,11 @@ const Head = async ({ params }) => {
     }
   }
 
-  userData = userData || {
-    name: 'Your name',
-    email: 'your@email.com',
-    githubHandle: 'github-account',
-    colorSchema: '0',
-    image: '',
-    id: 0,
-  };
-  //* TODO: make proper default url
-  return <SEO {...SEO_DATA.ticket(userData)} imagePath={buildOgImageUrl(userData)} />;
+  if (userData) {
+    return <SEO {...SEO_DATA.ticket(userData)} imagePath={buildOgImageUrl(userData)} />;
+  }
+
+  return <SEO {...SEO_DATA['404-ticket']} imagePath={buildOgImageUrl(null)} />;
 };
 
 export default Head;
