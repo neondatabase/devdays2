@@ -159,7 +159,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colo
                         `color-text-variant-${id}`
                       )}
                     >
-                      Neon Dev <br /> Days 2023
+                      Neon Dev <br /> Days
                     </h2>
                     <img
                       className="pointer-events-none relative z-10 min-h-[380px] max-w-full sm:hidden"
