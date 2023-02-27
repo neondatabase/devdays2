@@ -94,13 +94,13 @@ module.exports = {
         'color-picker-variant-3': 'linear-gradient(225deg, #FF66FF 13.02%, #421CFF 92.19%);',
         'color-picker-variant-4': 'linear-gradient(226.74deg, #E8EFFC 28.6%, #99B3E6 80.81%);',
         'ticket-back-variant-1':
-          'radial-gradient(transparent 0%, #000000 75%), linear-gradient(225deg, #00D1FF 0%, rgba(51, 255, 187, 0.2) 100%);',
+          'radial-gradient(transparent 0%, #080808 72%), linear-gradient(225deg, #00D1FF 0%, rgba(51, 255, 187, 0.2) 100%);',
         'ticket-back-variant-2':
-          'radial-gradient(transparent 0%, #000000 75%), linear-gradient(225deg, rgba(51, 255, 187, 0.6) 0%, rgba(230, 255, 102, 0.4) 100%);',
+          'radial-gradient(transparent 0%, #080808 72%), linear-gradient(225deg, rgba(51, 255, 187, 0.6) 0%, rgba(230, 255, 102, 0.4) 100%);',
         'ticket-back-variant-3':
-          'radial-gradient(transparent 0%, #000000 75%), linear-gradient(225deg, #7266FF 28.65%, #FF99DD 100%);',
+          'radial-gradient(transparent 0%, #080808 72%), linear-gradient(225deg, #7266FF 28.65%, #FF99DD 100%);',
         'ticket-back-variant-4':
-          'radial-gradient(transparent 0%, #000000 75%), linear-gradient(225deg, #CCCCFF 28.65%, rgba(204, 204, 255, 0.4) 100%);',
+          'radial-gradient(transparent 0%, #080808 72%), linear-gradient(225deg, #CCCCFF 28.65%, rgba(204, 204, 255, 0.4) 100%);',
       },
       keyframes: (theme) => ({
         'text-blink': {

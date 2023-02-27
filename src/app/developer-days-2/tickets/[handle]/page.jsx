@@ -28,8 +28,8 @@ const TicketPage = async ({ params }) => {
       className="flex min-h-[inherit] items-center justify-between gap-12 py-4 lg:flex-col lg:justify-start lg:pb-24 lg:pt-16"
       size="lg"
     >
-      <div className="relative z-10 w-full max-w-[620px] pb-9 lg:flex lg:flex-col lg:items-center">
-        <h1 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-[64px] lg:text-center">
+      <div className="w-full max-w-[620px] pb-9 lg:flex lg:flex-col lg:items-center">
+        <h1 className="pointer-events-none relative z-30 text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-[64px] lg:text-center">
           You’re In. <br className="lg:hidden sm:block" />
           Make it Unique.
         </h1>
@@ -38,7 +38,7 @@ const TicketPage = async ({ params }) => {
         </p>
         <SocialShare className="mt-12 sm:mt-6" url={shareUrl} />
       </div>
-      <div className="relative z-20 shrink-0">
+      <div className="relative z-10 shrink-0">
         <DynamicTicket userData={userData} />
       </div>
     </Container>
