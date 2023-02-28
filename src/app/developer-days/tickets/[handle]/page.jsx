@@ -20,7 +20,7 @@ const TicketPage = async ({ params }) => {
       <div className="xl:flex xl:w-full xl:flex-col xl:items-center">
         <h1 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-center xl:text-[78px] md:text-[58px] sm:text-[52px]">
           {userData.name}&apos;s
-          <br className="lg:hidden sm:block" />
+          <br />
           Ticket
         </h1>
         <p className="mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
