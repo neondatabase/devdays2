@@ -133,14 +133,18 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           >
             <Image
               className="h-full min-h-[740px] w-full"
-              src="/images/developer-days/elephant-tusk.png"
+              src="/developer-days/images/developer-days/elephant-tusk.png"
               width={1010}
               height={740}
               alt="Tusks illustration"
               priority
             />
           </CursorTrackingWrapper>
-          <Script src="/static/elephant-webgl-scene.js" type="module" strategy="afterInteractive" />
+          <Script
+            src="/developer-days/static/elephant-webgl-scene.js"
+            type="module"
+            strategy="afterInteractive"
+          />
         </div>
         <Image
           className="remove-image-loading-visual hidden xl:block"

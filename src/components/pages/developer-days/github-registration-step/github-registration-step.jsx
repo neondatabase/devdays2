@@ -10,7 +10,7 @@ import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mo
 
 const GithubRegistrationStep = () => {
   const { RiveComponent } = useRive({
-    src: '/animations/input-lines.riv',
+    src: '/developer-days/animations/input-lines.riv',
     autoplay: true,
     stateMachines: 'State Machine 1',
     layout: new Layout({
