@@ -33,7 +33,7 @@ const Head = async ({ params }) => {
     return <SEO {...SEO_DATA.ticket(userData)} imagePath={buildOgImageUrl(userData)} />;
   }
 
-  return <SEO {...SEO_DATA['404-ticket']} imagePath={buildOgImageUrl(null)} />;
+  return <SEO {...SEO_DATA['404-ticket']} />;
 };
 
 export default Head;

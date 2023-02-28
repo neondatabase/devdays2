@@ -94,12 +94,12 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           March 2023
         </span>
         <h1
-          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:text-center lg:text-[78px] md:text-[58px] sm:mt-2 sm:max-w-[80%] sm:text-[52px] xxs:max-w-[100%]"
+          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:text-center lg:text-[78px] md:text-[58px] sm:mt-2 sm:max-w-[80%] sm:text-[52px] xs:max-w-[100%]"
           ref={titleRef}
         >
           {window.innerWidth <= '1024' ? 'Developer Days' : titleContent}
         </h1>
-        <p className="mt-4 max-w-xl font-mono text-xl font-light tracking-tighter text-white lg:text-center lg:text-lg md:text-base sm:max-w-[80%] xxs:max-w-[100%]">
+        <p className="mt-4 max-w-xl font-mono text-xl font-light tracking-tighter text-white lg:text-center lg:text-lg md:text-base sm:max-w-[80%] xs:max-w-[100%]">
           Join us on <time dateTime="2023-03-28 10:30">March 28th, 9 a.m. PT</time> to learn more
           about latest of Serverless Postgres
         </p>
