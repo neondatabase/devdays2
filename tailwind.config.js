@@ -64,6 +64,9 @@ module.exports = {
       },
     },
     extend: {
+      letterSpacing: {
+        tighter: '-0.06em',
+      },
       fontFamily: {
         kallisto: ['Kallisto', 'Kallisto Fallback', ...defaultTheme.fontFamily.sans],
         sans: ['IBM Plex Sans', 'IBM Plex Sans Fallback', ...defaultTheme.fontFamily.sans],

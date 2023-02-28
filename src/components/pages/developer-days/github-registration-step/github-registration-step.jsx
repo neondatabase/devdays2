@@ -24,7 +24,7 @@ const GithubRegistrationStep = () => (
           <Button
             className="relative z-20 border-primary-4 !bg-primary-4 pl-[4.25rem] !text-xl tracking-tighter !text-black hover:bg-[#00e5bf] xl:pl-[4.25rem] md:pl-[4.25rem]"
             size="md"
-            theme="tertiary"
+            theme="primary"
             rel="noopener noreferrer"
             target="_blank"
             onClick={() => signIn('github')}

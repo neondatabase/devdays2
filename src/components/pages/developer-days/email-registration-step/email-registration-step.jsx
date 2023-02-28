@@ -72,9 +72,16 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
     <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
       {'Developer Days'.split('').map((letter, index) =>
         index === 9 ? (
-          <br className="lg:hidden" key={index} />
+          <span key={index}>
+            <br className="lg:hidden" />
+            <span className="hidden lg:inline"> </span>
+          </span>
         ) : (
-          <span className="animate-text-blink" style={{ animationPlayState: 'paused' }} key={index}>
+          <span
+            className="animate-text-blink lg:!animate-none"
+            style={{ animationPlayState: 'paused' }}
+            key={index}
+          >
             {letter}
           </span>
         )
@@ -85,8 +92,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
   return (
     <>
       <motion.div
-        className="relative z-30 w-5/12 xl:w-1/2 lg:mt-10 lg:flex lg:w-full lg:flex-col lg:items-center"
-        initial={window.innerWidth <= '1024' ? { opacity: 1 } : { opacity: 0 }}
+        className="col-span-4 col-start-2 self-center lg:!opacity-100"
+        initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'linear' }}
       >
@@ -97,7 +104,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:text-center lg:text-[78px] md:text-[58px] sm:mt-2 sm:max-w-[80%] sm:text-[52px] xs:max-w-[100%]"
           ref={titleRef}
         >
-          {window.innerWidth <= '1024' ? 'Developer Days' : titleContent}
+          {titleContent}
         </h1>
         <p className="mt-4 max-w-xl font-mono text-xl font-light tracking-tighter text-white lg:text-center lg:text-lg md:text-base sm:max-w-[80%] xs:max-w-[100%]">
           Join us on <time dateTime="2023-03-28 10:30">March 28th, 9 a.m. PT</time> to learn more
@@ -113,11 +120,11 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           onSuccess={onSuccessCallback}
         />
       </motion.div>
-      <motion.div
-        className="w-7/12 xl:w-1/2 lg:my-4 lg:w-full"
+      {/* <motion.div
+        className="absolute right-0 lg:!transform-none lg:!opacity-100"
         initial="initial"
-        animate={window.innerWidth <= '1024' ? false : columnControls}
-        variants={window.innerWidth <= '1024' ? false : appearColumnVariants}
+        animate={columnControls}
+        variants={appearColumnVariants}
       >
         <div className="relative min-h-[760px] w-[1100px] xl:hidden" style={{ perspective: 900 }}>
           <motion.canvas
@@ -147,7 +154,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           src={ElephantIllustration}
           alt="Elephant illustration"
         />
-      </motion.div>
+      </motion.div> */}
     </>
   );
 };
