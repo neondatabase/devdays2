@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import DynamicTicket from 'components/pages/dev-days-2/dynamic-ticket';
+import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
 import Container from 'components/shared/container';
 import SocialShare from 'components/shared/social-share';
 import prisma from 'utils/prisma';
@@ -11,7 +11,7 @@ const TicketPage = async ({ params }) => {
 
   if (!userData) return notFound();
 
-  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days-2/tickets/${userData.githubHandle}`;
+  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days/tickets/${userData.githubHandle}`;
 
   return (
     <Container
@@ -21,7 +21,7 @@ const TicketPage = async ({ params }) => {
       <div className="w-full max-w-[620px] pb-9 lg:flex lg:flex-col lg:items-center">
         <h1 className="pointer-events-none relative z-50 text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-[64px] lg:text-center">
           {userData.name}&apos;s <br className="lg:hidden sm:block" />
-          Make it Unique.
+          Ticket
         </h1>
         <p className="pointer-events-none mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
           Join {userData.name.split(' ')[0]} at Neon Developer Days on{' '}

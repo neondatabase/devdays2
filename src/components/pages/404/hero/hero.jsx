@@ -9,8 +9,8 @@ import Button from 'components/shared/button';
 import Container from 'components/shared/container';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import Link from 'components/shared/link';
-import DesktopBlankTicketIllustration from 'images/developer-days-2/blank-ticket-desktop.svg';
-import MobileBlankTicketIllustration from 'images/developer-days-2/blank-ticket-mobile.svg';
+import DesktopBlankTicketIllustration from 'images/developer-days/blank-ticket-desktop.svg';
+import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mobile.svg';
 
 import illustration from './images/illustration.png';
 
@@ -75,7 +75,7 @@ const Hero = ({ isTicketPage = false }) => {
             <CTA
               isDocsPage={isDocsPage}
               message={isTicketPage ? 'Register' : undefined}
-              to={isTicketPage ? '/developer-days-2' : undefined}
+              to={isTicketPage ? '/developer-days' : undefined}
             />
           )}
         </div>
