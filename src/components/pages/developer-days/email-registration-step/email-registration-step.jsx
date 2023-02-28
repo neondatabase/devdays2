@@ -140,7 +140,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
               priority
             />
           </CursorTrackingWrapper>
-          <Script src="/static/elephant-webgl-scene.js" type="module" strategy="lazyOnload" />
+          <Script src="/static/elephant-webgl-scene.js" type="module" strategy="afterInteractive" />
         </div>
         <Image
           className="remove-image-loading-visual hidden xl:block"
