@@ -23,7 +23,7 @@ const TicketPage = async ({ params }) => {
           {userData.name}&apos;s <br className="lg:hidden sm:block" />
           Ticket
         </h1>
-        <p className="pointer-events-none mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
+        <p className="pointer-events-none relative z-50 mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
           Join {userData.name.split(' ')[0]} at Neon Developer Days on{' '}
           <time dateTime="2023-03-28 09:00">March 28th, 9 a.m. PT</time>
         </p>
