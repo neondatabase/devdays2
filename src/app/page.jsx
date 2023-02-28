@@ -36,7 +36,7 @@ const DeveloperDays2Page = () => {
 
   if (status !== 'loading') {
     if (status === 'authenticated' && data?.githubHandle) {
-      return router.push(`/developer-days/tickets/${data.githubHandle}`);
+      return router.push(`/tickets/${data.githubHandle}`);
     }
 
     return (
