@@ -25,20 +25,10 @@ const sizeClassNames = {
   sm: {
     form: 'relative max-w-[540px]',
     input: 'h-[64px] text-lg pl-5 border',
-    button: '!text-base !px-8 !py-[15px] right-2 sm:!p-0',
+    button: '!text-base !px-7 !py-[15px] right-2 sm:!p-0',
     loading: 'right-2',
     success: 'right-2',
     stateIcon: 'w-14 h-14',
-  },
-  md: {
-    form: 'before:-bottom-3.5 before:-left-3.5 2xl:before:-bottom-2.5 2xl:before:-left-2.5',
-    input:
-      'h-24 max-w-[696px] 3xl:max-w-[585px] 2xl:h-20 2xl:pr-[187px] xl:h-[72px] xl:pr-[164px] t-2xl pl-7 border-4',
-    button: 'right-3 2xl:right-2.5 xl:right-2',
-    loading:
-      'right-3 h-[72px] w-[72px] 2xl:right-2.5 2xl:h-[60px] 2xl:w-[60px] xl:right-2 xl:h-[56px] xl:w-[56px]',
-    success: 'right-3 2xl:right-2.5 xl:right-2',
-    stateIcon: '2xl:w-[60px] xl:w-[56px]',
   },
 };
 

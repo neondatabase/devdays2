@@ -38,11 +38,7 @@ const CursorTrackingWrapper = ({
         }}
         onMouseMove={handleMouseMove}
       >
-        <motion.div
-          className="overflow-hidden rounded-[22px]"
-          ref={innerWrapperRef}
-          style={{ rotateY }}
-        >
+        <motion.div className="overflow-hidden" ref={innerWrapperRef} style={{ rotateY }}>
           {children}
         </motion.div>
       </motion.div>
