@@ -77,16 +77,13 @@ const colorVariants = [
 ];
 
 const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colorSchema } }) => {
-  let { data, status } = useSession();
-  // TODO: remove mocked values before merge
-  data = { colorSchema: '1' };
-  status = 'authenticated';
-  // -
+  const { data, status } = useSession();
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
   const prevColor = usePrevious(selectedColorSchema);
   const currentColorSchema = selectedColorSchema || colorSchema;
   const [elephantColorSchema, setElephantColorSchema] = useState(currentColorSchema);
   const gradientControls = useAnimationControls();
+  // TODO: fix translateZ opacity bug
   // const ticketControls = useAnimationControls();
 
   useEffect(() => {
@@ -239,14 +236,13 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colo
                   <p className="trac whitespace-nowrap font-kallisto text-[36px] font-light leading-none text-white lg:text-3xl md:text-[28px] xxs:text-[26px]">
                     #{`${number}`.padStart(6, '0')} /
                   </p>
-                  {/* TODO: set up real date */}
                   <time
-                    dateTime="2023-03-26T10:30:00-0800"
+                    dateTime="2023-03-28T09:00:00-0800"
                     className="whitespace-nowrap font-mono text-sm uppercase leading-dense tracking-wider text-white lg:text-[12px] md:text-[12px]"
                   >
-                    10:30AM PT,
+                    9 a.m. PT,
                     <br />
-                    March 26, 2023
+                    March 28th
                   </time>
                 </footer>
               </div>

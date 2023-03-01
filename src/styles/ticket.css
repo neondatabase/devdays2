@@ -1,6 +1,7 @@
 @layer components {
   .ticket {
     --delta-x: 0;
+    /* TODO: set up hover areas for each screen */
     --hover-gap-x: 100;
     --hover-gap-y: 0;
 
