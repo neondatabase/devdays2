@@ -1,9 +1,9 @@
 import Container from 'components/shared/container';
 
 const Footer = () => (
-  <footer className="safe-paddings mt-auto overflow-hidden border-t border-gray-2 text-white">
+  <footer className="safe-paddings border-t border-gray-2">
     <Container
-      className="flex justify-between gap-3 py-10 font-sans text-[15px] leading-tight text-gray-5 xl:py-8 lg:text-[12px] sm:flex-col sm:items-center"
+      className="flex items-center justify-between gap-3 py-8 font-sans text-[15px] leading-tight text-gray-5 xl:py-8 lg:text-[12px] sm:flex-col"
       size="full"
     >
       <p className="text-gray-8">Neon 2023 Ⓒ All rights reserved</p>
