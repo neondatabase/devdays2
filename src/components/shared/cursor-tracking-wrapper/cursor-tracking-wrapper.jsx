@@ -1,3 +1,5 @@
+'use client';
+
 import clsx from 'clsx';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import PropTypes from 'prop-types';
