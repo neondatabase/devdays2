@@ -25,7 +25,6 @@ const sizeClassNames = {
   sm: {
     form: 'relative max-w-[540px]',
     input: 'h-[64px] text-lg pl-6 border',
-    button: '!text-base !px-7 !py-[14px] right-2 sm:!p-0',
     loading: 'right-2',
     success: 'right-2',
     stateIcon: 'w-14 h-14',
@@ -179,10 +178,7 @@ const SubscriptionForm = ({
             variants={appearAndExitAnimationVariants}
           >
             <Button
-              className={clsx(
-                'absolute top-1/2 z-20 -translate-y-1/2 text-[15px] sm:h-14 sm:w-14 sm:rounded-full sm:p-0',
-                sizeClassNames[size].button
-              )}
+              className="absolute top-1/2 right-[7px] z-20 -translate-y-1/2 sm:h-14 sm:w-14 sm:rounded-full sm:p-0"
               size="sm"
               type="submit"
               theme="quaternary"

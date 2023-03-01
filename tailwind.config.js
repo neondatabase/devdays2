@@ -50,6 +50,7 @@ module.exports = {
     },
     extend: {
       letterSpacing: {
+        tight: '-0.04em',
         tighter: '-0.06em',
       },
       fontFamily: {
