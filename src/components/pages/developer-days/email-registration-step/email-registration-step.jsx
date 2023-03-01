@@ -124,20 +124,19 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         animate={columnControls}
         variants={appearColumnVariants}
       >
-        <div className="relative min-h-[760px] w-[1100px] xl:hidden" style={{ perspective: 900 }}>
+        <div
+          className="relative w-[1010px] animate-webgl-brightness mix-blend-lighten xl:hidden"
+          style={{ perspective: 900 }}
+        >
           <motion.canvas
-            className="webgl relative z-20 animate-webgl-brightness mix-blend-lighten"
+            className="webgl relative z-20"
             initial="initial"
             animate={sceneControls}
             variants={appearSceneVariants}
           />
-          <CursorTrackingWrapper
-            className="absolute inset-0 z-30 animate-webgl-brightness"
-            xMovement={1}
-            yMovement={1}
-          >
+          <CursorTrackingWrapper className="absolute inset-0 z-30" xMovement={1} yMovement={1}>
             <Image
-              className="h-full min-h-[740px] w-full"
+              className="h-full w-full"
               src="/images/developer-days/elephant-tusk.png"
               width={1010}
               height={740}
