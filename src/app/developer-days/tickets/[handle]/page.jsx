@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 
 import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
-import Container from 'components/shared/container';
 import SocialShare from 'components/shared/social-share';
 import prisma from 'utils/prisma';
 
@@ -13,10 +12,7 @@ const TicketPage = async ({ params }) => {
   const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days/tickets/${userData.githubHandle}`;
 
   return (
-    <Container
-      className="relative flex min-h-[inherit] items-center gap-12 py-4 xl:flex-wrap xl:justify-center xl:gap-4"
-      size="lg"
-    >
+    <div className="relative mx-auto flex min-h-[inherit] max-w-[1760px] items-center gap-12 py-4 xl:flex-wrap xl:justify-center xl:gap-4">
       <div className="xl:flex xl:w-full xl:flex-col xl:items-center">
         <h1 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-center xl:text-[78px] md:text-[58px] sm:text-[52px]">
           {userData.name}&apos;s
@@ -32,7 +28,7 @@ const TicketPage = async ({ params }) => {
       <div className="shrink-0 lg:mt-6 lg:max-w-[95%] sm:mt-4 sm:flex sm:flex-col-reverse">
         <DynamicTicket userData={userData} />
       </div>
-    </Container>
+    </div>
   );
 };
 

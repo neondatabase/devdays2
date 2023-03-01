@@ -3,7 +3,6 @@
 import { useRouter } from 'next/navigation';
 
 import EmailRegistrationStep from 'components/pages/developer-days/email-registration-step';
-import Container from 'components/shared/container';
 
 // @TODO:
 // deal with router: to and from tickets pages
@@ -15,9 +14,9 @@ const DeveloperDays2Page = () => {
   };
 
   return (
-    <Container className="relative grid h-full grid-cols-12 gap-10" size="lg">
+    <div className="relative mx-auto grid h-full max-w-[1760px] grid-cols-12 gap-10">
       <EmailRegistrationStep onSuccessCallback={handleSubmitSuccess} />
-    </Container>
+    </div>
   );
 };
 

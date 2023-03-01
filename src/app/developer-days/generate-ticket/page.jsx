@@ -1,12 +1,11 @@
 'use client';
 
 import GithubRegistrationStep from 'components/pages/developer-days/github-registration-step';
-import Container from 'components/shared/container';
 
 const GenerateTicketPage = () => (
-  <Container className="relative" size="lg">
+  <div className="relative mx-auto max-w-[1760px]">
     <GithubRegistrationStep />
-  </Container>
+  </div>
 );
 
 export default GenerateTicketPage;

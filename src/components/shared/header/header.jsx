@@ -2,7 +2,6 @@
 
 import NextLink from 'next/link';
 
-import Container from 'components/shared/container';
 import Logo from 'components/shared/logo';
 import LINKS from 'constants/links';
 
@@ -10,7 +9,7 @@ import Github from './images/header-github.inline.svg';
 
 const Header = () => (
   <header className="safe-paddings absolute left-0 top-0 right-0 z-10">
-    <Container className="flex h-[70px] items-center justify-between py-3.5" size="full">
+    <div className="flex h-[70px] items-center justify-between py-3.5 px-14" size="full">
       <NextLink href="/">
         <span className="sr-only">Neon</span>
         <Logo />
@@ -30,7 +29,7 @@ const Header = () => (
           <span>Star Us</span>
         </NextLink>
       </div>
-    </Container>
+    </div>
   </header>
 );
 
