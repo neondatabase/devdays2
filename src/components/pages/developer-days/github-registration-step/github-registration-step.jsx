@@ -17,11 +17,11 @@ const GithubRegistrationStep = () => (
         You’re invited. <br className="lg:hidden sm:block" />
         Grab the ticket.
       </h2>
-      <p className="mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
+      <p className="mt-5 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
         Generate a unique ticket image with your GitHub profile and participate in Neon's giveaway
         right after the conference.
       </p>
-      <div className="mt-12 flex items-center lg:mt-10 lg:flex-col sm:mt-6">
+      <div className="mt-11 flex items-center lg:mt-10 lg:flex-col sm:mt-6">
         <div className="relative">
           <Button
             className="relative z-20 border-primary-4 !bg-primary-4 !pr-8 pl-[4.25rem] !text-xl tracking-tight !text-black hover:bg-[#00e5bf] xl:pl-[4.25rem] md:pl-[4.25rem]"
