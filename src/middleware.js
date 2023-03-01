@@ -14,12 +14,26 @@ export async function middleware(req) {
   }
 
   const token = await getToken({ req });
+  // if token exists, user is authorized
   if (token?.githubHandle) {
-    if (pathname === '/generate-ticket' || pathname === '/') {
+    // authorized user should be moved to his ticket edit page from anywhere
+    if (
+      pathname === '/generate-ticket' ||
+      pathname === '/' ||
+      pathname.endsWith(`/tickets/${token.githubHandle}`)
+    ) {
+      return NextResponse.redirect(
+        new URL(`${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/developer-days/${pathname}/edit`)
+      );
+    }
+  } else if (pathname.endsWith(`/edit`)) {
+    if (!token?.githubHandle) {
       return NextResponse.redirect(
         new URL(
-          `/developer-days/tickets/${token.githubHandle}`,
-          `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}`
+          `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/developer-days${pathname
+            .split('/')
+            .slice(0, -1)
+            .join('/')}`
         )
       );
     }

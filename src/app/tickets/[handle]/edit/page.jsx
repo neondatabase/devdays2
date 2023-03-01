@@ -1,14 +1,16 @@
 import { notFound } from 'next/navigation';
 
 import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
-import Button from 'components/shared/button';
+import SocialShare from 'components/shared/social-share';
 import prisma from 'utils/prisma';
 
-const TicketPage = async ({ params }) => {
+const TicketEditPage = async ({ params }) => {
   // eslint-disable-next-line no-use-before-define
   const userData = await getTicketData(params.handle);
 
   if (!userData) return notFound();
+
+  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days/tickets/${userData.githubHandle}`;
 
   return (
     <div className="relative mx-auto grid h-full max-w-[1760px] grid-cols-12 gap-10">
@@ -21,15 +23,7 @@ const TicketPage = async ({ params }) => {
           Join {userData.name.split(' ')[0]} at Neon Developer Days on{' '}
           <time dateTime="2023-03-28 09:00">March 28th, 9 a.m. PT</time>
         </p>
-        <Button
-          className="relative z-20 mt-11 border-primary-4 !bg-primary-4 !text-xl tracking-[-0.02em] !text-black hover:bg-[#00e5bf] sm:mt-6"
-          size="md"
-          theme="primary"
-          rel="noopener noreferrer"
-          to="/"
-        >
-          <span>Register now</span>
-        </Button>
+        <SocialShare className="mt-11 sm:mt-6" url={shareUrl} />
       </div>
       <div className="col-span-6 col-start-7 -ml-10 self-center">
         <DynamicTicket userData={userData} />
@@ -38,7 +32,7 @@ const TicketPage = async ({ params }) => {
   );
 };
 
-export default TicketPage;
+export default TicketEditPage;
 
 async function getTicketData(handle) {
   let userData = null;
