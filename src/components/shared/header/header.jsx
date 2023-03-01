@@ -14,7 +14,7 @@ const Header = () => (
         <span className="sr-only">Neon</span>
         <Logo />
       </NextLink>
-      <div className="flex items-center space-x-7">
+      <div className="flex items-center space-x-8">
         <p className="font-mono text-[15px] font-light tracking-tighter text-white sm:hidden">
           Join us on March 28th, 9 a.m. PT
         </p>
