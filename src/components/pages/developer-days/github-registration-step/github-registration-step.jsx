@@ -52,7 +52,7 @@ const GithubRegistrationStep = () => {
             </Button>
             <RiveComponent className="pointer-events-none absolute -top-4 left-1/2 z-10 w-[140%] -translate-x-1/2 [&>*]:!min-h-[480px]" />
           </div>
-          <span className="relative z-10 ml-5 max-w-[140px] text-sm font-light leading-[1.375] leading-snug tracking-[0.04em] text-gray-5 lg:ml-0 lg:mt-2 lg:max-w-full">
+          <span className="relative z-10 ml-5 max-w-[140px] text-sm font-light leading-[1.375] tracking-[0.04em] text-gray-5 lg:ml-0 lg:mt-2 lg:max-w-full">
             Only public data <br /> is going to be used.
           </span>
         </div>

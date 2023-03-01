@@ -22,17 +22,19 @@ const links = [
 
 const SocialShare = ({ className = null, url }) => (
   <div className={clsx('pointer-events-none relative z-50 flex items-center', className)}>
-    <div className="pointer-events-auto flex gap-4">
+    <div className="pointer-events-auto flex gap-6">
       {links.map(({ icon: Icon, tag: Tag, title }, index) => (
         <Tag url={url} key={index}>
-          <div className="social-share relative flex gap-3 py-4 px-7 shadow-social transition duration-200 xs:py-2 xs:px-3">
-            <Icon className="h-[27px]" />
-            <p className="font-sans text-xl font-medium text-white">{title}</p>
+          <div className="social-share relative flex items-center gap-4 py-[18px] px-6 pr-7 shadow-social transition duration-200 xs:py-2 xs:px-3">
+            <Icon className="h-[26px]" />
+            <p className="font-sans text-xl font-medium leading-none tracking-[-0.02em] text-white">
+              {title}
+            </p>
           </div>
         </Tag>
       ))}
     </div>
-    <h2 className="ml-6 shrink-0 font-sans text-sm font-light text-white xl:hidden">
+    <h2 className="ml-6 shrink-0 font-sans text-sm font-light leading-[1.375] tracking-[0.04em] text-gray-5 xl:hidden">
       Share with <br /> your friends
     </h2>
   </div>
