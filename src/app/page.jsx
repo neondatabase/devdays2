@@ -10,7 +10,7 @@ const DeveloperDays2Page = () => {
   const router = useRouter();
 
   const handleSubmitSuccess = () => {
-    router.push('/developer-days/generate-ticket');
+    router.push('/generate-ticket');
   };
 
   return (

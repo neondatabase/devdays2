@@ -40,5 +40,6 @@ yarn-error.log*
 .eslintcache
 
 .idea/
+.vscode/
 
 .env

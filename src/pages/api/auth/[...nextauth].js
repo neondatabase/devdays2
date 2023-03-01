@@ -18,13 +18,18 @@ const createOptions = (req) => ({
         let userData;
         const providerAccountId = session.user.image.split('/').slice(-1)[0].split('?')[0];
 
+        const headers = {
+          headers: {
+            Accept: 'application/vnd.github+json',
+            'X-GitHub-Api-Version': '2022-11-28',
+          },
+        };
+        if (token?.access_token) {
+          headers.Authorization = `Bearer ${token.access_token}`;
+        }
+
         try {
-          userData = await fetch(`https://api.github.com/user/${providerAccountId}`, {
-            headers: {
-              Accept: 'application/vnd.github+json',
-              'X-GitHub-Api-Version': '2022-11-28',
-            },
-          });
+          userData = await fetch(`https://api.github.com/user/${providerAccountId}`, headers);
           userData = await userData.json();
         } catch (err) {
           console.log('err', err);
@@ -37,7 +42,7 @@ const createOptions = (req) => ({
 
       return session;
     },
-    async jwt({ user, token }) {
+    async jwt({ user, account, token }) {
       if (req.query?.colorSchema) {
         token.colorSchema = req.query.colorSchema;
       }
@@ -45,6 +50,10 @@ const createOptions = (req) => ({
       if (user) {
         token.uid = user.id;
         token.colorSchema = user.colorSchema;
+      }
+
+      if (account) {
+        token.access_token = account.access_token;
       }
 
       return token;
