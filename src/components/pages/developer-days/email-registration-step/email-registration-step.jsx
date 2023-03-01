@@ -15,12 +15,10 @@ import ElephantIllustration from 'images/developer-days/ticket-hero-elephant.png
 
 const appearColumnVariants = {
   initial: {
-    translateX: -100,
     opacity: 0,
     scale: 1.2,
   },
   appear: {
-    translateX: -100,
     opacity: 1,
     scale: 1,
     transition: {
@@ -106,7 +104,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         >
           {titleContent}
         </h1>
-        <p className="mt-4 max-w-xl font-mono text-xl font-light tracking-tighter text-white lg:text-center lg:text-lg md:text-base sm:max-w-[80%] xs:max-w-[100%]">
+        <p className="mt-5 max-w-xl font-mono text-xl font-light tracking-tighter text-white lg:text-center lg:text-lg md:text-base sm:max-w-[80%] xs:max-w-[100%]">
           Join us on <time dateTime="2023-03-28 10:30">March 28th, 9 a.m. PT</time> to learn more
           about latest of Serverless Postgres
         </p>
@@ -120,8 +118,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           onSuccess={onSuccessCallback}
         />
       </motion.div>
-      {/* <motion.div
-        className="absolute right-0 lg:!transform-none lg:!opacity-100"
+      <motion.div
+        className="col-span-7 col-start-6 self-center lg:!transform-none lg:!opacity-100"
         initial="initial"
         animate={columnControls}
         variants={appearColumnVariants}
@@ -154,7 +152,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           src={ElephantIllustration}
           alt="Elephant illustration"
         />
-      </motion.div> */}
+      </motion.div>
     </>
   );
 };
