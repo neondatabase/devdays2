@@ -213,9 +213,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colo
                 />
               </div>
               <div className="ml-4 flex-col">
-                <p className="font-sans text-[26px] font-semibold leading-none text-white">
-                  {name}
-                </p>
+                <p className="font-sans text-[26px] font-medium leading-none text-white">{name}</p>
                 <p className="font-mono text-base text-white">@{githubHandle}</p>
               </div>
             </div>
