@@ -10,7 +10,7 @@ const styles = {
   },
   theme: {
     primary: 'bg-primary-1 text-black hover:bg-[#00e5bf]',
-    quaternary: 'bg-white text-[#1A1A1A] border-2 border-black hover:border-primary-2',
+    quaternary: 'bg-white text-[#1A1A1A] border-2 border-white hover:border-primary-2',
   },
 };
 
