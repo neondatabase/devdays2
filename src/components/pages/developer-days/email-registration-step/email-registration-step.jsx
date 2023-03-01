@@ -125,7 +125,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         variants={appearColumnVariants}
       >
         <div
-          className="relative w-[1010px] animate-webgl-brightness mix-blend-lighten xl:hidden"
+          className="relative w-[1080px] animate-webgl-brightness mix-blend-lighten xl:hidden"
           style={{ perspective: 900 }}
         >
           <motion.canvas
