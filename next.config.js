@@ -3,6 +3,10 @@ module.exports = {
   experimental: {
     appDir: true,
   },
+  env: {
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+  },
+  basePath: '/developer-days',
   images: {
     remotePatterns: [
       {
@@ -10,9 +14,6 @@ module.exports = {
         hostname: '**',
       },
     ],
-  },
-  async redirects() {
-    return [];
   },
   async headers() {
     return [

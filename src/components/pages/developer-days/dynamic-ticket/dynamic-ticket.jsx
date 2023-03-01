@@ -95,8 +95,8 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colo
     const { userId, colorSchema } = data;
 
     const updateUserDataTimer = setTimeout(async () => {
-      await fetch(`/api/update/user?id=${userId}&colorSchema=${colorSchema}`);
-      await fetch(`/api/auth/session?colorSchema=${selectedColorSchema}`);
+      await fetch(`/developer-days/api/update/user?id=${userId}&colorSchema=${colorSchema}`);
+      await fetch(`/developer-days/api/auth/session?colorSchema=${selectedColorSchema}`);
     }, 1000);
 
     // eslint-disable-next-line consistent-return

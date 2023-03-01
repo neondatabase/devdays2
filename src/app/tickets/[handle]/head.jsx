@@ -3,7 +3,7 @@ import SEO_DATA from 'constants/seo-data';
 import prisma from 'utils/prisma';
 
 const buildOgImageUrl = (data) =>
-  data ? '/api/og?'.concat(new URLSearchParams(data)) : '/api/og?';
+  data ? '/developer-days/api/og?'.concat(new URLSearchParams(data)) : '/developer-days/api/og?';
 
 const Head = async ({ params }) => {
   const { handle } = params;
