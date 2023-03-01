@@ -24,8 +24,8 @@ const appearAndExitAnimationVariants = {
 const sizeClassNames = {
   sm: {
     form: 'relative max-w-[540px]',
-    input: 'h-[64px] text-lg pl-5 border',
-    button: '!text-base !px-7 !py-[15px] right-2 sm:!p-0',
+    input: 'h-[64px] text-lg pl-6 border',
+    button: '!text-base !px-7 !py-[14px] right-2 sm:!p-0',
     loading: 'right-2',
     success: 'right-2',
     stateIcon: 'w-14 h-14',
@@ -139,7 +139,7 @@ const SubscriptionForm = ({
     >
       <input
         className={clsx(
-          'remove-autocomplete-styles relative z-20 block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 placeholder:font-normal lg:w-full lg:pl-5 sm:pr-20',
+          'remove-autocomplete-styles relative z-20 block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 placeholder:font-normal',
           errorMessage && 'border-secondary-1',
           sizeClassNames[size].input
         )}
@@ -180,7 +180,7 @@ const SubscriptionForm = ({
           >
             <Button
               className={clsx(
-                'absolute top-1/2 z-20 -translate-y-1/2 sm:h-14 sm:w-14 sm:rounded-full sm:p-0',
+                'absolute top-1/2 z-20 -translate-y-1/2 text-[15px] sm:h-14 sm:w-14 sm:rounded-full sm:p-0',
                 sizeClassNames[size].button
               )}
               size="sm"

@@ -61,7 +61,7 @@ module.exports = {
         sm: [defaultTheme.fontSize.sm[0]],
         base: [defaultTheme.fontSize.base[0]],
         lg: [defaultTheme.fontSize.lg[0]],
-        xl: [defaultTheme.fontSize.xl[0]],
+        xl: [defaultTheme.fontSize.xl[0], 1.375],
         '2xl': [defaultTheme.fontSize['2xl'][0]],
         '3xl': [defaultTheme.fontSize['3xl'][0]],
         '4xl': ['2.5rem'],
