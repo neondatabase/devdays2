@@ -6,11 +6,11 @@ const styles = {
   base: 'inline-flex items-center justify-center font-bold !leading-none text-center whitespace-nowrap rounded-full transition-colors duration-200 outline-none',
   size: {
     md: 't-2xl py-[22px] px-11 2xl:py-[20px] xl:px-9 md:py-5 md:px-8',
-    sm: 'text-[15px] px-[30px] 2xl:py-[21px] 2xl:px-9 xl:py-5 xl:px-8 py-[14px]',
+    sm: 'text-base px-7 2xl:py-[21px] 2xl:px-9 xl:py-5 xl:px-8 py-[14px]',
   },
   theme: {
     primary: 'bg-primary-1 text-black hover:bg-[#00e5bf]',
-    quaternary: 'bg-white text-black border-2 border-black hover:border-primary-2',
+    quaternary: 'bg-white text-[#1A1A1A] border-2 border-black hover:border-primary-2',
   },
 };
 
