@@ -1,5 +1,3 @@
-'use client';
-
 import GithubRegistrationStep from 'components/pages/developer-days/github-registration-step';
 
 const GenerateTicketPage = () => (
