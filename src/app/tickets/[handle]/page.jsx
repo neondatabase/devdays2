@@ -6,6 +6,7 @@ import SocialShare from 'components/shared/social-share';
 import prisma from 'utils/prisma';
 
 const TicketPage = async ({ params }) => {
+  // eslint-disable-next-line no-use-before-define
   const userData = await getTicketData(params.handle);
 
   if (!userData) return notFound();
@@ -14,22 +15,21 @@ const TicketPage = async ({ params }) => {
 
   return (
     <Container
-      className="relative flex min-h-[inherit] items-center gap-12 py-4 xl:flex-wrap xl:justify-center xl:gap-4"
+      className="flex min-h-[inherit] items-center justify-between gap-12 py-4 lg:flex-col lg:justify-start lg:pb-24 lg:pt-16"
       size="lg"
     >
-      <div className="xl:flex xl:w-full xl:flex-col xl:items-center">
-        <h1 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-center xl:text-[78px] md:text-[58px] sm:text-[52px]">
-          {userData.name}&apos;s
-          <br />
+      <div className="w-full max-w-[620px] pb-9 lg:flex lg:flex-col lg:items-center">
+        <h1 className="pointer-events-none relative z-50 text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-[64px] lg:text-center">
+          {userData.name}&apos;s <br className="lg:hidden sm:block" />
           Ticket
         </h1>
-        <p className="mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
+        <p className="pointer-events-none relative z-50 mt-4 font-mono text-xl font-light leading-tight tracking-tighter text-white lg:text-center lg:text-lg md:text-base">
           Join {userData.name.split(' ')[0]} at Neon Developer Days on{' '}
           <time dateTime="2023-03-28 09:00">March 28th, 9 a.m. PT</time>
         </p>
         <SocialShare className="mt-12 sm:mt-6" url={shareUrl} />
       </div>
-      <div className="shrink-0 lg:mt-6 lg:max-w-[95%] sm:mt-4 sm:flex sm:flex-col-reverse">
+      <div className="shrink-0">
         <DynamicTicket userData={userData} />
       </div>
     </Container>

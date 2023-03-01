@@ -9,7 +9,7 @@ import LINKS from 'constants/links';
 import Github from './images/header-github.inline.svg';
 
 const Header = () => (
-  <header className="safe-paddings relative w-full lg:h-14">
+  <header className="safe-paddings relative z-50 w-full lg:h-14">
     <Container className="flex items-center justify-between py-3.5" size="lg">
       <Link to="/">
         <span className="sr-only">Neon</span>
