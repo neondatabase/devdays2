@@ -60,3 +60,5 @@ async function getTicketData(handle) {
 
   return userData;
 }
+
+export const revalidate = 60;

@@ -66,3 +66,13 @@ async function getTicketData(handle) {
 
   return userData;
 }
+
+export async function generateStaticParams() {
+  const users = await prisma.user.findMany();
+
+  return users.map((user) => ({
+    handle: user.login,
+  }));
+}
+
+export const revalidate = 60;
