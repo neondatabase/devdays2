@@ -14,22 +14,28 @@ const appearAndExitGradientVariants = {
     display: 'none',
     translateX: '-100%',
   },
-  move: {
+  almost: {
     display: 'block',
+    translateX: '0%',
+    transition: {
+      duration: 0.3,
+      ease: 'linear',
+    },
+  },
+  done: {
     translateX: '100%',
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       ease: 'linear',
-      opacity: {
-        duration: 0,
+      transitionEnd: {
+        display: 'none',
       },
-    },
-    transitionEnd: {
-      display: 'none',
     },
   },
 };
 
+// TODO: fix translateZ opacity bug
+// eslint-disable-next-line no-unused-vars
 const scaleAndMoveTicketVariants = {
   initial: {
     scale: 1,
@@ -71,24 +77,36 @@ const colorVariants = [
 ];
 
 const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colorSchema } }) => {
-  const { data, status } = useSession();
+  let { data, status } = useSession();
+  // TODO: remove mocked values before merge
+  data = { colorSchema: '1' };
+  status = 'authenticated';
+  // -
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
   const prevColor = usePrevious(selectedColorSchema);
   const currentColorSchema = selectedColorSchema || colorSchema;
+  const [elephantColorSchema, setElephantColorSchema] = useState(currentColorSchema);
   const gradientControls = useAnimationControls();
-  const ticketControls = useAnimationControls();
+  // const ticketControls = useAnimationControls();
 
   useEffect(() => {
-    if (prevColor !== selectedColorSchema) {
-      ticketControls.start('scaleOut').then(() => {
-        ticketControls.start('initial');
-      });
+    if (prevColor !== selectedColorSchema && selectedColorSchema) {
+      // TODO: fix translateZ opacity bug
+      // ticketControls.start('scaleOut').then(() => {
+      //   ticketControls.start('initial');
+      // });
 
-      gradientControls.start('move').then(() => {
-        gradientControls.start('initial');
-      });
+      gradientControls
+        .start('almost')
+        .then(() => {
+          setElephantColorSchema(selectedColorSchema);
+          return gradientControls.start('done');
+        })
+        .then(() => {
+          gradientControls.start('initial');
+        });
     }
-  }, [prevColor, selectedColorSchema, gradientControls, ticketControls]);
+  }, [prevColor, selectedColorSchema, gradientControls]);
 
   useEffect(() => {
     if (!selectedColorSchema) return;
@@ -115,111 +133,145 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colo
   const measurementRef = useRef({ x: 0, width: 0 });
 
   useEffect(() => {
-    const gap = getComputedStyle(ticketRef.current).getPropertyValue('--hoverGap');
+    const gap = getComputedStyle(ticketRef.current).getPropertyValue('--hover-gap-x');
+    const { left } = ticketRef.current.getBoundingClientRect();
+    const fullWidth = ticketRef.current.clientWidth + gap * 2;
 
     measurementRef.current = {
-      x: ticketRef.current.getBoundingClientRect().left - gap,
-      width: ticketRef.current.clientWidth + gap * 2,
+      x: left,
+      width: fullWidth,
+      center: left - gap + fullWidth / 2,
+      delta: null,
     };
   }, []);
 
   const onMouseMove = useCallback((evt) => {
-    const percent = Math.round(
-      (evt.clientX - measurementRef.current.x) / (measurementRef.current.width / 100)
-    );
-    ticketRef.current.style.setProperty(
-      '--percent',
-      // eslint-disable-next-line no-nested-ternary
-      percent < 0 ? 0 : percent > 100 ? 100 : percent
-    );
+    const currentX = evt.clientX - measurementRef.current.center;
+    const OxDelta = Math.round((currentX * 100 * 2) / measurementRef.current.width);
+    // eslint-disable-next-line no-nested-ternary
+    const normalizedOxDelta = OxDelta < -100 ? -100 : OxDelta > 100 ? 100 : OxDelta;
+
+    if (measurementRef.current.delta === null || measurementRef.current.delta !== OxDelta) {
+      measurementRef.current.delta = normalizedOxDelta;
+      ticketRef.current.style.setProperty('--delta-x', normalizedOxDelta);
+    }
   }, []);
 
   const onMouseLeave = useCallback(() => {
-    // Note: movement is measuring by percents from 0 (left side) to 100 (right side).
-    // By default value is 50 percent - without move to any sides
-    ticketRef.current.style.setProperty('--percent', 50);
+    ticketRef.current.style.setProperty('--delta-x', 0);
   }, []);
 
   return (
-    <div
-      className={clsx('ticket sm:flex sm:flex-col-reverse', {
-        'ticket-variant-1': currentColorSchema === '1',
-        'ticket-variant-2': currentColorSchema === '2',
-        'ticket-variant-3': currentColorSchema === '3',
-        'ticket-variant-4': currentColorSchema === '4',
-      })}
-    >
-      <div
-        className={clsx('ticket-hover-aria')}
+    <div className="md:flex md:flex-col-reverse">
+      <section
+        className={clsx('ticket', {
+          'before:bg-ticket-back-variant-1': currentColorSchema === '1',
+          'before:bg-ticket-back-variant-2': currentColorSchema === '2',
+          'before:bg-ticket-back-variant-3': currentColorSchema === '3',
+          'before:bg-ticket-back-variant-4': currentColorSchema === '4',
+        })}
         ref={ticketRef}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
       >
-        <motion.div
-          className="relative z-30"
-          initial="initial"
-          animate={
-            (typeof window !== 'undefined' && window.innerWidth <= '1024') ||
-            status !== 'authenticated'
-              ? false
-              : ticketControls
-          }
-          variants={scaleAndMoveTicketVariants}
+        <div
+          className={clsx('ticket-back', {
+            'bg-ticket-border-variant-1': currentColorSchema === '1',
+            'bg-ticket-border-variant-2': currentColorSchema === '2',
+            'bg-ticket-border-variant-3': currentColorSchema === '3',
+            'bg-ticket-border-variant-4': currentColorSchema === '4',
+          })}
         >
-          <div className="ticket-wrapper h-[388px] w-[790px] 2xl:h-[330px] 2xl:w-[670px] md:h-[700px] md:w-[334px]">
-            <section className="ticket-frame flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-3xl p-7 text-white md:p-5 md:pt-16 md:pb-20 md:before:hidden sm:justify-start">
+          <div
+            className={clsx('ticket-middle', {
+              'bg-ticket-middle-variant-1 md:bg-ticket-middle-variant-1-vertical':
+                currentColorSchema === '1',
+              'bg-ticket-middle-variant-2 md:bg-ticket-middle-variant-2-vertical':
+                currentColorSchema === '2',
+              'bg-ticket-middle-variant-3 md:bg-ticket-middle-variant-3-vertical':
+                currentColorSchema === '3',
+              'bg-ticket-middle-variant-4 md:bg-ticket-middle-variant-4-vertical':
+                currentColorSchema === '4',
+            })}
+          >
+            <div
+              className={clsx('ticket-front', {
+                'bg-ticket-front-variant-1': elephantColorSchema === '1',
+                'bg-ticket-front-variant-2': elephantColorSchema === '2',
+                'bg-ticket-front-variant-3': elephantColorSchema === '3',
+                'bg-ticket-front-variant-4': elephantColorSchema === '4',
+              })}
+            >
+              <div className="ticket-content flex flex-col justify-between p-7 text-white 2xl:p-6 md:p-5 md:pt-14 md:pb-[61px]">
+                <header className="order-2 ml-[44px] mb-4 self-start 2xl:ml-[42px] 2xl:mb-3 lg:ml-[38px] lg:mt-3 lg:mb-0 md:mt-4 md:ml-0">
+                  <h2
+                    className={clsx(
+                      'min-h-[100px] bg-clip-text font-kallisto text-5xl font-light leading-none text-transparent opacity-90 lg:text-[36px] md:text-4xl',
+                      {
+                        'bg-ticket-text-variant-1': currentColorSchema === '1',
+                        'bg-ticket-text-variant-2': currentColorSchema === '2',
+                        'bg-ticket-text-variant-3': currentColorSchema === '3',
+                        'bg-ticket-text-variant-4': currentColorSchema === '4',
+                      }
+                    )}
+                  >
+                    Neon Dev
+                    <br />
+                    Days 2023
+                  </h2>
+                </header>
+                <p className="order-1 grid grid-cols-[56px_1fr] grid-rows-2 gap-x-4 gap-y-2 lg:grid-cols-[48px_1fr] lg:gap-x-3 md:gap-x-2.5">
+                  <Image
+                    src={image}
+                    width={56}
+                    height={56}
+                    alt={`${name}'s profile picture`}
+                    className="row-start-1 row-end-3 h-[56px] w-[56px] rounded-full lg:h-[48px] lg:w-[48px]"
+                  />
+                  <b className="font-sans text-[26px] font-semibold leading-none text-white lg:text-xl">
+                    {name}
+                  </b>
+                  <span className="col-start-2 font-mono text-base leading-none text-white lg:text-sm">
+                    @{githubHandle}
+                  </span>
+                </p>
+                <footer className="order-3 flex items-center gap-3 md:mt-auto">
+                  <p className="trac whitespace-nowrap font-kallisto text-[36px] font-light leading-none text-white lg:text-3xl md:text-[28px] xxs:text-[26px]">
+                    #{`${number}`.padStart(6, '0')} /
+                  </p>
+                  {/* TODO: set up real date */}
+                  <time
+                    dateTime="2023-03-26T10:30:00-0800"
+                    className="whitespace-nowrap font-mono text-sm uppercase leading-dense tracking-wider text-white lg:text-[12px] md:text-[12px]"
+                  >
+                    10:30AM PT,
+                    <br />
+                    March 26, 2023
+                  </time>
+                </footer>
+              </div>
               {status === 'authenticated' && (
                 <motion.span
                   initial="initial"
                   animate={gradientControls}
                   variants={appearAndExitGradientVariants}
-                  className="flare absolute top-0 left-0 h-full w-full translate-x-full"
+                  className={clsx('flare absolute top-0 left-0 h-full w-full translate-x-full', {
+                    'bg-ticket-flare-variant-1': currentColorSchema === '1',
+                    'bg-ticket-flare-variant-2': currentColorSchema === '2',
+                    'bg-ticket-flare-variant-3': currentColorSchema === '3',
+                    'bg-ticket-flare-variant-4': currentColorSchema === '4',
+                  })}
                 />
               )}
-              <header className="lg:mal-[44px] relative order-2 ml-[44px] xl:ml-[38px] md:mt-5 md:ml-0">
-                <h2 className="ticket-text text-5xl sm:text-4xl">
-                  Neon Dev
-                  <br />
-                  Days 2023
-                </h2>
-              </header>
-              <p className="relative order-1 grid grid-cols-[56px_1fr] grid-rows-2 gap-x-4 gap-y-2 md:grid-cols-[48px_1fr] md:gap-x-3 sm:gap-x-2.5">
-                <Image
-                  src={image}
-                  width={56}
-                  height={56}
-                  alt={`${name}'s profile picture`}
-                  className="row-start-1 row-end-3 h-[56px] w-[56px] rounded-full md:h-[48px] md:w-[48px]"
-                />
-                <b className="font-sans text-[26px] font-semibold leading-none text-white md:text-xl">
-                  {name}
-                </b>
-                <span className="col-start-2 font-mono text-base leading-none text-white md:text-sm">
-                  @{githubHandle}
-                </span>
-              </p>
-              <footer className="relative order-3 flex items-center gap-3 md:mt-auto">
-                <p className="trac whitespace-nowrap font-kallisto text-[36px] font-light leading-none text-white md:text-3xl sm:text-[28px] xxs:text-[26px]">
-                  #{`${number}`.padStart(6, '0')} /
-                </p>
-                <time
-                  dateTime="2023-03-26T10:30:00-0800"
-                  className="whitespace-nowrap font-mono text-sm uppercase leading-dense tracking-wider text-white md:text-[12px] sm:text-[12px]"
-                >
-                  10:30AM PT,
-                  <br />
-                  March 26, 2023
-                </time>
-              </footer>
-            </section>
+            </div>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </section>
 
       {status === 'authenticated' && data?.colorSchema && (
-        <div className="mt-8 flex items-center gap-3 xl:justify-center sm:mt-0 sm:mb-7">
-          <p className="relative z-50 text-sm font-thin text-gray-7">Pick a color:</p>
-          <div className="relative z-50 flex gap-5">
+        <div className="pointer-events-none relative z-10 mt-9 flex items-center gap-5 2xl:mt-8 2xl:justify-center 2xl:gap-4 lg:mt-7 md:mt-0 md:mb-7">
+          <p className="text-sm font-light text-white opacity-80">Pick a color:</p>
+          <div className="pointer-events-auto flex gap-5">
             {colorVariants.map((item, i) => {
               const { id, title, buttonColorClass } = item;
               const isActive = currentColorSchema === `${id}`;
