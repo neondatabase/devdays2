@@ -9,40 +9,28 @@ const createOptions = (req) => ({
     GitHubProvider({
       clientId: process.env.GITHUB_APP_CLIENT_ID,
       clientSecret: process.env.GITHUB_APP_SECRET,
+      profile(profile) {
+        return {
+          id: profile.id,
+          name: profile.name,
+          email: profile.email,
+          image: profile.avatar_url,
+          login: profile.login,
+        };
+      },
     }),
   ],
   callbacks: {
     async session({ session, token }) {
       if (session?.user) {
-        const userId = token.uid;
-        let userData;
-        const providerAccountId = session.user.image.split('/').slice(-1)[0].split('?')[0];
-
-        const headers = {
-          headers: {
-            Accept: 'application/vnd.github+json',
-            'X-GitHub-Api-Version': '2022-11-28',
-          },
-        };
-        if (token?.access_token) {
-          headers.Authorization = `Bearer ${token.access_token}`;
-        }
-
-        try {
-          userData = await fetch(`https://api.github.com/user/${providerAccountId}`, headers);
-          userData = await userData.json();
-        } catch (err) {
-          console.log('err', err);
-        }
-
         session.colorSchema = token.colorSchema;
-        session.userId = userId;
-        session.githubHandle = userData?.login ?? null;
+        session.userId = token.uid;
+        session.githubHandle = token.githubHandle;
       }
 
       return session;
     },
-    async jwt({ user, account, token }) {
+    async jwt({ user, account, token, profile }) {
       if (req.query?.colorSchema) {
         token.colorSchema = req.query.colorSchema;
       }
@@ -54,6 +42,9 @@ const createOptions = (req) => ({
 
       if (account) {
         token.access_token = account.access_token;
+      }
+      if (profile) {
+        token.githubHandle = profile.login;
       }
 
       return token;

@@ -41,12 +41,12 @@ async function getTicketData(handle) {
     try {
       userData = await prisma.user.findFirstOrThrow({
         where: {
-          githubHandle: handle,
+          login: handle,
         },
         select: {
           name: true,
           email: true,
-          githubHandle: true,
+          login: true,
           colorSchema: true,
           image: true,
           id: true,

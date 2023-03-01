@@ -43,7 +43,7 @@ model User {
   name          String?
   email         String?   @unique
   emailVerified Boolean?  @map("email_verified")
-  githubHandle  String?   @unique @map("github_handle")
+  login         String?   @unique @map("github_handle")
   image         String?
   colorSchema   String?   @default("1")
   accounts      Account[]
