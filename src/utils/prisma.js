@@ -19,39 +19,10 @@ export const PrismaAdapter = (p) => ({
   getUser: (id) =>
     p.user.findUnique({
       where: { id: +id },
-      include: {
-        user: {
-          include: {
-            colorSchema: true,
-          },
-        },
+      select: {
+        colorSchema: true,
       },
     }),
-  createUser: async (data) => {
-    const userId = data?.image.split('/').slice(-1)[0].split('?')[0];
-    let githubHandle;
-    // @TODO: beware of rate limits
-    // fetch user-data using the github app
-    try {
-      let userData = await fetch(`https://api.github.com/user/${userId}`, {
-        headers: {
-          Accept: 'application/vnd.github+json',
-          'X-GitHub-Api-Version': '2022-11-28',
-        },
-      });
-      userData = await userData.json();
-      githubHandle = userData?.login;
-    } catch (err) {
-      console.log(err);
-    }
-
-    return p.user.create({
-      data: {
-        ...data,
-        githubHandle,
-      },
-    });
-  },
 });
 
 export default prisma;

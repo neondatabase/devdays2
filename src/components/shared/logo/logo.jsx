@@ -6,7 +6,7 @@ import logoWhite from 'images/logo-white.svg';
 
 const Logo = ({ className = null }) => (
   <Image
-    className={clsx('h-9 2xl:h-8', className)}
+    className={clsx('h-9 w-auto 2xl:h-8', className)}
     src={logoWhite}
     alt=""
     width={128}

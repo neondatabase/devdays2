@@ -13,12 +13,12 @@ const Head = async ({ params }) => {
     try {
       userData = await prisma.user.findUnique({
         where: {
-          githubHandle: handle,
+          login: handle,
         },
         select: {
           name: true,
           email: true,
-          githubHandle: true,
+          login: true,
           image: true,
           id: true,
           colorSchema: true,

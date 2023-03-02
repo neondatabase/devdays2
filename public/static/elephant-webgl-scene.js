@@ -14,7 +14,7 @@ const settings = {
 
 // Sizes
 const sizes = {
-  width: 1090,
+  width: 1080,
   height: 760,
 };
 

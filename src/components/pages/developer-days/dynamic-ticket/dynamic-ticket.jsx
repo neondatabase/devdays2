@@ -76,7 +76,9 @@ const colorVariants = [
   },
 ];
 
-const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colorSchema } }) => {
+const DynamicTicket = ({
+  userData: { id: number, name, image, login: githubHandle, colorSchema },
+}) => {
   const { data, status } = useSession();
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
   const prevColor = usePrevious(selectedColorSchema);
@@ -159,7 +161,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colo
   }, []);
 
   return (
-    <div className="md:flex md:flex-col-reverse">
+    <div className="mt-[4.5rem] md:flex md:flex-col-reverse">
       <section
         className={clsx('ticket', {
           'before:bg-ticket-back-variant-1': currentColorSchema === '1',
@@ -199,8 +201,8 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colo
                 'bg-ticket-front-variant-4': elephantColorSchema === '4',
               })}
             >
-              <div className="ticket-content flex flex-col justify-between p-7 text-white 2xl:p-6 md:p-5 md:pt-14 md:pb-[61px]">
-                <header className="order-2 ml-[44px] mb-4 self-start 2xl:ml-[42px] 2xl:mb-3 lg:ml-[38px] lg:mt-3 lg:mb-0 md:mt-4 md:ml-0">
+              <div className="ticket-content flex flex-col justify-between p-7 pb-6 text-white 2xl:p-6 md:p-5 md:pt-14 md:pb-[61px]">
+                <header className="order-2 ml-[43px] mb-4 self-start 2xl:ml-[42px] 2xl:mb-3 lg:ml-[38px] lg:mt-3 lg:mb-0 md:mt-4 md:ml-0">
                   <h2
                     className={clsx(
                       'min-h-[100px] bg-clip-text font-kallisto text-5xl font-light leading-none text-transparent opacity-90 lg:text-[36px] md:text-4xl',
@@ -232,13 +234,13 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colo
                     @{githubHandle}
                   </span>
                 </p>
-                <footer className="order-3 flex items-center gap-3 md:mt-auto">
-                  <p className="trac whitespace-nowrap font-kallisto text-[36px] font-light leading-none text-white lg:text-3xl md:text-[28px] xxs:text-[26px]">
+                <footer className="order-3 flex items-center gap-2 md:mt-auto">
+                  <p className="trac whitespace-nowrap font-kallisto text-[36px] font-light leading-none tracking-[0.08em] text-white lg:text-3xl md:text-[28px] xxs:text-[26px]">
                     #{`${number}`.padStart(6, '0')} /
                   </p>
                   <time
                     dateTime="2023-03-28T09:00:00-0800"
-                    className="whitespace-nowrap font-mono text-sm uppercase leading-dense tracking-wider text-white lg:text-[12px] md:text-[12px]"
+                    className="whitespace-nowrap font-mono text-sm uppercase leading-dense tracking-[0.01em] text-white lg:text-[12px] md:text-[12px]"
                   >
                     9 a.m. PT,
                     <br />
@@ -265,7 +267,7 @@ const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colo
       </section>
 
       {status === 'authenticated' && data?.colorSchema && (
-        <div className="pointer-events-none relative z-10 mt-9 flex items-center gap-5 2xl:mt-8 2xl:justify-center 2xl:gap-4 lg:mt-7 md:mt-0 md:mb-7">
+        <div className="pointer-events-none relative z-10 mt-9 flex items-center gap-6 2xl:mt-8 2xl:justify-center 2xl:gap-4 lg:mt-7 md:mt-0 md:mb-7">
           <p className="text-sm font-light text-white opacity-80">Pick a color:</p>
           <div className="pointer-events-auto flex gap-5">
             {colorVariants.map((item, i) => {
@@ -312,7 +314,7 @@ DynamicTicket.propTypes = {
     email: PropTypes.string,
     image: PropTypes.string,
     name: PropTypes.string,
-    githubHandle: PropTypes.string,
+    login: PropTypes.string,
     colorSchema: PropTypes.string,
   }).isRequired,
 };

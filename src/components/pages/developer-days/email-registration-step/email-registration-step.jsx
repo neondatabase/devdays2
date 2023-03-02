@@ -15,12 +15,10 @@ import ElephantIllustration from 'images/developer-days/ticket-hero-elephant.png
 
 const appearColumnVariants = {
   initial: {
-    translateX: -100,
     opacity: 0,
     scale: 1.2,
   },
   appear: {
-    translateX: -100,
     opacity: 1,
     scale: 1,
     transition: {
@@ -72,9 +70,16 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
     <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
       {'Developer Days'.split('').map((letter, index) =>
         index === 9 ? (
-          <br className="lg:hidden" key={index} />
+          <span key={index}>
+            <br className="xl:hidden" />
+            <span className="hidden xl:inline"> </span>
+          </span>
         ) : (
-          <span className="animate-text-blink" style={{ animationPlayState: 'paused' }} key={index}>
+          <span
+            className="animate-text-blink lg:!animate-none"
+            style={{ animationPlayState: 'paused' }}
+            key={index}
+          >
             {letter}
           </span>
         )
@@ -85,26 +90,26 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
   return (
     <>
       <motion.div
-        className="relative z-30 w-5/12 xl:w-1/2 lg:mt-10 lg:flex lg:w-full lg:flex-col lg:items-center"
-        initial={window.innerWidth <= '1024' ? { opacity: 1 } : { opacity: 0 }}
+        className="col-span-4 col-start-2 self-center lg:col-span-full lg:text-center lg:!opacity-100"
+        initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'linear' }}
       >
-        <span className="rounded-[50px] bg-secondary-2 py-1 px-3 text-sm font-semibold uppercase leading-snug dark:text-black sm:mt-0 sm:text-xs">
+        <span className="inline-block rounded-[50px] bg-secondary-2 py-1 px-3 align-top text-sm font-semibold uppercase leading-snug tracking-[-0.02em] text-black md:text-xs sm:mt-0 sm:text-xs">
           March 2023
         </span>
         <h1
-          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:text-center lg:text-[78px] md:text-[58px] sm:mt-2 sm:max-w-[80%] sm:text-[52px] xs:max-w-[100%]"
+          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:mt-2 lg:text-center lg:text-[78px] lg:tracking-[-0.05em] md:text-[58px] sm:mt-1 sm:text-[52px]"
           ref={titleRef}
         >
-          {window.innerWidth <= '1024' ? 'Developer Days' : titleContent}
+          {titleContent}
         </h1>
-        <p className="mt-4 max-w-xl font-mono text-xl font-light tracking-tighter text-white lg:text-center lg:text-lg md:text-base sm:max-w-[80%] xs:max-w-[100%]">
+        <p className="mt-5 max-w-xl font-mono text-xl font-light tracking-tighter text-white xl:text-lg lg:mx-auto lg:max-w-md md:mt-4 md:max-w-sm md:text-base sm:max-w-[80%]">
           Join us on <time dateTime="2023-03-28 10:30">March 28th, 9 a.m. PT</time> to learn more
           about latest of Serverless Postgres
         </p>
         <SubscriptionForm
-          className="mt-12 lg:mt-8 xs:mt-4"
+          className="mt-12 lg:mx-auto lg:mt-10 md:mt-8 sm:mt-7"
           successText="Thanks for registering!"
           submitButtonText="Register"
           size="sm"
@@ -114,25 +119,24 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         />
       </motion.div>
       <motion.div
-        className="w-7/12 xl:w-1/2 lg:my-4 lg:w-full"
+        className="col-span-7 col-start-6 self-center lg:col-span-full lg:!transform-none lg:!opacity-100"
         initial="initial"
-        animate={window.innerWidth <= '1024' ? false : columnControls}
-        variants={window.innerWidth <= '1024' ? false : appearColumnVariants}
+        animate={columnControls}
+        variants={appearColumnVariants}
       >
-        <div className="relative min-h-[760px] w-[1100px] xl:hidden" style={{ perspective: 900 }}>
+        <div
+          className="relative w-[1080px] animate-webgl-brightness mix-blend-lighten xl:hidden"
+          style={{ perspective: 900 }}
+        >
           <motion.canvas
-            className="webgl relative z-20 animate-webgl-brightness mix-blend-lighten"
+            className="webgl relative z-20"
             initial="initial"
             animate={sceneControls}
             variants={appearSceneVariants}
           />
-          <CursorTrackingWrapper
-            className="absolute inset-0 z-30 animate-webgl-brightness"
-            xMovement={1}
-            yMovement={1}
-          >
+          <CursorTrackingWrapper className="absolute inset-0 z-30" xMovement={1} yMovement={1}>
             <Image
-              className="h-full min-h-[740px] w-full"
+              className="h-full w-full"
               src="/developer-days/images/developer-days/elephant-tusk.png"
               width={1010}
               height={740}
@@ -147,7 +151,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           />
         </div>
         <Image
-          className="remove-image-loading-visual hidden xl:block"
+          className="remove-image-loading-visual hidden xl:block lg:my-9 md:my-4"
           src={ElephantIllustration}
           alt="Elephant illustration"
         />

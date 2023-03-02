@@ -3,8 +3,7 @@ import { ImageResponse } from '@vercel/og';
 import { image1, image2, image3, image4 } from 'constants/og-images';
 
 export const config = {
-  // runtime: 'edge',
-  runtime: 'experimental-edge',
+  runtime: 'edge',
 };
 
 const colorSchemeMap = {

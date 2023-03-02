@@ -2,7 +2,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  darkMode: 'class',
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     screens: {
@@ -19,7 +18,7 @@ module.exports = {
       inherit: 'inherit',
       current: 'currentColor',
       transparent: 'transparent',
-      black: '#000',
+      black: '#000000',
       white: '#ffffff',
       primary: {
         1: '#00e699',
@@ -48,22 +47,12 @@ module.exports = {
         8: '#f2f2f2',
         9: '#FAFAFA',
       },
-      code: {
-        'green-1': '#078345',
-        'green-2': '#47D18C',
-        'blue-1': '#206CDF',
-        'blue-2': '#66A3FF',
-        'red-1': '#DA0B51',
-        'red-2': '#F6558C',
-        'orange-1': '#FF9500',
-        'orange-2': '#FFBF66',
-        'gray-1': '#B3B3B3',
-        'gray-2': '#808080',
-        'brown-1': '#A86624',
-        'brown-2': '#BA8C5E',
-      },
     },
     extend: {
+      letterSpacing: {
+        tight: '-0.04em',
+        tighter: '-0.06em',
+      },
       fontFamily: {
         kallisto: ['Kallisto', 'Kallisto Fallback', ...defaultTheme.fontFamily.sans],
         sans: ['IBM Plex Sans', 'IBM Plex Sans Fallback', ...defaultTheme.fontFamily.sans],
@@ -73,7 +62,7 @@ module.exports = {
         sm: [defaultTheme.fontSize.sm[0]],
         base: [defaultTheme.fontSize.base[0]],
         lg: [defaultTheme.fontSize.lg[0]],
-        xl: [defaultTheme.fontSize.xl[0]],
+        xl: [defaultTheme.fontSize.xl[0], 1.375],
         '2xl': [defaultTheme.fontSize['2xl'][0]],
         '3xl': [defaultTheme.fontSize['3xl'][0]],
         '4xl': ['2.5rem'],
@@ -195,19 +184,7 @@ module.exports = {
         'text-blink': 'text-blink 1.5s cubic-bezier(0, 0.35, 0.35, 1)',
         'webgl-brightness': 'webgl-brightness 3s cubic-bezier(0, 0.35, 0.35, 1)',
       },
-      typography: () => ({
-        DEFAULT: {
-          css: {
-            h2: {
-              fontWeight: 600,
-            },
-            a: {
-              fontWeight: 600,
-            },
-          },
-        },
-      }),
     },
   },
-  plugins: [require('tailwindcss-safe-area'), require('@tailwindcss/typography')],
+  plugins: [require('tailwindcss-safe-area')],
 };
