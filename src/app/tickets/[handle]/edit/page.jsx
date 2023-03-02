@@ -26,7 +26,7 @@ const TicketEditPage = async ({ params }) => {
         <SocialShare className="mt-11 lg:mt-8 sm:mt-6" url={shareUrl} />
       </div>
       <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-start-6 2xl:ml-0 xl:col-span-full xl:self-start">
-        <DynamicTicket userData={userData} />
+        <DynamicTicket userData={userData} withColorPicker />
       </div>
     </div>
   );

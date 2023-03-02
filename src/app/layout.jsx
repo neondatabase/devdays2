@@ -17,7 +17,7 @@ const RootLayout = ({ children }) => (
           <Script id="google-tag-manager" strategy="afterInteractive" />
         )}
       </head>
-      <body className="h-full min-h-full bg-black xl:flex xl:h-auto xl:flex-col">
+      <body>
         {process.env.NODE_ENV === 'production' && (
           <noscript
             dangerouslySetInnerHTML={{

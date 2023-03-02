@@ -1,6 +1,6 @@
 @layer base {
   body {
-    @apply relative min-w-[320px] font-sans text-black antialiased;
+    @apply relative h-full min-h-full min-w-[320px] bg-black font-sans text-black antialiased xl:flex xl:h-auto xl:flex-col;
     -webkit-tap-highlight-color: transparent;
   }
 

@@ -77,6 +77,7 @@ const colorVariants = [
 ];
 
 const DynamicTicket = ({
+  withColorPicker = false,
   userData: { id: number, name, image, login: githubHandle, colorSchema },
 }) => {
   const { data, status } = useSession();
@@ -266,7 +267,7 @@ const DynamicTicket = ({
         </div>
       </section>
 
-      {status === 'authenticated' && data?.colorSchema && (
+      {withColorPicker && (
         <div className="pointer-events-none relative z-10 mt-9 flex items-center gap-6 2xl:mt-8 xl:justify-center lg:mt-7 lg:gap-4 md:mt-0 md:mb-7">
           <p className="text-sm font-light tracking-[0.04em] text-white opacity-80">
             Pick a color:
@@ -311,6 +312,7 @@ const DynamicTicket = ({
 };
 
 DynamicTicket.propTypes = {
+  withColorPicker: PropTypes.bool,
   userData: PropTypes.exact({
     id: PropTypes.number,
     email: PropTypes.string,
