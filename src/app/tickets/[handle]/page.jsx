@@ -1,7 +1,7 @@
+import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
 
 import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
-import Button from 'components/shared/button';
 import prisma from 'utils/prisma';
 
 const TicketPage = async ({ params }) => {
@@ -21,15 +21,13 @@ const TicketPage = async ({ params }) => {
           Join {userData.name.split(' ')[0]} at Neon Developer Days on{' '}
           <time dateTime="2023-03-28 09:00">March 28th, 9 a.m. PT</time>
         </p>
-        <Button
-          className="relative z-20 mt-11 border-primary-4 !bg-primary-4 !text-xl tracking-[-0.02em] !text-black hover:bg-[#00e5bf] sm:mt-6"
-          size="md"
-          theme="primary"
+        <NextLink
+          className="t-2xl mt-11 inline-flex items-center justify-center self-start whitespace-nowrap rounded-full bg-primary-4 py-5 px-11 text-center font-bold !leading-none text-black outline-none transition-colors duration-200 hover:bg-[#00e5bf] 2xl:py-[20px] xl:px-9 lg:mt-8 md:py-5 md:px-8 sm:w-full"
+          href="/"
           rel="noopener noreferrer"
-          to="/"
         >
           <span>Register now</span>
-        </Button>
+        </NextLink>
       </div>
       <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-start-6 2xl:ml-0 xl:col-span-full xl:self-start">
         <DynamicTicket userData={userData} />
