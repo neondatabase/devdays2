@@ -1,12 +1,12 @@
 'use client';
 
+import DesktopBlankTicketIllustration from 'images/blank-ticket-desktop.svg';
+import MobileBlankTicketIllustration from 'images/blank-ticket-mobile.svg';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import PropTypes from 'prop-types';
 
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
-import DesktopBlankTicketIllustration from 'images/developer-days/blank-ticket-desktop.svg';
-import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mobile.svg';
 
 import illustration from './images/illustration.png';
 
@@ -24,7 +24,7 @@ const Hero = ({ isTicketPage = false }) => (
       </p>
       <NextLink
         className="t-2xl mt-11 inline-flex items-center justify-center self-start whitespace-nowrap rounded-full bg-primary-1 py-5 px-11 text-center font-bold !leading-none text-black outline-none transition-colors duration-200 hover:bg-[#00e5bf] 2xl:py-[20px] xl:px-9 lg:mt-8 md:py-5 md:px-8 sm:w-full"
-        href={isTicketPage ? '/developer-days' : '/'}
+        href={isTicketPage ? '' : '/'}
       >
         {isTicketPage ? 'Register' : 'Back to home'}
       </NextLink>

@@ -1,6 +1,8 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
+import DesktopBlankTicketIllustration from 'images/blank-ticket-desktop.svg';
+import MobileBlankTicketIllustration from 'images/blank-ticket-mobile.svg';
 import Image from 'next/image';
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
@@ -9,8 +11,6 @@ import { Alignment, Fit, Layout, useRive } from 'rive-react';
 import Button from 'components/shared/button';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import GithubIcon from 'components/shared/header/images/header-github.inline.svg';
-import DesktopBlankTicketIllustration from 'images/developer-days/blank-ticket-desktop.svg';
-import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mobile.svg';
 
 const appearAndExitAnimationVariants = {
   initial: { opacity: 0 },
@@ -21,7 +21,7 @@ const appearAndExitAnimationVariants = {
 const GithubRegistrationStep = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { RiveComponent } = useRive({
-    src: '/developer-days/animations/input-lines.riv',
+    src: '/animations/input-lines.riv',
     autoplay: true,
     stateMachines: 'State Machine 1',
     layout: new Layout({

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useAnimationControls } from 'framer-motion';
+import ElephantIllustration from 'images/ticket-hero-elephant.png';
 import Image from 'next/image';
 import Script from 'next/script';
 import PropTypes from 'prop-types';
@@ -11,7 +12,6 @@ import BlinkingText from 'components/shared/blinking-text';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import SubscriptionForm from 'components/shared/subscription-form';
 import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
-import ElephantIllustration from 'images/developer-days/ticket-hero-elephant.png';
 
 const appearColumnVariants = {
   initial: {
@@ -137,18 +137,14 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           <CursorTrackingWrapper className="absolute inset-0 z-30" xMovement={1} yMovement={1}>
             <Image
               className="h-full w-full"
-              src="/developer-days/images/developer-days/elephant-tusk.png"
+              src="/images/elephant-tusk.png"
               width={1010}
               height={740}
               alt="Tusks illustration"
               priority
             />
           </CursorTrackingWrapper>
-          <Script
-            src="/developer-days/static/elephant-webgl-scene.js"
-            type="module"
-            strategy="afterInteractive"
-          />
+          <Script src="/static/elephant-webgl-scene.js" type="module" strategy="afterInteractive" />
         </div>
         <Image
           className="remove-image-loading-visual hidden xl:block lg:my-9 md:my-4"

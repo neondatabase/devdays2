@@ -1,6 +1,6 @@
+import DynamicTicket from 'components/pages/dynamic-ticket';
 import { notFound } from 'next/navigation';
 
-import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
 import SocialShare from 'components/shared/social-share';
 import prisma from 'utils/prisma';
 
