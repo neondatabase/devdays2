@@ -8,8 +8,8 @@ import LINKS from 'constants/links';
 import Github from './images/header-github.inline.svg';
 
 const Header = () => (
-  <header className="safe-paddings absolute left-0 top-0 right-0 z-10 lg:relative">
-    <div className="flex h-[70px] items-center justify-between py-3.5 px-14 lg:h-auto lg:py-6 lg:px-11 md:px-8 md:py-5 sm:px-4">
+  <header className="safe-paddings absolute left-0 top-0 right-0 z-10 xl:relative">
+    <div className="flex h-[70px] items-center justify-between py-3.5 px-14 xl:h-auto xl:py-6 xl:px-11 lg:px-8 lg:py-5 md:px-4">
       <NextLink href="/">
         <span className="sr-only">Neon</span>
         <Logo />

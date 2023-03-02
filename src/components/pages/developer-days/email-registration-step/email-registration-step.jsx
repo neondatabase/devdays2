@@ -76,7 +76,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           </span>
         ) : (
           <span
-            className="animate-text-blink lg:!animate-none"
+            className="animate-text-blink xl:!animate-none"
             style={{ animationPlayState: 'paused' }}
             key={index}
           >
@@ -90,26 +90,26 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
   return (
     <>
       <motion.div
-        className="col-span-4 col-start-2 self-center lg:col-span-full lg:text-center lg:!opacity-100"
+        className="col-span-4 col-start-2 self-center xl:col-span-full xl:text-center xl:!opacity-100"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'linear' }}
       >
-        <span className="inline-block rounded-[50px] bg-secondary-2 py-1 px-3 align-top text-sm font-semibold uppercase leading-snug tracking-[-0.02em] text-black md:text-xs sm:mt-0 sm:text-xs">
+        <span className="inline-block rounded-[50px] bg-secondary-2 py-1 px-3 align-top text-sm font-semibold uppercase leading-snug tracking-[-0.02em] text-black xl:text-xs lg:mt-0 lg:text-xs">
           March 2023
         </span>
         <h1
-          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:text-7xl lg:mt-2 lg:text-center lg:text-[78px] lg:tracking-[-0.05em] md:text-[58px] sm:mt-1 sm:text-[52px]"
+          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:mt-2 xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:text-[58px] md:mt-1 md:text-[52px]"
           ref={titleRef}
         >
           {titleContent}
         </h1>
-        <p className="mt-5 max-w-xl font-mono text-xl font-light tracking-tighter text-white xl:text-lg lg:mx-auto lg:max-w-md md:mt-4 md:max-w-sm md:text-base sm:max-w-[80%]">
+        <p className="mt-5 max-w-xl font-mono text-xl font-light tracking-tighter text-white 2xl:text-lg xl:mx-auto xl:max-w-md lg:mt-4 lg:max-w-sm lg:text-base md:max-w-[80%]">
           Join us on <time dateTime="2023-03-28 10:30">March 28th, 9 a.m. PT</time> to learn more
           about latest of Serverless Postgres
         </p>
         <SubscriptionForm
-          className="mt-12 lg:mx-auto lg:mt-10 md:mt-8 sm:mt-7"
+          className="mt-12 xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"
           successText="Thanks for registering!"
           submitButtonText="Register"
           size="sm"
@@ -119,7 +119,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         />
       </motion.div>
       <motion.div
-        className="col-span-7 col-start-6 self-center lg:col-span-full lg:!transform-none lg:!opacity-100"
+        className="col-span-7 col-start-6 self-center xl:col-span-full xl:!transform-none xl:!opacity-100"
         initial="initial"
         animate={columnControls}
         variants={appearColumnVariants}

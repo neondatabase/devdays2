@@ -22,8 +22,8 @@ const appearAndExitAnimationVariants = {
 
 const sizeClassNames = {
   sm: {
-    form: 'relative max-w-[540px] lg:max-w-[456px] md:max-w-[464px]',
-    input: 'h-[64px] text-lg pl-6 border lg:pl-5 sm:h-[56px]',
+    form: 'relative max-w-[540px] xl:max-w-[456px] lg:max-w-[464px]',
+    input: 'h-[64px] text-lg pl-6 border xl:pl-5 md:h-[56px]',
     loading: 'right-[7px]',
     success: 'right-[7px]',
     stateIcon: 'w-12 h-12',
@@ -119,7 +119,7 @@ const SubscriptionForm = ({
 
   return (
     <motion.form
-      className={clsx('lg:!w-auto lg:!opacity-100', className, sizeClassNames[size].form)}
+      className={clsx('xl:!w-auto xl:!opacity-100', className, sizeClassNames[size].form)}
       initial={{ opacity: 0, width: 0 }}
       animate={{ opacity: 1, width: `100%` }}
       transition={{
@@ -156,7 +156,7 @@ const SubscriptionForm = ({
       <AnimatePresence>
         {errorMessage && (
           <motion.span
-            className="t-base absolute left-1/2 -bottom-5 z-10 w-full translate-y-full -translate-x-1/2 text-center font-semibold !leading-snug text-secondary-1 lg:-bottom-4"
+            className="t-base absolute left-1/2 -bottom-5 z-10 w-full translate-y-full -translate-x-1/2 text-center font-semibold !leading-snug text-secondary-1 xl:-bottom-4"
             initial="initial"
             animate="animate"
             exit="exit"

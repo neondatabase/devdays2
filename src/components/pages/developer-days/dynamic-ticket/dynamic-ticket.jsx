@@ -161,9 +161,9 @@ const DynamicTicket = ({
   }, []);
 
   return (
-    <div className="mt-[4.5rem] md:flex md:flex-col-reverse">
+    <div className="mt-[4.5rem] xl:mt-11 lg:mt-10 md:mt-6 md:flex md:flex-col-reverse">
       <section
-        className={clsx('ticket', {
+        className={clsx('ticket xl:mx-auto', {
           'before:bg-ticket-back-variant-1': currentColorSchema === '1',
           'before:bg-ticket-back-variant-2': currentColorSchema === '2',
           'before:bg-ticket-back-variant-3': currentColorSchema === '3',
@@ -202,7 +202,7 @@ const DynamicTicket = ({
               })}
             >
               <div className="ticket-content flex flex-col justify-between p-7 pb-6 text-white 2xl:p-6 md:p-5 md:pt-14 md:pb-[61px]">
-                <header className="order-2 ml-[43px] mb-4 self-start 2xl:ml-[42px] 2xl:mb-3 lg:ml-[38px] lg:mt-3 lg:mb-0 md:mt-4 md:ml-0">
+                <header className="order-2 ml-[43px] mb-4 self-start 2xl:ml-[42px] 2xl:mb-3 lg:ml-[38px] lg:mt-3 lg:mb-0 md:mt-1 md:ml-0">
                   <h2
                     className={clsx(
                       'min-h-[100px] bg-clip-text font-kallisto text-5xl font-light leading-none text-transparent opacity-90 lg:text-[36px] md:text-4xl',
@@ -267,9 +267,11 @@ const DynamicTicket = ({
       </section>
 
       {status === 'authenticated' && data?.colorSchema && (
-        <div className="pointer-events-none relative z-10 mt-9 flex items-center gap-6 2xl:mt-8 2xl:justify-center 2xl:gap-4 lg:mt-7 md:mt-0 md:mb-7">
-          <p className="text-sm font-light text-white opacity-80">Pick a color:</p>
-          <div className="pointer-events-auto flex gap-5">
+        <div className="pointer-events-none relative z-10 mt-9 flex items-center gap-6 2xl:mt-8 xl:justify-center lg:mt-7 lg:gap-4 md:mt-0 md:mb-7">
+          <p className="text-sm font-light tracking-[0.04em] text-white opacity-80">
+            Pick a color:
+          </p>
+          <div className="pointer-events-auto flex gap-5 lg:gap-6">
             {colorVariants.map((item, i) => {
               const { id, title, buttonColorClass } = item;
               const isActive = currentColorSchema === `${id}`;
