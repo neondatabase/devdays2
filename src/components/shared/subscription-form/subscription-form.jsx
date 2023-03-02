@@ -65,18 +65,27 @@ const SubscriptionForm = ({
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    const loadingAnimationStartedTime = Date.now();
+
     if (!email) {
       setErrorMessage('Please enter your email');
     } else if (!emailRegexp.test(email)) {
       setErrorMessage('Please enter a valid email');
     } else if (submittedEmails.includes(email)) {
-      // show github cta right away
-      onSuccess();
+      setFormState('loading');
+      doNowOrAfterSomeTime(() => {
+        setFormState('success');
+        setEmail(successText);
+        onSuccess();
+        setTimeout(() => {
+          setFormState('default');
+          setEmail('');
+        }, 2000);
+      }, loadingAnimationStartedTime);
     } else {
       setErrorMessage('');
       setFormState('loading');
 
-      const loadingAnimationStartedTime = Date.now();
       sendHubspotFormData({
         formId,
         context,
