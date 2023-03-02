@@ -98,18 +98,22 @@ module.exports = {
         'ticket-back-variant-4': `radial-gradient(transparent 0%, ${theme(
           'colors.black'
         )} 72%), linear-gradient(225deg, #ccccff 28.65%, rgba(204, 204, 255, 0.4) 100%)`,
-        'ticket-middle-variant-1': 'url("/images/ticket-pattern-1.svg")',
-        'ticket-middle-variant-2': 'url("/images/ticket-pattern-2.svg")',
-        'ticket-middle-variant-3': 'url("/images/ticket-pattern-3.svg")',
-        'ticket-middle-variant-4': 'url("/images/ticket-pattern-4.svg")',
-        'ticket-middle-variant-1-vertical': 'url("/images/ticket-pattern-1-vertical.svg")',
-        'ticket-middle-variant-2-vertical': 'url("/images-2-vertical.svg")',
-        'ticket-middle-variant-3-vertical': 'url("/images-3-vertical.svg")',
-        'ticket-middle-variant-4-vertical': 'url("/images/ticket-pattern-4-vertical.svg")',
-        'ticket-front-variant-1': 'url("/images/elephant-1.png")',
-        'ticket-front-variant-2': 'url("/images/elephant-2.png")',
-        'ticket-front-variant-3': 'url("/images/elephant-3.png")',
-        'ticket-front-variant-4': 'url("/images/elephant-4.png")',
+        'ticket-middle-variant-1':
+          'url("/developer-days/images/developer-days/ticket-pattern-1.svg")',
+        'ticket-middle-variant-2':
+          'url("/developer-days/images/developer-days/ticket-pattern-2.svg")',
+        'ticket-middle-variant-3':
+          'url("/developer-days/images/developer-days/ticket-pattern-3.svg")',
+        'ticket-middle-variant-4':
+          'url("/developer-days/images/developer-days/ticket-pattern-4.svg")',
+        'ticket-middle-variant-1-vertical':
+          'url("/developer-days/images/developer-days/ticket-pattern-1-vertical.svg")',
+        'ticket-middle-variant-2-vertical':
+          'url("/developer-days/images/developer-days/ticket-pattern-2-vertical.svg")',
+        'ticket-middle-variant-3-vertical':
+          'url("/developer-days/images/developer-days/ticket-pattern-3-vertical.svg")',
+        'ticket-middle-variant-4-vertical':
+          'url("/developer-days/images/developer-days/ticket-pattern-4-vertical.svg")',
         'ticket-border-variant-1': `linear-gradient(0deg, transparent 10%, #00d1ff 48%, #00d1ff 52%, transparent 90%), linear-gradient(90deg, ${theme(
           'colors.black'
         )} 0%, #00d1ff 35%, #00d1ff 65%, ${theme('colors.black')} 100%)`,

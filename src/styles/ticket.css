@@ -121,22 +121,68 @@
   .ticket-front {
     @apply relative h-full w-full bg-no-repeat md:before:absolute md:before:right-0 md:before:bottom-[36px] md:before:h-[300px] md:before:w-[200px] md:before:bg-gradient-to-t md:before:from-black md:before:to-transparent;
 
-    background-size: 550px auto;
-    background-position: right -107px bottom -182px;
+    background-size: 440px 372px;
+    background-position: right 0 bottom 0;
 
     @media screen(2xl) {
-      background-size: 540px auto;
-      background-position: right -104px bottom -179px;
+      background-size: 436px 362px;
     }
 
     @media screen(lg) {
-      background-size: 340px auto;
-      background-position: right 0 bottom -45px;
+      background-size: 348px 293px;
     }
 
     @media screen(md) {
-      background-size: 450px auto;
-      background-position: right -140px bottom 37px;
+      background-size: 312px 454px;
+      background-position: right 0 bottom 30px;
+    }
+
+    &.ticket-front-variant-1 {
+      background-image: url('/developer-days/images/developer-days/elephant-1-large.png');
+
+      @media screen(lg) {
+        background-image: url('/developer-days/images/developer-days/elephant-1-medium.png');
+      }
+
+      @media screen(md) {
+        background-image: url('/developer-days/images/developer-days/elephant-1-small.png');
+      }
+    }
+
+    &.ticket-front-variant-2 {
+      background-image: url('/developer-days/images/developer-days/elephant-2-large.png');
+
+      @media screen(lg) {
+        background-image: url('/developer-days/images/developer-days/elephant-2-medium.png');
+      }
+
+      @media screen(md) {
+        background-image: url('/developer-days/images/developer-days/elephant-4-small.png');
+      }
+    }
+
+    &.ticket-front-variant-3 {
+      background-image: url('/developer-days/images/developer-days/elephant-3-large.png');
+
+      @media screen(lg) {
+        background-image: url('/developer-days/images/developer-days/elephant-3-medium.png');
+      }
+
+      @media screen(md) {
+        background-image: url('/developer-days/images/developer-days/elephant-4-small.png');
+      }
+    }
+
+    &.ticket-front-variant-4 {
+      background-image: url('/developer-days/images/developer-days/elephant-4-large.png');
+
+      @media screen(lg) {
+        background-image: url('/developer-days/images/developer-days/elephant-4-medium.png');
+      }
+
+      @media screen(md) {
+        background-image: url('/developer-days/images/developer-days/elephant-4-small.png');
+      }
     }
   }
 

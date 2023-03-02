@@ -196,10 +196,10 @@ const DynamicTicket = ({
           >
             <div
               className={clsx('ticket-front', {
-                'bg-ticket-front-variant-1': elephantColorSchema === '1',
-                'bg-ticket-front-variant-2': elephantColorSchema === '2',
-                'bg-ticket-front-variant-3': elephantColorSchema === '3',
-                'bg-ticket-front-variant-4': elephantColorSchema === '4',
+                'ticket-front-variant-1': elephantColorSchema === '1',
+                'ticket-front-variant-2': elephantColorSchema === '2',
+                'ticket-front-variant-3': elephantColorSchema === '3',
+                'ticket-front-variant-4': elephantColorSchema === '4',
               })}
             >
               <div className="ticket-content flex flex-col justify-between p-7 pb-6 text-white 2xl:p-6 md:p-5 md:pt-14 md:pb-[61px]">
