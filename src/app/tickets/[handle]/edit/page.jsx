@@ -10,7 +10,7 @@ const TicketEditPage = async ({ params }) => {
 
   if (!userData) return notFound();
 
-  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days/tickets/${userData.login}`;
+  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/tickets/${userData.login}`;
 
   return (
     <div className="relative mx-auto grid h-full max-w-[1760px] grid-cols-12 gap-10 xl:h-auto xl:flex-grow xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:py-7 md:px-8 md:pt-5 md:pb-20 sm:px-4">

@@ -6,7 +6,6 @@ module.exports = {
   env: {
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   },
-  basePath: '/developer-days',
   images: {
     remotePatterns: [
       {
