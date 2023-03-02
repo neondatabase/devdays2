@@ -23,7 +23,9 @@ export async function middleware(req) {
       pathname.endsWith(`/tickets/${token.githubHandle}`)
     ) {
       return NextResponse.redirect(
-        new URL(`${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/developer-days/${pathname}/edit`)
+        new URL(
+          `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/developer-days/tickets/${token.githubHandle}/edit`
+        )
       );
     }
   } else if (pathname.endsWith(`/edit`)) {
