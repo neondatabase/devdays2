@@ -13,7 +13,6 @@ import { doNowOrAfterSomeTime, emailRegexp, sendHubspotFormData } from 'utils/fo
 
 import CheckIcon from './icons/subscription-form-check.inline.svg';
 import ErrorIcon from './icons/subscription-form-error.inline.svg';
-import SendIcon from './icons/subscription-form-send.inline.svg';
 
 const appearAndExitAnimationVariants = {
   initial: { opacity: 0 },
@@ -23,11 +22,11 @@ const appearAndExitAnimationVariants = {
 
 const sizeClassNames = {
   sm: {
-    form: 'relative max-w-[540px]',
-    input: 'h-[64px] text-lg pl-6 border',
-    loading: 'right-2',
-    success: 'right-2',
-    stateIcon: 'w-14 h-14',
+    form: 'relative max-w-[540px] lg:max-w-[456px] md:max-w-[464px]',
+    input: 'h-[64px] text-lg pl-6 border lg:pl-5 sm:h-[56px]',
+    loading: 'right-[7px]',
+    success: 'right-[7px]',
+    stateIcon: 'w-12 h-12',
   },
 };
 
@@ -120,7 +119,7 @@ const SubscriptionForm = ({
 
   return (
     <motion.form
-      className={clsx('lg:!w-full lg:!opacity-100', className, sizeClassNames[size].form)}
+      className={clsx('lg:!w-auto lg:!opacity-100', className, sizeClassNames[size].form)}
       initial={{ opacity: 0, width: 0 }}
       animate={{ opacity: 1, width: `100%` }}
       transition={{
@@ -138,7 +137,7 @@ const SubscriptionForm = ({
     >
       <input
         className={clsx(
-          'remove-autocomplete-styles relative z-20 block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 placeholder:font-normal',
+          'remove-autocomplete-styles relative z-20 block w-full rounded-full border-primary-3 bg-black pr-[218px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 placeholder:font-normal xl:pr-[150px] xl:placeholder:text-base',
           errorMessage && 'border-secondary-1',
           sizeClassNames[size].input
         )}
@@ -151,7 +150,7 @@ const SubscriptionForm = ({
         onChange={handleInputChange}
       />
 
-      <RiveComponent className="pointer-events-none absolute -top-8 left-1/2 z-10 w-[120%] -translate-x-1/2 xs:top-0 [&>*]:!min-h-[360px]" />
+      <RiveComponent className="pointer-events-none absolute -top-8 left-1/2 z-10 w-[120%] -translate-x-1/2 [&>*]:!min-h-[360px]" />
 
       {/* Error message */}
       <AnimatePresence>
@@ -178,14 +177,13 @@ const SubscriptionForm = ({
             variants={appearAndExitAnimationVariants}
           >
             <Button
-              className="absolute top-1/2 right-[7px] z-20 -translate-y-1/2 sm:h-14 sm:w-14 sm:rounded-full sm:p-0"
+              className="absolute top-1/2 right-[7px] z-20 -translate-y-1/2"
               size="sm"
               type="submit"
               theme="quaternary"
               disabled={formState !== 'default'}
             >
-              <span className="sm:sr-only">{submitButtonText}</span>
-              <SendIcon className="hidden sm:ml-1.5 sm:block" aria-hidden />
+              <span className="">{submitButtonText}</span>
             </Button>
           </motion.div>
         )}

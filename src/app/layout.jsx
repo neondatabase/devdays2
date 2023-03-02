@@ -26,7 +26,7 @@ const RootLayout = ({ children }) => (
           />
         )}
         <Header />
-        <main className="h-full min-h-full overflow-hidden">{children}</main>
+        <main className="h-full min-h-full overflow-hidden lg:h-auto lg:min-h-0">{children}</main>
         <Footer />
       </body>
     </html>
