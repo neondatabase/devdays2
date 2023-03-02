@@ -1,11 +1,12 @@
 {
   "name": "Neon",
   "short_name": "starter",
-  "start_url": "/developer-days/",
+  "start_url": "/",
   "background_color": "#1a1a1a",
   "theme_color": "#1a1a1a",
   "display": "minimal-ui",
-  "icons": [{
+  "icons": [
+    {
       "src": "/developer-days/favicon/favicon-48x48.png?v=bc4c10baad3e61d9d82605bdd7b92c7d",
       "sizes": "48x48",
       "type": "image/png"
