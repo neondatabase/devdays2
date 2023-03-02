@@ -76,7 +76,9 @@ const colorVariants = [
   },
 ];
 
-const DynamicTicket = ({ userData: { id: number, name, image, githubHandle, colorSchema } }) => {
+const DynamicTicket = ({
+  userData: { id: number, name, image, login: githubHandle, colorSchema },
+}) => {
   const { data, status } = useSession();
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
   const prevColor = usePrevious(selectedColorSchema);
@@ -312,7 +314,7 @@ DynamicTicket.propTypes = {
     email: PropTypes.string,
     image: PropTypes.string,
     name: PropTypes.string,
-    githubHandle: PropTypes.string,
+    login: PropTypes.string,
     colorSchema: PropTypes.string,
   }).isRequired,
 };

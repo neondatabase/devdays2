@@ -10,7 +10,7 @@ import Header from 'components/shared/header';
 
 // eslint-disable-next-line react/prop-types
 const RootLayout = ({ children }) => (
-  <SessionProvider>
+  <SessionProvider basePath="/developer-days/api/auth">
     <html lang="en" className="h-full">
       <head>
         {process.env.NODE_ENV === 'production' && (
