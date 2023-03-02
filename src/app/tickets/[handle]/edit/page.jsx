@@ -10,7 +10,7 @@ const TicketEditPage = async ({ params }) => {
 
   if (!userData) return notFound();
 
-  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days/tickets/${userData.githubHandle}`;
+  const shareUrl = `${process.env.NEXT_PUBLIC_MAIN_SITE_URL}/developer-days/tickets/${userData.login}`;
 
   return (
     <div className="relative mx-auto grid h-full max-w-[1760px] grid-cols-12 gap-10">
