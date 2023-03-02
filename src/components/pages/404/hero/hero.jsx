@@ -11,8 +11,8 @@ import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mo
 import illustration from './images/illustration.png';
 
 const Hero = ({ isTicketPage = false }) => (
-  <div className="relative mx-auto grid h-full min-h-full max-w-[1760px] grid-cols-12 items-start gap-x-8 text-white md:gap-x-0 md:gap-y-4">
-    <div className="col-start-2 col-end-6 flex flex-col self-center 2xl:col-start-1 md:col-span-full">
+  <div className="relative mx-auto grid h-full max-w-[1760px] flex-grow grid-cols-12 gap-10 text-white xl:h-auto xl:flex-grow xl:grid-cols-1 xl:px-11 xl:py-11 lg:gap-y-8 lg:px-8 lg:py-9 md:gap-y-7 md:px-4 md:pt-5 md:pb-20">
+    <div className="col-span-4 col-start-2 self-center xl:col-span-full xl:self-end xl:text-center">
       <h1 className="text-[58px] font-bold leading-none xl:text-5xl xl:leading-none md:text-4xl">
         Ooops!
         <br /> {isTicketPage ? 'Ticket' : 'Page'} not found...
@@ -22,7 +22,6 @@ const Hero = ({ isTicketPage = false }) => (
           ? "Sorry, the ticket you are looking for doesn't exist."
           : 'Sorry, the page you are looking for doesn’t exist.'}
       </p>
-
       <NextLink
         className="t-2xl mt-11 inline-flex items-center justify-center self-start whitespace-nowrap rounded-full bg-primary-1 py-5 px-11 text-center font-bold !leading-none text-black outline-none transition-colors duration-200 hover:bg-[#00e5bf] 2xl:py-[20px] xl:px-9 lg:mt-8 md:py-5 md:px-8 sm:w-full"
         href={isTicketPage ? '/developer-days' : '/'}
@@ -30,8 +29,7 @@ const Hero = ({ isTicketPage = false }) => (
         {isTicketPage ? 'Register' : 'Back to home'}
       </NextLink>
     </div>
-
-    <div className="col-start-6 col-end-12 self-center 2xl:col-end-13 md:col-span-full">
+    <div className="col-span-7 col-start-6 self-center xl:col-span-full xl:self-start">
       {isTicketPage ? (
         <>
           <CursorTrackingWrapper>
@@ -53,7 +51,7 @@ const Hero = ({ isTicketPage = false }) => (
         </>
       ) : (
         <Image
-          className="w-full md:mx-auto md:max-w-xl"
+          className="w-[75%] xl:mx-auto sm:w-full"
           width={860}
           height={862}
           src={illustration}

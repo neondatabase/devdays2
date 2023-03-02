@@ -14,7 +14,7 @@ const DeveloperDays2Page = () => {
   };
 
   return (
-    <div className="relative mx-auto grid h-full max-w-[1760px] grid-cols-12 gap-10 lg:grid-cols-1 lg:gap-0 lg:px-11 lg:py-11 md:px-8 md:py-9 sm:px-4 sm:py-5">
+    <div className="relative mx-auto grid h-full max-w-[1760px] grid-cols-12 gap-10 xl:h-auto xl:flex-grow xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:px-8 lg:py-9 md:px-4 md:py-4">
       <EmailRegistrationStep onSuccessCallback={handleSubmitSuccess} />
     </div>
   );
