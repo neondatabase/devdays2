@@ -4,11 +4,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
-import { Alignment, Fit, Layout, useRive } from 'rive-react';
 
 import Button from 'components/shared/button';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import GithubIcon from 'components/shared/header/images/header-github.inline.svg';
+import LuminousBack from 'components/shared/subscription-form/icons/luminous-button-back.inline.svg';
 import DesktopBlankTicketIllustration from 'images/developer-days/blank-ticket-desktop.svg';
 import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mobile.svg';
 
@@ -20,15 +20,6 @@ const appearAndExitAnimationVariants = {
 
 const GithubRegistrationStep = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const { RiveComponent } = useRive({
-    src: '/animations/input-lines.riv',
-    autoplay: true,
-    stateMachines: 'State Machine 1',
-    layout: new Layout({
-      fit: Fit.FitWidth,
-      alignment: Alignment.TopCenter,
-    }),
-  });
 
   return (
     <>
@@ -44,7 +35,7 @@ const GithubRegistrationStep = () => {
         <div className="mt-11 flex items-center xl:mt-10 xl:flex-col lg:mt-8 md:mt-6">
           <div className="relative">
             <Button
-              className="relative z-20 hover:bg-primary-4"
+              className="relative z-10"
               size="md"
               theme="primary"
               rel="noopener noreferrer"
@@ -58,7 +49,7 @@ const GithubRegistrationStep = () => {
               <AnimatePresence>
                 {isLoading ? (
                   <motion.div
-                    className="absolute top-1/2 left-3 z-20 flex -translate-y-1/2 items-center justify-center rounded-full bg-primary-4"
+                    className="absolute top-1/2 left-3 z-20 flex -translate-y-1/2 items-center justify-center rounded-full bg-transparent"
                     initial="initial"
                     animate="animate"
                     exit="exit"
@@ -99,9 +90,12 @@ const GithubRegistrationStep = () => {
               </AnimatePresence>
               <span>Generate with GitHub</span>
             </Button>
-            <RiveComponent className="pointer-events-none absolute -top-4 left-1/2 z-10 w-[140%] -translate-x-1/2 [&>*]:!min-h-[480px]" />
+            <LuminousBack
+              className="pointer-events-none absolute -top-12 left-1/2 -z-10 -translate-x-1/2"
+              aria-hidden="true"
+            />
           </div>
-          <span className="relative z-10 ml-5 max-w-[140px] text-sm leading-[1.375] tracking-[0.04em] text-gray-5 xl:mt-3 xl:ml-0 xl:max-w-full">
+          <span className="relative z-10 ml-5 max-w-[140px] text-sm leading-[1.375] tracking-[0.04em] text-gray-5 xl:mt-3 xl:ml-0 xl:max-w-full sm:mt-2">
             Only public data <br className="xl:hidden" /> is going to be used.
           </span>
         </div>

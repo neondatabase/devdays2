@@ -21,7 +21,7 @@ const sizes = {
 // Image Details
 let originalImage = null;
 let depthImage = null;
-let stableImage = null;
+const stableImage = null;
 const originalImageDetails = {
   width: 0,
   height: 0,
@@ -83,7 +83,7 @@ const loadImages = () => {
     stableImage.dispose();
   }
   depthImage = textureLoader.load(settings.depthImagePath);
-  stableImage = textureLoader.load(settings.stableImagePath);
+  // stableImage = textureLoader.load(settings.stableImagePath);
 
   originalImage = textureLoader.load(settings.originalImagePath, (tex) => {
     originalImageDetails.width = tex.image.width;
