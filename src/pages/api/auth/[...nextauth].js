@@ -3,8 +3,6 @@ import GitHubProvider from 'next-auth/providers/github';
 
 import prisma, { PrismaAdapter } from 'utils/prisma';
 
-const log = console;
-
 const createOptions = (req) => ({
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -51,28 +49,9 @@ const createOptions = (req) => ({
 
       return token;
     },
-    async redirect({ url, baseUrl }) {
-      log.debug('redirect', { url, baseUrl });
-      // Allows relative callback URLs
-      if (url.startsWith('/')) return `${baseUrl}${url}`;
-      // Allows callback URLs on the same origin
-      if (new URL(url).origin === baseUrl) return url;
-      return baseUrl;
-    },
   },
   session: {
     strategy: 'jwt',
-  },
-  logger: {
-    error(code, metadata) {
-      log.error(code, metadata);
-    },
-    warn(code) {
-      log.warn(code);
-    },
-    debug(code, metadata) {
-      log.debug(code, metadata);
-    },
   },
 });
 

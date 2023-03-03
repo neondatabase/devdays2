@@ -20,7 +20,8 @@ const TicketEditPage = async ({ params }) => {
           Ticket
         </h1>
         <p className="pointer-events-none relative z-50 mt-5 font-mono text-xl font-light leading-tight tracking-tight text-white xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base">
-          Join {userData.name.split(' ')[0]} at Neon Developer Days on{' '}
+          Choose the ticket color and gather a watch party for the upcoming{' '}
+          {userData.name.split(' ')[0]} Neon Developer Days! See you on{' '}
           <time dateTime="2023-03-28 09:00">March 28th, 9 a.m. PT</time>
         </p>
         <SocialShare className="mt-11 lg:mt-8 sm:mt-6" url={shareUrl} />
