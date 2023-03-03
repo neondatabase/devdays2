@@ -160,7 +160,6 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           alt="Elephant illustration"
         />
       </motion.div>
-      {/* <Script src="/static/elephant-webgl-scene.js" type="module" strategy="afterInteractive" /> */}
     </>
   );
 };
