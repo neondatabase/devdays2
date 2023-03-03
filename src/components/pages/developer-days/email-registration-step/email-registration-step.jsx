@@ -90,7 +90,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
   return (
     <>
       <motion.div
-        className="relative z-10 col-span-4 col-start-2 self-center xl:col-span-full xl:text-center xl:!opacity-100"
+        className="relative z-10 col-span-4 col-start-2 self-center 2xl:col-start-1 xl:col-span-full xl:text-center xl:!opacity-100"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'linear' }}

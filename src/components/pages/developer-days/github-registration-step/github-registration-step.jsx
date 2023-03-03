@@ -23,7 +23,7 @@ const GithubRegistrationStep = () => {
 
   return (
     <>
-      <div className="col-span-5 col-start-2 self-center xl:col-span-full xl:self-end xl:text-center">
+      <div className="col-span-5 col-start-2 self-center 2xl:col-start-1  xl:col-span-full xl:self-end xl:text-center">
         <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:text-[58px] md:text-[52px]">
           You’re invited. <br />
           Grab the ticket.
