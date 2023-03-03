@@ -18,6 +18,9 @@ export default {
     ],
   },
   generateTicket: {
+    title: 'Grab the ticket for Neon Developer Days',
+    description:
+      "Generate a unique ticket image with your GitHub profile and participate in Neon's right after the conference.",
     preload: [
       { href: '/animations/input-lines.riv', as: 'fetch' },
       { href: '/images/developer-days/elephant-1-large.png', as: 'image' },
