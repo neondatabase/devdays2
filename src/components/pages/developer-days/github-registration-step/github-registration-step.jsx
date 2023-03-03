@@ -35,7 +35,7 @@ const GithubRegistrationStep = () => {
         <div className="mt-11 flex items-center xl:mt-10 xl:flex-col lg:mt-8 md:mt-6">
           <div className="relative">
             <Button
-              className="relative z-10 hover:bg-primary-4"
+              className="relative z-10"
               size="md"
               theme="primary"
               rel="noopener noreferrer"
@@ -49,7 +49,7 @@ const GithubRegistrationStep = () => {
               <AnimatePresence>
                 {isLoading ? (
                   <motion.div
-                    className="absolute top-1/2 left-3 z-20 flex -translate-y-1/2 items-center justify-center rounded-full bg-primary-4"
+                    className="absolute top-1/2 left-3 z-20 flex -translate-y-1/2 items-center justify-center rounded-full bg-transparent"
                     initial="initial"
                     animate="animate"
                     exit="exit"
