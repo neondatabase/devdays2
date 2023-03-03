@@ -13,19 +13,19 @@ const TicketEditPage = async ({ params }) => {
   const shareUrl = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/tickets/${userData.login}`;
 
   return (
-    <div className="relative mx-auto grid min-h-[865px] max-w-[1760px] flex-grow grid-cols-12 gap-10 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:py-7 md:px-8 md:pt-5 md:pb-20 sm:px-4">
-      <div className="relative z-10 col-span-5 col-start-2 self-center 2xl:col-start-1 xl:col-span-full xl:self-end xl:text-center">
+    <div className="relative mx-auto grid max-w-[1760px] flex-grow grid-cols-12 gap-10 py-20 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:py-7 md:px-8 md:pt-5 md:pb-20 sm:px-4">
+      <div className="relative z-10 col-span-5 col-start-2 self-center 2xl:col-span-5 2xl:col-start-1 xl:col-span-full xl:self-end xl:text-center">
         <h1 className="pointer-events-none relative z-50 text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-[78px] 2xl:tracking-[-0.05em] xl:mx-auto xl:max-w-[700px] lg:text-[58px] md:max-w-[500px] md:text-[52px]">
           {userData.name}&apos;s <br className="hidden md:block" />
           Ticket
         </h1>
-        <p className="pointer-events-none relative z-50 mt-5 max-w-[610px] font-mono text-xl font-light leading-tight tracking-tight text-white xl:mx-auto xl:max-w-[700px] xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base md:max-w-[500px]">
+        <p className="pointer-events-none relative z-50 mt-5 max-w-[610px] font-mono text-xl font-light leading-tight tracking-tight text-white 2xl:max-w-[500px] xl:mx-auto xl:max-w-[700px] xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base">
           Choose the ticket color and gather a watch party for the upcoming Neon Developer Days! See
-          you on <time dateTime="2023-03-28 09:00">March 28th, 9 a.m. PT</time>
+          you on <time dateTime="2023-03-28 09:00">March 29th, 9 a.m. PT</time>
         </p>
         <SocialShare className="mt-11 lg:mt-8 sm:mt-6" url={shareUrl} />
       </div>
-      <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-start-6 2xl:ml-0 xl:col-span-full xl:self-start">
+      <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-start-6 xl:col-span-full xl:ml-0 xl:ml-0 xl:self-start">
         <DynamicTicket userData={userData} withColorPicker />
       </div>
     </div>

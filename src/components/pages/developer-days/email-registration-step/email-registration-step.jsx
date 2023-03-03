@@ -98,7 +98,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
   return (
     <>
       <motion.div
-        className="relative z-10 col-span-4 col-start-2 self-center 2xl:col-start-1 xl:col-span-full xl:text-center xl:!opacity-100"
+        className="relative z-10 col-span-4 col-start-2 self-center 2xl:col-start-1 xl:col-span-full xl:self-end xl:text-center xl:!opacity-100"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'linear' }}
@@ -113,7 +113,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           {titleContent}
         </h1>
         <p className="mt-5 max-w-xl font-mono text-xl font-light tracking-tighter text-white 2xl:text-lg xl:mx-auto xl:max-w-md lg:mt-4 lg:max-w-sm lg:text-base md:max-w-[80%]">
-          Join us on <time dateTime="2023-03-28 10:30">March 28th, 9 a.m. PT</time> to learn more
+          Join us on <time dateTime="2023-03-28 10:30">March 29th, 9 a.m. PT</time> to learn more
           about latest of Serverless Postgres
         </p>
         <SubscriptionForm
@@ -127,20 +127,22 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         />
       </motion.div>
       <motion.div
-        className="col-span-7 col-start-6 self-center xl:col-span-full xl:!transform-none xl:!opacity-100"
+        className="col-span-7 col-start-6 self-center 2xl:col-span-8 2xl:col-start-5 xl:col-span-full xl:!transform-none xl:self-start xl:!opacity-100"
         initial="initial"
         animate={columnControls}
         variants={appearColumnVariants}
       >
         <div
-          className="relative w-[1080px] animate-webgl-brightness mix-blend-lighten xl:hidden"
+          className="relative w-[1080px] animate-webgl-brightness mix-blend-lighten 2xl:max-w-full xl:hidden"
           style={{ perspective: 900 }}
         >
           <motion.canvas
-            className="webgl relative z-20"
+            className="webgl relative z-20 2xl:!h-auto 2xl:max-w-full"
             initial="initial"
             animate={sceneControls}
             variants={appearSceneVariants}
+            width={1080}
+            height={760}
             ref={canvasRef}
           />
           <CursorTrackingWrapper className="absolute inset-0 z-30" xMovement={1} yMovement={1}>
