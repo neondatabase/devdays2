@@ -7,29 +7,10 @@ const defaultDescription =
   'Postgres made for developers. Easy to Use, Scalable, Cost efficient solution for your next project.';
 const defaultImagePath = '/images/social-previews/index.jpg';
 
-const defaultFonts = [
-  {
-    href: '/fonts/ibm-plex-sans/ibm-plex-sans-regular.woff2',
-    as: 'font',
-    type: 'font/woff2',
-  },
-  {
-    href: '/fonts/ibm-plex-sans/ibm-plex-sans-semibold.woff2',
-    as: 'font',
-    type: 'font/woff2',
-  },
-  {
-    href: '/fonts/ibm-plex-mono/ibm-plex-mono-light.woff2',
-    as: 'font',
-    type: 'font/woff2',
-  },
-];
-
 const SEO = ({
   title = defaultTitle,
   description = defaultDescription,
   imagePath = defaultImagePath,
-  preload = [],
 }) => {
   const currentImagePath = imagePath.startsWith('http') ? imagePath : SITE_URL + imagePath;
 
@@ -62,10 +43,27 @@ const SEO = ({
       <link rel="icon" type="image/png" sizes="384x384" href="/favicon/favicon-384x384.png" />
       <link rel="icon" type="image/png" sizes="512x512" href="/favicon/favicon-512x512.png" />
       <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#1a1a1a" />
-
-      {[...defaultFonts, preload].map((item, index) => (
-        <link key={index} rel="preload" crossOrigin {...item} />
-      ))}
+      <link
+        rel="preload"
+        href="/fonts/ibm-plex-sans/ibm-plex-sans-regular.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/fonts/ibm-plex-sans/ibm-plex-sans-semibold.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/fonts/ibm-plex-mono/ibm-plex-mono-light.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
     </>
   );
 };
