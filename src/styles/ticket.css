@@ -1,9 +1,8 @@
 @layer components {
   .ticket {
     --delta-x: 0;
-    /* TODO: set up hover areas for each screen */
-    --hover-gap-x: 100;
-    --hover-gap-y: 0;
+    --hover-gap-x: 300;
+    --hover-gap-y: 400;
 
     --width: 790px;
     --height: 388px;
@@ -20,16 +19,24 @@
     @media screen(2xl) {
       --width: 776px;
       --height: 380px;
+      --hover-gap-x: 200;
+    }
+
+    @media screen(xl) {
+      --hover-gap-y: 130;
     }
 
     @media screen(lg) {
       --width: 670px;
       --height: 330px;
+      --hover-gap-y: 110;
     }
 
     @media screen(md) {
       --width: 334px;
       --height: 700px;
+      --hover-gap-x: 200;
+      --hover-gap-y: 170;
     }
 
     /* ticket back flare */
