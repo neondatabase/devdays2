@@ -127,17 +127,17 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         />
       </motion.div>
       <motion.div
-        className="col-span-7 col-start-6 self-center xl:col-span-full xl:!transform-none xl:self-start xl:!opacity-100"
+        className="col-span-7 col-start-6 self-center 2xl:col-span-8 2xl:col-start-5 xl:col-span-full xl:!transform-none xl:self-start xl:!opacity-100"
         initial="initial"
         animate={columnControls}
         variants={appearColumnVariants}
       >
         <div
-          className="relative w-[1080px] max-w-full animate-webgl-brightness mix-blend-lighten xl:hidden"
+          className="relative w-[1080px] animate-webgl-brightness mix-blend-lighten 2xl:max-w-full xl:hidden"
           style={{ perspective: 900 }}
         >
           <motion.canvas
-            className="webgl relative z-20 !h-auto max-w-full"
+            className="webgl relative z-20 2xl:!h-auto 2xl:max-w-full"
             initial="initial"
             animate={sceneControls}
             variants={appearSceneVariants}
