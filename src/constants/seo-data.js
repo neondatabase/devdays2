@@ -35,6 +35,11 @@ export default {
       { href: '/images/developer-days/elephant-4-large.png', as: 'image' },
       { href: '/images/developer-days/elephant-4-medium.png', as: 'image' },
       { href: '/images/developer-days/elephant-4-small.png', as: 'image' },
+      {
+        href: '/fonts/kallisto/kallisto-light.woff2',
+        as: 'font',
+        type: 'font/woff2',
+      },
     ],
   },
   ticket({ name }) {
