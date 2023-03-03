@@ -103,7 +103,7 @@ const GithubRegistrationStep = () => {
       <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-span-5 2xl:-mr-10 2xl:ml-0 xl:col-span-full xl:mr-0 xl:self-start">
         <CursorTrackingWrapper>
           <Image
-            className="mx-auto xl:max-w-[95%] md:hidden"
+            className="remove-image-loading-visual mx-auto xl:max-w-[95%] md:hidden"
             width={792}
             height={390}
             src={DesktopBlankTicketIllustration}

@@ -34,7 +34,7 @@ const Hero = ({ isTicketPage = false }) => (
         <>
           <CursorTrackingWrapper>
             <Image
-              className="mx-auto sm:hidden"
+              className="remove-image-loading-visual mx-auto sm:hidden"
               width={776}
               height={380}
               src={DesktopBlankTicketIllustration}
