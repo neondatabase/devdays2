@@ -64,7 +64,7 @@ const SEO = ({
       <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#1a1a1a" />
 
       {[...defaultFonts, preload].map((item, index) => (
-        <link key={index} rel="preload" crossOrigin {...item} />
+        <link key={index} rel="preload" crossOrigin="anonymous" {...item} />
       ))}
     </>
   );
