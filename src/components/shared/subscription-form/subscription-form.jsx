@@ -72,6 +72,7 @@ const SubscriptionForm = ({
     } else if (!emailRegexp.test(email)) {
       setErrorMessage('Please enter a valid email');
     } else if (submittedEmails.includes(email)) {
+      setErrorMessage('');
       setFormState('loading');
       doNowOrAfterSomeTime(() => {
         setFormState('success');
