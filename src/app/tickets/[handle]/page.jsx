@@ -11,8 +11,8 @@ const TicketPage = async ({ params }) => {
   if (!userData) return notFound();
 
   return (
-    <div className="relative mx-auto grid max-w-[1760px] flex-grow grid-cols-12 gap-10 py-20 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:py-7 md:px-8 md:pt-5 md:pb-20 sm:px-4">
-      <div className="relative z-10 col-span-4 col-start-2 self-center 2xl:pr-10 xl:col-span-full xl:self-end xl:pr-0 xl:text-center">
+    <div className="relative mx-auto grid max-w-[1760px] flex-grow grid-cols-12 gap-10 py-20 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:py-7 md:px-8 md:pt-5 md:pb-20 sm:px-4">
+      <div className="relative z-10 col-span-4 col-start-2 self-center 2xl:col-start-1 xl:col-span-full xl:self-end xl:text-center">
         <h1 className="pointer-events-none relative z-50 text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-[78px] 2xl:tracking-[-0.05em] xl:mx-auto xl:max-w-[700px] lg:text-[58px] md:max-w-[500px] md:text-[52px]">
           {userData.name}&apos;s <br className="hidden md:block" />
           Ticket
@@ -29,7 +29,7 @@ const TicketPage = async ({ params }) => {
           <span>Register now</span>
         </NextLink>
       </div>
-      <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-start-6 xl:col-span-full xl:ml-0 xl:self-start">
+      <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-start-5 2xl:ml-0 xl:col-span-full xl:self-start">
         <DynamicTicket userData={userData} />
       </div>
     </div>

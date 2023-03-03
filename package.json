@@ -33,7 +33,7 @@
     "framer-motion": "^9.0.1",
     "lodash.shuffle": "^4.2.0",
     "next": "^13.1.2",
-    "next-auth": "npm:@pixel-point/next-auth@^4.19.3",
+    "next-auth": "^4.20.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -41,7 +41,8 @@
     "react-share": "^4.4.1",
     "react-use": "^17.4.0",
     "rive-react": "^3.0.36",
-    "tailwindcss-safe-area": "^0.2.2"
+    "tailwindcss-safe-area": "^0.2.2",
+    "three": "^0.150.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.1",

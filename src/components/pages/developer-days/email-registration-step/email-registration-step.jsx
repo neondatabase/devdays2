@@ -2,9 +2,8 @@
 
 import { motion, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
-import Script from 'next/script';
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import BlinkingText from 'components/shared/blinking-text';
@@ -51,6 +50,15 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
   const columnControls = useAnimationControls();
   const sceneControls = useAnimationControls();
 
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    (async () => {
+      const elephantWebglScene = (await import('utils/elephant-webgl-scene')).default;
+      elephantWebglScene(canvasRef.current);
+    })();
+  }, []);
+
   useEffect(() => {
     const handleElephantTextureLoad = () => {
       if (window.localStorage.getItem('isTextureLoaded')) {
@@ -90,7 +98,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
   return (
     <>
       <motion.div
-        className="relative z-10 col-span-4 col-start-2 self-center xl:col-span-full xl:self-end xl:text-center xl:!opacity-100"
+        className="relative z-10 col-span-4 col-start-2 self-center 2xl:col-start-1 xl:col-span-full xl:self-end xl:text-center xl:!opacity-100"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'linear' }}
@@ -135,6 +143,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
             variants={appearSceneVariants}
             width={1080}
             height={760}
+            ref={canvasRef}
           />
           <CursorTrackingWrapper className="absolute inset-0 z-30" xMovement={1} yMovement={1}>
             <Image
@@ -146,7 +155,6 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
               priority
             />
           </CursorTrackingWrapper>
-          <Script src="/static/elephant-webgl-scene.js" type="module" strategy="afterInteractive" />
         </div>
         <Image
           className="remove-image-loading-visual hidden xl:block lg:my-9 md:my-4"
