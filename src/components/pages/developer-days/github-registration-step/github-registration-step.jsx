@@ -23,7 +23,7 @@ const GithubRegistrationStep = () => {
 
   return (
     <>
-      <div className="col-span-5 col-start-2 self-center 2xl:col-start-1  xl:col-span-full xl:self-end xl:text-center">
+      <div className="col-span-5 col-start-2 self-center 2xl:col-start-1 xl:col-span-full xl:self-end xl:text-center">
         <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:text-[58px] md:text-[52px]">
           You’re invited. <br />
           Grab the ticket.
@@ -100,7 +100,7 @@ const GithubRegistrationStep = () => {
           </span>
         </div>
       </div>
-      <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-span-5 2xl:-mr-10 2xl:ml-0 xl:col-span-full xl:mr-0 xl:self-start">
+      <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-span-7 2xl:ml-0 xl:col-span-full xl:mr-0 xl:self-start">
         <CursorTrackingWrapper>
           <Image
             className="remove-image-loading-visual mx-auto xl:max-w-[95%] md:hidden"
