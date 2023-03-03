@@ -42,8 +42,8 @@ const SocialShare = ({ className = null, url }) => {
           onClick={() => handleCopy(url)}
         >
           <CopyIcon className="h-[26px]" aria-hidden />
-          <p className="font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
-            Copy link
+          <p className="min-w-[82px] font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
+            {isCopied ? 'Copied!' : 'Copy link'}
           </p>
         </Button>
       </div>
