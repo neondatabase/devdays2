@@ -10,6 +10,7 @@ const styles = {
   },
   theme: {
     primary: 'bg-primary-4 text-black hover:bg-[#00e5bf]',
+    'code-copy': 'rounded-md',
     quaternary: 'bg-white text-[#1A1A1A] border-2 border-white hover:border-primary-2',
   },
 };
