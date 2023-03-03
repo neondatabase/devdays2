@@ -29,7 +29,7 @@ const TicketPage = async ({ params }) => {
           <span>Register now</span>
         </NextLink>
       </div>
-      <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-start-6 2xl:ml-0 xl:col-span-full xl:self-start">
+      <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-start-6 xl:col-span-full xl:ml-0 xl:self-start">
         <DynamicTicket userData={userData} />
       </div>
     </div>
