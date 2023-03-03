@@ -231,7 +231,7 @@ const DynamicTicket = ({
                   <b className="font-sans text-[26px] font-semibold leading-none text-white lg:text-xl">
                     {name}
                   </b>
-                  <span className="col-start-2 font-mono text-base font-light leading-none text-white lg:text-sm">
+                  <span className="col-start-2 font-mono text-base font-normal leading-none text-white lg:text-sm">
                     @{githubHandle}
                   </span>
                 </p>
