@@ -12,12 +12,12 @@ const TicketPage = async ({ params }) => {
 
   return (
     <div className="relative mx-auto grid max-w-[1760px] flex-grow grid-cols-12 gap-10 py-20 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:py-7 md:px-8 md:pt-5 md:pb-20 sm:px-4">
-      <div className="relative z-10 col-span-4 col-start-2 self-center 2xl:col-start-1 xl:col-span-full xl:self-end xl:text-center">
+      <div className="relative z-10 col-span-5 col-start-2 self-center 2xl:col-start-1 xl:col-span-full xl:self-end xl:text-center">
         <h1 className="pointer-events-none relative z-50 text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-[78px] 2xl:tracking-[-0.05em] xl:mx-auto xl:max-w-[700px] lg:text-[58px] md:max-w-[500px] md:text-[52px]">
           {userData.name}&apos;s <br className="hidden md:block" />
           Ticket
         </h1>
-        <p className="pointer-events-none relative z-50 mt-5 font-mono text-xl font-light leading-tight tracking-tight text-white xl:mx-auto xl:max-w-[700px] xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base md:max-w-[500px]">
+        <p className="pointer-events-none relative z-50 mt-5 max-w-[610px] font-mono text-xl font-light leading-tight tracking-tight text-white xl:mx-auto xl:max-w-[700px] xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base md:max-w-[500px]">
           Join {userData.name.split(' ')[0]} at Neon Developer Days on{' '}
           <time dateTime="2023-03-28 09:00">March 28th, 9 a.m. PT</time>
         </p>
