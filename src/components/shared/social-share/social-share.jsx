@@ -43,7 +43,7 @@ const SocialShare = ({ className = null, url }) => {
         >
           <CopyIcon className="h-[26px]" aria-hidden />
           <p className="font-sans text-xl font-medium leading-none tracking-[-0.02em] text-white">
-            Copy link
+            {isCopied ? 'Copied!' : 'Copy link'}
           </p>
         </Button>
       </div>
