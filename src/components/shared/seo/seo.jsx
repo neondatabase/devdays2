@@ -14,27 +14,12 @@ const defaultFonts = [
     type: 'font/woff2',
   },
   {
-    href: '/fonts/ibm-plex-sans/ibm-plex-sans-medium.woff2',
-    as: 'font',
-    type: 'font/woff2',
-  },
-  {
     href: '/fonts/ibm-plex-sans/ibm-plex-sans-semibold.woff2',
     as: 'font',
     type: 'font/woff2',
   },
   {
-    href: '/fonts/ibm-plex-sans/ibm-plex-sans-bold.woff2',
-    as: 'font',
-    type: 'font/woff2',
-  },
-  {
     href: '/fonts/ibm-plex-mono/ibm-plex-mono-light.woff2',
-    as: 'font',
-    type: 'font/woff2',
-  },
-  {
-    href: '/fonts/ibm-plex-mono/ibm-plex-mono-regular.woff2',
     as: 'font',
     type: 'font/woff2',
   },

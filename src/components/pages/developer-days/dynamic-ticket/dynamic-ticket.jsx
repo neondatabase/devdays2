@@ -231,7 +231,7 @@ const DynamicTicket = ({
                   <b className="font-sans text-[26px] font-semibold leading-none text-white lg:text-xl">
                     {name}
                   </b>
-                  <span className="col-start-2 font-mono text-base leading-none text-white lg:text-sm">
+                  <span className="col-start-2 font-mono text-base font-normal leading-none text-white lg:text-sm">
                     @{githubHandle}
                   </span>
                 </p>
@@ -241,7 +241,7 @@ const DynamicTicket = ({
                   </p>
                   <time
                     dateTime="2023-03-28T09:00:00-0800"
-                    className="whitespace-nowrap font-mono text-sm uppercase leading-dense tracking-[0.01em] text-white lg:text-[12px] md:text-[12px]"
+                    className="whitespace-nowrap font-mono text-sm font-light uppercase leading-dense tracking-[0.01em] text-white lg:text-[12px] md:text-[12px]"
                   >
                     9 a.m. PT,
                     <br />
@@ -269,9 +269,7 @@ const DynamicTicket = ({
 
       {withColorPicker && (
         <div className="pointer-events-none relative z-10 mt-9 flex items-center gap-6 2xl:mt-8 xl:justify-center lg:mt-7 lg:gap-4 md:mt-0 md:mb-7">
-          <p className="text-sm font-light tracking-[0.04em] text-white opacity-80">
-            Pick a color:
-          </p>
+          <p className="text-sm tracking-[0.04em] text-white opacity-80">Pick a color:</p>
           <div className="pointer-events-auto flex gap-5 lg:gap-6">
             {colorVariants.map((item, i) => {
               const { id, title, buttonColorClass } = item;
