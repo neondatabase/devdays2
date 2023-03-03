@@ -7,18 +7,24 @@ const defaultDescription =
   'Postgres made for developers. Easy to Use, Scalable, Cost efficient solution for your next project.';
 const defaultImagePath = '/images/social-previews/index.jpg';
 
-const fontsBasePath = '/fonts';
-
-const fontsPaths = [
-  '/ibm-plex-sans/ibm-plex-sans-bold.woff2',
-  '/ibm-plex-sans/ibm-plex-sans-regular.woff2',
+const defaultFonts = [
+  {
+    href: '/fonts/ibm-plex-sans/ibm-plex-sans-regular.woff2',
+    as: 'font',
+    type: 'font/woff2',
+  },
+  {
+    href: '/fonts/ibm-plex-sans/ibm-plex-sans-bold.woff2',
+    as: 'font',
+    type: 'font/woff2',
+  },
 ];
 
 const SEO = ({
   title = defaultTitle,
   description = defaultDescription,
   imagePath = defaultImagePath,
-  preloadAssets = [],
+  preload = [],
 }) => {
   const currentImagePath = imagePath.startsWith('http') ? imagePath : SITE_URL + imagePath;
 
@@ -52,19 +58,8 @@ const SEO = ({
       <link rel="icon" type="image/png" sizes="512x512" href="/favicon/favicon-512x512.png" />
       <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#1a1a1a" />
 
-      {fontsPaths.map((fontPath, index) => (
-        <link
-          rel="preload"
-          href={`${fontsBasePath}${fontPath}`}
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-          key={index}
-        />
-      ))}
-
-      {preloadAssets.map((item, index) => (
-        <link key={index} rel="preload" href={item} as="image" crossOrigin="true" />
+      {[...defaultFonts, preload].map((item, index) => (
+        <link key={index} rel="preload" crossOrigin {...item} />
       ))}
     </>
   );
@@ -74,7 +69,7 @@ SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   imagePath: PropTypes.string,
-  preloadAssets: PropTypes.array,
+  preload: PropTypes.array,
 };
 
 export default SEO;

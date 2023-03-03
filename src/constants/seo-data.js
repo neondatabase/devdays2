@@ -11,29 +11,33 @@ export default {
     description:
       'Join us at Developer Days virtually on March 28th to learn about Neon and how to build better with Serverless Postgres.',
     imagePath: '/images/social-previews/developer-days.jpg',
-    preloadAssets: [
-      '/images/developer-days/elephant-defuse.jpg',
-      '/images/developer-days/elephant-depth.jpg',
+    preload: [
+      { href: '/animations/input-lines.riv', as: 'fetch' },
+      { href: '/images/developer-days/elephant-defuse.jpg', as: 'image' },
+      { href: '/images/developer-days/elephant-depth.jpg', as: 'image' },
+    ],
+  },
+  generateTicket: {
+    preload: [
+      { href: '/animations/input-lines.riv', as: 'fetch' },
+      { href: '/images/developer-days/elephant-1-large.png', as: 'image' },
+      { href: '/images/developer-days/elephant-1-medium.png', as: 'image' },
+      { href: '/images/developer-days/elephant-1-small.png', as: 'image' },
+      { href: '/images/developer-days/elephant-2-large.png', as: 'image' },
+      { href: '/images/developer-days/elephant-2-medium.png', as: 'image' },
+      { href: '/images/developer-days/elephant-2-small.png', as: 'image' },
+      { href: '/images/developer-days/elephant-3-large.png', as: 'image' },
+      { href: '/images/developer-days/elephant-3-medium.png', as: 'image' },
+      { href: '/images/developer-days/elephant-3-small.png', as: 'image' },
+      { href: '/images/developer-days/elephant-4-large.png', as: 'image' },
+      { href: '/images/developer-days/elephant-4-medium.png', as: 'image' },
+      { href: '/images/developer-days/elephant-4-small.png', as: 'image' },
     ],
   },
   ticket({ name }) {
     return {
       title: `${name}'s ticket for Neon Developer Days - Neon`,
       description: `Join ${name} virtually at Developer Days on March 28th to learn about Neon and how to build better with Serverless Postgres`,
-      preloadAssets: [
-        '/images/developer-days/elephant-1-large.png',
-        '/images/developer-days/elephant-1-medium.png',
-        '/images/developer-days/elephant-1-small.png',
-        '/images/developer-days/elephant-2-large.png',
-        '/images/developer-days/elephant-2-medium.png',
-        '/images/developer-days/elephant-2-small.png',
-        '/images/developer-days/elephant-3-large.png',
-        '/images/developer-days/elephant-3-medium.png',
-        '/images/developer-days/elephant-3-small.png',
-        '/images/developer-days/elephant-4-large.png',
-        '/images/developer-days/elephant-4-medium.png',
-        '/images/developer-days/elephant-4-small.png',
-      ],
     };
   },
 };
