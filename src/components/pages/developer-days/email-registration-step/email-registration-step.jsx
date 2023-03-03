@@ -2,9 +2,8 @@
 
 import { motion, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
-import Script from 'next/script';
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import BlinkingText from 'components/shared/blinking-text';
@@ -50,6 +49,15 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
   const [titleRef, isTitleInView, titleEntry] = useInView({ triggerOnce: true, threshold: 0.5 });
   const columnControls = useAnimationControls();
   const sceneControls = useAnimationControls();
+
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    (async () => {
+      const elephantWebglScene = (await import('utils/elephant-webgl-scene')).default;
+      elephantWebglScene(canvasRef.current);
+    })();
+  }, []);
 
   useEffect(() => {
     const handleElephantTextureLoad = () => {
@@ -133,6 +141,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
             initial="initial"
             animate={sceneControls}
             variants={appearSceneVariants}
+            ref={canvasRef}
           />
           <CursorTrackingWrapper className="absolute inset-0 z-30" xMovement={1} yMovement={1}>
             <Image
@@ -144,7 +153,6 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
               priority
             />
           </CursorTrackingWrapper>
-          <Script src="/static/elephant-webgl-scene.js" type="module" strategy="afterInteractive" />
         </div>
         <Image
           className="remove-image-loading-visual hidden xl:block lg:my-9 md:my-4"
