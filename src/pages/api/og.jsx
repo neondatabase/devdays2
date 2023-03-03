@@ -17,7 +17,7 @@ export default async function handler(req) {
   const { searchParams } = req.nextUrl;
   const name = searchParams.get('name');
   const id = searchParams.get('id');
-  const handle = searchParams.get('githubHandle');
+  const handle = searchParams.get('login');
   const image = searchParams.get('image');
   const color = searchParams.get('colorSchema');
 
