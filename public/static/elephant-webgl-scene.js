@@ -8,8 +8,8 @@ import * as THREE from 'https://cdn.skypack.dev/three@0.129.0';
 const settings = {
   xThreshold: 8,
   yThreshold: 8,
-  originalImagePath: '/images/elephant-defuse.jpg',
-  depthImagePath: '/images/elephant-depth.jpg',
+  originalImagePath: '/images/developer-days/elephant-defuse.jpg',
+  depthImagePath: '/images/developer-days/elephant-depth.jpg',
 };
 
 // Sizes

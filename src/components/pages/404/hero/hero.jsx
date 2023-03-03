@@ -1,12 +1,12 @@
 'use client';
 
-import DesktopBlankTicketIllustration from 'images/blank-ticket-desktop.svg';
-import MobileBlankTicketIllustration from 'images/blank-ticket-mobile.svg';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import PropTypes from 'prop-types';
 
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
+import DesktopBlankTicketIllustration from 'images/developer-days/blank-ticket-desktop.svg';
+import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mobile.svg';
 
 import illustration from './images/illustration.png';
 

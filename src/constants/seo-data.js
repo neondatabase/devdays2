@@ -10,8 +10,11 @@ export default {
     title: 'Neon Developer Days — Neon',
     description:
       'Join us at Developer Days virtually on March 28th to learn about Neon and how to build better with Serverless Postgres.',
-    imagePath: '/images/social-previews.jpg',
-    preloadAssets: ['/images/elephant-defuse.jpg', '/images/elephant-depth.jpg'],
+    imagePath: '/images/social-previews/developer-days.jpg',
+    preloadAssets: [
+      '/images/developer-days/elephant-defuse.jpg',
+      '/images/developer-days/elephant-depth.jpg',
+    ],
   },
   ticket({ name }) {
     return {

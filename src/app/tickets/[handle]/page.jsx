@@ -1,7 +1,7 @@
-import DynamicTicket from 'components/pages/dynamic-ticket';
 import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
 
+import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
 import prisma from 'utils/prisma';
 
 const TicketPage = async ({ params }) => {

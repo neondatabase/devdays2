@@ -1,7 +1,8 @@
 'use client';
 
-import EmailRegistrationStep from 'components/pages/email-registration-step';
 import { useRouter } from 'next/navigation';
+
+import EmailRegistrationStep from 'components/pages/developer-days/email-registration-step';
 
 // @TODO:
 // deal with router: to and from tickets pages
