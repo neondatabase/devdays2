@@ -9,7 +9,7 @@ import useCopyToClipboard from 'hooks/use-copy-to-clipboard';
 import CopyIcon from 'icons/copy.inline.svg';
 import TwitterIcon from 'icons/twitter-icon.inline.svg';
 
-const message = 'Just got my ticket to Developer Days. Claim yours!';
+const message = 'Just got my ticket to @neondatabase Developer Days. Claim yours!';
 
 const SocialShare = ({ className = null, url }) => {
   const { isCopied, handleCopy } = useCopyToClipboard(3000);
