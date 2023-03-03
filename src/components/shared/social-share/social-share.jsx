@@ -20,7 +20,7 @@ const SocialShare = ({ className = null, url }) => (
       <TwitterShareButton url={url} title={message}>
         <div className="social-share relative flex items-center gap-4 py-[18px] px-6 pr-7 shadow-social transition duration-200 lg:px-8 xs:py-2 xs:px-3">
           <TwitterIcon className="h-[26px]" />
-          <p className="font-sans text-xl font-medium leading-none tracking-[-0.02em] text-white">
+          <p className="font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
             Twitter
           </p>
         </div>
@@ -28,13 +28,13 @@ const SocialShare = ({ className = null, url }) => (
       <LinkedinShareButton url={url}>
         <div className="social-share relative flex items-center gap-4 py-[18px] px-6 pr-7 shadow-social transition duration-200 lg:px-8 xs:py-2 xs:px-3">
           <LinkedinIcon className="h-[26px]" />
-          <p className="font-sans text-xl font-medium leading-none tracking-[-0.02em] text-white">
+          <p className="font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
             LinkedIn
           </p>
         </div>
       </LinkedinShareButton>
     </div>
-    <h2 className="ml-6 shrink-0 font-sans text-sm font-light leading-[1.375] tracking-[0.04em] text-gray-5 2xl:hidden">
+    <h2 className="ml-6 shrink-0 font-sans text-sm leading-[1.375] tracking-[0.04em] text-gray-5 2xl:hidden">
       Share with <br /> your friends
     </h2>
   </div>

@@ -19,7 +19,7 @@ const Header = () => (
           Join us on March 28th, 9 a.m. PT
         </p>
         <NextLink
-          className="relative flex h-[42px] items-center rounded-full border-2 border-white bg-black pl-[6px] pr-[22px] font-bold leading-none text-white hover:border-primary-2"
+          className="relative flex h-[42px] items-center rounded-full border-2 border-white bg-black pl-[6px] pr-[22px] font-semibold leading-none text-white hover:border-primary-2"
           href={LINKS.github}
           theme="tertiary"
           rel="noopener noreferrer"
