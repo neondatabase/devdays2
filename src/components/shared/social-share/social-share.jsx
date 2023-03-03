@@ -41,7 +41,7 @@ const SocialShare = ({ className = null, url }) => {
           theme="code-copy"
           onClick={() => handleCopy(url)}
         >
-          <CopyIcon className="h-[26px]" aria-hidden />
+          <CopyIcon className="h-[26px] shrink-0" aria-hidden />
           <p className="min-w-[82px] font-sans text-xl font-medium leading-none tracking-[-0.02em] text-white">
             {isCopied ? 'Copied!' : 'Copy link'}
           </p>
