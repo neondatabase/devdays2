@@ -38,7 +38,6 @@ const SocialShare = ({ className = null, url }) => {
           type="button"
           disabled={isCopied}
           size="sm"
-          // theme="quaternary"
           theme="code-copy"
           onClick={() => handleCopy(url)}
         >
