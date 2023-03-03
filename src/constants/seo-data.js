@@ -9,7 +9,7 @@ export default {
   developerDays2: {
     title: 'Neon Developer Days — Neon',
     description:
-      'Join us at Developer Days virtually on March 28th to learn about Neon and how to build better with Serverless Postgres.',
+      'Join us at Developer Days virtually on March 29th to learn about Neon and how to build better with Serverless Postgres.',
     imagePath: '/images/social-previews/developer-days.jpg',
   },
   generateTicket: {
@@ -20,7 +20,7 @@ export default {
   ticket({ name }) {
     return {
       title: `${name}'s ticket for Neon Developer Days - Neon`,
-      description: `Join ${name} virtually at Developer Days on March 28th to learn about Neon and how to build better with Serverless Postgres`,
+      description: `Join ${name} virtually at Developer Days on March 29th to learn about Neon and how to build better with Serverless Postgres`,
     };
   },
 };

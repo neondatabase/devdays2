@@ -24,9 +24,9 @@ const Hero = ({ isTicketPage = false }) => (
       </p>
       <NextLink
         className="t-2xl mt-11 inline-flex items-center justify-center self-start whitespace-nowrap rounded-full bg-primary-1 py-5 px-11 text-center font-semibold !leading-none text-black outline-none transition-colors duration-200 hover:bg-[#00e5bf] 2xl:py-[20px] xl:px-9 lg:mt-8 md:py-5 md:px-8"
-        href={isTicketPage ? '' : '/'}
+        href="/"
       >
-        {isTicketPage ? 'Register' : 'Back to home'}
+        {isTicketPage ? 'Get yours' : 'Back to home'}
       </NextLink>
     </div>
     <div className="col-span-7 col-start-6 self-center xl:col-span-full xl:self-start">

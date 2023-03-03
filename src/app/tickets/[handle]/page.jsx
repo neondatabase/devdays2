@@ -17,9 +17,9 @@ const TicketPage = async ({ params }) => {
           {userData.name}&apos;s <br className="hidden md:block" />
           Ticket
         </h1>
-        <p className="pointer-events-none relative z-50 mt-5 max-w-[610px] font-mono text-xl font-light leading-tight tracking-tight text-white xl:mx-auto xl:max-w-[700px] xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base md:max-w-[500px]">
+        <p className="pointer-events-none relative z-50 mt-5 max-w-[610px] font-mono text-xl font-light leading-tight tracking-tight text-white 2xl:max-w-[500px] xl:mx-auto xl:max-w-[700px] xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base">
           Join {userData.name.split(' ')[0]} at Neon Developer Days on{' '}
-          <time dateTime="2023-03-28 09:00">March 28th, 9 a.m. PT</time>
+          <time dateTime="2023-03-28 09:00">March 29th, 9 a.m. PT</time>
         </p>
         <NextLink
           className="t-2xl mt-11 inline-flex items-center justify-center self-start whitespace-nowrap rounded-full bg-primary-4 py-5 px-11 text-center font-semibold !leading-none text-black outline-none transition-colors duration-200 hover:bg-[#00e5bf] 2xl:py-[20px] xl:px-9 lg:mt-8 md:py-5 md:px-8 sm:w-full"
@@ -29,7 +29,7 @@ const TicketPage = async ({ params }) => {
           <span>Register now</span>
         </NextLink>
       </div>
-      <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-start-5 2xl:ml-0 xl:col-span-full xl:self-start">
+      <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-start-6 2xl:ml-0 xl:col-span-full xl:self-start">
         <DynamicTicket userData={userData} />
       </div>
     </div>

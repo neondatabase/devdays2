@@ -113,7 +113,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           {titleContent}
         </h1>
         <p className="mt-5 max-w-xl font-mono text-xl font-light tracking-tighter text-white 2xl:text-lg xl:mx-auto xl:max-w-md lg:mt-4 lg:max-w-sm lg:text-base md:max-w-[80%]">
-          Join us on <time dateTime="2023-03-28 10:30">March 28th, 9 a.m. PT</time> to learn more
+          Join us on <time dateTime="2023-03-28 10:30">March 29th, 9 a.m. PT</time> to learn more
           about latest of Serverless Postgres
         </p>
         <SubscriptionForm
