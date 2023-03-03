@@ -22,7 +22,6 @@ export default (canvas) => {
   // Image Details
   let originalImage = null;
   let depthImage = null;
-  const stableImage = null;
   const originalImageDetails = {
     width: 0,
     height: 0,
@@ -75,17 +74,16 @@ export default (canvas) => {
   const textureLoader = new THREE.TextureLoader(manager);
 
   const loadImages = () => {
-    if (originalImage !== null || depthImage !== null || stableImage !== null) {
-      originalImage.dispose();
-      depthImage.dispose();
-      stableImage.dispose();
-    }
     depthImage = textureLoader.load(settings.depthImagePath);
 
     originalImage = textureLoader.load(settings.originalImagePath, (tex) => {
       originalImageDetails.width = tex.image.width;
       originalImageDetails.height = tex.image.height;
       originalImageDetails.aspectRatio = tex.image.height / tex.image.width;
+
+      create3dImage();
+      resize();
+      tick();
     });
   };
 
@@ -143,8 +141,6 @@ export default (canvas) => {
     scene.add(plane);
   };
 
-  create3dImage();
-
   /**
    * Resize
    */
@@ -187,6 +183,7 @@ export default (canvas) => {
     cursor.x = 0;
     cursor.y = 0;
   });
+
   window.addEventListener('touchmove', (event) => {
     const touch = event.touches[0];
     cursor.x = touch.pageX / sizes.width - 0.5;
@@ -201,7 +198,6 @@ export default (canvas) => {
   /**
    * Renderer
    */
-
   const renderer = new THREE.WebGLRenderer({
     canvas,
     alpha: true,
@@ -239,6 +235,4 @@ export default (canvas) => {
     // Call tick again on the next frame
     window.requestAnimationFrame(tick);
   };
-
-  tick();
 };
