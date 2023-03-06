@@ -8,7 +8,6 @@ import { useState } from 'react';
 import Button from 'components/shared/button';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import GithubIcon from 'components/shared/header/images/header-github.inline.svg';
-import LuminousBack from 'components/shared/subscription-form/icons/luminous-button-back.inline.svg';
 import DesktopBlankTicketIllustration from 'images/developer-days/blank-ticket-desktop.svg';
 import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mobile.svg';
 
@@ -33,68 +32,62 @@ const GithubRegistrationStep = () => {
           right after the conference.
         </p>
         <div className="mt-11 flex items-center xl:mt-10 xl:flex-col lg:mt-8 md:mt-6">
-          <div className="relative">
-            <Button
-              className="relative z-10"
-              size="md"
-              theme="primary"
-              rel="noopener noreferrer"
-              target="_blank"
-              disabled={isLoading}
-              onClick={() => {
-                setIsLoading(true);
-                signIn('github');
-              }}
-            >
-              <AnimatePresence>
-                {isLoading ? (
-                  <motion.div
-                    className="absolute top-1/2 left-3 z-20 flex -translate-y-1/2 items-center justify-center rounded-full bg-transparent"
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    variants={appearAndExitAnimationVariants}
-                    aria-hidden
+          <Button
+            size="md"
+            theme="with-icon"
+            rel="noopener noreferrer"
+            target="_blank"
+            disabled={isLoading}
+            isAnimated
+            onClick={() => {
+              setIsLoading(true);
+              signIn('github');
+            }}
+          >
+            <AnimatePresence>
+              {isLoading ? (
+                <motion.div
+                  className="absolute top-1/2 left-3 z-20 flex -translate-y-1/2 items-center justify-center rounded-full bg-transparent"
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  variants={appearAndExitAnimationVariants}
+                  aria-hidden
+                >
+                  <div className="h-[40px] w-[40px] rounded-full" />
+                  <svg
+                    className="absolute top-1/2 left-1/2 h-[40px] w-[40px]"
+                    width="58"
+                    height="58"
+                    viewBox="0 0 58 58"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ transform: 'scale(1, -1) rotate(-90deg) translate(-50%, -50%)' }}
                   >
-                    <div className="h-[40px] w-[40px] rounded-full" />
-                    <svg
-                      className="absolute top-1/2 left-1/2 h-[40px] w-[40px]"
-                      width="58"
-                      height="58"
-                      viewBox="0 0 58 58"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      style={{ transform: 'scale(1, -1) rotate(-90deg) translate(-50%, -50%)' }}
-                    >
-                      <motion.path
-                        d="M3 29C3 43.3594 14.6406 55 29 55C43.3594 55 55 43.3594 55 29C55 14.6406 43.3594 3 29 3C14.6406 3 3 14.6406 3 29Z"
-                        strokeLinecap="round"
-                        stroke="black"
-                        strokeWidth="5"
-                        initial={{ pathLength: 0 }}
-                        animate={{
-                          pathLength: 1,
-                          transition: { duration: 2, delay: 0.2, repeat: Infinity },
-                        }}
-                      />
-                    </svg>
-                  </motion.div>
-                ) : (
-                  <GithubIcon
-                    className="absolute top-1/2 left-3 -translate-y-1/2 text-black"
-                    width={40}
-                    height={40}
-                    aria-hidden="true"
-                  />
-                )}
-              </AnimatePresence>
-              <span>Generate with GitHub</span>
-            </Button>
-            <LuminousBack
-              className="pointer-events-none absolute -top-12 left-1/2 -z-10 -translate-x-1/2"
-              aria-hidden="true"
-            />
-          </div>
+                    <motion.path
+                      d="M3 29C3 43.3594 14.6406 55 29 55C43.3594 55 55 43.3594 55 29C55 14.6406 43.3594 3 29 3C14.6406 3 3 14.6406 3 29Z"
+                      strokeLinecap="round"
+                      stroke="black"
+                      strokeWidth="5"
+                      initial={{ pathLength: 0 }}
+                      animate={{
+                        pathLength: 1,
+                        transition: { duration: 2, delay: 0.2, repeat: Infinity },
+                      }}
+                    />
+                  </svg>
+                </motion.div>
+              ) : (
+                <GithubIcon
+                  className="absolute top-1/2 left-3 -translate-y-1/2 text-black"
+                  width={40}
+                  height={40}
+                  aria-hidden="true"
+                />
+              )}
+            </AnimatePresence>
+            <span>Generate with GitHub</span>
+          </Button>
           <span className="relative z-10 ml-5 max-w-[140px] text-sm leading-[1.375] tracking-[0.04em] text-gray-5 xl:mt-3 xl:ml-0 xl:max-w-full sm:mt-2">
             Only public data <br className="xl:hidden" /> is going to be used.
           </span>

@@ -1,9 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import NextLink from 'next/link';
 import PropTypes from 'prop-types';
 
+import Button from 'components/shared/button';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import DesktopBlankTicketIllustration from 'images/developer-days/blank-ticket-desktop.svg';
 import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mobile.svg';
@@ -22,12 +22,9 @@ const Hero = ({ isTicketPage = false }) => (
           ? "Sorry, the ticket you are looking for doesn't exist."
           : 'Sorry, the page you are looking for doesn’t exist.'}
       </p>
-      <NextLink
-        className="t-2xl mt-11 inline-flex items-center justify-center self-start whitespace-nowrap rounded-full bg-primary-1 py-5 px-11 text-center font-semibold !leading-none text-black outline-none transition-colors duration-200 hover:bg-[#00e5bf] 2xl:py-[20px] xl:px-9 lg:mt-8 md:py-5 md:px-8"
-        href="/"
-      >
+      <Button className="mt-11" size="md" theme="primary" href="/" isAnimated>
         {isTicketPage ? 'Get yours' : 'Back to home'}
-      </NextLink>
+      </Button>
     </div>
     <div className="col-span-7 col-start-6 self-center xl:col-span-full xl:self-start">
       {isTicketPage ? (
