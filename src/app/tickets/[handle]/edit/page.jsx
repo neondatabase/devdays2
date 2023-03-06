@@ -23,7 +23,7 @@ const TicketEditPage = async ({ params }) => {
           Choose the ticket color and gather a watch party for the upcoming Neon Developer Days! See
           you on <time dateTime="2023-03-28 09:00">March 29th, 9 a.m. PT</time>
         </p>
-        <SocialShare className="mt-11 lg:mt-8 sm:mt-6" url={shareUrl} />
+        <SocialShare className="pointer-events-auto mt-11 lg:mt-8 sm:mt-6" url={shareUrl} />
       </div>
       <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-start-6 xl:col-span-full xl:ml-0 xl:self-start">
         <DynamicTicket userData={userData} withColorPicker />
