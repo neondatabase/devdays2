@@ -209,7 +209,7 @@ const DynamicTicket = ({
               <div className="ticket-content flex flex-col justify-between p-7 pb-6 text-white 2xl:p-6 md:p-5 md:pt-14 md:pb-[61px]">
                 <header
                   className={clsx(
-                    { 'opacity-30': isBlankTicket },
+                    { 'opacity-20': isBlankTicket },
                     'order-2 ml-[43px] mb-4 self-start 2xl:ml-[42px] 2xl:mb-3 lg:ml-[38px] lg:mt-3 lg:mb-0 md:mt-1 md:ml-0'
                   )}
                 >
@@ -232,7 +232,7 @@ const DynamicTicket = ({
                 </header>
                 <p
                   className={clsx(
-                    { 'opacity-30': isBlankTicket },
+                    { 'opacity-20': isBlankTicket },
                     'order-1 grid grid-cols-[56px_1fr] grid-rows-2 gap-x-4 gap-y-2 lg:grid-cols-[48px_1fr] lg:gap-x-3 md:gap-x-2.5'
                   )}
                 >
@@ -256,7 +256,7 @@ const DynamicTicket = ({
                 </p>
                 <footer
                   className={clsx(
-                    { 'opacity-30': isBlankTicket },
+                    { 'opacity-20': isBlankTicket },
                     'order-3 flex items-center gap-2 md:mt-auto'
                   )}
                 >
