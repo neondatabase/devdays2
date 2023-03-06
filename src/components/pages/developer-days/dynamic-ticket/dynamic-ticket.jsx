@@ -77,6 +77,7 @@ const colorVariants = [
 ];
 
 const DynamicTicket = ({
+  isBlankTicket = false,
   withColorPicker = false,
   userData: { id: number, name, image, login: githubHandle, colorSchema },
 }) => {
@@ -162,9 +163,15 @@ const DynamicTicket = ({
   }, []);
 
   return (
-    <div className="mt-[4.5rem] xl:mt-11 lg:mt-10 md:mt-6 md:flex md:flex-col-reverse">
+    <div
+      className={clsx(
+        { 'mt-[4.5rem]': !isBlankTicket },
+        'xl:mt-11 lg:mt-10 md:mt-6 md:flex md:flex-col-reverse'
+      )}
+    >
       <section
         className={clsx('ticket xl:mx-auto', {
+          'ticket-blank': isBlankTicket,
           'before:bg-ticket-back-variant-1': currentColorSchema === '1',
           'before:bg-ticket-back-variant-2': currentColorSchema === '2',
           'before:bg-ticket-back-variant-3': currentColorSchema === '3',
@@ -176,6 +183,7 @@ const DynamicTicket = ({
       >
         <div
           className={clsx('ticket-back', {
+            'bg-ticket-border-variant-0': isBlankTicket,
             'bg-ticket-border-variant-1': currentColorSchema === '1',
             'bg-ticket-border-variant-2': currentColorSchema === '2',
             'bg-ticket-border-variant-3': currentColorSchema === '3',
@@ -196,6 +204,7 @@ const DynamicTicket = ({
           >
             <div
               className={clsx('ticket-front', {
+                'ticket-front-variant-0': isBlankTicket,
                 'ticket-front-variant-1': elephantColorSchema === '1',
                 'ticket-front-variant-2': elephantColorSchema === '2',
                 'ticket-front-variant-3': elephantColorSchema === '3',
@@ -203,11 +212,17 @@ const DynamicTicket = ({
               })}
             >
               <div className="ticket-content flex flex-col justify-between p-7 pb-6 text-white 2xl:p-6 md:p-5 md:pt-14 md:pb-[61px]">
-                <header className="order-2 ml-[43px] mb-4 self-start 2xl:ml-[42px] 2xl:mb-3 lg:ml-[38px] lg:mt-3 lg:mb-0 md:mt-1 md:ml-0">
+                <header
+                  className={clsx(
+                    { 'opacity-20': isBlankTicket },
+                    'order-2 ml-[43px] mb-4 self-start 2xl:ml-[42px] 2xl:mb-3 lg:ml-[38px] lg:mt-3 lg:mb-0 md:mt-1 md:ml-0'
+                  )}
+                >
                   <h2
                     className={clsx(
                       'min-h-[100px] bg-clip-text font-kallisto text-5xl font-light leading-none text-transparent opacity-90 lg:text-[36px] md:text-4xl',
                       {
+                        'bg-ticket-text-variant-0': isBlankTicket,
                         'bg-ticket-text-variant-1': currentColorSchema === '1',
                         'bg-ticket-text-variant-2': currentColorSchema === '2',
                         'bg-ticket-text-variant-3': currentColorSchema === '3',
@@ -220,14 +235,23 @@ const DynamicTicket = ({
                     Days 2023
                   </h2>
                 </header>
-                <p className="order-1 grid grid-cols-[56px_1fr] grid-rows-2 gap-x-4 gap-y-2 lg:grid-cols-[48px_1fr] lg:gap-x-3 md:gap-x-2.5">
-                  <Image
-                    src={image}
-                    width={56}
-                    height={56}
-                    alt={`${name}'s profile picture`}
-                    className="row-start-1 row-end-3 h-[56px] w-[56px] rounded-full lg:h-[48px] lg:w-[48px]"
-                  />
+                <p
+                  className={clsx(
+                    { 'opacity-20': isBlankTicket },
+                    'order-1 grid grid-cols-[56px_1fr] grid-rows-2 gap-x-4 gap-y-2 lg:grid-cols-[48px_1fr] lg:gap-x-3 md:gap-x-2.5'
+                  )}
+                >
+                  {image ? (
+                    <Image
+                      src={image}
+                      width={56}
+                      height={56}
+                      alt={`${name}'s profile picture`}
+                      className="row-start-1 row-end-3 h-[56px] w-[56px] rounded-full lg:h-[48px] lg:w-[48px]"
+                    />
+                  ) : (
+                    <span className="row-start-1 row-end-3 h-[56px] w-[56px] rounded-full border border-white lg:h-[48px] lg:w-[48px]" />
+                  )}
                   <b className="font-sans text-[26px] font-semibold leading-none text-white lg:text-xl">
                     {name}
                   </b>
@@ -235,7 +259,12 @@ const DynamicTicket = ({
                     @{githubHandle}
                   </span>
                 </p>
-                <footer className="order-3 flex items-center gap-2 md:mt-auto">
+                <footer
+                  className={clsx(
+                    { 'opacity-20': isBlankTicket },
+                    'order-3 flex items-center gap-2 md:mt-auto'
+                  )}
+                >
                   <p className="trac whitespace-nowrap font-kallisto text-[36px] font-light leading-none tracking-[0.08em] text-white lg:text-3xl md:text-[28px] xxs:text-[26px]">
                     #{`${number}`.padStart(6, '0')} /
                   </p>
@@ -310,6 +339,7 @@ const DynamicTicket = ({
 };
 
 DynamicTicket.propTypes = {
+  isBlankTicket: PropTypes.bool,
   withColorPicker: PropTypes.bool,
   userData: PropTypes.exact({
     id: PropTypes.number,

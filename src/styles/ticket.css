@@ -40,7 +40,7 @@
     }
 
     /* ticket back flare */
-    &::before {
+    .not(.ticket-blank)::before {
       background-image: radial-gradient(transparent 0%, theme(colors.black) 72%),
         linear-gradient(225deg, #00d1ff 0%, rgba(51, 255, 187, 0.2) 100%);
     }
@@ -144,6 +144,18 @@
       background-position: right 0 bottom 30px;
     }
 
+    &.ticket-front-variant-0 {
+      background-image: url('/images/developer-days/elephant-0-large.png');
+
+      @media screen(lg) {
+        background-image: url('/images/developer-days/elephant-0-medium.png');
+      }
+
+      @media screen(md) {
+        background-image: url('/images/developer-days/elephant-0-small.png');
+      }
+    }
+
     &.ticket-front-variant-1 {
       background-image: url('/images/developer-days/elephant-1-large.png');
 
@@ -209,5 +221,9 @@
     background-size: var(--flash-width) var(--flash-height);
     background-image: radial-gradient(rgb(255 255 255 / 0.2) 0%, transparent 72%);
     background-position: left calc(var(--flash-x) + var(--flash-delta-x)) top var(--flash-y);
+  }
+
+  .ticket-blank .ticket-content {
+    background-image: radial-gradient(rgb(255 255 255 / 0.15) 0%, transparent 65%);
   }
 }

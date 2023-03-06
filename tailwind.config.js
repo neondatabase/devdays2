@@ -7,6 +7,7 @@ module.exports = {
     screens: {
       '3xl': { max: '1920px' },
       '2xl': { max: '1800px' },
+      '1xl': { max: '1439px' },
       xl: { max: '1279px' },
       lg: { max: '1023px' },
       md: { max: '767px' },
@@ -82,6 +83,8 @@ module.exports = {
         'color-picker-variant-2': 'linear-gradient(225deg, #BDF471 35.94%, #00CC33 100%);',
         'color-picker-variant-3': 'linear-gradient(225deg, #FF66FF 13.02%, #421CFF 92.19%);',
         'color-picker-variant-4': 'linear-gradient(226.74deg, #E8EFFC 28.6%, #99B3E6 80.81%);',
+        'ticket-text-variant-0':
+          'linear-gradient(215.67deg, #FFFFFF 41.51%, rgba(255, 255, 255, 0.5) 79.11%);',
         'ticket-text-variant-1': 'linear-gradient(215.67deg, #ffffff 41.51%, #66ffcc 79.11%)',
         'ticket-text-variant-2': 'linear-gradient(215.67deg, #ffffff 41.51%, #e6ff66 79.11%)',
         'ticket-text-variant-3': 'linear-gradient(215.67deg, #ffffff 41.51%, #ff99dd 79.11%)',
@@ -110,6 +113,11 @@ module.exports = {
           'url("/images/developer-days/ticket-pattern-3-vertical.svg")',
         'ticket-middle-variant-4-vertical':
           'url("/images/developer-days/ticket-pattern-4-vertical.svg")',
+        'ticket-border-variant-0': `linear-gradient(0deg, transparent 10%, rgba(255, 255, 255, 0.2) 48%, rgba(255, 255, 255, 0.2) 52%, transparent 90%), linear-gradient(90deg, ${theme(
+          'colors.black'
+        )} 0%, rgba(255, 255, 255, 0.2) 35%, rgba(255, 255, 255, 0.2) 65%, ${theme(
+          'colors.black'
+        )} 100%)`,
         'ticket-border-variant-1': `linear-gradient(0deg, transparent 10%, #00d1ff 48%, #00d1ff 52%, transparent 90%), linear-gradient(90deg, ${theme(
           'colors.black'
         )} 0%, #00d1ff 35%, #00d1ff 65%, ${theme('colors.black')} 100%)`,
