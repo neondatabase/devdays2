@@ -47,8 +47,8 @@ const Button = ({
       {children}
       <RiveComponent
         className={clsx(
-          theme === 'with-icon' ? '-top-8' : '-top-4 xl:hidden',
-          'pointer-events-none absolute left-1/2 -z-10 w-[120%] min-w-[240px] -translate-x-1/2 [&>*]:!min-h-[180px]'
+          theme === 'with-icon' ? '-top-8' : '-top-0 xl:hidden',
+          'pointer-events-none absolute left-1/2 -z-10 w-[120%] min-w-[200px] -translate-x-1/2 [&>*]:!min-h-[180px]'
         )}
       />
     </Tag>
