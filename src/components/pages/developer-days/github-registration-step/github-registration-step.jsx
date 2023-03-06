@@ -20,11 +20,11 @@ const GithubRegistrationStep = () => {
   return (
     <>
       <div className="col-span-5 col-start-2 self-center 2xl:col-start-1 xl:col-span-full xl:self-end xl:text-center">
-        <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:text-[58px] md:text-[52px]">
+        <h2 className="text-[96px] font-semibold leading-none tracking-tighter text-white 2xl:text-7xl 1xl:max-w-[420px] xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:text-[58px] md:text-[52px]">
           You’re invited. <br />
           Grab the ticket.
         </h2>
-        <p className="mt-5 font-mono text-xl font-light leading-tight tracking-tight text-white xl:mx-auto xl:max-w-xl xl:text-center xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base">
+        <p className="mt-5 font-mono text-xl font-light leading-tight tracking-tight text-white 1xl:max-w-[420px] xl:mx-auto xl:max-w-xl xl:text-center xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base">
           Generate a unique ticket image with your GitHub profile and participate in Neon's giveaway
           right after the conference.
         </p>
