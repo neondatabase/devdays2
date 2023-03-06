@@ -21,7 +21,7 @@ const TicketPage = async ({ params }) => {
           Join {userData.name.split(' ')[0]} at Neon Developer Days on{' '}
           <time dateTime="2023-03-28 09:00">March 29th, 9 a.m. PT</time>
         </p>
-        <Button className="mt-11" size="md" theme="primary" href="/" isAnimated>
+        <Button className="pointer-events-auto mt-11" size="md" theme="primary" href="/" isAnimated>
           Register now
         </Button>
       </div>
