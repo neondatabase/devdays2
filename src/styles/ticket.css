@@ -40,7 +40,7 @@
     }
 
     /* ticket back flare */
-    &::before {
+    .not(.ticket-blank)::before {
       background-image: radial-gradient(transparent 0%, theme(colors.black) 72%),
         linear-gradient(225deg, #00d1ff 0%, rgba(51, 255, 187, 0.2) 100%);
     }
@@ -142,6 +142,18 @@
     @media screen(md) {
       background-size: 312px 454px;
       background-position: right 0 bottom 30px;
+    }
+
+    &.ticket-front-variant-0 {
+      background-image: url('/images/developer-days/elephant-0-large.png');
+
+      @media screen(lg) {
+        background-image: url('/images/developer-days/elephant-0-medium.png');
+      }
+
+      @media screen(md) {
+        background-image: url('/images/developer-days/elephant-0-small.png');
+      }
     }
 
     &.ticket-front-variant-1 {

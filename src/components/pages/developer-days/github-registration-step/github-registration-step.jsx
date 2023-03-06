@@ -1,16 +1,13 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import Image from 'next/image';
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 
+import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
 import Button from 'components/shared/button';
-import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import GithubIcon from 'components/shared/header/images/header-github.inline.svg';
 import LuminousBack from 'components/shared/subscription-form/icons/luminous-button-back.inline.svg';
-import DesktopBlankTicketIllustration from 'images/developer-days/blank-ticket-desktop.svg';
-import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mobile.svg';
 
 const appearAndExitAnimationVariants = {
   initial: { opacity: 0 },
@@ -101,21 +98,15 @@ const GithubRegistrationStep = () => {
         </div>
       </div>
       <div className="col-span-6 col-start-7 -ml-10 self-center 2xl:col-span-7 2xl:ml-0 xl:col-span-full xl:mr-0 xl:self-start">
-        <CursorTrackingWrapper>
-          <Image
-            className="remove-image-loading-visual mx-auto xl:max-w-[95%] md:hidden"
-            width={792}
-            height={390}
-            src={DesktopBlankTicketIllustration}
-            alt="Blank ticket desktop illustration"
-          />
-        </CursorTrackingWrapper>
-        <Image
-          className="remove-image-loading-visual mx-auto hidden md:block"
-          width={346}
-          height={702}
-          src={MobileBlankTicketIllustration}
-          alt="Blank ticket mobile illustration"
+        <DynamicTicket
+          userData={{
+            id: 0,
+            name: 'Your Name',
+            image: '',
+            login: 'github-account',
+            colorSchema: '0',
+          }}
+          isBlankTicket
         />
       </div>
     </>

@@ -4,9 +4,7 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import PropTypes from 'prop-types';
 
-import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
-import DesktopBlankTicketIllustration from 'images/developer-days/blank-ticket-desktop.svg';
-import MobileBlankTicketIllustration from 'images/developer-days/blank-ticket-mobile.svg';
+import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
 
 import illustration from './images/illustration.png';
 
@@ -31,24 +29,16 @@ const Hero = ({ isTicketPage = false }) => (
     </div>
     <div className="col-span-7 col-start-6 self-center xl:col-span-full xl:self-start">
       {isTicketPage ? (
-        <>
-          <CursorTrackingWrapper>
-            <Image
-              className="remove-image-loading-visual mx-auto sm:hidden"
-              width={776}
-              height={380}
-              src={DesktopBlankTicketIllustration}
-              alt="Blank ticket desktop illustration"
-            />
-          </CursorTrackingWrapper>
-          <Image
-            className="mx-auto hidden sm:block"
-            width={346}
-            height={702}
-            src={MobileBlankTicketIllustration}
-            alt="Blank ticket mobile illustration"
+        <DynamicTicket
+            userData={{
+              id: 0,
+              name: 'Your Name',
+              image: '',
+              login: 'github-account',
+              colorSchema: '0',
+            }}
+            isBlankTicket
           />
-        </>
       ) : (
         <Image
           className="w-[75%] xl:mx-auto sm:w-full"
