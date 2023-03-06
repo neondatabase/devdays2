@@ -222,4 +222,8 @@
     background-image: radial-gradient(rgb(255 255 255 / 0.2) 0%, transparent 72%);
     background-position: left calc(var(--flash-x) + var(--flash-delta-x)) top var(--flash-y);
   }
+
+  .ticket-blank .ticket-content {
+    background-image: radial-gradient(rgb(255 255 255 / 0.15) 0%, transparent 65%);
+  }
 }

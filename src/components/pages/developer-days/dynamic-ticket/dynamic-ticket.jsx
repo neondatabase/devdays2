@@ -163,7 +163,12 @@ const DynamicTicket = ({
   }, []);
 
   return (
-    <div className="mt-[4.5rem] xl:mt-11 lg:mt-10 md:mt-6 md:flex md:flex-col-reverse">
+    <div
+      className={clsx(
+        { 'mt-[4.5rem]': !isBlankTicket },
+        'xl:mt-11 lg:mt-10 md:mt-6 md:flex md:flex-col-reverse'
+      )}
+    >
       <section
         className={clsx('ticket xl:mx-auto', {
           'ticket-blank': isBlankTicket,
