@@ -19,8 +19,8 @@ const GithubRegistrationStep = () => {
 
   return (
     <>
-      <div className="col-span-5 col-start-2 self-center 2xl:col-start-1 xl:col-span-full xl:self-end xl:text-center">
-        <h2 className="text-[78px] font-semibold leading-none tracking-tighter text-white 1xl:max-w-[420px] xl:text-center xl:tracking-[-0.05em] lg:text-[58px] md:text-[52px]">
+      <div className="col-span-4 col-start-2 self-center 2xl:col-start-1 xl:col-span-full xl:self-end xl:text-center">
+        <h2 className="text-[58px] font-semibold leading-none tracking-[-0.05em] text-white 1xl:max-w-[420px] xl:mx-auto xl:text-center md:text-[52px]">
           You’re invited. <br />
           Grab the ticket.
         </h2>
@@ -85,12 +85,12 @@ const GithubRegistrationStep = () => {
             </AnimatePresence>
             <span>Generate with GitHub</span>
           </Button>
-          <span className="relative z-10 ml-5 max-w-[140px] text-sm leading-[1.375] tracking-[0.04em] text-gray-5 xl:mt-3 xl:ml-0 xl:max-w-full sm:mt-2">
+          <span className="relative z-10 ml-5 max-w-[140px] shrink-0 text-sm leading-[1.375] tracking-[0.04em] text-gray-5 xl:mt-3 xl:ml-0 xl:max-w-full sm:mt-2">
             Only public data <br className="xl:hidden" /> is going to be used.
           </span>
         </div>
       </div>
-      <div className="col-span-6 col-start-7 self-center 2xl:col-span-7 xl:col-span-full xl:mr-0 xl:self-start">
+      <div className="col-span-6 col-start-7 self-center 2xl:col-start-6 1xl:-ml-10 xl:col-span-full xl:ml-0 xl:mr-0 xl:self-start">
         <DynamicTicket
           userData={{
             id: 0,
