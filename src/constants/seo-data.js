@@ -17,10 +17,12 @@ export default {
     description:
       "Generate a unique ticket image with your GitHub profile and participate in Neon's right after the conference.",
   },
-  ticket({ name }) {
+  ticket({ name, login: githubHandle }) {
+    const userName = name || githubHandle;
+
     return {
-      title: `${name}'s ticket for Neon Developer Days - Neon`,
-      description: `Join ${name} virtually at Developer Days on March 29th to learn about Neon and how to build better with Serverless Postgres`,
+      title: `${userName}'s ticket for Neon Developer Days - Neon`,
+      description: `Join ${userName} virtually at Developer Days on March 29th to learn about Neon and how to build better with Serverless Postgres`,
     };
   },
 };

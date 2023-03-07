@@ -18,7 +18,7 @@ export default async function handler(req) {
   const id = searchParams.get('id');
   const handle = searchParams.get('login');
   const image = searchParams.get('image');
-  const name = searchParams.get('name') || handle;
+  const name = searchParams.get('name') !== 'null' ? searchParams.get('name') : handle;
   const color = searchParams.get('colorSchema') || '1';
 
   return new ImageResponse(
