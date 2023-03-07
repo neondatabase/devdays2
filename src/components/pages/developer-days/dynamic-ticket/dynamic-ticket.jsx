@@ -84,7 +84,7 @@ const DynamicTicket = ({
   const { data, status } = useSession();
   const [selectedColorSchema, setSelectedColorSchema] = useState(null);
   const prevColor = usePrevious(selectedColorSchema);
-  const currentColorSchema = selectedColorSchema || colorSchema;
+  const currentColorSchema = selectedColorSchema || colorSchema || '1';
   const [elephantColorSchema, setElephantColorSchema] = useState(currentColorSchema);
   const gradientControls = useAnimationControls();
   // TODO: fix translateZ opacity bug
@@ -246,14 +246,14 @@ const DynamicTicket = ({
                       src={image}
                       width={56}
                       height={56}
-                      alt={`${name}'s profile picture`}
+                      alt={`${name || githubHandle}'s profile picture`}
                       className="row-start-1 row-end-3 h-[56px] w-[56px] rounded-full lg:h-[48px] lg:w-[48px]"
                     />
                   ) : (
                     <span className="row-start-1 row-end-3 h-[56px] w-[56px] rounded-full border border-white lg:h-[48px] lg:w-[48px]" />
                   )}
                   <b className="font-sans text-[26px] font-semibold leading-none text-white lg:text-xl">
-                    {name}
+                    {name || githubHandle}
                   </b>
                   <span className="col-start-2 font-mono text-base font-normal leading-none text-white lg:text-sm">
                     @{githubHandle}
