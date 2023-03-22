@@ -119,7 +119,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           about latest of Serverless Postgres
         </p>
         <Button className="mt-3 lg:mt-2" size="md" theme="text" href="/agenda">
-          See the Agenda here
+          Don&apos;t miss the agenda
           <ArrowIcon className="ml-4 rotate-180" aria-hidden />
         </Button>
         <SubscriptionForm

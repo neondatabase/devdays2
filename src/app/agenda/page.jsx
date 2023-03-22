@@ -54,7 +54,7 @@ const AgendaPage = () => {
           March 29, 2023
         </span>
         <h1 className="mt-4 text-[96px] font-semibold leading-none tracking-tighter text-white xl:mt-3 xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:mt-3 lg:text-[58px] md:text-[52px]">
-          Join Neon Live and listen to our speakers
+          Developer Days Agenda
         </h1>
         <p className="mt-5 font-mono text-xl font-light leading-snug tracking-tighter text-white 2xl:text-lg xl:mt-4 lg:text-base">
           Join us on <time dateTime="2023-03-29 09:00">March 29th, 9 a.m. PT</time> to learn more
@@ -70,7 +70,7 @@ const AgendaPage = () => {
           onSuccess={handleSubmitSuccess}
         />
       </div>
-      <div className="col-span-5 col-start-7 self-center 2xl:col-span-7 2xl:col-start-6 xl:col-span-full xl:!transform-none xl:self-start xl:!opacity-100">
+      <div className="relative z-10 col-span-5 col-start-7 self-center 2xl:col-span-7 2xl:col-start-6 xl:col-span-full xl:!transform-none xl:self-start xl:!opacity-100">
         <ul className="columns-2 gap-20 xl:mt-20 xl:gap-32 xl:px-20 lg:mt-[3.25rem] lg:gap-24 lg:px-11 sm:mt-10 sm:columns-1 sm:px-0">
           {agendaData.map((item, index) => {
             const { title, author } = item;
