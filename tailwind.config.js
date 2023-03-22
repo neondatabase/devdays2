@@ -139,6 +139,7 @@ module.exports = {
           'linear-gradient(106deg, transparent 30%, rgba(255, 153, 221, 0.8) 60%, transparent 60%)',
         'ticket-flare-variant-4':
           'linear-gradient(106deg, transparent 30%, rgba(204, 204, 255, 0.8) 60%, transparent 60%)',
+        'agenda-dots': 'url("/images/developer-days/agenda-bg.svg")',
       }),
       keyframes: (theme) => ({
         'text-blink': {

@@ -7,9 +7,11 @@ import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import BlinkingText from 'components/shared/blinking-text';
+import Button from 'components/shared/button';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import SubscriptionForm from 'components/shared/subscription-form';
 import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
+import ArrowIcon from 'icons/arrow-left.inline.svg';
 import ElephantIllustration from 'images/developer-days/ticket-hero-elephant.png';
 
 const appearColumnVariants = {
@@ -116,6 +118,10 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           Join us on <time dateTime="2023-03-28 10:30">March 29th, 9 a.m. PT</time> to learn more
           about latest of Serverless Postgres
         </p>
+        <Button className="mt-3 lg:mt-2" size="md" theme="text" href="/agenda">
+          See the Agenda here
+          <ArrowIcon className="ml-4 rotate-180" aria-hidden />
+        </Button>
         <SubscriptionForm
           className="mt-12 xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"
           successText="Thanks for registering!"
