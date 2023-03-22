@@ -36,7 +36,7 @@ const agendaData = [
   },
 ];
 
-const GenerateTicketPage = () => (
+const AgendaPage = () => (
   <div className="relative mx-auto grid max-w-[1760px] flex-grow grid-cols-12 gap-10 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:px-8 lg:pt-2 lg:pb-9 md:px-4">
     <div className="col-span-4 col-start-2 -mr-10 self-center 2xl:col-start-1 xl:col-span-full xl:mr-0 xl:self-end xl:text-center xl:!opacity-100">
       <span className="inline-block rounded-[50px] bg-secondary-2 py-1 px-3 align-top text-sm font-semibold uppercase leading-snug tracking-[-0.02em] text-black lg:mt-0 lg:text-xs">
@@ -75,4 +75,4 @@ const GenerateTicketPage = () => (
   </div>
 );
 
-export default GenerateTicketPage;
+export default AgendaPage;
