@@ -6,11 +6,15 @@ export default {
     title: 'Ticket Not Found - Neon',
     imagePath: '/images/social-previews/no-name-ticket.jpg',
   },
+  agenda: {
+    title: 'Developer Days Agenda - Neon',
+    description:
+      'Join us at Developer Days virtually on March 29th to learn about Neon and how to build better with Serverless Postgres.',
+  },
   developerDays2: {
     title: 'Neon Developer Days — Neon',
     description:
       'Join us at Developer Days virtually on March 29th to learn about Neon and how to build better with Serverless Postgres.',
-    imagePath: '/images/social-previews/developer-days.jpg',
   },
   generateTicket: {
     title: 'Grab the ticket for Neon Developer Days',

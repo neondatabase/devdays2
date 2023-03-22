@@ -139,6 +139,10 @@ module.exports = {
           'linear-gradient(106deg, transparent 30%, rgba(255, 153, 221, 0.8) 60%, transparent 60%)',
         'ticket-flare-variant-4':
           'linear-gradient(106deg, transparent 30%, rgba(204, 204, 255, 0.8) 60%, transparent 60%)',
+        'agenda-top-dots': 'url("/images/developer-days/agenda-top-dots.svg")',
+        'agenda-top-dots-medium': 'url("/images/developer-days/agenda-top-dots-medium.svg")',
+        'agenda-top-dots-small': 'url("/images/developer-days/agenda-top-dots-small.svg")',
+        'agenda-bottom-dots': 'url("/images/developer-days/agenda-bottom-dots.svg")',
       }),
       keyframes: (theme) => ({
         'text-blink': {

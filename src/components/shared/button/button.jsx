@@ -17,6 +17,7 @@ const styles = {
     'with-icon':
       'pl-[4.1rem] xl:pl-[4.25rem] lg:pl-[4.25rem] bg-primary-4 text-black hover:bg-[#00e5bf]',
     quaternary: 'bg-white text-[#1A1A1A] border-2 border-white hover:border-primary-2',
+    text: '[word-spacing:0.7rem] tracking-tighter !p-0 text-primary-4 !leading-snug xl:text-lg hover:text-[#00e5bf]',
   },
 };
 
@@ -26,7 +27,7 @@ const Button = ({
   size,
   theme,
   children,
-  isAnimated,
+  isAnimated = false,
   ...otherProps
 }) => {
   const { RiveComponent } = useRive({
