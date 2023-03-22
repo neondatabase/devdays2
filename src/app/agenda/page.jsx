@@ -40,7 +40,7 @@ const AgendaPage = () => (
   <div className="relative mx-auto grid max-w-[1760px] flex-grow grid-cols-12 gap-10 py-20 before:pointer-events-none before:absolute before:top-[71px] before:left-0 before:z-0 before:h-48 before:w-[765px] before:bg-agenda-top-dots before:bg-cover after:pointer-events-none after:absolute after:bottom-[3px] after:left-0 after:z-0 after:h-80 after:w-[765px] after:bg-agenda-bottom-dots after:bg-cover 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:py-11 xl:py-11 xl:px-11 xl:before:top-0 xl:before:w-full xl:before:bg-agenda-top-dots-medium xl:after:hidden lg:py-9 lg:px-8 lg:pt-2 lg:pb-9 lg:before:bg-agenda-top-dots-small md:px-4 sm:before:hidden">
     <div className="col-span-4 col-start-2 -mr-10 self-center 2xl:col-start-1 xl:col-span-full xl:mr-0 xl:self-end xl:text-center">
       <span className="inline-block rounded-[50px] bg-secondary-2 py-1 px-3 align-top text-sm font-semibold uppercase leading-snug tracking-[-0.02em] text-black lg:mt-0 lg:text-xs">
-        March 29, 2023
+        March 2023
       </span>
       <h1 className="mt-4 text-[96px] font-semibold leading-none tracking-tighter text-white xl:mt-3 xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:mt-3 lg:text-[58px] md:text-[52px]">
         Developer Days Agenda
