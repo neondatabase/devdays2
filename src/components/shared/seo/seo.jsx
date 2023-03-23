@@ -5,7 +5,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_DEFAULT_SITE_URL || 'localhost:3000';
 const defaultTitle = 'Neon — Serverless, Fault-Tolerant, Branchable Postgres';
 const defaultDescription =
   'Postgres made for developers. Easy to Use, Scalable, Cost efficient solution for your next project.';
-const defaultImagePath = '/images/social-previews/index.jpg';
+const defaultImagePath = '/images/social-previews/developer-days.jpg';
 
 const SEO = ({
   title = defaultTitle,

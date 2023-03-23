@@ -2,6 +2,7 @@
 
 import clsx from 'clsx';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useCookie, useLocation } from 'react-use';
@@ -37,15 +38,20 @@ const SubscriptionForm = ({
   submitButtonText = 'Subscribe',
   size = 'md',
   localStorageKey,
-  onSuccess,
 }) => {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [formState, setFormState] = useState('default');
   const [submittedEmails, setSubmittedEmails] = useLocalStorage(localStorageKey, []);
   const [errorMessage, setErrorMessage] = useState('');
   const [hubspotutk] = useCookie('hubspotutk');
   const { href } = useLocation();
+
   const handleInputChange = (event) => setEmail(event.currentTarget.value.trim());
+
+  const handleSubmitSuccess = () => {
+    router.push('/generate-ticket');
+  };
 
   const context = {
     hutk: hubspotutk,
@@ -77,7 +83,7 @@ const SubscriptionForm = ({
       doNowOrAfterSomeTime(() => {
         setFormState('success');
         setEmail(successText);
-        onSuccess();
+        handleSubmitSuccess();
         setTimeout(() => {
           setFormState('default');
           setEmail('');
@@ -105,7 +111,7 @@ const SubscriptionForm = ({
             doNowOrAfterSomeTime(() => {
               setFormState('success');
               setEmail(successText);
-              onSuccess();
+              handleSubmitSuccess();
               setTimeout(() => {
                 setFormState('default');
                 setEmail('');
@@ -267,7 +273,6 @@ SubscriptionForm.propTypes = {
   submitButtonText: PropTypes.string,
   size: PropTypes.oneOf(['sm', 'md']),
   localStorageKey: PropTypes.string.isRequired,
-  onSuccess: PropTypes.func,
 };
 
 export default SubscriptionForm;
