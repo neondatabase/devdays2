@@ -13,7 +13,7 @@ const Header = ({ withBorder }) => (
   <header
     className={clsx(
       'safe-paddings left-0 top-0 right-0 z-10 xl:relative',
-      withBorder ? 'relative border-b border-[#ffffff33]' : 'absolute'
+      withBorder ? 'relative border-b border-[rgba(255,255,255,0.2)]' : 'absolute'
     )}
   >
     <div className="flex h-[70px] items-center justify-between py-3.5 px-14 xl:h-auto xl:py-6 xl:px-11 lg:px-8 lg:py-5 md:px-4">
