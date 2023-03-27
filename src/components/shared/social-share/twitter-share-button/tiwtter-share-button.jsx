@@ -54,7 +54,7 @@ const TwitterShareButton = ({
   const handleTwitterShare = (event) => {
     const link = `https://twitter.com/intent/tweet${objectToGetParams({
       url,
-      shareText,
+      text: shareText,
     })}`;
 
     const windowConfig = {

@@ -24,7 +24,7 @@ const Stage = () => {
           allowFullScreen
         />
         <div className="flex h-20 items-center justify-between bg-black px-8 py-10 lg:h-14 lg:px-11 lg:py-2 md:h-12 md:py-0 md:px-8 sm:h-10 sm:px-4">
-          <h2 className="ml-6 text-[28px] font-semibold leading-none tracking-tighter text-white lg:ml-0 md:text-2xl">
+          <h2 className="ml-6 text-[28px] font-semibold leading-none tracking-tighter text-white lg:ml-0 md:text-2xl xs:text-lg">
             Neon Live
           </h2>
           <TwitterShareButton
