@@ -1,1 +1,3 @@
-export { default } from './email-registration-step';
+import EmailRegistrationStep from './email-registration-step';
+
+export default EmailRegistrationStep;

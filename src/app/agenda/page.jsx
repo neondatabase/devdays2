@@ -29,7 +29,7 @@ const AgendaPage = () => (
       <div className="relative z-10 col-span-5 col-start-7 self-center 2xl:col-span-7 2xl:col-start-6 xl:col-span-full xl:!transform-none xl:self-start">
         <ul className="columns-2 gap-20 xl:mt-20 xl:gap-32 xl:px-20 lg:mt-[3.25rem] lg:gap-24 lg:px-11 sm:mt-10 sm:columns-1 sm:px-0">
           {DEV_DAYS_AGENDA.map((item, index) => {
-            const { title, author } = item;
+            const { title, speaker } = item;
 
             return (
               <li key={index} className="mt-10 first:mt-0 lg:mt-8">
@@ -37,7 +37,7 @@ const AgendaPage = () => (
                   {title}
                 </h3>
                 <p className="mt-2 font-mono text-xl font-light leading-[1.25] tracking-tight text-gray-5 lg:text-base">
-                  {author}
+                  {speaker}
                 </p>
               </li>
             );

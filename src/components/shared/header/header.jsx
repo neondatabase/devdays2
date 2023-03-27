@@ -9,11 +9,11 @@ import LINKS from 'constants/links';
 
 import Github from './images/header-github.inline.svg';
 
-const Header = ({ withBorder }) => (
+const Header = ({ isHeaderAbsolute }) => (
   <header
     className={clsx(
       'safe-paddings left-0 top-0 right-0 z-10 xl:relative',
-      withBorder ? 'relative border-b border-[rgba(255,255,255,0.2)]' : 'absolute'
+      isHeaderAbsolute ? 'absolute' : 'relative border-b border-[rgba(255,255,255,0.2)]'
     )}
   >
     <div className="flex h-[70px] items-center justify-between py-3.5 px-14 xl:h-auto xl:py-6 xl:px-11 lg:px-8 lg:py-5 md:px-4">
@@ -41,7 +41,7 @@ const Header = ({ withBorder }) => (
 );
 
 Header.propTypes = {
-  withBorder: PropTypes.bool,
+  isHeaderAbsolute: PropTypes.bool,
 };
 
 export default Header;

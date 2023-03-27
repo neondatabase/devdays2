@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import Footer from 'components/shared/footer';
 import Header from 'components/shared/header';
 
-const Layout = ({ children, isFooterShow = true, isHeaderWithBorder = false }) => (
+const Layout = ({ children, isFooterShow = true, isHeaderAbsolute = true }) => (
   <>
-    <Header withBorder={isHeaderWithBorder} />
+    <Header isHeaderAbsolute={isHeaderAbsolute} />
     <main
       className={clsx(
         'flex flex-col overflow-hidden xl:min-h-0 xl:flex-grow',
-        !isHeaderWithBorder && 'min-h-full'
+        isHeaderAbsolute && 'min-h-full'
       )}
     >
       {children}
@@ -22,7 +22,7 @@ const Layout = ({ children, isFooterShow = true, isHeaderWithBorder = false }) =
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   isFooterShow: PropTypes.bool,
-  isHeaderWithBorder: PropTypes.bool,
+  isHeaderAbsolute: PropTypes.bool,
 };
 
 export default Layout;
