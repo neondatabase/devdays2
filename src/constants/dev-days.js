@@ -1,5 +1,5 @@
 // TODO change video url before merge
-const DEV_DAYS_STAGE_VIDEO = 'https://www.youtube.com/embed/TvnIeE-SBl4?&autoplay=1&start=';
+const DEV_DAYS_STAGE_VIDEO = 'https://www.youtube.com/embed/TvnIeE-SBl4?autoplay=1&amp;mute=1&amp;';
 
 const DEV_DAYS_AGENDA = [
   {

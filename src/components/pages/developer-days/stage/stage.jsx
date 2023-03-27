@@ -56,7 +56,7 @@ const Stage = () => {
             return (
               <li key={index}>
                 <div className="flex items-center">
-                  <span className="text-sm font-light leading-snug tracking-[0.04em] text-gray-5">
+                  <span className="text-sm font-light leading-none tracking-[0.04em] text-gray-5">
                     {time}
                   </span>
                   {blogPostUrl && (
