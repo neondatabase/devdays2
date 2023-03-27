@@ -30,7 +30,7 @@ const Stage = () => {
           <TwitterShareButton
             className="!gap-0 !px-0 !text-sm !font-light tracking-[-0.02em]"
             url={`${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/stage`}
-            shareText="Go to @neondatabase Developer Days!"
+            shareText="Watching @neondatabase Developer Days live! 🔥 Join at "
             iconSize="small"
           >
             Share your thoughts on Twitter
