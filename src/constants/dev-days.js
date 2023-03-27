@@ -1,6 +1,6 @@
-const DEV_DAYS_STAGE_VIDEO = '';
+// TODO change video url before merge
+const DEV_DAYS_STAGE_VIDEO = 'https://www.youtube.com/embed/TvnIeE-SBl4?&autoplay=1&start=';
 
-// TODO: add urls with timestamps, like https://www.youtube.com/embed/1-NzQ9ObsfM?t=2476s&amp;autoplay=1
 const DEV_DAYS_AGENDA = [
   {
     time: '6:00pm - 6:30pm',
@@ -9,7 +9,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/nikita-shamgunov-photo.png',
     blogPostUrl: '',
-    url: '',
+    timeStamp: '160',
   },
   {
     time: '6:35pm - 7:15pm',
@@ -18,7 +18,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'blue',
     speakerImage: '/images/developer-days/speakers/heikki-linnakangas-photo.png',
     blogPostUrl: '',
-    url: '',
+    timeStamp: '190',
   },
   {
     time: '7:30pm - 8:00pm',
@@ -28,7 +28,7 @@ const DEV_DAYS_AGENDA = [
     speakerImage: '/images/developer-days/speakers/raouf-chebri-photo.png',
     blogPostUrl:
       'https://neon.tech/blog/building-an-ai-powered-chatbot-using-vercel-openai-and-postgres',
-    url: '',
+    timeStamp: '220',
   },
   {
     time: '8:05pm - 8:45pm',
@@ -37,7 +37,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/em-sharnoff-photo.png',
     blogPostUrl: '',
-    url: '',
+    timeStamp: '260',
   },
   {
     time: '9:00pm - 9:30pm',
@@ -46,7 +46,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'blue',
     speakerImage: '/images/developer-days/speakers/konstantin-knizhnik-photo.png',
     blogPostUrl: '',
-    url: '',
+    timeStamp: '320',
   },
   {
     time: '9:35pm - 10:15pm',
@@ -55,7 +55,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'pink',
     speakerImage: '/images/developer-days/speakers/anastasia-lubennikova-photo.png',
     blogPostUrl: '',
-    url: '',
+    timeStamp: '380',
   },
   {
     time: '10:20pm - 11:00pm',
@@ -64,7 +64,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/george-macKerron-photo.png',
     blogPostUrl: '',
-    url: '',
+    timeStamp: '510',
   },
   {
     time: '11:15pm - 12:00pm',
@@ -73,7 +73,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'blue',
     speakerImage: '/images/developer-days/speakers/mahmoud-abdelwahab-photo.png',
     blogPostUrl: '',
-    url: '',
+    timeStamp: '660',
   },
 ];
 

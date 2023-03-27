@@ -7,7 +7,6 @@ import { useState } from 'react';
 import Button from 'components/shared/button';
 import TwitterShareButton from 'components/shared/social-share/twitter-share-button';
 import { DEV_DAYS_AGENDA, DEV_DAYS_STAGE_VIDEO } from 'constants/dev-days';
-import ArrowIcon from 'icons/arrow-left.inline.svg';
 
 const Stage = () => {
   const [videoSource, setVideoSource] = useState(DEV_DAYS_STAGE_VIDEO);
@@ -18,8 +17,8 @@ const Stage = () => {
         <h1 className="sr-only">Neon Developer Days Live translation</h1>
         <iframe
           className="grow"
-          allow="autoplay; picture-in-picture"
-          allowFullScreen=""
+          allow="autoplay; picture-in-picture web-share"
+          allowFullScreen="true"
           src={videoSource}
           title="Neon Live"
           width="100%"
@@ -44,30 +43,25 @@ const Stage = () => {
         </h2>
         <ul className="mt-4 flex flex-col gap-5 md:gap-4">
           {DEV_DAYS_AGENDA.map((item, index) => {
-            const { time, title, speaker, speakerImage, speakerBackground, blogPostUrl, url } =
-              item;
+            const {
+              time,
+              title,
+              speaker,
+              speakerImage,
+              speakerBackground,
+              blogPostUrl,
+              timeStamp,
+            } = item;
 
             return (
               <li key={index}>
-                <span className="text-sm font-light leading-snug tracking-[0.04em] text-gray-5">
-                  {time}
-                </span>
-                <div
-                  className={clsx(
-                    'mt-2 rounded-[6px] border border-gray-10 py-3 px-4 transition-colors duration-200',
-                    url ? 'hover:cursor-pointer hover:border-[#797D86]' : 'hover:cursor-default'
-                  )}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => (url ? setVideoSource(url) : false)}
-                  onKeyDown={() => (url ? setVideoSource(url) : false)}
-                >
-                  <h3 className="text-base font-medium leading-[1.25] tracking-tighter text-white">
-                    {title}
-                  </h3>
+                <div className="flex items-center">
+                  <span className="text-sm font-light leading-snug tracking-[0.04em] text-gray-5">
+                    {time}
+                  </span>
                   {blogPostUrl && (
                     <Button
-                      className="!font-mono !font-medium opacity-80 ![word-spacing:0]"
+                      className="ml-auto !font-mono !font-medium opacity-80 ![word-spacing:0]"
                       size="sm"
                       theme="text"
                       href={blogPostUrl}
@@ -75,10 +69,25 @@ const Stage = () => {
                       rel="noreferrer"
                       tabIndex={0}
                     >
-                      Read the post
-                      <ArrowIcon className="ml-1 h-[8px] rotate-180" aria-hidden />
+                      Read blog post
                     </Button>
                   )}
+                </div>
+                <button
+                  className={clsx(
+                    'mt-2 w-full rounded-[6px] border border-gray-10 py-3 px-4 text-left transition-colors duration-200',
+                    timeStamp
+                      ? 'hover:cursor-pointer hover:border-[#797D86]'
+                      : 'hover:cursor-default'
+                  )}
+                  type="button"
+                  onClick={() =>
+                    timeStamp ? setVideoSource(DEV_DAYS_STAGE_VIDEO + timeStamp) : false
+                  }
+                >
+                  <h3 className="text-base font-medium leading-[1.25] tracking-tighter text-white">
+                    {title}
+                  </h3>
                   <figure className="mt-3 flex items-center">
                     <span
                       className={clsx('h-7 w-7 shrink-0 rounded-full', {
@@ -101,7 +110,7 @@ const Stage = () => {
                       {speaker}
                     </figcaption>
                   </figure>
-                </div>
+                </button>
               </li>
             );
           })}
