@@ -17,11 +17,11 @@ const Stage = () => {
         <h1 className="sr-only">Neon Developer Days Live translation</h1>
         <iframe
           className="grow"
-          allow="autoplay; picture-in-picture web-share"
-          allowFullScreen="true"
+          allow="autoplay; picture-in-picture; web-share"
           src={videoSource}
           title="Neon Live"
           width="100%"
+          allowFullScreen
         />
         <div className="flex h-20 items-center justify-between bg-black px-8 py-10 lg:h-14 lg:px-11 lg:py-2 md:h-12 md:py-0 md:px-8 sm:h-10 sm:px-4">
           <h2 className="ml-6 text-[28px] font-semibold leading-none tracking-tighter text-white lg:ml-0 md:text-2xl">
@@ -82,7 +82,9 @@ const Stage = () => {
                   )}
                   type="button"
                   onClick={() =>
-                    timeStamp ? setVideoSource(DEV_DAYS_STAGE_VIDEO + timeStamp) : false
+                    timeStamp
+                      ? setVideoSource(DEV_DAYS_STAGE_VIDEO.replace('&mute=1', '') + timeStamp)
+                      : false
                   }
                 >
                   <h3 className="text-base font-medium leading-[1.25] tracking-tighter text-white">

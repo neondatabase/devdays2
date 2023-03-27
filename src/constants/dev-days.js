@@ -1,7 +1,8 @@
-// TODO change video url before merge
+// TODO: before merge change video id to actual
 const DEV_DAYS_STAGE_VIDEO =
-  'https://www.youtube.com/embed/TvnIeE-SBl4?autoplay=1&amp;mute=1&amp;start=';
+  'https://www.youtube.com/embed/TvnIeE-SBl4?autoplay=1&mute=1&rel=0&start=';
 
+// TODO: change timestamps to actual
 const DEV_DAYS_AGENDA = [
   {
     time: '6:00pm - 6:30pm',
