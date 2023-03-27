@@ -11,15 +11,15 @@ const agendaData = [
     author: 'Heikki Linnakangas',
   },
   {
-    title: 'Building an AI-powered ChatBot using Vercel, OpenAI, and Postgres ',
+    title: 'Building an AI-powered ChatBot using Vercel, OpenAI, and Postgres',
     author: 'Raouf Chebri',
   },
   {
-    title: 'Scaling Serverless Postgre: How we implement Autoscaling',
+    title: 'Scaling serverless Postgres: How we implement Autoscaling',
     author: 'Em Sharnoff',
   },
   {
-    title: 'Optimizing Performance in a Serverless PostgreSQL Database',
+    title: 'Optimizing Performance in a serverless Postgres database',
     author: 'Konstantin Knizhnik & Matthias Van De Meent',
   },
   {
@@ -47,7 +47,7 @@ const AgendaPage = () => (
       </h1>
       <p className="mt-5 font-mono text-xl font-light leading-snug tracking-tighter text-white 2xl:text-lg xl:mt-4 lg:text-base">
         Join us on <time dateTime="2023-03-29 09:00">March 29th, 9 a.m. PT</time> to learn more
-        about latest of Serverless Postgres
+        about serverless Postgres
       </p>
       <SubscriptionForm
         className="mt-12 xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"
