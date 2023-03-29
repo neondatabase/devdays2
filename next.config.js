@@ -6,6 +6,15 @@ module.exports = {
   env: {
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/stage',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
