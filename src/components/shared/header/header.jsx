@@ -6,12 +6,10 @@ import PropTypes from 'prop-types';
 
 import Logo from 'components/shared/logo';
 import LINKS from 'constants/links';
-import AgendaIcon from 'icons/agenda.inline.svg';
+import LiveIcon from 'icons/live.inline.svg';
 import TwitterIcon from 'icons/twitter.inline.svg';
 
 import Github from './images/header-github.inline.svg';
-// TODO: change agenda link to /stage page
-// import LiveIcon from 'icons/live.inline.svg';
 
 const Header = ({ isHeaderAbsolute }) => (
   <header
@@ -31,8 +29,8 @@ const Header = ({ isHeaderAbsolute }) => (
           href="/stage"
           theme="tertiary"
         >
-          <AgendaIcon className="mr-[10px] h-4" />
-          <span>Agenda</span>
+          <LiveIcon className="mr-[10px] h-6 w-auto" aria-hidden />
+          <span>Live</span>
         </NextLink>
         <NextLink
           className="relative flex items-center font-mono text-[15px] font-light tracking-tighter text-white transition-colors duration-200 hover:text-primary-2 sm:hidden"
@@ -41,7 +39,7 @@ const Header = ({ isHeaderAbsolute }) => (
           rel="noopener noreferrer"
           target="_blank"
         >
-          <TwitterIcon className="mr-[10px] h-4 w-auto" />
+          <TwitterIcon className="mr-[10px] h-4 w-auto" aria-hidden />
           <span>Twitter</span>
         </NextLink>
         <NextLink
@@ -51,7 +49,7 @@ const Header = ({ isHeaderAbsolute }) => (
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Github className="mr-[10px] text-white" />
+          <Github className="mr-[10px] text-white" aria-hidden />
           <span>Star Us</span>
         </NextLink>
       </div>

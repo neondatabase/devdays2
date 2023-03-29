@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
 
 import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
+import Button from 'components/shared/button';
 import Layout from 'components/shared/layout';
-import SocialShare from 'components/shared/social-share';
+import LiveIcon from 'icons/live.inline.svg';
 import prisma from 'utils/prisma';
 
 const TicketEditPage = async ({ params }) => {
@@ -11,7 +12,6 @@ const TicketEditPage = async ({ params }) => {
 
   if (!userData) return notFound();
 
-  const shareUrl = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/tickets/${userData.login}`;
   const userName = userData.name || userData.login;
 
   return (
@@ -26,7 +26,17 @@ const TicketEditPage = async ({ params }) => {
             Choose the ticket color and gather a watch party for the upcoming Neon Developer Days!
             See you on <time dateTime="2023-03-29T09:00">March 29th, 9 a.m. PT</time>
           </p>
-          <SocialShare className="pointer-events-auto mt-11 lg:mt-8 sm:mt-6" url={shareUrl} />
+          <Button
+            className="social-share pointer-events-auto relative z-50 mt-11 flex items-center gap-4 py-[18px] px-6 pr-7 text-white shadow-social transition duration-200 lg:px-8 xs:py-2 xs:px-3"
+            size="sm"
+            theme="code-copy"
+            href="/stage"
+          >
+            <LiveIcon className="h-[32px] w-fit shrink-0" aria-hidden />
+            <span className="min-w-[82px] font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
+              Neon Live
+            </span>
+          </Button>
         </div>
         <div className="col-span-6 col-start-7 self-center 2xl:col-start-6 1xl:-ml-10 xl:col-span-full xl:ml-0 xl:self-start">
           <DynamicTicket userData={userData} withColorPicker />

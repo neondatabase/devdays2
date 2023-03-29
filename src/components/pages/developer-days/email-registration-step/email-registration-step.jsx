@@ -9,9 +9,7 @@ import { useInView } from 'react-intersection-observer';
 import BlinkingText from 'components/shared/blinking-text';
 import Button from 'components/shared/button';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
-import SubscriptionForm from 'components/shared/subscription-form';
-import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
-import ArrowIcon from 'icons/arrow-left.inline.svg';
+import LiveIcon from 'icons/live.inline.svg';
 import ElephantIllustration from 'images/developer-days/ticket-hero-elephant.png';
 
 const appearColumnVariants = {
@@ -47,6 +45,7 @@ const appearSceneVariants = {
   },
 };
 
+// eslint-disable-next-line no-unused-vars
 const EmailRegistrationStep = ({ onSuccessCallback }) => {
   const [titleRef, isTitleInView, titleEntry] = useInView({ triggerOnce: true, threshold: 0.5 });
   const columnControls = useAnimationControls();
@@ -118,19 +117,17 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           Join us on <time dateTime="2023-03-29T09:00">March 29th, 9 a.m. PT</time> to learn more
           about latest of Serverless Postgres
         </p>
-        <Button className="mt-3 lg:mt-2" size="md" theme="text" href="/stage">
-          Don&apos;t miss the agenda
-          <ArrowIcon className="ml-4 rotate-180" aria-hidden />
-        </Button>
-        <SubscriptionForm
-          className="mt-12 xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"
-          successText="Thanks for registering!"
-          submitButtonText="Register"
+        <Button
+          className="social-share pointer-events-auto relative z-50 mt-11 flex items-center gap-4 py-[18px] px-6 pr-7 text-white shadow-social transition duration-200 lg:px-8 xs:py-2 xs:px-3"
           size="sm"
-          localStorageKey="submittedEmailDeveloperDays2Form"
-          formId={HUBSPOT_DEVELOPER_DAYS_2_FORM_ID}
-          onSuccess={onSuccessCallback}
-        />
+          theme="code-copy"
+          href="/stage"
+        >
+          <LiveIcon className="h-[32px] w-fit shrink-0" aria-hidden />
+          <span className="min-w-[82px] font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
+            Neon Live
+          </span>
+        </Button>
       </motion.div>
       <motion.div
         className="col-span-7 col-start-6 self-center 2xl:col-span-8 2xl:col-start-5 xl:col-span-full xl:!transform-none xl:self-start xl:!opacity-100"
