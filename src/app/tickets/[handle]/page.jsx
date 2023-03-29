@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
 import Button from 'components/shared/button';
 import Layout from 'components/shared/layout';
+import LiveIcon from 'icons/live.inline.svg';
 import prisma from 'utils/prisma';
 
 const TicketPage = async ({ params }) => {
@@ -26,13 +27,15 @@ const TicketPage = async ({ params }) => {
             <time dateTime="2023-03-29T09:00">March 29th, 9 a.m. PT</time>
           </p>
           <Button
-            className="pointer-events-auto mt-11"
-            size="md"
-            theme="primary"
-            href="/"
-            isAnimated
+            className="social-share pointer-events-auto relative z-50 mt-11 flex items-center gap-4 py-[18px] px-6 pr-7 text-white shadow-social transition duration-200 lg:px-8 xs:py-2 xs:px-3"
+            size="sm"
+            theme="code-copy"
+            href="/stage"
           >
-            Register now
+            <LiveIcon className="h-[32px] w-fit shrink-0" aria-hidden />
+            <span className="min-w-[82px] font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
+              Neon Live
+            </span>
           </Button>
         </div>
         <div className="col-span-6 col-start-7 self-center 2xl:col-start-6 1xl:-ml-10 xl:col-span-full xl:ml-0 xl:self-start">

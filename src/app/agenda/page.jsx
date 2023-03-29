@@ -1,7 +1,7 @@
+import Button from 'components/shared/button';
 import Layout from 'components/shared/layout';
-import SubscriptionForm from 'components/shared/subscription-form';
 import { DEV_DAYS_AGENDA } from 'constants/dev-days';
-import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
+import LiveIcon from 'icons/live.inline.svg';
 
 const AgendaPage = () => (
   <Layout>
@@ -17,14 +17,17 @@ const AgendaPage = () => (
           Join us on <time dateTime="2023-03-29T09:00">March 29th, 9 a.m. PT</time> to learn more
           about latest of Serverless Postgres
         </p>
-        <SubscriptionForm
-          className="mt-12 xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"
-          successText="Thanks for registering!"
-          submitButtonText="Register"
+        <Button
+          className="social-share relative mt-11 flex items-center gap-4 py-[18px] px-6 pr-7 text-white shadow-social transition duration-200 lg:px-8 xs:py-2 xs:px-3"
           size="sm"
-          localStorageKey="submittedEmailDeveloperDays2Form"
-          formId={HUBSPOT_DEVELOPER_DAYS_2_FORM_ID}
-        />
+          theme="code-copy"
+          href="/stage"
+        >
+          <LiveIcon className="h-[32px] w-fit shrink-0" aria-hidden />
+          <span className="min-w-[82px] font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
+            Neon Live
+          </span>
+        </Button>
       </div>
       <div className="relative z-10 col-span-5 col-start-7 self-center 2xl:col-span-7 2xl:col-start-6 xl:col-span-full xl:!transform-none xl:self-start">
         <ul className="columns-2 gap-20 xl:mt-20 xl:gap-32 xl:px-20 lg:mt-[3.25rem] lg:gap-24 lg:px-11 sm:mt-10 sm:columns-1 sm:px-0">

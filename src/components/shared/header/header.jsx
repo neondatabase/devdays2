@@ -29,7 +29,7 @@ const Header = ({ isHeaderAbsolute }) => (
           href="/stage"
           theme="tertiary"
         >
-          <LiveIcon className="mr-[4px] h-6" />
+          <LiveIcon className="mr-[10px] h-6 w-auto" aria-hidden />
           <span>Live</span>
         </NextLink>
         <NextLink
@@ -39,7 +39,7 @@ const Header = ({ isHeaderAbsolute }) => (
           rel="noopener noreferrer"
           target="_blank"
         >
-          <TwitterIcon className="mr-[10px] h-4" />
+          <TwitterIcon className="mr-[10px] h-4 w-auto" aria-hidden />
           <span>Twitter</span>
         </NextLink>
         <NextLink
@@ -49,7 +49,7 @@ const Header = ({ isHeaderAbsolute }) => (
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Github className="mr-[10px] text-white" />
+          <Github className="mr-[10px] text-white" aria-hidden />
           <span>Star Us</span>
         </NextLink>
       </div>
