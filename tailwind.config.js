@@ -38,6 +38,7 @@ module.exports = {
         8: '#0055FF',
       },
       gray: {
+        0: '#131415',
         1: '#262626',
         2: '#404040',
         3: '#595959',
@@ -47,6 +48,7 @@ module.exports = {
         7: '#e5e5e5',
         8: '#f2f2f2',
         9: '#FAFAFA',
+        10: '#303236',
       },
     },
     extend: {
@@ -143,6 +145,8 @@ module.exports = {
         'agenda-top-dots-medium': 'url("/images/developer-days/agenda-top-dots-medium.svg")',
         'agenda-top-dots-small': 'url("/images/developer-days/agenda-top-dots-small.svg")',
         'agenda-bottom-dots': 'url("/images/developer-days/agenda-bottom-dots.svg")',
+        'live-video':
+          'linear-gradient(103.37deg, rgba(255, 255, 255, 0.05) 12.69%, rgba(255, 255, 255, 0.11) 43.45%, rgba(255, 255, 255, 0) 93.31%)',
       }),
       keyframes: (theme) => ({
         'text-blink': {
