@@ -28,7 +28,7 @@ const Header = ({ isHeaderAbsolute }) => (
       <div className="flex items-center space-x-8">
         <NextLink
           className="relative flex items-center font-mono text-[15px] font-light tracking-tighter text-white transition-colors duration-200 hover:text-primary-2"
-          href="/agenda"
+          href="/stage"
           theme="tertiary"
         >
           <AgendaIcon className="mr-[10px] h-4" />
@@ -41,7 +41,7 @@ const Header = ({ isHeaderAbsolute }) => (
           rel="noopener noreferrer"
           target="_blank"
         >
-          <TwitterIcon className="mr-[10px] h-4" />
+          <TwitterIcon className="mr-[10px] h-4 w-auto" />
           <span>Twitter</span>
         </NextLink>
         <NextLink
