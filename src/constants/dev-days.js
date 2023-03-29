@@ -20,7 +20,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'blue',
     speakerImage: '/images/developer-days/speakers/heikki-linnakangas-photo.png',
     blogPostUrl: '',
-    timeStamp: '1482',
+    timeStamp: '1480',
   },
   {
     time: '09:40 AM',
@@ -29,7 +29,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/em-sharnoff-photo.png',
     blogPostUrl: 'https://neon.tech/blog/postgres-autoscaling',
-    timeStamp: '2828',
+    timeStamp: '2826',
   },
   {
     time: '10:02 AM',
@@ -38,7 +38,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'blue',
     speakerImage: '/images/developer-days/speakers/konstantin-knizhnik-photo.png',
     blogPostUrl: '',
-    timeStamp: '4128',
+    timeStamp: '4127',
   },
   {
     time: '10:27 AM',
@@ -47,7 +47,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'pink',
     speakerImage: '/images/developer-days/speakers/anastasia-lubennikova-photo.png',
     blogPostUrl: '',
-    timeStamp: '5697',
+    timeStamp: '5695',
   },
   {
     time: '10:42 AM',
@@ -56,7 +56,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/george-macKerron-photo.png',
     blogPostUrl: 'https://neon.tech/blog/quicker-serverless-postgres',
-    timeStamp: '6594',
+    timeStamp: '6592',
   },
   {
     time: '11:00 AM',
@@ -66,7 +66,7 @@ const DEV_DAYS_AGENDA = [
     speakerImage: '/images/developer-days/speakers/raouf-chebri-photo.png',
     blogPostUrl:
       'https://neon.tech/blog/building-an-ai-powered-chatbot-using-vercel-openai-and-postgres',
-    timeStamp: '7568',
+    timeStamp: '7566',
   },
   {
     time: '11:20 AM',
@@ -75,7 +75,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'blue',
     speakerImage: '/images/developer-days/speakers/mahmoud-abdelwahab-photo.png',
     blogPostUrl: '',
-    timeStamp: '8767',
+    timeStamp: '8766',
   },
 ];
 
