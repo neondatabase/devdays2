@@ -11,7 +11,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/nikita-shamgunov-photo.png',
     blogPostUrl: '',
-    timeStamp: '',
+    timeStamp: '416',
   },
   {
     time: '09:18 AM',
