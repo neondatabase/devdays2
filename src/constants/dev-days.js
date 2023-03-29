@@ -29,7 +29,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/em-sharnoff-photo.png',
     blogPostUrl: 'https://neon.tech/blog/postgres-autoscaling',
-    timeStamp: '2700',
+    timeStamp: '2944',
   },
   {
     time: '10:02 AM',
