@@ -47,7 +47,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'pink',
     speakerImage: '/images/developer-days/speakers/anastasia-lubennikova-photo.png',
     blogPostUrl: '',
-    timeStamp: '',
+    timeStamp: '5813',
   },
   {
     time: '10:42 AM',
