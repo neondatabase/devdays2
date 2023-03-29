@@ -67,7 +67,6 @@ const Stage = () => {
                       href={blogPostUrl}
                       target="_blank"
                       rel="noreferrer"
-                      tabIndex={0}
                     >
                       Read blog post
                     </Button>
