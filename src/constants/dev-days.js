@@ -75,7 +75,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'blue',
     speakerImage: '/images/developer-days/speakers/mahmoud-abdelwahab-photo.png',
     blogPostUrl: '',
-    timeStamp: '',
+    timeStamp: '8884',
   },
 ];
 
