@@ -15,14 +15,17 @@ const Stage = () => {
     <>
       <div className="flex flex-col bg-live-video">
         <h1 className="sr-only">Neon Developer Days Live translation</h1>
-        <iframe
-          className="grow"
-          allow="autoplay; picture-in-picture; web-share"
-          src={videoSource}
-          title="Neon Live"
-          width="100%"
-          allowFullScreen
-        />
+        <div className="relative flex grow items-center pb-[56.25%]">
+          <iframe
+            className="absolute top-0 left-0 h-full w-full"
+            allow="autoplay; picture-in-picture; web-share"
+            src={videoSource}
+            title="Neon Live"
+            width="100%"
+            height="100%"
+            allowFullScreen
+          />
+        </div>
         <div className="flex h-20 items-center justify-between bg-black px-8 py-10 lg:h-14 lg:px-11 lg:py-2 md:h-12 md:py-0 md:px-8 sm:h-10 sm:px-4">
           <h2 className="ml-6 text-[28px] font-semibold leading-none tracking-tighter text-white lg:ml-0 md:text-2xl xs:text-lg">
             Neon Live
