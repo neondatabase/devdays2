@@ -11,6 +11,11 @@ export default {
     description:
       'Join us at Developer Days virtually on March 29th to learn about Neon and how to build better with Serverless Postgres.',
   },
+  stage: {
+    title: 'Neon Developer Days Stage — Neon',
+    description:
+      'Join us at Developer Days virtually on March 29th to learn about Neon and how to build better with Serverless Postgres.',
+  },
   developerDays2: {
     title: 'Neon Developer Days — Neon',
     description:

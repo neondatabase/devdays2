@@ -1,1 +1,3 @@
-export { default } from './dynamic-ticket';
+import DynamicTicket from './dynamic-ticket';
+
+export default DynamicTicket;

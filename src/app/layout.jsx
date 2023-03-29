@@ -5,9 +5,6 @@ import { SessionProvider } from 'next-auth/react';
 
 import 'styles/globals.css';
 
-import Footer from 'components/shared/footer';
-import Header from 'components/shared/header';
-
 // eslint-disable-next-line react/prop-types
 const RootLayout = ({ children }) => (
   <SessionProvider>
@@ -29,11 +26,7 @@ const RootLayout = ({ children }) => (
             }}
           />
         )}
-        <Header />
-        <main className="flex min-h-full flex-col overflow-hidden xl:min-h-0 xl:flex-grow">
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   </SessionProvider>

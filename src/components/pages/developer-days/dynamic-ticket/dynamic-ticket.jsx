@@ -268,7 +268,7 @@ const DynamicTicket = ({
                     #{`${number}`.padStart(6, '0')} /
                   </p>
                   <time
-                    dateTime="2023-03-28T09:00:00-0800"
+                    dateTime="2023-03-29T09:00"
                     className="whitespace-nowrap font-mono text-sm font-light uppercase leading-dense tracking-[0.01em] text-white lg:text-[12px] md:text-[12px]"
                   >
                     9 a.m. PT,
