@@ -11,7 +11,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/nikita-shamgunov-photo.png',
     blogPostUrl: '',
-    timeStamp: '416',
+    timeStamp: '300',
   },
   {
     time: '09:18 AM',
@@ -20,7 +20,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'blue',
     speakerImage: '/images/developer-days/speakers/heikki-linnakangas-photo.png',
     blogPostUrl: '',
-    timeStamp: '1598',
+    timeStamp: '1482',
   },
   {
     time: '09:40 AM',
@@ -29,7 +29,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/em-sharnoff-photo.png',
     blogPostUrl: 'https://neon.tech/blog/postgres-autoscaling',
-    timeStamp: '2944',
+    timeStamp: '2828',
   },
   {
     time: '10:02 AM',
@@ -38,7 +38,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'blue',
     speakerImage: '/images/developer-days/speakers/konstantin-knizhnik-photo.png',
     blogPostUrl: '',
-    timeStamp: '4244',
+    timeStamp: '4128',
   },
   {
     time: '10:27 AM',
@@ -47,7 +47,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'pink',
     speakerImage: '/images/developer-days/speakers/anastasia-lubennikova-photo.png',
     blogPostUrl: '',
-    timeStamp: '5813',
+    timeStamp: '5697',
   },
   {
     time: '10:42 AM',
@@ -56,7 +56,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/george-macKerron-photo.png',
     blogPostUrl: 'https://neon.tech/blog/quicker-serverless-postgres',
-    timeStamp: '6710',
+    timeStamp: '6594',
   },
   {
     time: '11:00 AM',
@@ -66,7 +66,7 @@ const DEV_DAYS_AGENDA = [
     speakerImage: '/images/developer-days/speakers/raouf-chebri-photo.png',
     blogPostUrl:
       'https://neon.tech/blog/building-an-ai-powered-chatbot-using-vercel-openai-and-postgres',
-    timeStamp: '7685',
+    timeStamp: '7568',
   },
   {
     time: '11:20 AM',
@@ -75,7 +75,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'blue',
     speakerImage: '/images/developer-days/speakers/mahmoud-abdelwahab-photo.png',
     blogPostUrl: '',
-    timeStamp: '8884',
+    timeStamp: '8767',
   },
 ];
 
