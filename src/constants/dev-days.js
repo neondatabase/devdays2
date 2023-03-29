@@ -66,7 +66,7 @@ const DEV_DAYS_AGENDA = [
     speakerImage: '/images/developer-days/speakers/raouf-chebri-photo.png',
     blogPostUrl:
       'https://neon.tech/blog/building-an-ai-powered-chatbot-using-vercel-openai-and-postgres',
-    timeStamp: '',
+    timeStamp: '7685',
   },
   {
     time: '11:20 AM',
