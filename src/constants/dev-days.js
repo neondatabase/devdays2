@@ -24,16 +24,16 @@ const DEV_DAYS_AGENDA = [
   },
   {
     time: '09:40 AM',
-    title: 'Scaling Serverless Postgre: How we implement Autoscaling',
+    title: 'Scaling Serverless Postgres: How we implement autoscaling',
     speaker: 'Em Sharnoff',
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/em-sharnoff-photo.png',
-    blogPostUrl: '',
+    blogPostUrl: 'https://neon.tech/blog/postgres-autoscaling',
     timeStamp: '',
   },
   {
     time: '10:02 AM',
-    title: 'Optimizing Performance in a Serverless PostgreSQL Database',
+    title: 'Optimizing performance in a serverless Postgres database',
     speaker: 'Konstantin Knizhnik & Matthias Van De Meent',
     speakerBackground: 'blue',
     speakerImage: '/images/developer-days/speakers/konstantin-knizhnik-photo.png',
@@ -55,7 +55,7 @@ const DEV_DAYS_AGENDA = [
     speaker: 'George MacKerron',
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/george-macKerron-photo.png',
-    blogPostUrl: '',
+    blogPostUrl: 'https://neon.tech/blog/quicker-serverless-postgres',
     timeStamp: '',
   },
   {
