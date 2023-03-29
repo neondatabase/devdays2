@@ -20,7 +20,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'blue',
     speakerImage: '/images/developer-days/speakers/heikki-linnakangas-photo.png',
     blogPostUrl: '',
-    timeStamp: '',
+    timeStamp: '1598',
   },
   {
     time: '09:40 AM',
