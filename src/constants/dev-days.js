@@ -56,7 +56,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/george-macKerron-photo.png',
     blogPostUrl: 'https://neon.tech/blog/quicker-serverless-postgres',
-    timeStamp: '',
+    timeStamp: '6710',
   },
   {
     time: '11:00 AM',
