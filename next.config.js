@@ -13,6 +13,16 @@ module.exports = {
         destination: '/stage',
         permanent: true,
       },
+      {
+        source: '/generate-ticket',
+        destination: '/stage',
+        permanent: true,
+      },
+      {
+        source: '/agenda',
+        destination: '/stage',
+        permanent: true,
+      },
     ];
   },
   images: {
