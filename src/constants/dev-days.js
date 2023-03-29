@@ -29,7 +29,7 @@ const DEV_DAYS_AGENDA = [
     speakerBackground: 'yellow',
     speakerImage: '/images/developer-days/speakers/em-sharnoff-photo.png',
     blogPostUrl: '',
-    timeStamp: '',
+    timeStamp: '2700',
   },
   {
     time: '10:02 AM',
