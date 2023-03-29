@@ -9,6 +9,11 @@ module.exports = {
   async redirects() {
     return [
       {
+        source: '/',
+        destination: '/stage',
+        permanent: true,
+      },
+      {
         source: '/generate-ticket',
         destination: '/stage',
         permanent: true,
