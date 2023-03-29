@@ -56,9 +56,12 @@ const Stage = () => {
             return (
               <li key={index}>
                 <div className="flex items-center">
-                  <span className="text-sm font-light leading-none tracking-[0.04em] text-gray-5">
+                  <time
+                    className="text-sm font-light leading-none tracking-[0.04em] text-gray-5"
+                    dateTime={`2023-03-29T${time.slice(0, 5)}`}
+                  >
                     {time}
-                  </span>
+                  </time>
                   {blogPostUrl && (
                     <Button
                       className="ml-auto !font-mono !font-medium opacity-80 ![word-spacing:0]"
