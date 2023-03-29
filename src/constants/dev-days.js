@@ -1,11 +1,11 @@
 // TODO: before merge change video id to actual
 const DEV_DAYS_STAGE_VIDEO =
-  'https://www.youtube.com/embed/TvnIeE-SBl4?autoplay=1&mute=1&rel=0&start=';
+  'https://www.youtube.com/embed/A74KeYh19jE?autoplay=1&mute=1&rel=0&start=';
 
 // TODO: change timestamps to actual
 const DEV_DAYS_AGENDA = [
   {
-    time: '6:00pm - 6:30pm',
+    time: '09:00am',
     title: 'Keynote',
     speaker: 'Nikita Shamgunov',
     speakerBackground: 'yellow',
@@ -14,7 +14,7 @@ const DEV_DAYS_AGENDA = [
     timeStamp: '160',
   },
   {
-    time: '6:35pm - 7:15pm',
+    time: '09:18am',
     title: 'Deep dive into the Neon storage engine GetPage@LSN',
     speaker: 'Heikki Linnakangas',
     speakerBackground: 'blue',
@@ -23,7 +23,43 @@ const DEV_DAYS_AGENDA = [
     timeStamp: '190',
   },
   {
-    time: '7:30pm - 8:00pm',
+    time: '09:40am',
+    title: 'Scaling Serverless Postgre: How we implement Autoscaling',
+    speaker: 'Em Sharnoff',
+    speakerBackground: 'yellow',
+    speakerImage: '/images/developer-days/speakers/em-sharnoff-photo.png',
+    blogPostUrl: '',
+    timeStamp: '260',
+  },
+  {
+    time: '10:002am',
+    title: 'Optimizing Performance in a Serverless PostgreSQL Database',
+    speaker: 'Konstantin Knizhnik & Matthias Van De Meent',
+    speakerBackground: 'blue',
+    speakerImage: '/images/developer-days/speakers/konstantin-knizhnik-photo.png',
+    blogPostUrl: '',
+    timeStamp: '320',
+  },
+  {
+    time: '10:27am',
+    title: 'Understand your storage cost',
+    speaker: 'Anastasia Lubennikova',
+    speakerBackground: 'pink',
+    speakerImage: '/images/developer-days/speakers/anastasia-lubennikova-photo.png',
+    blogPostUrl: '',
+    timeStamp: '380',
+  },
+  {
+    time: '10:42am',
+    title: 'Quicker serverless Postgres connections',
+    speaker: 'George MacKerron',
+    speakerBackground: 'yellow',
+    speakerImage: '/images/developer-days/speakers/george-macKerron-photo.png',
+    blogPostUrl: '',
+    timeStamp: '510',
+  },
+  {
+    time: '11:00am',
     title: 'Building an AI-powered ChatBot using Vercel, OpenAI, and Postgres',
     speaker: 'Raouf Chebri',
     speakerBackground: 'pink',
@@ -33,43 +69,7 @@ const DEV_DAYS_AGENDA = [
     timeStamp: '220',
   },
   {
-    time: '8:05pm - 8:45pm',
-    title: 'Scaling Serverless Postgre: How we implement Autoscaling',
-    speaker: 'Em Sharnoff',
-    speakerBackground: 'yellow',
-    speakerImage: '/images/developer-days/speakers/em-sharnoff-photo.png',
-    blogPostUrl: '',
-    timeStamp: '260',
-  },
-  {
-    time: '9:00pm - 9:30pm',
-    title: 'Optimizing Performance in a Serverless PostgreSQL Database',
-    speaker: 'Konstantin Knizhnik & Matthias Van De Meent',
-    speakerBackground: 'blue',
-    speakerImage: '/images/developer-days/speakers/konstantin-knizhnik-photo.png',
-    blogPostUrl: '',
-    timeStamp: '320',
-  },
-  {
-    time: '9:35pm - 10:15pm',
-    title: 'Understand your storage cost',
-    speaker: 'Anastasia Lubennikova',
-    speakerBackground: 'pink',
-    speakerImage: '/images/developer-days/speakers/anastasia-lubennikova-photo.png',
-    blogPostUrl: '',
-    timeStamp: '380',
-  },
-  {
-    time: '10:20pm - 11:00pm',
-    title: 'Quicker serverless Postgres connections',
-    speaker: 'George MacKerron',
-    speakerBackground: 'yellow',
-    speakerImage: '/images/developer-days/speakers/george-macKerron-photo.png',
-    blogPostUrl: '',
-    timeStamp: '510',
-  },
-  {
-    time: '11:15pm - 12:00pm',
+    time: '11:20am',
     title: 'Developer workflows with Vercel and GitHub Actions',
     speaker: 'Mahmoud Abdelwahab',
     speakerBackground: 'blue',
