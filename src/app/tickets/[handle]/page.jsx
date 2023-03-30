@@ -32,7 +32,7 @@ const TicketPage = async ({ params }) => {
             theme="code-copy"
             href="/stage"
           >
-            <LiveIcon className="h-[32px] w-fit shrink-0" aria-hidden />
+            <LiveIcon className="h-[32px] w-auto shrink-0" aria-hidden />
             <span className="min-w-[82px] font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
               Neon Live
             </span>
