@@ -1,30 +1,27 @@
 module.exports = {
   poweredByHeader: false,
-  experimental: {
-    appDir: true,
-  },
   env: {
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/stage',
-        permanent: true,
-      },
-      {
-        source: '/generate-ticket',
-        destination: '/stage',
-        permanent: true,
-      },
-      {
-        source: '/agenda',
-        destination: '/stage',
-        permanent: true,
-      },
-    ];
-  },
+  // async redirects() {
+  //   return [
+  // {
+  //   source: '/',
+  //   destination: '/stage',
+  //   permanent: true,
+  // },
+  // {
+  //   source: '/generate-ticket',
+  //   destination: '/stage',
+  //   permanent: true,
+  // },
+  // {
+  //   source: '/agenda',
+  //   destination: '/stage',
+  //   permanent: true,
+  // },
+  // ];
+  // },
   images: {
     remotePatterns: [
       {

@@ -1,3 +1,5 @@
+export const DEFAULT_IMAGE_PATH = '/images/social-previews/index.jpg';
+
 export default {
   404: {
     title: 'Page Not Found — Neon',

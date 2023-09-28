@@ -1,9 +1,9 @@
 'use client';
 
+import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 import clsx from 'clsx';
 import NextLink from 'next/link';
 import PropTypes from 'prop-types';
-import { Alignment, Fit, Layout, useRive } from 'rive-react';
 
 const styles = {
   base: 'inline-flex items-center justify-center font-semibold !leading-none text-center whitespace-nowrap rounded-full transition-colors duration-200 outline-none',

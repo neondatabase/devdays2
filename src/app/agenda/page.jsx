@@ -1,7 +1,11 @@
 import Button from 'components/shared/button';
 import Layout from 'components/shared/layout';
 import { DEV_DAYS_AGENDA } from 'constants/dev-days';
+import SEO_DATA from 'constants/seo-data';
 import LiveIcon from 'icons/live.inline.svg';
+import getMetadata from 'utils/get-metadata';
+
+export const metadata = getMetadata(SEO_DATA.agenda);
 
 const AgendaPage = () => (
   <Layout>

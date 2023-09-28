@@ -7,9 +7,10 @@ import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import BlinkingText from 'components/shared/blinking-text';
-import Button from 'components/shared/button';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
-import LiveIcon from 'icons/live.inline.svg';
+import GradientLabel from 'components/shared/gradient-label';
+import SubscriptionForm from 'components/shared/subscription-form';
+import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
 import ElephantIllustration from 'images/developer-days/ticket-hero-elephant.png';
 
 const appearColumnVariants = {
@@ -77,8 +78,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
 
   const titleContent = (
     <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
-      {'Developer Days'.split('').map((letter, index) =>
-        index === 9 ? (
+      {'Neon Dev Days 2023'.split('').map((letter, index) =>
+        index === 8 ? (
           <span key={index}>
             <br className="xl:hidden" />
             <span className="hidden xl:inline"> </span>
@@ -104,30 +105,27 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'linear' }}
       >
-        <span className="inline-block rounded-[50px] bg-secondary-2 py-1 px-3 align-top text-sm font-semibold uppercase leading-snug tracking-[-0.02em] text-black xl:text-xs lg:mt-0 lg:text-xs">
-          March 2023
-        </span>
+        <GradientLabel className="inline-block" theme="green">
+          November 2nd
+        </GradientLabel>
         <h1
-          className="mt-4 text-[120px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:mt-2 xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:text-[58px] md:mt-1 md:text-[52px]"
+          className="mt-4 text-[104px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:mt-2 xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:text-[58px] md:mt-1 md:text-[52px]"
           ref={titleRef}
         >
           {titleContent}
         </h1>
-        <p className="mt-5 max-w-xl font-mono text-xl font-light tracking-tighter text-white 2xl:text-lg xl:mx-auto xl:max-w-md lg:mt-4 lg:max-w-sm lg:text-base md:max-w-[80%]">
-          Join us on <time dateTime="2023-03-29T09:00">March 29th, 9 a.m. PT</time> to learn more
-          about latest of Serverless Postgres
+        <p className="mt-6 max-w-xl font-mono text-xl font-light tracking-tighter text-white 2xl:text-lg xl:mx-auto xl:max-w-md lg:mt-4 lg:max-w-sm lg:text-base md:max-w-[80%]">
+          Join us at <time dateTime="2023-03-26T10:30">10:30AM PT, March 26</time> to hear more
+          about latest updates from our dev team.
         </p>
-        <Button
-          className="social-share pointer-events-auto relative z-50 mt-11 flex items-center gap-4 py-[18px] px-6 pr-7 text-white shadow-social transition duration-200 lg:px-8 xs:py-2 xs:px-3"
+        <SubscriptionForm
+          className="mt-7 xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"
+          successText="Thanks for registering!"
+          submitButtonText="Register"
           size="sm"
-          theme="code-copy"
-          href="/stage"
-        >
-          <LiveIcon className="h-[32px] w-auto shrink-0" aria-hidden />
-          <span className="min-w-[82px] font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
-            Neon Live
-          </span>
-        </Button>
+          localStorageKey="submittedEmailDeveloperDays2Form"
+          formId={HUBSPOT_DEVELOPER_DAYS_2_FORM_ID}
+        />
       </motion.div>
       <motion.div
         className="col-span-7 col-start-6 self-center 2xl:col-span-8 2xl:col-start-5 xl:col-span-full xl:!transform-none xl:self-start xl:!opacity-100"

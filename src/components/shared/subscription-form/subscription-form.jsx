@@ -1,12 +1,12 @@
 'use client';
 
+import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 import clsx from 'clsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useCookie, useLocation } from 'react-use';
-import { Alignment, Fit, Layout, useRive } from 'rive-react';
 
 import Button from 'components/shared/button';
 import useLocalStorage from 'hooks/use-local-storage';
