@@ -12,21 +12,25 @@ export default {
     title: 'Developer Days Agenda - Neon',
     description:
       'Join us at Developer Days virtually on March 29th to learn about Neon and how to build better with Serverless Postgres.',
+    pathname: '/agenda',
   },
   stage: {
     title: 'Neon Developer Days Stage — Neon',
     description:
       'Join us at Developer Days virtually on March 29th to learn about Neon and how to build better with Serverless Postgres.',
+    pathname: '/stage',
   },
   developerDays2: {
     title: 'Neon Developer Days — Neon',
     description:
       'Join us at Developer Days virtually on March 29th to learn about Neon and how to build better with Serverless Postgres.',
+    pathname: '',
   },
   generateTicket: {
     title: 'Grab the ticket for Neon Developer Days',
     description:
       "Generate a unique ticket image with your GitHub profile and participate in Neon's right after the conference.",
+    pathname: '/generate-ticket',
   },
   ticket({ name, login: githubHandle }) {
     const userName = name || githubHandle;
