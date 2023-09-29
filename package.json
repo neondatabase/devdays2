@@ -19,7 +19,8 @@
     "lint:md:fix": "markdownlint --fix --ignore-path .gitignore .",
     "prepare": "husky install",
     "migrate": "npx prisma migrate dev",
-    "studio": "npx prisma studio"
+    "studio": "npx prisma studio",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
