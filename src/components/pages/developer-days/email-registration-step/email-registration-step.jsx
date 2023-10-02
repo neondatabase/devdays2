@@ -10,7 +10,7 @@ import BlinkingText from 'components/shared/blinking-text';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import GradientLabel from 'components/shared/gradient-label';
 import SubscriptionForm from 'components/shared/subscription-form';
-import { HUBSPOT_DEVELOPER_DAYS_2_FORM_ID } from 'constants/forms';
+import { HUBSPOT_DEVELOPER_DAYS_3_FORM_ID } from 'constants/forms';
 import ElephantIllustration from 'images/developer-days/ticket-hero-elephant.png';
 
 const appearColumnVariants = {
@@ -124,7 +124,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           submitButtonText="Register"
           size="sm"
           localStorageKey="submittedEmailDeveloperDays2Form"
-          formId={HUBSPOT_DEVELOPER_DAYS_2_FORM_ID}
+          formId={HUBSPOT_DEVELOPER_DAYS_3_FORM_ID}
         />
       </motion.div>
       <motion.div
