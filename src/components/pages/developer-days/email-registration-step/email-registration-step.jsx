@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 
+import AnimatedLogos from 'components/shared/animated-logos';
 import BlinkingText from 'components/shared/blinking-text';
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
 import GradientLabel from 'components/shared/gradient-label';
@@ -126,6 +127,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           localStorageKey="submittedEmailDeveloperDays2Form"
           formId={HUBSPOT_DEVELOPER_DAYS_3_FORM_ID}
         />
+        <AnimatedLogos className="mt-14" />
       </motion.div>
       <motion.div
         className="col-span-7 col-start-6 self-center xl:col-span-full xl:!transform-none xl:self-start xl:!opacity-100"

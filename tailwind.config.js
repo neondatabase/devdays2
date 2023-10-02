@@ -188,10 +188,15 @@ module.exports = {
             filter: 'brightness(1) saturate(1)',
           },
         },
+        logos: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       }),
       animation: {
         'text-blink': 'text-blink 1.5s cubic-bezier(0, 0.35, 0.35, 1)',
         'webgl-brightness': 'webgl-brightness 3s cubic-bezier(0, 0.35, 0.35, 1)',
+        logos: 'logos 30s linear infinite',
       },
     },
   },
