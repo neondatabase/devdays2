@@ -115,8 +115,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           {titleContent}
         </h1>
         <p className="mt-6 max-w-xl font-mono text-xl font-light tracking-tighter text-white 2xl:text-lg xl:mx-auto xl:max-w-md lg:mt-4 lg:max-w-sm lg:text-base md:max-w-[80%]">
-          Join us at <time dateTime="2023-03-26T10:30">10:30AM PT, March 26</time> to hear more
-          about latest updates from our dev team.
+          Join us at <time dateTime="2023-11-02">November 2</time> to hear more about latest updates
+          from our dev team.
         </p>
         <SubscriptionForm
           className="mt-7 xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"

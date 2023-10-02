@@ -11,19 +11,19 @@ export default {
   agenda: {
     title: 'Developer Days Agenda - Neon',
     description:
-      'Join us at Developer Days virtually on March 29th to learn about Neon and how to build better with Serverless Postgres.',
+      'Join us at Developer Days virtually on November 2nd to learn about Neon and how to build better with Serverless Postgres.',
     pathname: '/agenda',
   },
   stage: {
     title: 'Neon Developer Days Stage — Neon',
     description:
-      'Join us at Developer Days virtually on March 29th to learn about Neon and how to build better with Serverless Postgres.',
+      'Join us at Developer Days virtually on November 2nd to learn about Neon and how to build better with Serverless Postgres.',
     pathname: '/stage',
   },
   developerDays2: {
     title: 'Neon Developer Days — Neon',
     description:
-      'Join us at Developer Days virtually on March 29th to learn about Neon and how to build better with Serverless Postgres.',
+      'Join us at Developer Days virtually on November 2nd to learn about Neon and how to build better with Serverless Postgres.',
     pathname: '',
   },
   generateTicket: {
@@ -37,7 +37,7 @@ export default {
 
     return {
       title: `${userName}'s ticket for Neon Developer Days - Neon`,
-      description: `Join ${userName} virtually at Developer Days on March 29th to learn about Neon and how to build better with Serverless Postgres`,
+      description: `Join ${userName} virtually at Developer Days on November 2nd to learn about Neon and how to build better with Serverless Postgres`,
     };
   },
 };
