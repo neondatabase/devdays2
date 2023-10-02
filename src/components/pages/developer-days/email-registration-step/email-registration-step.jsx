@@ -127,7 +127,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           localStorageKey="submittedEmailDeveloperDays2Form"
           formId={HUBSPOT_DEVELOPER_DAYS_3_FORM_ID}
         />
-        <AnimatedLogos className="mt-14" />
+        <AnimatedLogos className="mt-14 sm:mt-10" />
       </motion.div>
       <motion.div
         className="col-span-7 col-start-6 self-center xl:col-span-full xl:!transform-none xl:self-start xl:!opacity-100"
