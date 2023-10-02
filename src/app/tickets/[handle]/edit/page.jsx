@@ -3,7 +3,10 @@ import { notFound } from 'next/navigation';
 import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
 import Button from 'components/shared/button';
 import Layout from 'components/shared/layout';
+import SEO_DATA from 'constants/seo-data';
 import LiveIcon from 'icons/live.inline.svg';
+import buildOgImageUrl from 'utils/build-og-image-url';
+import getMetadata from 'utils/get-metadata';
 import prisma from 'utils/prisma';
 
 const TicketEditPage = async ({ params }) => {
@@ -80,6 +83,37 @@ export async function generateStaticParams() {
   return users.map((user) => ({
     handle: user.login,
   }));
+}
+
+export async function generateMetadata({ params }) {
+  const { handle } = params;
+  let userData;
+
+  if (handle) {
+    try {
+      userData = await prisma.user.findUnique({
+        where: {
+          login: handle,
+        },
+        select: {
+          name: true,
+          email: true,
+          login: true,
+          image: true,
+          id: true,
+          colorSchema: true,
+        },
+      });
+    } catch (err) {
+      console.log('Ticket page head query err', err);
+    }
+  }
+
+  if (userData) {
+    return getMetadata({ ...SEO_DATA.ticket(userData), imagePath: buildOgImageUrl(userData) });
+  }
+
+  return getMetadata({ ...SEO_DATA['404-ticket'] });
 }
 
 export const revalidate = 60;

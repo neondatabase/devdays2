@@ -17,7 +17,11 @@ export async function middleware(req) {
   // if token exists, user is authorized
   if (token?.githubHandle) {
     // authorized user should be moved to his ticket edit page from anywhere
-    if (pathname.endsWith(`/tickets/${token.githubHandle}`)) {
+    if (
+      pathname === '/generate-ticket' ||
+      pathname === '/' ||
+      pathname.endsWith(`/tickets/${token.githubHandle}`)
+    ) {
       return NextResponse.redirect(
         new URL(`${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/tickets/${token.githubHandle}/edit`)
       );

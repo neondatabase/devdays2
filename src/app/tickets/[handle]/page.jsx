@@ -5,11 +5,9 @@ import Button from 'components/shared/button';
 import Layout from 'components/shared/layout';
 import SEO_DATA from 'constants/seo-data';
 import LiveIcon from 'icons/live.inline.svg';
+import buildOgImageUrl from 'utils/build-og-image-url';
 import getMetadata from 'utils/get-metadata';
 import prisma from 'utils/prisma';
-
-const buildOgImageUrl = (data) =>
-  data ? '/api/og?'.concat(new URLSearchParams(data)) : '/api/og?';
 
 const TicketPage = async ({ params }) => {
   // eslint-disable-next-line no-use-before-define
