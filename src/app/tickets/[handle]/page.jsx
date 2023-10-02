@@ -29,7 +29,7 @@ const TicketPage = async ({ params }) => {
           </h1>
           <p className="relative z-50 mt-5 max-w-[610px] font-mono text-[1.15rem] font-light leading-tight tracking-tight text-white 2xl:max-w-[500px] 1xl:max-w-[420px] xl:mx-auto xl:max-w-[700px] xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base">
             Join {userName.split(' ')[0]} at Neon Developer Days on{' '}
-            <time dateTime="2023-11-02">November 2nd</time>
+            <time dateTime="2023-11-02T10:00">November 2nd, 10 a.m. PT</time>
           </p>
           <Button
             className="social-share pointer-events-auto relative z-50 mt-11 flex items-center gap-4 py-[18px] px-6 pr-7 text-white shadow-social transition duration-200 lg:px-8 xs:py-2 xs:px-3"

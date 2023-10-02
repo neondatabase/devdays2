@@ -18,8 +18,8 @@ const AgendaPage = () => (
           Developer Days Agenda
         </h1>
         <p className="mt-5 font-mono text-xl font-light leading-snug tracking-tighter text-white 2xl:text-lg xl:mt-4 lg:text-base">
-          Join us on <time dateTime="2023-11-02">November 2nd</time> to learn more about latest of
-          Serverless Postgres
+          Join us on <time dateTime="2023-11-02T10:00">November 2nd, 10 a.m. PT</time> to learn more
+          about latest of Serverless Postgres
         </p>
         <Button
           className="social-share relative mt-11 flex items-center gap-4 py-[18px] px-6 pr-7 text-white shadow-social transition duration-200 lg:px-8 xs:py-2 xs:px-3"
