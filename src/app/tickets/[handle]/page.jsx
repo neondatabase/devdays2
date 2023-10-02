@@ -94,7 +94,11 @@ export async function generateMetadata({ params }) {
   }
 
   if (userData) {
-    return getMetadata({ ...SEO_DATA.ticket(userData), imagePath: buildOgImageUrl(userData) });
+    return getMetadata({
+      ...SEO_DATA.ticket(userData),
+      pathname: `/tickets/${userData.login}`,
+      imagePath: buildOgImageUrl(userData),
+    });
   }
 
   return getMetadata({ ...SEO_DATA['404-ticket'] });
