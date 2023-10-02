@@ -2,6 +2,11 @@
 import { NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 
+const SITE_URL =
+  process.env.VERCEL_ENV === 'preview'
+    ? `https://${process.env.VERCEL_BRANCH_URL}`
+    : process.env.NEXT_PUBLIC_DEFAULT_SITE_URL;
+
 export async function middleware(req) {
   const { pathname } = req.nextUrl;
   // Add any assets or page that you don't want to run middleware on
@@ -22,16 +27,12 @@ export async function middleware(req) {
       pathname === '/' ||
       pathname.endsWith(`/tickets/${token.githubHandle}`)
     ) {
-      return NextResponse.redirect(
-        new URL(`${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/tickets/${token.githubHandle}/edit`)
-      );
+      return NextResponse.redirect(new URL(`${SITE_URL}/tickets/${token.githubHandle}/edit`));
     }
   } else if (pathname.endsWith(`/edit`)) {
     if (!token?.githubHandle) {
       return NextResponse.redirect(
-        new URL(
-          `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}${pathname.split('/').slice(0, -1).join('/')}`
-        )
+        new URL(`${SITE_URL}${pathname.split('/').slice(0, -1).join('/')}`)
       );
     }
   }
