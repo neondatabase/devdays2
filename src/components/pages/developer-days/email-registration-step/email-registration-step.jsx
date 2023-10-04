@@ -79,8 +79,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
 
   const titleContent = (
     <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
-      {'Neon Developer Days 2023'.split('').map((letter, index) =>
-        index === 14 ? (
+      {'Developer Days 2023'.split('').map((letter, index) =>
+        index === 9 ? (
           <span key={index}>
             <br className="xl:hidden" />
             <span className="hidden xl:inline"> </span>
