@@ -30,15 +30,13 @@ const TicketPage = async ({ params }) => {
           </p>
 
           <Button
-            className="pointer-events-auto social-share relative flex items-center gap-4 py-[18px] mt-11 px-6 pr-7 shadow-social transition-all duration-200 lg:px-8 xs:py-2 xs:px-3"
-            type="button"
-            size="sm"
-            theme="code-copy"
+            className="mt-11 pointer-events-auto"
+            size="md"
+            theme="primary"
             href="/"
+            isAnimated
           >
-            <p className="font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
-              Get yours
-            </p>
+            Get yours
           </Button>
         </div>
         <div className="col-span-6 col-start-7 self-center 2xl:col-start-6 1xl:-ml-10 xl:col-span-full xl:ml-0 xl:self-start">
