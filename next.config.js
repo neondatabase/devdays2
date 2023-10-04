@@ -3,26 +3,38 @@ module.exports = {
   env: {
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   },
-  // @TODO: uncomment this when the event is live
-  /* async redirects() {
+
+  async redirects() {
     return [
-  {
-    source: '/',
-    destination: '/stage',
-    permanent: true,
+      {
+        source: '/stage',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/agenda',
+        destination: '/',
+        permanent: true,
+      },
+      // @TODO: uncomment this when the event is live
+      /*  {
+        source: '/',
+        destination: '/stage',
+        permanent: true,
+      },
+      {
+        source: '/generate-ticket',
+        destination: '/stage',
+        permanent: true,
+      },
+      {
+        source: '/agenda',
+        destination: '/stage',
+        permanent: true,
+      },
+      */
+    ];
   },
-  {
-    source: '/generate-ticket',
-    destination: '/stage',
-    permanent: true,
-  },
-  {
-    source: '/agenda',
-    destination: '/stage',
-    permanent: true,
-  },
- ];
-}, */
   images: {
     remotePatterns: [
       {

@@ -79,8 +79,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
 
   const titleContent = (
     <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
-      {'Neon Dev Days 2023'.split('').map((letter, index) =>
-        index === 8 ? (
+      {'Neon Developer Days 2023'.split('').map((letter, index) =>
+        index === 14 ? (
           <span key={index}>
             <br className="xl:hidden" />
             <span className="hidden xl:inline"> </span>
@@ -116,8 +116,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           {titleContent}
         </h1>
         <p className="mt-6 max-w-xl font-mono text-xl font-light tracking-tighter text-white 2xl:text-lg xl:mx-auto xl:max-w-md lg:mt-4 lg:max-w-sm lg:text-base md:max-w-[80%]">
-          Join us at <time dateTime="2023-11-02T10:00">10:00AM PT, November 2</time> to hear more
-          about latest updates from our dev team.
+          Join us at <time dateTime="2023-11-02T10:00">10:00 AM PT, November 2nd</time> for
+          presentations about Postgres, Scalability, AI, and using Neon with modern Developer Tools.
         </p>
         <SubscriptionForm
           className="mt-7 xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"
