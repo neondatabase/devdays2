@@ -79,8 +79,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
 
   const titleContent = (
     <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
-      {'Developer Days 2023'.split('').map((letter, index) =>
-        index === 9 ? (
+      {'Neon Developer Days 2023'.split('').map((letter, index) =>
+        index === 14 ? (
           <span key={index}>
             <br className="xl:hidden" />
             <span className="hidden xl:inline"> </span>
@@ -110,14 +110,18 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           November 2nd
         </GradientLabel>
         <h1
-          className="mt-4 text-[104px] font-semibold leading-none tracking-tighter text-white 2xl:text-8xl xl:mt-2 xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:text-[58px] md:mt-1 md:text-[52px]"
+          className="mt-4 text-[94px] -mr-16 xl:mr-0 font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:mt-2 xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:text-[58px] md:mt-1 md:text-[52px]"
           ref={titleRef}
         >
           {titleContent}
         </h1>
         <p className="mt-6 max-w-xl font-mono text-xl font-light tracking-tighter text-white 2xl:text-lg xl:mx-auto xl:max-w-md lg:mt-4 lg:max-w-sm lg:text-base md:max-w-[80%]">
-          Join us at <time dateTime="2023-11-02T10:00">10:00 AM PT, November 2nd</time> for
-          presentations about Postgres, Scalability, AI, and using Neon with modern Developer Tools.
+          Join us at{' '}
+          <time className="text-primary-4" dateTime="2023-11-02T10:00">
+            10:00 AM PT, November 2nd
+          </time>{' '}
+          for presentations about Postgres, Scalability, AI, and using Neon with modern Developer
+          Tools.
         </p>
         <SubscriptionForm
           className="mt-7 xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"
