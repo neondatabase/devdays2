@@ -120,8 +120,8 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           <time className="text-primary-4" dateTime="2023-11-02T10:00">
             10:00 AM PT, November 2nd
           </time>{' '}
-          for presentations about Postgres, Scalability, AI, and using Neon with modern Developer
-          Tools.
+          for presentations about Postgres, scalability, AI, and using Neon with modern developer
+          tools.
         </p>
         <SubscriptionForm
           className="mt-7 xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"
