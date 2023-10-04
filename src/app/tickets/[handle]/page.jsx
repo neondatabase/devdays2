@@ -36,7 +36,7 @@ const TicketPage = async ({ params }) => {
             href="/"
             isAnimated
           >
-            Get yours
+            Grab yours
           </Button>
         </div>
         <div className="col-span-6 col-start-7 self-center 2xl:col-start-6 1xl:-ml-10 xl:col-span-full xl:ml-0 xl:self-start">

@@ -21,7 +21,7 @@ const Hero = ({ isTicketPage = false }) => (
           : 'Sorry, the page you are looking for doesn’t exist.'}
       </p>
       <Button className="mt-11" size="md" theme="primary" href="/" isAnimated>
-        {isTicketPage ? 'Get yours' : 'Back to home'}
+        {isTicketPage ? 'Grab yours' : 'Back to home'}
       </Button>
     </div>
     <div className="col-span-6 col-start-7 self-center 2xl:col-start-6 1xl:-ml-10 xl:col-span-full xl:ml-0 xl:mr-0 xl:self-start">
