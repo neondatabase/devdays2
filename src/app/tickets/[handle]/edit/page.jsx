@@ -18,6 +18,8 @@ const TicketEditPage = async ({ params }) => {
 
   const shareUrl = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/tickets/${userData.login}`;
 
+  console.log(userData);
+
   return (
     <Layout>
       <div className="relative mx-auto grid max-w-[1760px] flex-grow grid-cols-12 gap-10 py-20 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:py-7 md:px-8 md:pt-5 md:pb-20 sm:px-4">
@@ -111,4 +113,4 @@ export async function generateMetadata({ params }) {
   return getMetadata({ ...SEO_DATA['404-ticket'] });
 }
 
-export const revalidate = 60;
+export const revalidate = 0;
