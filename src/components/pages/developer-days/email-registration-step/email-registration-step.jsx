@@ -110,7 +110,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           November 2nd
         </GradientLabel>
         <h1
-          className="mt-4 text-[94px] -mr-16 xl:mr-0 font-semibold leading-none tracking-tighter text-white 2xl:text-7xl xl:mt-2 xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:text-[58px] md:mt-1 md:text-[52px]"
+          className="mt-4 text-[82px] font-semibold leading-none tracking-tighter text-white 2xl:text-6xl xl:mt-2 xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:text-[58px] md:mt-1 md:text-[52px]"
           ref={titleRef}
         >
           {titleContent}
