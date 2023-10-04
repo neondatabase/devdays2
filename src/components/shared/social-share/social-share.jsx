@@ -25,7 +25,7 @@ const SocialShare = ({ className = null, url }) => {
           url={url}
           shareText="Just got my ticket to @neondatabase Developer Days. Claim yours!"
         >
-          Twitter
+          Post
         </TwitterShareButton>
         <Button
           className={clsx(

@@ -1,5 +1,5 @@
 const Footer = () => (
-  <footer className="safe-paddings border-t border-gray-2">
+  <footer className="safe-paddings border-t border-gray-2/70">
     <div className="flex items-center justify-between gap-2 py-8 px-14 text-[15px] leading-tight text-gray-5 xl:px-11 lg:px-8 lg:text-[12px] md:flex-col md:gap-1 md:px-4 md:py-3 md:text-[14px] md:leading-normal">
       <p className="text-gray-8">Neon 2023 Ⓒ All rights reserved</p>
       <p className="sm:max-w-[18rem] sm:text-center">

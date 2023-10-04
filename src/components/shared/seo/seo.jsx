@@ -32,7 +32,7 @@ const SEO = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="theme-color" content="#1a1a1a" />
       <link rel="icon" href="/favicon.ico" />
-      <link rel="manifest" href="/manifest.webmanifest" crossOrigin="anonymous" />
+      <link rel="manifest" href="/manifest.json" crossOrigin="anonymous" />
       <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48x48.png" />
       <link rel="icon" type="image/png" sizes="72x72" href="/favicon/favicon-72x72.png" />

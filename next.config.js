@@ -1,14 +1,23 @@
 module.exports = {
   poweredByHeader: false,
-  experimental: {
-    appDir: true,
-  },
   env: {
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   },
+
   async redirects() {
     return [
       {
+        source: '/stage',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/agenda',
+        destination: '/',
+        permanent: true,
+      },
+      // @TODO: uncomment this when the event is live
+      /*  {
         source: '/',
         destination: '/stage',
         permanent: true,
@@ -23,6 +32,7 @@ module.exports = {
         destination: '/stage',
         permanent: true,
       },
+      */
     ];
   },
   images: {

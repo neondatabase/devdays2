@@ -9,7 +9,7 @@ const Layout = ({ children, isFooterShow = true, isHeaderAbsolute = true }) => (
     <Header isHeaderAbsolute={isHeaderAbsolute} />
     <main
       className={clsx(
-        'flex flex-col overflow-hidden xl:min-h-0 xl:flex-grow',
+        'flex flex-col overflow-hidden xl:min-h-0 xl:flex-grow [@media(max-height:650px)_and_(min-width:1279px)]:py-[70px]',
         isHeaderAbsolute && 'min-h-full'
       )}
     >

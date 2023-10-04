@@ -1,5 +1,9 @@
 import Stage from 'components/pages/developer-days/stage';
 import Layout from 'components/shared/layout';
+import SEO_DATA from 'constants/seo-data';
+import getMetadata from 'utils/get-metadata';
+
+export const metadata = getMetadata(SEO_DATA.stage);
 
 const StagePage = () => (
   <Layout isFooterShow={false} isHeaderAbsolute={false}>

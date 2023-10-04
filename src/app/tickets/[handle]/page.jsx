@@ -1,9 +1,11 @@
 import { notFound } from 'next/navigation';
 
 import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
-import Button from 'components/shared/button';
+import Button from 'components/shared/button/button';
 import Layout from 'components/shared/layout';
-import LiveIcon from 'icons/live.inline.svg';
+import SEO_DATA from 'constants/seo-data';
+import buildOgImageUrl from 'utils/build-og-image-url';
+import getMetadata from 'utils/get-metadata';
 import prisma from 'utils/prisma';
 
 const TicketPage = async ({ params }) => {
@@ -24,18 +26,17 @@ const TicketPage = async ({ params }) => {
           </h1>
           <p className="relative z-50 mt-5 max-w-[610px] font-mono text-[1.15rem] font-light leading-tight tracking-tight text-white 2xl:max-w-[500px] 1xl:max-w-[420px] xl:mx-auto xl:max-w-[700px] xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base">
             Join {userName.split(' ')[0]} at Neon Developer Days on{' '}
-            <time dateTime="2023-03-29T09:00">March 29th, 9 a.m. PT</time>
+            <time dateTime="2023-11-02T10:00">November 2nd, 10 a.m. PT</time>
           </p>
+
           <Button
-            className="social-share pointer-events-auto relative z-50 mt-11 flex items-center gap-4 py-[18px] px-6 pr-7 text-white shadow-social transition duration-200 lg:px-8 xs:py-2 xs:px-3"
-            size="sm"
-            theme="code-copy"
-            href="/stage"
+            className="mt-11 pointer-events-auto"
+            size="md"
+            theme="primary"
+            href="/"
+            isAnimated
           >
-            <LiveIcon className="h-[32px] w-auto shrink-0" aria-hidden />
-            <span className="min-w-[82px] font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
-              Neon Live
-            </span>
+            Get yours
           </Button>
         </div>
         <div className="col-span-6 col-start-7 self-center 2xl:col-start-6 1xl:-ml-10 xl:col-span-full xl:ml-0 xl:self-start">
@@ -75,6 +76,41 @@ async function getTicketData(handle) {
   return userData;
 }
 
+export async function generateMetadata({ params }) {
+  const { handle } = params;
+  let userData;
+
+  if (handle) {
+    try {
+      userData = await prisma.user.findUnique({
+        where: {
+          login: handle,
+        },
+        select: {
+          name: true,
+          email: true,
+          login: true,
+          image: true,
+          id: true,
+          colorSchema: true,
+        },
+      });
+    } catch (err) {
+      console.log('Ticket page head query err', err);
+    }
+  }
+
+  if (userData) {
+    return getMetadata({
+      ...SEO_DATA.ticket(userData),
+      pathname: `/tickets/${userData.login}`,
+      imagePath: buildOgImageUrl(userData),
+    });
+  }
+
+  return getMetadata({ ...SEO_DATA['404-ticket'] });
+}
+
 export async function generateStaticParams() {
   const users = await prisma.user.findMany();
 
@@ -83,4 +119,4 @@ export async function generateStaticParams() {
   }));
 }
 
-export const revalidate = 60;
+export const revalidate = 0;

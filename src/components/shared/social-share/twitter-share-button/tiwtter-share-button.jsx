@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
 import Button from 'components/shared/button';
-import TwitterIcon from 'icons/twitter-icon.inline.svg';
+import XIcon from 'icons/x-icon.inline.svg';
 
 const objectToGetParams = (object) => {
   const params = Object.entries(object)
@@ -79,7 +79,7 @@ const TwitterShareButton = ({
       theme="code-copy"
       onClick={handleTwitterShare}
     >
-      <TwitterIcon className={clsx('shrink-0', iconSize === 'default' ? 'h-[26px]' : 'h-[14px]')} />
+      <XIcon className={clsx('shrink-0', iconSize === 'default' ? 'h-[26px]' : 'h-[14px]')} />
       <span>{children}</span>
     </Button>
   );

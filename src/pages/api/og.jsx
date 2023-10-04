@@ -129,8 +129,8 @@ export default async function handler(req) {
                 fontFamily: 'monospace',
               }}
             >
-              <span>9AM PT,</span>
-              <span>March 29, 2023</span>
+              <span>10AM PT,</span>
+              <span>November 2, 2023</span>
             </p>
           </div>
         </div>
