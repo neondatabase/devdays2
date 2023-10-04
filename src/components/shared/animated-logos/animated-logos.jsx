@@ -96,7 +96,7 @@ const AnimatedLogos = ({ className = null }) => (
       'logos grid w-full overflow-x-hidden md:-mx-4 md:w-[calc(100%+32px)] sm:mx-0 sm:w-full relative z-10'
     )}
   >
-    <div className="flex h-10 w-full animate-logos">
+    <div className="flex h-10 w-full animate-logos motion-reduce:animate-none">
       <ul className="flex w-full justify-between items-center">
         {logos.map(({ src, alt, width, height }, index) => (
           <li className="px-[18px]" key={`logo_${index}`}>
