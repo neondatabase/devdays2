@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 
 import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
+import Button from 'components/shared/button/button';
 import Layout from 'components/shared/layout';
-import SocialShare from 'components/shared/social-share';
 import SEO_DATA from 'constants/seo-data';
 import buildOgImageUrl from 'utils/build-og-image-url';
 import getMetadata from 'utils/get-metadata';
@@ -16,8 +16,6 @@ const TicketPage = async ({ params }) => {
 
   const userName = userData.name || userData.login;
 
-  const shareUrl = `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/tickets/${userData.login}`;
-
   return (
     <Layout>
       <div className="relative mx-auto grid max-w-[1760px] flex-grow grid-cols-12 gap-10 py-20 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:py-7 md:px-8 md:pt-5 md:pb-20 sm:px-4">
@@ -30,7 +28,18 @@ const TicketPage = async ({ params }) => {
             Join {userName.split(' ')[0]} at Neon Developer Days on{' '}
             <time dateTime="2023-11-02T10:00">November 2nd, 10 a.m. PT</time>
           </p>
-          <SocialShare className="pointer-events-auto mt-11 lg:mt-8 sm:mt-6" url={shareUrl} />
+
+          <Button
+            className="pointer-events-auto social-share relative flex items-center gap-4 py-[18px] mt-11 px-6 pr-7 shadow-social transition-all duration-200 lg:px-8 xs:py-2 xs:px-3"
+            type="button"
+            size="sm"
+            theme="code-copy"
+            href="/"
+          >
+            <p className="font-sans text-xl font-semibold leading-none tracking-[-0.02em] text-white">
+              Get yours
+            </p>
+          </Button>
         </div>
         <div className="col-span-6 col-start-7 self-center 2xl:col-start-6 1xl:-ml-10 xl:col-span-full xl:ml-0 xl:self-start">
           <DynamicTicket userData={userData} />

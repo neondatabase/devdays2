@@ -29,6 +29,12 @@ export async function middleware(req) {
     ) {
       return NextResponse.redirect(new URL(`${SITE_URL}/tickets/${token.githubHandle}/edit`));
     }
+    // if user is authorized but tries to access another user's edit page, redirect to /tickets/:handle
+    if (pathname.endsWith(`/edit`) && token?.githubHandle !== pathname.split('/').slice(-2)[0]) {
+      return NextResponse.redirect(
+        new URL(`${SITE_URL}${pathname.split('/').slice(0, -1).join('/')}`)
+      );
+    }
   } else if (pathname.endsWith(`/edit`)) {
     if (!token?.githubHandle) {
       return NextResponse.redirect(
