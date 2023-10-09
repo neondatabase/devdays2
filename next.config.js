@@ -11,11 +11,6 @@ module.exports = {
         destination: '/',
         permanent: true,
       },
-      {
-        source: '/agenda',
-        destination: '/',
-        permanent: true,
-      },
       // @TODO: uncomment this when the event is live
       /*  {
         source: '/',
