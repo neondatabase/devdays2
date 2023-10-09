@@ -16,7 +16,7 @@ const AgendaTable = () => (
         <tbody className="text-lg leading-dense divide-y divide-[#242628] border-b border-[#242628] md:text-base">
           {DEV_DAYS_AGENDA.map(({ event, company, speaker: { name, role, avatar } }, index) => (
             <tr key={index}>
-              <td className="flex items-center gap-x-2.5 py-4">
+              <td className="flex items-center gap-x-2.5 py-4 sm:pr-2.5">
                 {avatar && (
                   <Image
                     className="rounded-full sm:w-8 sm:h-8"

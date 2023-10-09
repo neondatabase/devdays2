@@ -5,7 +5,7 @@ import GradientLabel from 'components/shared/gradient-label';
 import ArrowLeftIcon from 'icons/arrow-left.inline.svg';
 
 const Hero = () => (
-  <section className="relative mx-auto py-20 grid max-w-[1760px] flex-grow grid-cols-12 gap-10 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:px-8 lg:py-9 md:px-4 md:py-4">
+  <section className="relative mx-auto pt-10 grid max-w-[1760px] flex-grow grid-cols-12 gap-10 2xl:px-14 2xl:pb-10 xl:pb-0 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:px-8 lg:py-9 md:px-4 md:py-4">
     <div className="relative z-10 col-span-4 col-start-2 self-center 2xl:col-start-1 2xl:col-span-5 xl:col-span-full xl:self-end xl:text-center max-w-[472px] xl:max-w-2xl xl:mx-auto">
       <GradientLabel className="inline-block" theme="green">
         November 2nd
