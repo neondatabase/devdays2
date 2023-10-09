@@ -9,7 +9,7 @@ export default {
     imagePath: '/images/social-previews/no-name-ticket.jpg',
   },
   agenda: {
-    title: 'Developer Days Agenda - Neon',
+    title: 'Neon Developer Days Agenda - Neon',
     description:
       'Join us at 10:00 AM PT, November 2nd for presentations about Postgres, scalability, AI, and using Neon with modern developer tools.',
     pathname: '/agenda',
