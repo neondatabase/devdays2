@@ -1,3 +1,18 @@
+import alexBlokh from 'images/agenda/alex-blokh.png';
+import alexRuheni from 'images/agenda/alex-ruheni.png';
+import anastasiaIubennikova from 'images/agenda/anastasia-iubennikova.png';
+import georgeDu from 'images/agenda/george-du.png';
+import georgeMacKerron from 'images/agenda/george-mackerron.png';
+import jacobLee from 'images/agenda/jacob-lee.png';
+import jamieBarton from 'images/agenda/jamie-barton.png';
+import kevinBlanco from 'images/agenda/kevin-blanco.png';
+import mattSilverlock from 'images/agenda/matt-silverlock.png';
+import ojas from 'images/agenda/ojas.png';
+import peterPistorius from 'images/agenda/peter-pistorius.png';
+import raoufChebri from 'images/agenda/raouf-chebri.png';
+import romaricPhilogene from 'images/agenda/romaric-philogene.png';
+import samAybar from 'images/agenda/sam-aybar.png';
+
 // TODO: before merge change video id to actual
 const DEV_DAYS_STAGE_VIDEO =
   'https://www.youtube.com/embed/A74KeYh19jE?autoplay=1&mute=1&rel=0&start=';
@@ -7,77 +22,81 @@ const DEV_DAYS_AGENDA = [
   {
     event: 'Learn about the latest new features and improvements we released',
     company: 'Neon',
-    speaker: 'Keynote',
+    speaker: { name: 'Keynote' },
   },
   {
     event: 'How to use NPM packages outside of Node',
     company: 'Neon',
-    speaker: 'George MacKerron',
+    speaker: { name: 'George MacKerron', role: 'Typescript Developer', avatar: georgeMacKerron },
   },
   {
     event: 'Optimizing vector search shouldn’t be this hard',
     company: 'Neon',
-    speaker: 'Raouf Chebri',
+    speaker: { name: 'Raouf Chebri', role: 'Developer Advocate', avatar: raoufChebri },
   },
   {
     event: 'Custom extensions support',
     company: 'Neon',
-    speaker: 'Anastasia Iubennikova',
+    speaker: {
+      name: 'Anastasia Iubennikova',
+      role: 'Software Engineer',
+      avatar: anastasiaIubennikova,
+    },
   },
   {
     event: 'Revolutionizing business intelligence',
     company: 'Appsmith',
-    speaker: 'Kevin Blanco',
+    speaker: { name: 'Kevin Blanco', role: 'Senior DevRel Advocate', avatar: kevinBlanco },
   },
   {
     event: 'Development Workflows with Neon and Hasura',
     company: 'Hasura',
-    speaker: 'Ojas',
+    speaker: { name: 'Ojas', role: 'Software Engineer', avatar: ojas },
   },
   {
     event: 'Cache anything, everywhere',
     company: 'Grafbase',
-    speaker: 'Jamie Barton',
+    speaker: { name: 'Jamie Barton', role: 'DevRel Engineer', avatar: jamieBarton },
   },
   {
     event: 'Building internal apps with AI and Neon',
     company: 'Airplane',
-    speaker: 'George Du',
+    speaker: { name: 'George Du', role: 'Software Engineer', avatar: georgeDu },
   },
   {
     event: 'State of Drizzle 2023',
     company: 'Drizzle',
-    speaker: 'Alex Blokh',
+    speaker: { name: 'Alex Blokh', role: 'Founder', avatar: alexBlokh },
   },
   {
     event: "Prisma & Neon's Serverless driver on the Edge",
     company: 'Prisma',
-    speaker: 'Alex Ruheni',
+    speaker: { name: 'Alex Ruheni', role: 'Developer Advocate', avatar: alexRuheni },
   },
   {
     event: 'Fullstack Preview Environments w/ Neon and Qovery',
     company: 'Qovery',
-    speaker: 'Romaric Philogene',
+    speaker: { name: 'Romaric Philogene', role: 'CEO and Co-Founder', avatar: romaricPhilogene },
   },
   {
     event: "Accelerating Neon with PolyScale's DDN",
     company: 'PolyScale.ai',
-    speaker: 'Sam Aybar',
+    speaker: { name: 'Sam Aybar', role: 'Developer Advocate', avatar: samAybar },
   },
   {
     event: "Don't let bad data block you",
     company: 'Snaplet',
-    speaker: 'Peter Pistorius',
+    speaker: { name: 'Peter Pistorius', role: 'Founder', avatar: peterPistorius },
   },
   {
     event: 'Database protocols weren’t designed for serverless',
     company: 'Cloudflare',
-    speaker: 'Matt Silverlock',
+    speaker: { name: 'Matt Silverlock', role: 'Director of Product', avatar: mattSilverlock },
   },
   {
     event: 'Using Natural Language to Query Postgres',
     company: 'LangChain.js',
-    speaker: 'Jacob Lee',
+    speaker: { name: 'Jacob Lee', role: 'Maintainer', avatar: jacobLee },
   },
 ];
 

@@ -1,25 +1,49 @@
+import Image from 'next/image';
+
 import { DEV_DAYS_AGENDA } from 'constants/dev-days';
 
 const AgendaTable = () => (
-  <section className="relative mx-auto mb-28 grid max-w-[1760px] w-full flex-grow grid-cols-12 gap-10 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:px-8 lg:py-9 md:px-4 md:py-4 text-white">
-    <table className="col-start-2 col-span-10 w-full">
-      <thead className="text-left text-primary-4 text-sm font-medium leading-none border-b border-[#242628]">
-        <tr>
-          <th className="tracking-[0.02em] pb-5">Event</th>
-          <th className="tracking-[0.02em] pb-5">Company</th>
-          <th className="tracking-[0.02em] pb-5">Speaker</th>
-        </tr>
-      </thead>
-      <tbody className="text-lg leading-dense divide-y divide-[#242628] border-b border-[#242628]">
-        {DEV_DAYS_AGENDA.map(({ event, company, speaker }, index) => (
-          <tr key={index}>
-            <td className="tracking-[-0.02em] text-xl py-4">{event}</td>
-            <td className="tracking-[-0.02em] py-4">{company}</td>
-            <td className="tracking-[-0.02em] text-gray-80 py-4">{speaker}</td>
+  <section className="relative mx-auto mb-[105px] grid max-w-[1760px] w-full flex-grow grid-cols-12 gap-10 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:px-8 lg:py-9 md:px-4 md:py-4 text-white lg:mb-20 md:mb-16 sm:mb-14">
+    <div className="col-start-2 col-span-10 max-w-[1240px] 2xl:col-start-1 2xl:col-span-full lg:overflow-x-auto lg:max-w-none lg:-mx-8 md:-mx-4 lg:px-8 md:px-4">
+      <table className="w-full lg:min-w-[800px] sm:min-w-[680px]">
+        <thead className="text-left text-primary-4 text-sm font-medium leading-none border-b border-[#242628]">
+          <tr>
+            <th className="tracking-[0.02em] pb-5">Speaker</th>
+            <th className="tracking-[0.02em] pb-5">Talk</th>
+            <th className="tracking-[0.02em] pb-5">Company</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody className="text-lg leading-dense divide-y divide-[#242628] border-b border-[#242628] md:text-base">
+          {DEV_DAYS_AGENDA.map(({ event, company, speaker: { name, role, avatar } }, index) => (
+            <tr key={index}>
+              <td className="flex items-center gap-x-2.5 py-4">
+                {avatar && (
+                  <Image
+                    className="rounded-full sm:w-8 sm:h-8"
+                    src={avatar}
+                    alt={name}
+                    width={40}
+                    height={40}
+                  />
+                )}
+                <div className="flex flex-col">
+                  <span className="text-base tracking-[-0.02em] font-medium sm:text-[15px]">
+                    {name}
+                  </span>
+                  {role && (
+                    <span className="mt-0.5 text-[13px] tracking-[-0.02em] text-gray-80 font-light">
+                      {role}
+                    </span>
+                  )}
+                </div>
+              </td>
+              <td className="tracking-[-0.02em] py-4 text-xl lg:text-base">{event}</td>
+              <td className="tracking-[-0.02em] py-4 font-semibold text-gray-80">{company}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   </section>
 );
 
