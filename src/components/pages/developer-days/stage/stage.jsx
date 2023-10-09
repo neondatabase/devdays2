@@ -1,15 +1,15 @@
 'use client';
 
-import clsx from 'clsx';
-import Image from 'next/image';
+// import clsx from 'clsx';
+// import Image from 'next/image';
 import { useState } from 'react';
 
-import Button from 'components/shared/button';
+// import Button from 'components/shared/button';
 import TwitterShareButton from 'components/shared/social-share/twitter-share-button';
-import { DEV_DAYS_AGENDA, DEV_DAYS_STAGE_VIDEO } from 'constants/dev-days';
+import { DEV_DAYS_STAGE_VIDEO } from 'constants/dev-days';
 
 const Stage = () => {
-  const [videoSource, setVideoSource] = useState(DEV_DAYS_STAGE_VIDEO);
+  const [videoSource] = useState(DEV_DAYS_STAGE_VIDEO);
 
   return (
     <>
@@ -46,7 +46,7 @@ const Stage = () => {
         <h2 className="text-2xl font-semibold leading-dense tracking-tighter text-white md:text-xl">
           Schedule
         </h2>
-        <ul className="mt-4 flex flex-col gap-5 md:gap-4">
+        {/* <ul className="mt-4 flex flex-col gap-5 md:gap-4">
           {DEV_DAYS_AGENDA.map((item, index) => {
             const {
               time,
@@ -123,7 +123,7 @@ const Stage = () => {
               </li>
             );
           })}
-        </ul>
+        </ul> */}
       </div>
     </>
   );
