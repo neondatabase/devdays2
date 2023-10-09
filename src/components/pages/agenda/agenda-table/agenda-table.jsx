@@ -11,6 +11,7 @@ const AgendaTable = () => (
       width={378}
       height={768}
       alt=""
+      loading="lazy"
       aria-hidden
     />
     <div className="relative mx-auto mb-[105px] grid max-w-[1760px] w-full flex-grow grid-cols-12 gap-10 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:px-8 lg:py-9 md:px-4 md:py-4 text-white lg:mb-20 md:mb-16 sm:mb-14">
