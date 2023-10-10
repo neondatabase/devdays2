@@ -46,7 +46,15 @@ const DEV_DAYS_AGENDA = [
   {
     event: 'Revolutionizing business intelligence',
     company: 'Appsmith',
-    speaker: { name: 'Kevin Blanco', role: 'Senior DevRel Advocate', avatar: kevinBlanco },
+    speaker: {
+      name: 'Kevin Blanco',
+      role: 'Senior DevRel Advocate',
+      avatar: kevinBlanco,
+      bio: 'Senior DevRel Advocate 🥑 at Appsmith - Google Developer Expert in GCP & Google Cloud Certified Engineer - Tech Director - Certified Davinci Resolve Colorist - Private Pilot - International Speaker',
+      xUrl: 'https://twitter.com/kevinblanco',
+      linkedinUrl: 'https://www.linkedin.com/in/kevinblanco/',
+      githubUrl: 'https://github.com',
+    },
   },
   {
     event: 'Development Workflows with Neon and Hasura',
