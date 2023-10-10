@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { useInView } from 'react-intersection-observer';
 
@@ -10,6 +11,7 @@ import ElephantWebglAnimation from 'components/shared/elephant-webgl-animation';
 import GradientLabel from 'components/shared/gradient-label';
 import SubscriptionForm from 'components/shared/subscription-form';
 import { HUBSPOT_DEVELOPER_DAYS_3_FORM_ID } from 'constants/forms';
+import ArrowLeftIcon from 'icons/arrow-left-thin.inline.svg';
 
 // eslint-disable-next-line no-unused-vars
 const EmailRegistrationStep = ({ onSuccessCallback }) => {
@@ -61,8 +63,15 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
           for presentations about Postgres, scalability, AI, and using Neon with modern developer
           tools.
         </p>
+        <Link
+          className="inline-flex items-end text-primary-4 mt-[18px] text-lg leading-none tracking-[-0.02em] underline decoration-primary-4/40 underline-offset-[8px] hover:decoration-primary-4 transition-colors duration-200 lg:text-base"
+          href="/agenda"
+        >
+          <span>See the agenda here</span>
+          <ArrowLeftIcon className="ml-2.5 w-[18px] h-auto rotate-180" />
+        </Link>
         <SubscriptionForm
-          className="mt-7 xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"
+          className="mt-[58px] xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"
           successText="Thanks for registering!"
           submitButtonText="Register"
           size="sm"

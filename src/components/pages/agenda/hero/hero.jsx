@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import ElephantWebglAnimation from 'components/shared/elephant-webgl-animation';
 import GradientLabel from 'components/shared/gradient-label';
-import ArrowLeftIcon from 'icons/arrow-left.inline.svg';
+import ArrowLeftIcon from 'icons/arrow-left-thin.inline.svg';
 
 const Hero = () => (
   <section className="relative mx-auto pt-10 grid max-w-[1760px] flex-grow grid-cols-12 gap-10 2xl:px-14 2xl:pb-10 xl:pb-0 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:px-8 lg:py-9 md:px-4 md:py-4">
@@ -25,7 +25,7 @@ const Hero = () => (
         className="inline-flex items-end text-primary-4 mt-[18px] text-lg leading-none tracking-[-0.02em] underline decoration-primary-4/40 underline-offset-[8px] hover:decoration-primary-4 transition-colors duration-200 lg:text-base"
         href="/"
       >
-        <ArrowLeftIcon className="mr-2.5 w-[19px] h-auto" />
+        <ArrowLeftIcon className="mr-2.5 w-[18px] h-auto" />
         <span>Back to the registration</span>
       </Link>
     </div>
