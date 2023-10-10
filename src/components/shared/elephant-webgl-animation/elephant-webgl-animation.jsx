@@ -93,7 +93,7 @@ const ElephantWebglAnimation = () => {
             className="h-full w-full"
             src="/images/developer-days/elephant-tusk.png"
             width={1010}
-            height={740}
+            height={704}
             alt="Tusks illustration"
             priority
           />
