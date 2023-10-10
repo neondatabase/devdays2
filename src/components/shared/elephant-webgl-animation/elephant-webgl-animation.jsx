@@ -103,6 +103,7 @@ const ElephantWebglAnimation = () => {
         className="remove-image-loading-visual hidden xl:block lg:my-9 md:my-4"
         src={ElephantIllustration}
         alt="Elephant illustration"
+        sizes="100vw"
       />
     </motion.div>
   );

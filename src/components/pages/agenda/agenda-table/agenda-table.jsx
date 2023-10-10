@@ -19,15 +19,15 @@ const AgendaTable = () => (
         <table className="w-full lg:min-w-[800px] sm:min-w-[680px]">
           <thead className="text-left text-primary-4 text-sm font-medium leading-none border-b border-[#242628]">
             <tr>
-              <th className="tracking-[0.02em] pb-5">Speaker</th>
-              <th className="tracking-[0.02em] pb-5">Talk</th>
+              <th className="tracking-[0.02em] pb-5 pr-4">Speaker</th>
+              <th className="tracking-[0.02em] pb-5 pr-4">Talk</th>
               <th className="tracking-[0.02em] pb-5">Company</th>
             </tr>
           </thead>
           <tbody className="text-lg leading-dense divide-y divide-[#242628] border-b border-[#242628] md:text-base">
             {DEV_DAYS_AGENDA.map(({ event, company, speaker: { name, role, avatar } }, index) => (
               <tr key={index}>
-                <td className="flex items-center gap-x-2.5 py-4 sm:pr-2.5">
+                <td className="flex items-center gap-x-2.5 py-4 pr-4">
                   {avatar && (
                     <Image
                       className="rounded-full sm:w-8 sm:h-8"
@@ -48,7 +48,7 @@ const AgendaTable = () => (
                     )}
                   </div>
                 </td>
-                <td className="tracking-[-0.02em] py-4 text-xl lg:text-base">{event}</td>
+                <td className="tracking-[-0.02em] py-4 text-xl pr-4 lg:text-base">{event}</td>
                 <td className="tracking-[-0.02em] py-4 font-semibold text-gray-80">{company}</td>
               </tr>
             ))}
