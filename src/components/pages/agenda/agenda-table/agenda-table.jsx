@@ -6,7 +6,7 @@ import patternSvg from 'images/agenda/pattern.svg';
 const AgendaTable = () => (
   <section className="relative">
     <img
-      className="absolute right-0 bottom-[183px] xl:-bottom-72 lg:hidden"
+      className="absolute right-0 bottom-[183px] [@media(max-width:1440px)]:hidden"
       src={patternSvg}
       width={378}
       height={768}
