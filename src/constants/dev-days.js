@@ -59,17 +59,32 @@ const DEV_DAYS_AGENDA = [
   {
     event: 'Development Workflows with Neon and Hasura',
     company: 'Hasura',
-    speaker: { name: 'Ojas', role: 'Software Engineer', avatar: ojas },
+    speaker: {
+      name: 'Ojas',
+      role: 'Software Engineer',
+      avatar: ojas,
+      bio: "I'm Ojas, a skilled polyglot software engineer working at Hasura who has a strong passion for building innovative solutions and tinkering with various technologies in software development.",
+    },
   },
   {
     event: 'Cache anything, everywhere',
     company: 'Grafbase',
-    speaker: { name: 'Jamie Barton', role: 'DevRel Engineer', avatar: jamieBarton },
+    speaker: {
+      name: 'Jamie Barton',
+      role: 'DevRel Engineer',
+      avatar: jamieBarton,
+      bio: "Around since the days of dial-up models and Flash websites. Despite my age (in tech years, at least), I'm always working with the latest tools like React and GraphQL to build functional web apps.",
+    },
   },
   {
     event: 'Building internal apps with AI and Neon',
     company: 'Airplane',
-    speaker: { name: 'George Du', role: 'Software Engineer', avatar: georgeDu },
+    speaker: {
+      name: 'George Du',
+      role: 'Software Engineer',
+      avatar: georgeDu,
+      bio: 'Engineering lead for Airplane Postgres',
+    },
   },
   {
     event: 'State of Drizzle 2023',
@@ -79,32 +94,62 @@ const DEV_DAYS_AGENDA = [
   {
     event: "Prisma & Neon's Serverless driver on the Edge",
     company: 'Prisma',
-    speaker: { name: 'Alex Ruheni', role: 'Developer Advocate', avatar: alexRuheni },
+    speaker: {
+      name: 'Alex Ruheni',
+      role: 'Developer Advocate',
+      avatar: alexRuheni,
+      bio: 'Alex is a Developer Advocate at Prisma, working to make databases easy and fun. He loves learning and teaching other developers.',
+    },
   },
   {
     event: 'Fullstack Preview Environments w/ Neon and Qovery',
     company: 'Qovery',
-    speaker: { name: 'Romaric Philogene', role: 'CEO and Co-Founder', avatar: romaricPhilogene },
+    speaker: {
+      name: 'Romaric Philogene',
+      role: 'CEO and Co-Founder',
+      avatar: romaricPhilogene,
+      bio: 'Romaric has 10+ years of experience in R&D. From the Ad-Tech to the financial industry, he has deep expertise in highly-reliable and performant systems.',
+    },
   },
   {
     event: "Accelerating Neon with PolyScale's DDN",
     company: 'PolyScale.ai',
-    speaker: { name: 'Sam Aybar', role: 'Developer Advocate', avatar: samAybar },
+    speaker: {
+      name: 'Sam Aybar',
+      role: 'Developer Advocate',
+      avatar: samAybar,
+      bio: 'Sam leads Developer Advocacy at PolyScale.ai where he helps customers scale and accelerate databases globally. Sam joined PolyScale in 2022. Previously he worked at BlazeMeter, Runscope and DataSift.',
+    },
   },
   {
     event: "Don't let bad data block you",
     company: 'Snaplet',
-    speaker: { name: 'Peter Pistorius', role: 'Founder', avatar: peterPistorius },
+    speaker: {
+      name: 'Peter Pistorius',
+      role: 'Founder',
+      avatar: peterPistorius,
+      bio: 'Peter is a lifelong product developer obsessed with improving user-experience. Before building Snaplet he co-created RedwoodJS.',
+    },
   },
   {
     event: 'Database protocols weren’t designed for serverless',
     company: 'Cloudflare',
-    speaker: { name: 'Matt Silverlock', role: 'Director of Product', avatar: mattSilverlock },
+    speaker: {
+      name: 'Matt Silverlock',
+      role: 'Director of Product',
+      avatar: mattSilverlock,
+      bio: 'Matt is the product lead for developer databases & messaging at Cloudflare — and is a long-time open-source contributor, including co-maintainer of the Gorilla Toolkit in Go & various HTTP projects.',
+    },
   },
   {
     event: 'Using Natural Language to Query Postgres',
     company: 'LangChain.js',
-    speaker: { name: 'Jacob Lee', role: 'Maintainer', avatar: jacobLee },
+    speaker: {
+      name: 'Jacob Lee',
+      role: 'Maintainer',
+      avatar: jacobLee,
+      bio: 'Passionate about bringing the power of LLMs to a wider audience!',
+    },
   },
 ];
 
