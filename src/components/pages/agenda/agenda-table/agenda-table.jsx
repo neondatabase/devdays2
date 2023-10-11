@@ -39,8 +39,11 @@ const AgendaTable = () => {
             </thead>
             <tbody className="text-lg leading-dense divide-y divide-gray-15 border-b border-gray-15 md:text-base">
               {DEV_DAYS_AGENDA.map(({ event, company, speaker }, index) => (
-                <tr className="sm:flex sm:flex-col-reverse sm:py-4 sm:first:pt-0" key={index}>
-                  <td className="py-4 pr-4 sm:pr-0 sm:py-0 sm:mt-2.5">
+                <tr
+                  className="sm:flex sm:flex-col-reverse sm:pt-[18px] sm:pb-5 sm:first:pt-0"
+                  key={index}
+                >
+                  <td className="py-4 pr-4 sm:pr-0 sm:py-0 sm:mt-3.5">
                     <Speaker
                       speaker={speaker}
                       company={company}
