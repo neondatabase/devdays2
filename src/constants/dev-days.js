@@ -27,12 +27,22 @@ const DEV_DAYS_AGENDA = [
   {
     event: 'How to use NPM packages outside of Node',
     company: 'Neon',
-    speaker: { name: 'George MacKerron', role: 'Typescript Developer', avatar: georgeMacKerron },
+    speaker: {
+      name: 'George MacKerron',
+      role: 'Typescript Developer',
+      avatar: georgeMacKerron,
+      bio: "George is (amongst other things) a full-stack developer and technical writer specialising in TypeScript and Postgres. He maintains the Zapatos library and Neon's serverless driver. Recent side projects include a proof-of-concept TypeScript TLS client.",
+    },
   },
   {
     event: 'Optimizing vector search shouldn’t be this hard',
     company: 'Neon',
-    speaker: { name: 'Raouf Chebri', role: 'Developer Advocate', avatar: raoufChebri },
+    speaker: {
+      name: 'Raouf Chebri',
+      role: 'Developer Advocate',
+      avatar: raoufChebri,
+      bio: 'Raouf Chebri is a Software Developer Engineer and an MBA with experience in backend and frontend development and a growing interest for Machine Learning, Deep Learning and Computer Vision.',
+    },
   },
   {
     event: 'Custom extensions support',
@@ -41,6 +51,7 @@ const DEV_DAYS_AGENDA = [
       name: 'Anastasia Iubennikova',
       role: 'Software Engineer',
       avatar: anastasiaIubennikova,
+      bio: 'Anastasia is a software engineer at Neon, PostgreSQL Major Contributor, and educator.',
     },
   },
   {
@@ -89,7 +100,12 @@ const DEV_DAYS_AGENDA = [
   {
     event: 'State of Drizzle 2023',
     company: 'Drizzle',
-    speaker: { name: 'Alex Blokh', role: 'Founder', avatar: alexBlokh },
+    speaker: {
+      name: 'Alex Blokh',
+      role: 'Founder',
+      avatar: alexBlokh,
+      bio: 'I’ve been a software engineer for the past 12 years',
+    },
   },
   {
     event: "Prisma & Neon's Serverless driver on the Edge",

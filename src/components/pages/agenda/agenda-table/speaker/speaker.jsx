@@ -23,7 +23,14 @@ const Speaker = ({ avatar, name, role, bio, xUrl, linkedinUrl, githubUrl }) => {
   };
   return (
     <>
-      <button className="flex items-center gap-x-2.5 group" type="button" onClick={openModal}>
+      <button
+        className={clsx(
+          'flex items-center gap-x-2.5 group',
+          bio ? 'cursor-pointer' : 'cursor-auto'
+        )}
+        type="button"
+        onClick={openModal}
+      >
         {avatar && (
           <Image
             className="rounded-full sm:w-8 sm:h-8"
