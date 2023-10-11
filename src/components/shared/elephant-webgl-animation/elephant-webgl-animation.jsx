@@ -1,7 +1,9 @@
 'use client';
 
+import clsx from 'clsx';
 import { motion, useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
+import PropTypes from 'prop-types';
 import { useEffect, useRef } from 'react';
 
 import CursorTrackingWrapper from 'components/shared/cursor-tracking-wrapper';
@@ -40,7 +42,7 @@ const appearSceneVariants = {
   },
 };
 
-const ElephantWebglAnimation = () => {
+const ElephantWebglAnimation = ({ className }) => {
   const columnControls = useAnimationControls();
   const sceneControls = useAnimationControls();
 
@@ -70,7 +72,10 @@ const ElephantWebglAnimation = () => {
 
   return (
     <motion.div
-      className="col-span-7 col-start-6 self-center xl:col-span-full xl:!transform-none xl:self-start xl:!opacity-100"
+      className={clsx(
+        'col-span-7 col-start-6 self-center xl:col-span-full xl:!transform-none xl:self-start xl:!opacity-100',
+        className
+      )}
       initial="initial"
       animate={columnControls}
       variants={appearColumnVariants}
@@ -107,6 +112,10 @@ const ElephantWebglAnimation = () => {
       />
     </motion.div>
   );
+};
+
+ElephantWebglAnimation.propTypes = {
+  className: PropTypes.string,
 };
 
 export default ElephantWebglAnimation;

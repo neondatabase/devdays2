@@ -12,7 +12,16 @@ import GithubIcon from 'icons/github.inline.svg';
 import LinkedinIcon from 'icons/linkedin-logo.inline.svg';
 import XIcon from 'icons/x-logo.inline.svg';
 
-const Speaker = ({ avatar, name, role, bio, xUrl, linkedinUrl, githubUrl }) => {
+const Speaker = ({
+  company,
+  avatar,
+  name,
+  role,
+  bio = null,
+  xUrl = null,
+  linkedinUrl = null,
+  githubUrl = null,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
@@ -25,7 +34,7 @@ const Speaker = ({ avatar, name, role, bio, xUrl, linkedinUrl, githubUrl }) => {
     <>
       <button
         className={clsx(
-          'flex items-center gap-x-2.5 group',
+          'flex items-center gap-x-2.5 group sm:w-full',
           bio ? 'cursor-pointer' : 'cursor-auto'
         )}
         type="button"
@@ -40,7 +49,7 @@ const Speaker = ({ avatar, name, role, bio, xUrl, linkedinUrl, githubUrl }) => {
             height={40}
           />
         )}
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start text-left">
           <span
             className={clsx(
               'text-base tracking-[-0.02em] font-medium duration-200 transition-colors sm:text-[15px]',
@@ -50,8 +59,11 @@ const Speaker = ({ avatar, name, role, bio, xUrl, linkedinUrl, githubUrl }) => {
             {name}
           </span>
           {role && (
-            <span className="mt-0.5 text-[13px] tracking-[-0.02em] text-gray-80 font-light">
-              {role}
+            <span className="mt-0.5 text-[13px] text-gray-80 font-light">
+              <span className="tracking-[-0.02em]">{role}</span>
+              <span className="hidden sm:inline" aria-hidden>
+                , {company}
+              </span>
             </span>
           )}
         </div>
@@ -134,9 +146,10 @@ const Speaker = ({ avatar, name, role, bio, xUrl, linkedinUrl, githubUrl }) => {
 };
 
 Speaker.propTypes = {
-  avatar: PropTypes.string,
+  company: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  role: PropTypes.string,
+  role: PropTypes.string.isRequired,
   bio: PropTypes.string,
   xUrl: PropTypes.string,
   linkedinUrl: PropTypes.string,
