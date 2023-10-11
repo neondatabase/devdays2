@@ -42,6 +42,9 @@ const DEV_DAYS_AGENDA = [
       role: 'Developer Advocate',
       avatar: raoufChebri,
       bio: 'Raouf Chebri is a Software Developer Engineer and an MBA with experience in backend and frontend development and a growing interest for Machine Learning, Deep Learning and Computer Vision.',
+      xUrl: 'https://twitter.com/raoufdevrel',
+      linkedinUrl: 'https://www.linkedin.com/in/raoufchebri/',
+      githubUrl: 'https://github.com/raoufchebri',
     },
   },
   {
@@ -52,6 +55,8 @@ const DEV_DAYS_AGENDA = [
       role: 'Software Engineer',
       avatar: anastasiaIubennikova,
       bio: 'Anastasia is a software engineer at Neon, PostgreSQL Major Contributor, and educator.',
+      githubUrl: 'https://github.com/lubennikovaav',
+      linkedinUrl: 'https://www.linkedin.com/in/anastasia-lubennikova-8a2295a0/',
     },
   },
   {
