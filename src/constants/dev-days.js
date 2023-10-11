@@ -62,9 +62,6 @@ const DEV_DAYS_AGENDA = [
       role: 'Senior DevRel Advocate',
       avatar: kevinBlanco,
       bio: 'Senior DevRel Advocate 🥑 at Appsmith - Google Developer Expert in GCP & Google Cloud Certified Engineer - Tech Director - Certified Davinci Resolve Colorist - Private Pilot - International Speaker',
-      xUrl: 'https://twitter.com/kevinblanco',
-      linkedinUrl: 'https://www.linkedin.com/in/kevinblanco/',
-      githubUrl: 'https://github.com',
     },
   },
   {

@@ -22,7 +22,7 @@ const SpeakerModal = ({
   <ReactModal
     style={{
       overlay: {
-        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         zIndex: '30',
       },
     }}
@@ -30,8 +30,7 @@ const SpeakerModal = ({
     contentLabel={name}
     ariaHideApp={false}
     bodyOpenClassName="overflow-hidden touch-none"
-    className="relative top-1/2 left-1/2 max-h-[95%] w-[95%] max-w-[458px] -translate-x-1/2 -translate-y-1/2 rounded-[10px] bg-black text-white shadow-[0px_14px_56px_0px_rgba(0,229,153,0.12),0px_6px_10px_0px_rgba(0,0,0,0.25)] border border-gray-15 after:bg-[linear-gradient(245deg,rgba(0,229,153,0.08)0%,rgba(0,229,153,0.5)100%)] after:absolute after:-inset-px after:rounded-[10px] after:p-px"
-    closeTimeoutMS={200}
+    className="relative top-1/2 left-1/2 max-h-[95%] w-[95%] max-w-[458px] -translate-x-1/2 -translate-y-1/2 rounded-[10px] bg-black text-white shadow-[0px_14px_56px_0px_rgba(0,229,153,0.12),0px_6px_10px_0px_rgba(0,0,0,0.25)] border border-gray-15 after:bg-[linear-gradient(245deg,rgba(0,229,153,0.08)0%,rgba(0,229,153,0.5)100%)] after:absolute after:-inset-px after:rounded-[10px] after:p-px focus:outline-none"
     shouldCloseOnOverlayClick
     onRequestClose={closeModal}
   >
