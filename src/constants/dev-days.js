@@ -1,3 +1,18 @@
+import alexBlokh from 'images/agenda/alex-blokh.png';
+import alexRuheni from 'images/agenda/alex-ruheni.png';
+import anastasiaIubennikova from 'images/agenda/anastasia-iubennikova.png';
+import georgeDu from 'images/agenda/george-du.png';
+import georgeMacKerron from 'images/agenda/george-mackerron.png';
+import jacobLee from 'images/agenda/jacob-lee.png';
+import jamieBarton from 'images/agenda/jamie-barton.png';
+import kevinBlanco from 'images/agenda/kevin-blanco.png';
+import mattSilverlock from 'images/agenda/matt-silverlock.png';
+import ojas from 'images/agenda/ojas.png';
+import peterPistorius from 'images/agenda/peter-pistorius.png';
+import raoufChebri from 'images/agenda/raouf-chebri.png';
+import romaricPhilogene from 'images/agenda/romaric-philogene.png';
+import samAybar from 'images/agenda/sam-aybar.png';
+
 // TODO: before merge change video id to actual
 const DEV_DAYS_STAGE_VIDEO =
   'https://www.youtube.com/embed/A74KeYh19jE?autoplay=1&mute=1&rel=0&start=';
@@ -5,77 +20,166 @@ const DEV_DAYS_STAGE_VIDEO =
 // TODO: change timestamps to actual
 const DEV_DAYS_AGENDA = [
   {
-    time: '09:00 AM',
-    title: 'Keynote',
-    speaker: 'Nikita Shamgunov',
-    speakerBackground: 'yellow',
-    speakerImage: '/images/developer-days/speakers/nikita-shamgunov-photo.png',
-    blogPostUrl: '',
-    timeStamp: '300',
+    event: 'Learn about the latest new features and improvements we released',
+    company: 'Neon',
+    speaker: { name: 'Keynote' },
   },
   {
-    time: '09:18 AM',
-    title: 'Deep dive into the Neon storage engine GetPage@LSN',
-    speaker: 'Heikki Linnakangas',
-    speakerBackground: 'blue',
-    speakerImage: '/images/developer-days/speakers/heikki-linnakangas-photo.png',
-    blogPostUrl: '',
-    timeStamp: '1480',
+    event: 'How to use NPM packages outside of Node',
+    company: 'Neon',
+    speaker: {
+      name: 'George MacKerron',
+      role: 'Typescript Developer',
+      avatar: georgeMacKerron,
+      bio: "George is (amongst other things) a full-stack developer and technical writer specialising in TypeScript and Postgres. He maintains the Zapatos library and Neon's serverless driver. Recent side projects include a proof-of-concept TypeScript TLS client.",
+      xUrl: 'https://twitter.com/jawj',
+      linkedinUrl: 'https://www.linkedin.com/in/georgemackerron/',
+      githubUrl: 'https://github.com/jawj/',
+    },
   },
   {
-    time: '09:40 AM',
-    title: 'Scaling Serverless Postgres: How we implement autoscaling',
-    speaker: 'Em Sharnoff',
-    speakerBackground: 'yellow',
-    speakerImage: '/images/developer-days/speakers/em-sharnoff-photo.png',
-    blogPostUrl: 'https://neon.tech/blog/postgres-autoscaling',
-    timeStamp: '2826',
+    event: 'Optimizing vector search shouldn’t be this hard',
+    company: 'Neon',
+    speaker: {
+      name: 'Raouf Chebri',
+      role: 'Developer Advocate',
+      avatar: raoufChebri,
+      bio: 'Raouf Chebri is a Software Developer Engineer and an MBA with experience in backend and frontend development and a growing interest for Machine Learning, Deep Learning and Computer Vision.',
+      xUrl: 'https://twitter.com/raoufdevrel',
+      linkedinUrl: 'https://www.linkedin.com/in/raoufchebri/',
+      githubUrl: 'https://github.com/raoufchebri',
+    },
   },
   {
-    time: '10:02 AM',
-    title: 'Optimizing performance in a serverless Postgres database',
-    speaker: 'Konstantin Knizhnik & Matthias Van De Meent',
-    speakerBackground: 'blue',
-    speakerImage: '/images/developer-days/speakers/konstantin-knizhnik-photo.png',
-    blogPostUrl: '',
-    timeStamp: '4127',
+    event: 'Custom extensions support',
+    company: 'Neon',
+    speaker: {
+      name: 'Anastasia Iubennikova',
+      role: 'Software Engineer',
+      avatar: anastasiaIubennikova,
+      bio: 'Anastasia is a software engineer at Neon, PostgreSQL Major Contributor, and educator.',
+      githubUrl: 'https://github.com/lubennikovaav',
+      linkedinUrl: 'https://www.linkedin.com/in/anastasia-lubennikova-8a2295a0/',
+    },
   },
   {
-    time: '10:27 AM',
-    title: 'Understand your storage cost',
-    speaker: 'Anastasia Lubennikova',
-    speakerBackground: 'pink',
-    speakerImage: '/images/developer-days/speakers/anastasia-lubennikova-photo.png',
-    blogPostUrl: '',
-    timeStamp: '5695',
+    event: 'Revolutionizing business intelligence',
+    company: 'Appsmith',
+    speaker: {
+      name: 'Kevin Blanco',
+      role: 'Senior DevRel Advocate',
+      avatar: kevinBlanco,
+      bio: 'Senior DevRel Advocate 🥑 at Appsmith - Google Developer Expert in GCP & Google Cloud Certified Engineer - Tech Director - Certified Davinci Resolve Colorist - Private Pilot - International Speaker',
+      xUrl: 'https://twitter.com/KevinBlancoZ',
+      linkedinUrl: 'https://www.linkedin.com/in/kevinblanco',
+      githubUrl: 'https://github.com/kevinblanco',
+    },
   },
   {
-    time: '10:42 AM',
-    title: 'Quicker serverless Postgres connections',
-    speaker: 'George MacKerron',
-    speakerBackground: 'yellow',
-    speakerImage: '/images/developer-days/speakers/george-macKerron-photo.png',
-    blogPostUrl: 'https://neon.tech/blog/quicker-serverless-postgres',
-    timeStamp: '6592',
+    event: 'Development Workflows with Neon and Hasura',
+    company: 'Hasura',
+    speaker: {
+      name: 'Ojas',
+      role: 'Software Engineer',
+      avatar: ojas,
+      bio: "I'm Ojas, a skilled polyglot software engineer working at Hasura who has a strong passion for building innovative solutions and tinkering with various technologies in software development.",
+    },
   },
   {
-    time: '11:00 AM',
-    title: 'Building an AI-powered ChatBot using Vercel, OpenAI, and Postgres',
-    speaker: 'Raouf Chebri',
-    speakerBackground: 'pink',
-    speakerImage: '/images/developer-days/speakers/raouf-chebri-photo.png',
-    blogPostUrl:
-      'https://neon.tech/blog/building-an-ai-powered-chatbot-using-vercel-openai-and-postgres',
-    timeStamp: '7566',
+    event: 'Cache anything, everywhere',
+    company: 'Grafbase',
+    speaker: {
+      name: 'Jamie Barton',
+      role: 'DevRel Engineer',
+      avatar: jamieBarton,
+      bio: "Around since the days of dial-up models and Flash websites. Despite my age (in tech years, at least), I'm always working with the latest tools like React and GraphQL to build functional web apps.",
+      xUrl: 'https://x.com/notrab',
+    },
   },
   {
-    time: '11:20 AM',
-    title: 'Developer workflows with Vercel and GitHub Actions',
-    speaker: 'Mahmoud Abdelwahab',
-    speakerBackground: 'blue',
-    speakerImage: '/images/developer-days/speakers/mahmoud-abdelwahab-photo.png',
-    blogPostUrl: '',
-    timeStamp: '8766',
+    event: 'Building internal apps with AI and Neon',
+    company: 'Airplane',
+    speaker: {
+      name: 'George Du',
+      role: 'Software Engineer',
+      avatar: georgeDu,
+      bio: 'Engineering lead for Airplane Postgres',
+    },
+  },
+  {
+    event: 'State of Drizzle 2023',
+    company: 'Drizzle',
+    speaker: {
+      name: 'Alex Blokh',
+      role: 'Founder',
+      avatar: alexBlokh,
+      bio: 'I’ve been a software engineer for the past 12 years',
+    },
+  },
+  {
+    event: "Prisma & Neon's Serverless driver on the Edge",
+    company: 'Prisma',
+    speaker: {
+      name: 'Alex Ruheni',
+      role: 'Developer Advocate',
+      avatar: alexRuheni,
+      bio: 'Alex is a Developer Advocate at Prisma, working to make databases easy and fun. He loves learning and teaching other developers.',
+      xUrl: 'https://x.com/ruheni_alex',
+      githubUrl: 'https://github.com/ruheni',
+    },
+  },
+  {
+    event: 'Fullstack Preview Environments w/ Neon and Qovery',
+    company: 'Qovery',
+    speaker: {
+      name: 'Romaric Philogene',
+      role: 'CEO and Co-Founder',
+      avatar: romaricPhilogene,
+      bio: 'Romaric has 10+ years of experience in R&D. From the Ad-Tech to the financial industry, he has deep expertise in highly-reliable and performant systems.',
+      linkedinUrl: 'https://www.linkedin.com/in/romaricphilogene/',
+    },
+  },
+  {
+    event: "Accelerating Neon with PolyScale's DDN",
+    company: 'PolyScale.ai',
+    speaker: {
+      name: 'Sam Aybar',
+      role: 'Developer Advocate',
+      avatar: samAybar,
+      bio: 'Sam leads Developer Advocacy at PolyScale.ai where he helps customers scale and accelerate databases globally. Sam joined PolyScale in 2022. Previously he worked at BlazeMeter, Runscope and DataSift.',
+    },
+  },
+  {
+    event: "Don't let bad data block you",
+    company: 'Snaplet',
+    speaker: {
+      name: 'Peter Pistorius',
+      role: 'Founder',
+      avatar: peterPistorius,
+      bio: 'Peter is a lifelong product developer obsessed with improving user-experience. Before building Snaplet he co-created RedwoodJS.',
+      xUrl: 'https://x.com/appfactory',
+    },
+  },
+  {
+    event: 'Database protocols weren’t designed for serverless',
+    company: 'Cloudflare',
+    speaker: {
+      name: 'Matt Silverlock',
+      role: 'Director of Product',
+      avatar: mattSilverlock,
+      bio: 'Matt is the product lead for developer databases & messaging at Cloudflare — and is a long-time open-source contributor, including co-maintainer of the Gorilla Toolkit in Go & various HTTP projects.',
+    },
+  },
+  {
+    event: 'Using Natural Language to Query Postgres',
+    company: 'LangChain.js',
+    speaker: {
+      name: 'Jacob Lee',
+      role: 'Maintainer',
+      avatar: jacobLee,
+      bio: 'Passionate about bringing the power of LLMs to a wider audience!',
+      xUrl: 'https://x.com/hacubu',
+    },
   },
 ];
 
