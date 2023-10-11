@@ -32,6 +32,9 @@ const DEV_DAYS_AGENDA = [
       role: 'Typescript Developer',
       avatar: georgeMacKerron,
       bio: "George is (amongst other things) a full-stack developer and technical writer specialising in TypeScript and Postgres. He maintains the Zapatos library and Neon's serverless driver. Recent side projects include a proof-of-concept TypeScript TLS client.",
+      xUrl: 'https://twitter.com/jawj',
+      linkedinUrl: 'https://www.linkedin.com/in/georgemackerron/',
+      githubUrl: 'https://github.com/jawj/',
     },
   },
   {
