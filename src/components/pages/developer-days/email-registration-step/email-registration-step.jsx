@@ -55,7 +55,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => {
         >
           {titleContent}
         </h1>
-        <p className="mt-6 max-w-xl font-mono text-xl font-light tracking-tighter text-white 2xl:text-lg xl:mx-auto xl:max-w-md lg:mt-4 lg:max-w-sm lg:text-base md:max-w-[80%]">
+        <p className="mt-6 max-w-xl text-xl font-light tracking-[-0.02em] leading-[1.3] text-white 2xl:text-lg xl:mx-auto xl:max-w-md lg:mt-4 lg:max-w-sm lg:text-base md:max-w-[80%]">
           Join us at{' '}
           <time className="text-primary-4" dateTime="2023-11-02T10:00">
             10:00 AM PT, November 2nd

@@ -13,7 +13,7 @@ const Hero = () => (
       <h1 className="text-6xl leading-none tracking-tight mt-3 text-white font-medium lg:text-[58px] md:text-[52px] sm:text-[44px] sm:max-w-[326px] sm:mx-auto">
         Join Neon Live and listen to our speakers
       </h1>
-      <p className="mt-7 text-white font-light text-xl leading-snug tracking-[-0.02em] 2xl:text-lg lg:mt-4 lg:text-base">
+      <p className="mt-7 text-white font-light text-xl leading-[1.3] tracking-[-0.02em] 2xl:text-lg lg:mt-4 lg:text-base">
         Join us at{' '}
         <time className="text-primary-4" dateTime="2023-11-02T10:00">
           10:00 AM PT, November 2nd

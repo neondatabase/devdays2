@@ -16,7 +16,7 @@ const AgendaTable = () => (
     />
     <div className="relative mx-auto grid max-w-[1760px] w-full flex-grow grid-cols-12 gap-10 2xl:px-14 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:px-8 lg:py-9 md:px-4 md:py-4 text-white sm:py-0">
       <div className="col-start-2 col-span-10 max-w-[1240px] 2xl:col-start-1 2xl:col-span-full lg:overflow-x-auto lg:max-w-none lg:-mx-8 md:-mx-4 lg:px-8 md:px-4 sm:overflow-visible sm:px-0 sm:mx-0">
-        <table className="w-full lg:min-w-[800px] sm:min-w-fit">
+        <table className="w-full lg:min-w-[680px] sm:min-w-fit">
           <thead className="text-left text-primary-4 text-sm font-medium leading-none border-b border-gray-15 sm:hidden">
             <tr>
               <th className="tracking-[0.02em] pb-5 pr-4">Speaker</th>
