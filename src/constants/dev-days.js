@@ -62,6 +62,9 @@ const DEV_DAYS_AGENDA = [
       role: 'Senior DevRel Advocate',
       avatar: kevinBlanco,
       bio: 'Senior DevRel Advocate 🥑 at Appsmith - Google Developer Expert in GCP & Google Cloud Certified Engineer - Tech Director - Certified Davinci Resolve Colorist - Private Pilot - International Speaker',
+      xUrl: 'https://twitter.com/KevinBlancoZ',
+      linkedinUrl: 'https://www.linkedin.com/in/kevinblanco',
+      githubUrl: 'https://github.com/kevinblanco',
     },
   },
   {
@@ -82,6 +85,7 @@ const DEV_DAYS_AGENDA = [
       role: 'DevRel Engineer',
       avatar: jamieBarton,
       bio: "Around since the days of dial-up models and Flash websites. Despite my age (in tech years, at least), I'm always working with the latest tools like React and GraphQL to build functional web apps.",
+      xUrl: 'https://x.com/notrab',
     },
   },
   {
@@ -112,6 +116,8 @@ const DEV_DAYS_AGENDA = [
       role: 'Developer Advocate',
       avatar: alexRuheni,
       bio: 'Alex is a Developer Advocate at Prisma, working to make databases easy and fun. He loves learning and teaching other developers.',
+      xUrl: 'https://x.com/ruheni_alex',
+      githubUrl: 'https://github.com/ruheni',
     },
   },
   {
@@ -122,6 +128,7 @@ const DEV_DAYS_AGENDA = [
       role: 'CEO and Co-Founder',
       avatar: romaricPhilogene,
       bio: 'Romaric has 10+ years of experience in R&D. From the Ad-Tech to the financial industry, he has deep expertise in highly-reliable and performant systems.',
+      linkedinUrl: 'https://www.linkedin.com/in/romaricphilogene/',
     },
   },
   {
@@ -142,6 +149,7 @@ const DEV_DAYS_AGENDA = [
       role: 'Founder',
       avatar: peterPistorius,
       bio: 'Peter is a lifelong product developer obsessed with improving user-experience. Before building Snaplet he co-created RedwoodJS.',
+      xUrl: 'https://x.com/appfactory',
     },
   },
   {
@@ -162,6 +170,7 @@ const DEV_DAYS_AGENDA = [
       role: 'Maintainer',
       avatar: jacobLee,
       bio: 'Passionate about bringing the power of LLMs to a wider audience!',
+      xUrl: 'https://x.com/hacubu',
     },
   },
 ];
