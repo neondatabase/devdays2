@@ -1,9 +1,11 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import DynamicTicket from 'components/pages/developer-days/dynamic-ticket';
 import Layout from 'components/shared/layout';
 import SocialShare from 'components/shared/social-share';
 import SEO_DATA from 'constants/seo-data';
+import ArrowLeftIcon from 'icons/arrow-left-thin.inline.svg';
 import buildOgImageUrl from 'utils/build-og-image-url';
 import getMetadata from 'utils/get-metadata';
 import prisma from 'utils/prisma';
@@ -30,6 +32,13 @@ const TicketEditPage = async ({ params }) => {
             Choose the ticket color and gather a watch party for the upcoming Neon Developer Days!
             See you on <time dateTime="2023-11-02T10:00">November 2nd, 10 a.m. PT</time>
           </p>
+          <Link
+            className="pointer-events-auto inline-flex items-end text-primary-4 mt-[18px] text-lg leading-none tracking-[-0.02em] underline decoration-primary-4/40 underline-offset-[8px] hover:decoration-primary-4 transition-colors duration-200 lg:text-base"
+            href="/agenda"
+          >
+            <span>Check out the agenda</span>
+            <ArrowLeftIcon className="ml-2.5 w-[18px] h-auto rotate-180" />
+          </Link>
           <SocialShare className="pointer-events-auto mt-11 lg:mt-8 sm:mt-6" url={shareUrl} />
         </div>
         <div className="col-span-6 col-start-7 self-center 2xl:col-start-6 1xl:-ml-10 xl:col-span-full xl:ml-0 xl:self-start">
