@@ -34,7 +34,7 @@ const TicketPage = async ({ params }) => {
             className="pointer-events-auto flex items-end text-primary-4 mt-[18px] text-lg leading-none tracking-[-0.02em] underline decoration-primary-4/40 underline-offset-[8px] hover:decoration-primary-4 transition-colors duration-200 lg:text-base"
             href="/speakers"
           >
-            <span>Check out the list of speakers</span>
+            <span>Check out the speakers</span>
             <ArrowLeftIcon className="ml-2.5 w-[18px] h-auto rotate-180" />
           </Link>
 
