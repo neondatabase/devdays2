@@ -66,7 +66,7 @@ const DEV_DAYS_AGENDA = [
     },
   },
   {
-    event: 'Revolutionizing business intelligence',
+    event: 'Revolutionizing business intelligence using Appsmith and Neon',
     company: 'Appsmith',
     speaker: {
       name: 'Kevin Blanco',
@@ -210,7 +210,7 @@ const DEV_DAYS_AGENDA = [
     },
   },
   {
-    event: 'How to wrongly store 2M vectors in PGVectors',
+    event: 'How to wrongly store 2M vectors in pgvector',
     company: 'Quivr',
     speaker: {
       name: 'Stan Girard',
