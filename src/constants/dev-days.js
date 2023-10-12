@@ -1,6 +1,7 @@
 import alexBlokh from 'images/agenda/alex-blokh.png';
 import alexRuheni from 'images/agenda/alex-ruheni.png';
 import anastasiaIubennikova from 'images/agenda/anastasia-iubennikova.png';
+import edouardBonlieu from 'images/agenda/edouard-bonlieu.png';
 import georgeDu from 'images/agenda/george-du.png';
 import georgeMacKerron from 'images/agenda/george-mackerron.png';
 import jacobLee from 'images/agenda/jacob-lee.png';
@@ -12,6 +13,8 @@ import peterPistorius from 'images/agenda/peter-pistorius.png';
 import raoufChebri from 'images/agenda/raouf-chebri.png';
 import romaricPhilogene from 'images/agenda/romaric-philogene.png';
 import samAybar from 'images/agenda/sam-aybar.png';
+import stanGirard from 'images/agenda/stan-girard.png';
+import zachZaro from 'images/agenda/zach-zaro.png';
 
 // TODO: before merge change video id to actual
 const DEV_DAYS_STAGE_VIDEO =
@@ -141,12 +144,14 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: "Accelerating Neon with PolyScale's DDN",
-    company: 'PolyScale.ai',
+    company: 'PolyScale',
     speaker: {
       name: 'Sam Aybar',
       role: 'Developer Advocate',
       avatar: samAybar,
       bio: 'Sam leads Developer Advocacy at PolyScale.ai where he helps customers scale and accelerate databases globally. Sam joined PolyScale in 2022. Previously he worked at BlazeMeter, Runscope and DataSift.',
+      xUrl: 'https://twitter.com/saybar',
+      linkedinUrl: 'https://www.linkedin.com/in/samaybar/',
     },
   },
   {
@@ -172,13 +177,49 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'Using Natural Language to Query Postgres',
-    company: 'LangChain.js',
+    company: 'LangChain',
     speaker: {
       name: 'Jacob Lee',
       role: 'Maintainer',
       avatar: jacobLee,
       bio: 'Passionate about bringing the power of LLMs to a wider audience!',
       xUrl: 'https://x.com/hacubu',
+    },
+  },
+  {
+    event: 'Deploy FullStack Apps Globally with Koyeb and Neon',
+    company: 'Koyeb',
+    speaker: {
+      name: 'Edouard Bonlieu',
+      role: 'Co-Founder',
+      avatar: edouardBonlieu,
+      bio: 'Edouard has been building cloud products for the last 10 years. Today focused on the serverless space, Edouard’s mission is to allow every developer to push code to production, everywhere, in minutes.',
+      xUrl: 'https://twitter.com/edouardb_',
+      linkedinUrl: 'https://www.linkedin.com/in/ebonlieu',
+    },
+  },
+  {
+    event: 'The Future of Development Environments',
+    company: 'Coherence',
+    speaker: {
+      name: 'Zach Zaro',
+      role: 'CEO and Cofounder',
+      avatar: zachZaro,
+      bio: 'Zach is the CEO and cofounder of Coherence. Previously Zach was the CTO at Quip and the founding CTO at Maven clinic. Coherence is the tool he wished he could have bought.',
+      xUrl: 'https://twitter.com/ZacharyZaro',
+    },
+  },
+  {
+    event: 'How to wrongly store 2M vectors in PGVectors',
+    company: 'Quivr',
+    speaker: {
+      name: 'Stan Girard',
+      role: 'Creator',
+      avatar: stanGirard,
+      bio: 'Stan Girard is the creator of Quivr, an open-source Generative AI personal assistant, which gained remarkable traction in the tech community (20k+ stars on Github in 4 months).',
+      xUrl: 'https://twitter.com/_StanGirard',
+      linkedinUrl: 'https://www.linkedin.com/in/stanislas-girard/',
+      githubUrl: 'https://github.com/StanGirard',
     },
   },
 ];
