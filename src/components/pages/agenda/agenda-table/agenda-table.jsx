@@ -2,18 +2,28 @@
 
 import { useState } from 'react';
 
+import CustomModal from 'components/shared/custom-modal';
 import { DEV_DAYS_AGENDA } from 'constants/dev-days';
 import patternSvg from 'images/agenda/pattern.svg';
 
 import Speaker from './speaker';
 import SpeakerModal from './speaker-modal';
+import Talk from './talk';
+import TalkModal from './talk-modal';
 
 const AgendaTable = () => {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
-  const [showModal, setShowModal] = useState(false);
-  const closeModal = (e) => {
+  const [showSpeakerModal, setShowSpeakerModal] = useState(false);
+  const [selectedTalk, setSelectedTalk] = useState(null);
+  const [showTalkModal, setShowTalkModal] = useState(false);
+  const closeSpeakerModal = (e) => {
     e.stopPropagation();
-    setShowModal(false);
+    setShowSpeakerModal(false);
+  };
+
+  const closeTalkModal = (e) => {
+    e.stopPropagation();
+    setShowTalkModal(false);
   };
 
   return (
@@ -38,7 +48,7 @@ const AgendaTable = () => {
               </tr>
             </thead>
             <tbody className="text-lg leading-dense divide-y divide-gray-15 border-b border-gray-15 md:text-base">
-              {DEV_DAYS_AGENDA.map(({ event, company, speaker }, index) => (
+              {DEV_DAYS_AGENDA.map(({ event, description, company, speaker }, index) => (
                 <tr
                   className="sm:flex sm:flex-col-reverse sm:pt-[18px] sm:pb-5 sm:first:pt-0"
                   key={index}
@@ -47,12 +57,17 @@ const AgendaTable = () => {
                     <Speaker
                       speaker={speaker}
                       company={company}
-                      setShowModal={setShowModal}
+                      setShowModal={setShowSpeakerModal}
                       setSelectedSpeaker={setSelectedSpeaker}
                     />
                   </td>
                   <td className="tracking-[-0.02em] py-4 text-xl pr-4 lg:text-base sm:text-xl sm:pr-0 sm:py-0 sm:leading-[1.25] xs:text-lg">
-                    {event}
+                    <Talk
+                      event={event}
+                      description={description}
+                      setShowModal={setShowTalkModal}
+                      setSelectedTalk={setSelectedTalk}
+                    />
                   </td>
                   <td className="tracking-[-0.02em] py-4 font-semibold text-gray-80 sm:hidden">
                     {company}
@@ -64,7 +79,22 @@ const AgendaTable = () => {
         </div>
       </div>
       {selectedSpeaker?.bio && (
-        <SpeakerModal {...selectedSpeaker} isOpen={showModal} closeModal={closeModal} />
+        <CustomModal
+          name={selectedSpeaker.name}
+          isOpen={showSpeakerModal}
+          closeModal={closeSpeakerModal}
+        >
+          <SpeakerModal
+            {...selectedSpeaker}
+            isOpen={showSpeakerModal}
+            closeModal={closeSpeakerModal}
+          />
+        </CustomModal>
+      )}
+      {selectedTalk?.description && (
+        <CustomModal name={selectedTalk.event} isOpen={showTalkModal} closeModal={closeTalkModal}>
+          <TalkModal {...selectedTalk} isOpen={showTalkModal} closeModal={closeTalkModal} />
+        </CustomModal>
       )}
     </section>
   );
