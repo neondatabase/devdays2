@@ -6,24 +6,16 @@ import CustomModal from 'components/shared/custom-modal';
 import { DEV_DAYS_AGENDA } from 'constants/dev-days';
 import patternSvg from 'images/agenda/pattern.svg';
 
-import Speaker from './speaker';
-import SpeakerModal from './speaker-modal';
-import Talk from './talk';
-import TalkModal from './talk-modal';
+import Event from './event';
+import EventModal from './event-modal';
 
 const AgendaTable = () => {
-  const [selectedSpeaker, setSelectedSpeaker] = useState(null);
-  const [showSpeakerModal, setShowSpeakerModal] = useState(false);
-  const [selectedTalk, setSelectedTalk] = useState(null);
-  const [showTalkModal, setShowTalkModal] = useState(false);
-  const closeSpeakerModal = (e) => {
-    e.stopPropagation();
-    setShowSpeakerModal(false);
-  };
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [showEventModal, setShowEventModal] = useState(false);
 
-  const closeTalkModal = (e) => {
+  const closeEventModal = (e) => {
     e.stopPropagation();
-    setShowTalkModal(false);
+    setShowEventModal(false);
   };
 
   return (
@@ -48,52 +40,24 @@ const AgendaTable = () => {
               </tr>
             </thead>
             <tbody className="text-lg leading-dense divide-y divide-gray-15 border-b border-gray-15 md:text-base">
-              {DEV_DAYS_AGENDA.map(({ event, description, company, speaker }, index) => (
-                <tr
-                  className="sm:flex sm:flex-col-reverse sm:pt-[18px] sm:pb-5 sm:first:pt-0"
+              {DEV_DAYS_AGENDA.map(({ event, company, speaker, description }, index) => (
+                <Event
+                  event={event}
+                  speaker={speaker}
+                  company={company}
+                  description={description}
+                  setShowModal={setShowEventModal}
+                  setSelectedSpeaker={setSelectedEvent}
                   key={index}
-                >
-                  <td className="py-4 pr-4 sm:pr-0 sm:py-0 sm:mt-3.5">
-                    <Speaker
-                      speaker={speaker}
-                      company={company}
-                      setShowModal={setShowSpeakerModal}
-                      setSelectedSpeaker={setSelectedSpeaker}
-                    />
-                  </td>
-                  <td className="tracking-[-0.02em] py-4 text-xl pr-4 lg:text-base sm:text-xl sm:pr-0 sm:py-0 sm:leading-[1.25] xs:text-lg">
-                    <Talk
-                      event={event}
-                      description={description}
-                      setShowModal={setShowTalkModal}
-                      setSelectedTalk={setSelectedTalk}
-                    />
-                  </td>
-                  <td className="tracking-[-0.02em] py-4 font-semibold text-gray-80 sm:hidden">
-                    {company}
-                  </td>
-                </tr>
+                />
               ))}
             </tbody>
           </table>
         </div>
       </div>
-      {selectedSpeaker?.bio && (
-        <CustomModal
-          name={selectedSpeaker.name}
-          isOpen={showSpeakerModal}
-          closeModal={closeSpeakerModal}
-        >
-          <SpeakerModal
-            {...selectedSpeaker}
-            isOpen={showSpeakerModal}
-            closeModal={closeSpeakerModal}
-          />
-        </CustomModal>
-      )}
-      {selectedTalk?.description && (
-        <CustomModal name={selectedTalk.event} isOpen={showTalkModal} closeModal={closeTalkModal}>
-          <TalkModal {...selectedTalk} isOpen={showTalkModal} closeModal={closeTalkModal} />
+      {selectedEvent?.bio && (
+        <CustomModal name={selectedEvent.name} isOpen={showEventModal} closeModal={closeEventModal}>
+          <EventModal {...selectedEvent} isOpen={showEventModal} closeModal={closeEventModal} />
         </CustomModal>
       )}
     </section>
