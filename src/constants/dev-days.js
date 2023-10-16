@@ -142,7 +142,7 @@ const DEV_DAYS_AGENDA = [
     },
   },
   {
-    event: 'Fullstack Preview Environments w/ Neon and Qovery',
+    event: 'Fullstack Preview Environments with Neon and Qovery',
     description: 'Learn how to create a Neon branch for every preview deployment on Qovery.',
     company: 'Qovery',
     speaker: {
@@ -170,7 +170,7 @@ const DEV_DAYS_AGENDA = [
   {
     event: "Don't let bad data block you",
     description:
-      "n this talk I'll explain how bad data can make you build inaccurate features and make bug fixing terribly slow, and then I'll show you the alternatives!",
+      "In this talk I'll explain how bad data can make you build inaccurate features and make bug fixing terribly slow, and then I'll show you the alternatives!",
     company: 'Snaplet',
     speaker: {
       name: 'Peter Pistorius',
