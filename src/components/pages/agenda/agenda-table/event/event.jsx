@@ -18,8 +18,10 @@ const Event = ({
 
   return (
     <tr
-      className="group sm:flex sm:flex-col-reverse sm:pt-[18px] sm:pb-5 sm:first:pt-0"
-      role="button"
+      className={clsx('group sm:flex sm:flex-col-reverse sm:pt-[18px] sm:pb-5 sm:first:pt-0', {
+        'sm:cursor-pointer': bio || description,
+      })}
+      role={bio ? 'button' : 'row'}
       onClick={openModal}
     >
       <td className="py-4 pr-4 sm:pr-0 sm:py-0 sm:mt-3.5">
