@@ -35,7 +35,7 @@ const EventModal = ({
         />
       )}
       <div className="flex flex-col items-start leading-dense">
-        <span className="text-xl tracking-[-0.02em] font-medium sm:text-[15px]">{name}</span>
+        <span className="text-xl tracking-[-0.02em] font-medium sm:text-lg">{name}</span>
         {role && (
           <span className="mt-1 text-sm tracking-[-0.02em] text-gray-80 font-light">{role}</span>
         )}
@@ -80,9 +80,7 @@ const EventModal = ({
     )}
     {description && (
       <div className="mt-11">
-        <span className="block text-xl leading-dense tracking-[-0.02em] max-w-[calc(100%-40px)] sm:text-lg">
-          {event}
-        </span>
+        <span className="block text-xl leading-dense tracking-[-0.02em] sm:text-lg">{event}</span>
         <p className="mt-4 pt-4 text-gray-90 border-t border-gray-15 text-sm font-light leading-[1.25]">
           {description}
         </p>
