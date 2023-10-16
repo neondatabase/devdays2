@@ -2,7 +2,14 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
-const Event = ({ speaker, company, event, description, setShowModal, setSelectedSpeaker }) => {
+const Event = ({
+  speaker,
+  company,
+  event,
+  description = null,
+  setShowModal,
+  setSelectedSpeaker,
+}) => {
   const { avatar, name, role, bio } = speaker;
   const openModal = () => {
     setShowModal(true);
@@ -65,7 +72,7 @@ Event.propTypes = {
     bio: PropTypes.string,
   }).isRequired,
   event: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   company: PropTypes.string.isRequired,
   setShowModal: PropTypes.func.isRequired,
   setSelectedSpeaker: PropTypes.func.isRequired,
