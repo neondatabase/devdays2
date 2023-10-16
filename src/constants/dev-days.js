@@ -129,6 +129,7 @@ const DEV_DAYS_AGENDA = [
       role: 'Founder',
       avatar: alexBlokh,
       bio: 'I’ve been a software engineer for the past 12 years',
+      xUrl: ' https://x.com/_alexblokh',
     },
   },
   {
@@ -194,6 +195,7 @@ const DEV_DAYS_AGENDA = [
       role: 'Director of Product',
       avatar: mattSilverlock,
       bio: 'Matt is the product lead for developer databases & messaging at Cloudflare — and is a long-time open-source contributor, including co-maintainer of the Gorilla Toolkit in Go & various HTTP projects.',
+      xUrl: 'https://twitter.com/elithrar',
     },
   },
   {
