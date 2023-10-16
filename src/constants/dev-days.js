@@ -29,6 +29,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'How to use NPM packages outside of Node',
+    description:
+      'NPM is bursting with useful libraries. But many of them assume they’re running in Node.js, and throw errors elsewhere. Based on his experience developing Neon’s serverless driver, George shows how you can run NPM packages in other places — such as Vercel Edge Functions, or even web browsers — using a couple of simple techniques.',
     company: 'Neon',
     speaker: {
       name: 'George MacKerron',
@@ -42,6 +44,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'Optimizing vector search shouldn’t be this hard',
+    description:
+      'Large-scale LLM applications increasingly rely on efficient nearest neighbor search algorithms, such as Hierarchical Navigable Small World (HNSW) and Inverted File with Flat Indexing (IVFFlat). While these algorithms offer trade-offs between speed, accuracy, and resource utilization, finding the optimal set of hyperparameters remains a challenge.',
     company: 'Neon',
     speaker: {
       name: 'Raouf Chebri',
