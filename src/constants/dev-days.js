@@ -43,9 +43,9 @@ const DEV_DAYS_AGENDA = [
     },
   },
   {
-    event: 'Optimizing vector search shouldn’t be this hard',
+    event: 'Scenario analysis with database branching',
     description:
-      'Large-scale LLM applications increasingly rely on efficient nearest neighbor search algorithms, such as Hierarchical Navigable Small World (HNSW) and Inverted File with Flat Indexing (IVFFlat). While these algorithms offer trade-offs between speed, accuracy, and resource utilization, finding the optimal set of hyperparameters remains a challenge.',
+      'Database branching allows you to create instant copy-on-write clones of your database that could be modified without compromising your data. One challenge in scenario analysis exploring multiple states of your database in parallel. In this talk, we will explore how to leverage Neon’s API and database branching to parallelize scenario analysis.',
     company: 'Neon',
     speaker: {
       name: 'Raouf Chebri',
