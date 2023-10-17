@@ -126,11 +126,13 @@ const DEV_DAYS_AGENDA = [
   {
     event: 'State of Drizzle 2023',
     company: 'Drizzle',
+    description:
+      "I will talk a bit about what Drizzle is, where it's at right now and plans for the future.",
     speaker: {
       name: 'Alex Blokh',
       role: 'Founder',
       avatar: alexBlokh,
-      bio: 'I’ve been a software engineer for the past 12 years',
+      bio: 'I’ve been a software engineer for the past 12 years.',
       xUrl: ' https://x.com/_alexblokh',
     },
   },
