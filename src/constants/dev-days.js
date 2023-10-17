@@ -59,6 +59,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'Custom extensions support',
+    description: `Supporting extensions into a cloud-based PostgreSQL service is a non-trivial task and poses a series of challenges.
+    In this talk we explain how we tackled these challenges with our latest Neon feature, “custom extensions support”.`,
     company: 'Neon',
     speaker: {
       name: 'Anastasia Iubennikova',
