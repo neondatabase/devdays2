@@ -29,6 +29,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'How to use NPM packages outside of Node',
+    description:
+      'NPM is bursting with useful libraries. But many of them assume they’re running in Node.js, and throw errors elsewhere. Based on his experience developing Neon’s serverless driver, George shows how you can run NPM packages in other places — such as Vercel Edge Functions, or even web browsers — using a couple of simple techniques.',
     company: 'Neon',
     speaker: {
       name: 'George MacKerron',
@@ -42,6 +44,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'Optimizing vector search shouldn’t be this hard',
+    description:
+      'Large-scale LLM applications increasingly rely on efficient nearest neighbor search algorithms, such as Hierarchical Navigable Small World (HNSW) and Inverted File with Flat Indexing (IVFFlat). While these algorithms offer trade-offs between speed, accuracy, and resource utilization, finding the optimal set of hyperparameters remains a challenge.',
     company: 'Neon',
     speaker: {
       name: 'Raouf Chebri',
@@ -55,6 +59,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'Custom extensions support',
+    description: `Supporting extensions into a cloud-based PostgreSQL service is a non-trivial task and poses a series of challenges.
+    In this talk we explain how we tackled these challenges with our latest Neon feature, “custom extensions support”.`,
     company: 'Neon',
     speaker: {
       name: 'Anastasia Iubennikova',
@@ -67,6 +73,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'Revolutionizing business intelligence using Appsmith and Neon',
+    description:
+      "In this comprehensive talk, we will delve into how Appsmith, in collaboration with Neon's serverless PostgreSQL modern platform, can transform the way businesses harness the power of data and AI-driven insights.",
     company: 'Appsmith',
     speaker: {
       name: 'Kevin Blanco',
@@ -80,6 +88,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'Development Workflows with Neon and Hasura',
+    description:
+      "What if you could get a new database and API on every feature branch, radically redefining the state of stateless development? Dive into the realm of dynamic database provisioning with Neon and GraphQL API creation with Hasura's Data Delivery Network",
     company: 'Hasura',
     speaker: {
       name: 'Ojas',
@@ -90,6 +100,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'Cache anything, everywhere',
+    description:
+      'Discover how companies utilize edge computing to cache and extend data from any API using GraphQL, enhancing app performance and reliability.',
     company: 'Grafbase',
     speaker: {
       name: 'Jamie Barton',
@@ -101,6 +113,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'Building internal apps with AI and Neon',
+    description:
+      'We build a Neon-powered app on Airplane that leverages pgvector, and discuss how AI is used to accelerate the building process.',
     company: 'Airplane',
     speaker: {
       name: 'George Du',
@@ -112,16 +126,20 @@ const DEV_DAYS_AGENDA = [
   {
     event: 'State of Drizzle 2023',
     company: 'Drizzle',
+    description:
+      "I will talk a bit about what Drizzle is, where it's at right now and plans for the future.",
     speaker: {
       name: 'Alex Blokh',
       role: 'Founder',
       avatar: alexBlokh,
-      bio: 'I’ve been a software engineer for the past 12 years',
+      bio: 'I’ve been a software engineer for the past 12 years.',
       xUrl: ' https://x.com/_alexblokh',
     },
   },
   {
     event: "Prisma & Neon's Serverless driver on the Edge",
+    description:
+      "Edge serverless runtimes provide great power and introduce new challenges working with databases. In this talk, you'll learn how to use Prisma & Neon's serverless database driver on the edge to make your apps edge-compatible without breaking a sweat.",
     company: 'Prisma',
     speaker: {
       name: 'Alex Ruheni',
@@ -133,7 +151,8 @@ const DEV_DAYS_AGENDA = [
     },
   },
   {
-    event: 'Fullstack Preview Environments w/ Neon and Qovery',
+    event: 'Fullstack Preview Environments with Neon and Qovery',
+    description: 'Learn how to create a Neon branch for every preview deployment on Qovery.',
     company: 'Qovery',
     speaker: {
       name: 'Romaric Philogene',
@@ -145,6 +164,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: "Accelerating Neon with PolyScale's DDN",
+    description:
+      'Learn how PolyScale’s high performance Data Delivery Network (DDN) can accelerate your Neon databases. See how smart caching can be implemented in minutes to improve query performance, lower latency and make cached data available at the edge.',
     company: 'PolyScale',
     speaker: {
       name: 'Sam Aybar',
@@ -157,6 +178,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: "Don't let bad data block you",
+    description:
+      "In this talk I'll explain how bad data can make you build inaccurate features and make bug fixing terribly slow, and then I'll show you the alternatives!",
     company: 'Snaplet',
     speaker: {
       name: 'Peter Pistorius',
@@ -168,6 +191,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'Database protocols weren’t designed for serverless',
+    description:
+      'A dive into how database connection protocols & threading models work, why they don’t gel with serverless envs, and how we can work around their constraints (HTTP, WS, new pooling approaches)',
     company: 'Cloudflare',
     speaker: {
       name: 'Matt Silverlock',
@@ -179,6 +204,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'Using Natural Language to Query Postgres',
+    description:
+      "LLMs are good at translation, and this applies to English to SQL too! In this talk, I'll show off some ways you can analyze data in your existing analytics databases using natural language.",
     company: 'LangChain',
     speaker: {
       name: 'Jacob Lee',
@@ -190,6 +217,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'Deploy FullStack Apps Globally with Koyeb and Neon',
+    description:
+      'During this lightning talk, we will walk through the different steps required to deploy a full stack app at the edge using Koyeb’s high-performance serverless platform and Neon.',
     company: 'Koyeb',
     speaker: {
       name: 'Edouard Bonlieu',
@@ -202,6 +231,8 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'The Future of Development Environments',
+    description:
+      'An overview of environments across the development lifecycle and how the development environment is evolving moving forward.',
     company: 'Coherence',
     speaker: {
       name: 'Zach Zaro',
@@ -213,6 +244,7 @@ const DEV_DAYS_AGENDA = [
   },
   {
     event: 'How to wrongly store 2M vectors in pgvector',
+    description: 'Lets dive into the errors that were made on Quivr that cost us money and time.',
     company: 'Quivr',
     speaker: {
       name: 'Stan Girard',
