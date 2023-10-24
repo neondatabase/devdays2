@@ -63,7 +63,7 @@ const DEV_DAYS_AGENDA = [
     In this talk we explain how we tackled these challenges with our latest Neon feature, “custom extensions support”.`,
     company: 'Neon',
     speaker: {
-      name: 'Anastasia Iubennikova',
+      name: 'Anastasia Lubennikova',
       role: 'Software Engineer',
       avatar: anastasiaIubennikova,
       bio: 'Anastasia is a software engineer at Neon, PostgreSQL Major Contributor, and educator.',
