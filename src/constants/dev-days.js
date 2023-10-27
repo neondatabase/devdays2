@@ -25,28 +25,117 @@ const DEV_DAYS_AGENDA = [
   {
     event: 'Learn about the latest new features and improvements we released',
     company: 'Neon',
+    time: '10:00',
     speaker: { name: 'Keynote' },
   },
   {
-    event: 'How to use NPM packages outside of Node',
-    description:
-      'NPM is bursting with useful libraries. But many of them assume they’re running in Node.js, and throw errors elsewhere. Based on his experience developing Neon’s serverless driver, George shows how you can run NPM packages in other places — such as Vercel Edge Functions, or even web browsers — using a couple of simple techniques.',
+    event: 'Custom extensions support',
+    description: `Supporting extensions into a cloud-based PostgreSQL service is a non-trivial task and poses a series of challenges.
+    In this talk we explain how we tackled these challenges with our latest Neon feature, “custom extensions support”.`,
     company: 'Neon',
+    time: '10:23',
     speaker: {
-      name: 'George MacKerron',
-      role: 'Typescript Developer',
-      avatar: georgeMacKerron,
-      bio: "George is (amongst other things) a full-stack developer and technical writer specialising in TypeScript and Postgres. He maintains the Zapatos library and Neon's serverless driver. Recent side projects include a proof-of-concept TypeScript TLS client.",
-      xUrl: 'https://twitter.com/jawj',
-      linkedinUrl: 'https://www.linkedin.com/in/georgemackerron/',
-      githubUrl: 'https://github.com/jawj/',
+      name: 'Anastasia Lubennikova',
+      role: 'Software Engineer',
+      avatar: anastasiaIubennikova,
+      bio: 'Anastasia is a software engineer at Neon, PostgreSQL Major Contributor, and educator.',
+      githubUrl: 'https://github.com/lubennikovaav',
+      linkedinUrl: 'https://www.linkedin.com/in/anastasia-lubennikova-8a2295a0/',
     },
   },
   {
-    event: 'Scenario analysis with database branching',
+    event: "Prisma & Neon's Serverless driver on the Edge",
     description:
-      'Database branching allows you to create instant copy-on-write clones of your database that could be modified without compromising your data. One challenge in scenario analysis exploring multiple states of your database in parallel. In this talk, we will explore how to leverage Neon’s API and database branching to parallelize scenario analysis.',
+      "Edge serverless runtimes provide great power and introduce new challenges working with databases. In this talk, you'll learn how to use Prisma & Neon's serverless database driver on the edge to make your apps edge-compatible without breaking a sweat.",
+    company: 'Prisma',
+    time: '10:35',
+    speaker: {
+      name: 'Alex Ruheni',
+      role: 'Developer Advocate',
+      avatar: alexRuheni,
+      bio: 'Alex is a Developer Advocate at Prisma, working to make databases easy and fun. He loves learning and teaching other developers.',
+      xUrl: 'https://x.com/ruheni_alex',
+      githubUrl: 'https://github.com/ruheni',
+    },
+  },
+  {
+    event: 'Using Natural Language to Query Postgres',
+    description:
+      "LLMs are good at translation, and this applies to English to SQL too! In this talk, I'll show off some ways you can analyze data in your existing analytics databases using natural language.",
+    company: 'LangChain',
+    time: '10:47',
+    speaker: {
+      name: 'Jacob Lee',
+      role: 'Maintainer',
+      avatar: jacobLee,
+      bio: 'Passionate about bringing the power of LLMs to a wider audience!',
+      xUrl: 'https://x.com/hacubu',
+    },
+  },
+  {
+    event: 'State of Drizzle 2023',
+    company: 'Drizzle',
+    description:
+      "I will talk a bit about what Drizzle is, where it's at right now and plans for the future.",
+    time: '11:10',
+    speaker: {
+      name: 'Alex Blokh',
+      role: 'Founder',
+      avatar: alexBlokh,
+      bio: 'I’ve been a software engineer for the past 12 years.',
+      xUrl: ' https://x.com/_alexblokh',
+    },
+  },
+  {
+    event: 'Revolutionizing business intelligence using Appsmith and Neon',
+    description:
+      "In this comprehensive talk, we will delve into how Appsmith, in collaboration with Neon's serverless PostgreSQL modern platform, can transform the way businesses harness the power of data and AI-driven insights.",
+    company: 'Appsmith',
+    time: '11:21',
+    speaker: {
+      name: 'Kevin Blanco',
+      role: 'Senior DevRel Advocate',
+      avatar: kevinBlanco,
+      bio: 'Senior DevRel Advocate 🥑 at Appsmith - Google Developer Expert in GCP & Google Cloud Certified Engineer - Tech Director - Certified Davinci Resolve Colorist - Private Pilot - International Speaker',
+      xUrl: 'https://twitter.com/KevinBlancoZ',
+      linkedinUrl: 'https://www.linkedin.com/in/kevinblanco',
+      githubUrl: 'https://github.com/kevinblanco',
+    },
+  },
+  {
+    event: "Don't let bad data block you",
+    description:
+      "In this talk I'll explain how bad data can make you build inaccurate features and make bug fixing terribly slow, and then I'll show you the alternatives!",
+    company: 'Snaplet',
+    time: '11:54',
+    speaker: {
+      name: 'Peter Pistorius',
+      role: 'Founder',
+      avatar: peterPistorius,
+      bio: 'Peter is a lifelong product developer obsessed with improving user-experience. Before building Snaplet he co-created RedwoodJS.',
+      xUrl: 'https://x.com/appfactory',
+    },
+  },
+  {
+    event: 'Cache anything, everywhere',
+    description:
+      'Discover how companies utilize edge computing to cache and extend data from any API using GraphQL, enhancing app performance and reliability.',
+    company: 'Grafbase',
+    time: '12:05',
+    speaker: {
+      name: 'Jamie Barton',
+      role: 'DevRel Engineer',
+      avatar: jamieBarton,
+      bio: "Around since the days of dial-up models and Flash websites. Despite my age (in tech years, at least), I'm always working with the latest tools like React and GraphQL to build functional web apps.",
+      xUrl: 'https://x.com/notrab',
+    },
+  },
+  {
+    event: 'Optimizing your workflows with branching',
+    description:
+      'Database branching is one of the features that set Neon apart from other Postgres providers. Branching allows you to get a copy-on-write clone of your database that you can experiment with without compromising you main database. In this talk, I’ll show you how database branching help you collaborate and write safer code.',
     company: 'Neon',
+    time: '12:17',
     speaker: {
       name: 'Raouf Chebri',
       role: 'Developer Advocate',
@@ -58,32 +147,89 @@ const DEV_DAYS_AGENDA = [
     },
   },
   {
-    event: 'Custom extensions support',
-    description: `Supporting extensions into a cloud-based PostgreSQL service is a non-trivial task and poses a series of challenges.
-    In this talk we explain how we tackled these challenges with our latest Neon feature, “custom extensions support”.`,
-    company: 'Neon',
+    event: 'Deploy FullStack Apps Globally with Koyeb and Neon',
+    description:
+      'During this lightning talk, we will walk through the different steps required to deploy a full stack app at the edge using Koyeb’s high-performance serverless platform and Neon.',
+    company: 'Koyeb',
+    time: '12:35',
     speaker: {
-      name: 'Anastasia Lubennikova',
-      role: 'Software Engineer',
-      avatar: anastasiaIubennikova,
-      bio: 'Anastasia is a software engineer at Neon, PostgreSQL Major Contributor, and educator.',
-      githubUrl: 'https://github.com/lubennikovaav',
-      linkedinUrl: 'https://www.linkedin.com/in/anastasia-lubennikova-8a2295a0/',
+      name: 'Edouard Bonlieu',
+      role: 'Co-Founder',
+      avatar: edouardBonlieu,
+      bio: 'Edouard has been building cloud products for the last 10 years. Today focused on the serverless space, Edouard’s mission is to allow every developer to push code to production, everywhere, in minutes.',
+      xUrl: 'https://twitter.com/edouardb_',
+      linkedinUrl: 'https://www.linkedin.com/in/ebonlieu',
     },
   },
   {
-    event: 'Revolutionizing business intelligence using Appsmith and Neon',
+    event: 'Building internal apps with AI and Neon',
     description:
-      "In this comprehensive talk, we will delve into how Appsmith, in collaboration with Neon's serverless PostgreSQL modern platform, can transform the way businesses harness the power of data and AI-driven insights.",
-    company: 'Appsmith',
+      'We build a Neon-powered app on Airplane that leverages pgvector, and discuss how AI is used to accelerate the building process.',
+    company: 'Airplane',
+    time: '12:41',
     speaker: {
-      name: 'Kevin Blanco',
-      role: 'Senior DevRel Advocate',
-      avatar: kevinBlanco,
-      bio: 'Senior DevRel Advocate 🥑 at Appsmith - Google Developer Expert in GCP & Google Cloud Certified Engineer - Tech Director - Certified Davinci Resolve Colorist - Private Pilot - International Speaker',
-      xUrl: 'https://twitter.com/KevinBlancoZ',
-      linkedinUrl: 'https://www.linkedin.com/in/kevinblanco',
-      githubUrl: 'https://github.com/kevinblanco',
+      name: 'George Du',
+      role: 'Software Engineer',
+      avatar: georgeDu,
+      bio: 'Engineering lead for Airplane Postgres',
+    },
+  },
+  {
+    event: 'Fullstack Preview Environments with Neon and Qovery',
+    description: 'Learn how to create a Neon branch for every preview deployment on Qovery.',
+    company: 'Qovery',
+    time: '12:49',
+    speaker: {
+      name: 'Romaric Philogene',
+      role: 'CEO and Co-Founder',
+      avatar: romaricPhilogene,
+      bio: 'Romaric has 10+ years of experience in R&D. From the Ad-Tech to the financial industry, he has deep expertise in highly-reliable and performant systems.',
+      linkedinUrl: 'https://www.linkedin.com/in/romaricphilogene/',
+    },
+  },
+  {
+    event: 'How to use NPM packages outside of Node',
+    description:
+      'NPM is bursting with useful libraries. But many of them assume they’re running in Node.js, and throw errors elsewhere. Based on his experience developing Neon’s serverless driver, George shows how you can run NPM packages in other places — such as Vercel Edge Functions, or even web browsers — using a couple of simple techniques.',
+    company: 'Neon',
+    time: '1:45',
+    speaker: {
+      name: 'George MacKerron',
+      role: 'Typescript Developer',
+      avatar: georgeMacKerron,
+      bio: "George is (amongst other things) a full-stack developer and technical writer specialising in TypeScript and Postgres. He maintains the Zapatos library and Neon's serverless driver. Recent side projects include a proof-of-concept TypeScript TLS client.",
+      xUrl: 'https://twitter.com/jawj',
+      linkedinUrl: 'https://www.linkedin.com/in/georgemackerron/',
+      githubUrl: 'https://github.com/jawj/',
+    },
+  },
+  {
+    event: "Accelerating Neon with PolyScale's DDN",
+    description:
+      'Learn how PolyScale’s high performance Data Delivery Network (DDN) can accelerate your Neon databases. See how smart caching can be implemented in minutes to improve query performance, lower latency and make cached data available at the edge.',
+    company: 'PolyScale',
+    time: '2:12',
+    speaker: {
+      name: 'Sam Aybar',
+      role: 'Developer Advocate',
+      avatar: samAybar,
+      bio: 'Sam leads Developer Advocacy at PolyScale.ai where he helps customers scale and accelerate databases globally. Sam joined PolyScale in 2022. Previously he worked at BlazeMeter, Runscope and DataSift.',
+      xUrl: 'https://twitter.com/saybar',
+      linkedinUrl: 'https://www.linkedin.com/in/samaybar/',
+    },
+  },
+  {
+    event: 'The Future of Development Environments',
+    description:
+      'An overview of environments across the development lifecycle and how the development environment is evolving moving forward.',
+    company: 'Coherence',
+    time: '2:36',
+    speaker: {
+      name: 'Zach Zaro',
+      role: 'CEO and Cofounder',
+      avatar: zachZaro,
+      bio: 'Zach is the CEO and cofounder of Coherence. Previously Zach was the CTO at Quip and the founding CTO at Maven clinic. Coherence is the tool he wished he could have bought.',
+      xUrl: 'https://twitter.com/ZacharyZaro',
     },
   },
   {
@@ -99,97 +245,6 @@ const DEV_DAYS_AGENDA = [
     },
   },
   {
-    event: 'Cache anything, everywhere',
-    description:
-      'Discover how companies utilize edge computing to cache and extend data from any API using GraphQL, enhancing app performance and reliability.',
-    company: 'Grafbase',
-    speaker: {
-      name: 'Jamie Barton',
-      role: 'DevRel Engineer',
-      avatar: jamieBarton,
-      bio: "Around since the days of dial-up models and Flash websites. Despite my age (in tech years, at least), I'm always working with the latest tools like React and GraphQL to build functional web apps.",
-      xUrl: 'https://x.com/notrab',
-    },
-  },
-  {
-    event: 'Building internal apps with AI and Neon',
-    description:
-      'We build a Neon-powered app on Airplane that leverages pgvector, and discuss how AI is used to accelerate the building process.',
-    company: 'Airplane',
-    speaker: {
-      name: 'George Du',
-      role: 'Software Engineer',
-      avatar: georgeDu,
-      bio: 'Engineering lead for Airplane Postgres',
-    },
-  },
-  {
-    event: 'State of Drizzle 2023',
-    company: 'Drizzle',
-    description:
-      "I will talk a bit about what Drizzle is, where it's at right now and plans for the future.",
-    speaker: {
-      name: 'Alex Blokh',
-      role: 'Founder',
-      avatar: alexBlokh,
-      bio: 'I’ve been a software engineer for the past 12 years.',
-      xUrl: ' https://x.com/_alexblokh',
-    },
-  },
-  {
-    event: "Prisma & Neon's Serverless driver on the Edge",
-    description:
-      "Edge serverless runtimes provide great power and introduce new challenges working with databases. In this talk, you'll learn how to use Prisma & Neon's serverless database driver on the edge to make your apps edge-compatible without breaking a sweat.",
-    company: 'Prisma',
-    speaker: {
-      name: 'Alex Ruheni',
-      role: 'Developer Advocate',
-      avatar: alexRuheni,
-      bio: 'Alex is a Developer Advocate at Prisma, working to make databases easy and fun. He loves learning and teaching other developers.',
-      xUrl: 'https://x.com/ruheni_alex',
-      githubUrl: 'https://github.com/ruheni',
-    },
-  },
-  {
-    event: 'Fullstack Preview Environments with Neon and Qovery',
-    description: 'Learn how to create a Neon branch for every preview deployment on Qovery.',
-    company: 'Qovery',
-    speaker: {
-      name: 'Romaric Philogene',
-      role: 'CEO and Co-Founder',
-      avatar: romaricPhilogene,
-      bio: 'Romaric has 10+ years of experience in R&D. From the Ad-Tech to the financial industry, he has deep expertise in highly-reliable and performant systems.',
-      linkedinUrl: 'https://www.linkedin.com/in/romaricphilogene/',
-    },
-  },
-  {
-    event: "Accelerating Neon with PolyScale's DDN",
-    description:
-      'Learn how PolyScale’s high performance Data Delivery Network (DDN) can accelerate your Neon databases. See how smart caching can be implemented in minutes to improve query performance, lower latency and make cached data available at the edge.',
-    company: 'PolyScale',
-    speaker: {
-      name: 'Sam Aybar',
-      role: 'Developer Advocate',
-      avatar: samAybar,
-      bio: 'Sam leads Developer Advocacy at PolyScale.ai where he helps customers scale and accelerate databases globally. Sam joined PolyScale in 2022. Previously he worked at BlazeMeter, Runscope and DataSift.',
-      xUrl: 'https://twitter.com/saybar',
-      linkedinUrl: 'https://www.linkedin.com/in/samaybar/',
-    },
-  },
-  {
-    event: "Don't let bad data block you",
-    description:
-      "In this talk I'll explain how bad data can make you build inaccurate features and make bug fixing terribly slow, and then I'll show you the alternatives!",
-    company: 'Snaplet',
-    speaker: {
-      name: 'Peter Pistorius',
-      role: 'Founder',
-      avatar: peterPistorius,
-      bio: 'Peter is a lifelong product developer obsessed with improving user-experience. Before building Snaplet he co-created RedwoodJS.',
-      xUrl: 'https://x.com/appfactory',
-    },
-  },
-  {
     event: 'Database protocols weren’t designed for serverless',
     description:
       'A dive into how database connection protocols & threading models work, why they don’t gel with serverless envs, and how we can work around their constraints (HTTP, WS, new pooling approaches)',
@@ -200,46 +255,6 @@ const DEV_DAYS_AGENDA = [
       avatar: mattSilverlock,
       bio: 'Matt is the product lead for developer databases & messaging at Cloudflare — and is a long-time open-source contributor, including co-maintainer of the Gorilla Toolkit in Go & various HTTP projects.',
       xUrl: 'https://twitter.com/elithrar',
-    },
-  },
-  {
-    event: 'Using Natural Language to Query Postgres',
-    description:
-      "LLMs are good at translation, and this applies to English to SQL too! In this talk, I'll show off some ways you can analyze data in your existing analytics databases using natural language.",
-    company: 'LangChain',
-    speaker: {
-      name: 'Jacob Lee',
-      role: 'Maintainer',
-      avatar: jacobLee,
-      bio: 'Passionate about bringing the power of LLMs to a wider audience!',
-      xUrl: 'https://x.com/hacubu',
-    },
-  },
-  {
-    event: 'Deploy FullStack Apps Globally with Koyeb and Neon',
-    description:
-      'During this lightning talk, we will walk through the different steps required to deploy a full stack app at the edge using Koyeb’s high-performance serverless platform and Neon.',
-    company: 'Koyeb',
-    speaker: {
-      name: 'Edouard Bonlieu',
-      role: 'Co-Founder',
-      avatar: edouardBonlieu,
-      bio: 'Edouard has been building cloud products for the last 10 years. Today focused on the serverless space, Edouard’s mission is to allow every developer to push code to production, everywhere, in minutes.',
-      xUrl: 'https://twitter.com/edouardb_',
-      linkedinUrl: 'https://www.linkedin.com/in/ebonlieu',
-    },
-  },
-  {
-    event: 'The Future of Development Environments',
-    description:
-      'An overview of environments across the development lifecycle and how the development environment is evolving moving forward.',
-    company: 'Coherence',
-    speaker: {
-      name: 'Zach Zaro',
-      role: 'CEO and Cofounder',
-      avatar: zachZaro,
-      bio: 'Zach is the CEO and cofounder of Coherence. Previously Zach was the CTO at Quip and the founding CTO at Maven clinic. Coherence is the tool he wished he could have bought.',
-      xUrl: 'https://twitter.com/ZacharyZaro',
     },
   },
   {

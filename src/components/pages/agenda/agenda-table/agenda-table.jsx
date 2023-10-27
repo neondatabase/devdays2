@@ -36,15 +36,16 @@ const AgendaTable = () => {
               <tr>
                 <th className="tracking-[0.02em] pb-5 pr-4">Speaker</th>
                 <th className="tracking-[0.02em] pb-5 pr-4">Talk</th>
-                <th className="tracking-[0.02em] pb-5">Company</th>
+                <th className="tracking-[0.02em] pb-5">Schedule</th>
               </tr>
             </thead>
             <tbody className="text-lg leading-dense divide-y divide-gray-15 border-b border-gray-15 md:text-base">
-              {DEV_DAYS_AGENDA.map(({ event, company, speaker, description }, index) => (
+              {DEV_DAYS_AGENDA.map(({ event, company, time, speaker, description }, index) => (
                 <Event
                   event={event}
                   speaker={speaker}
                   company={company}
+                  time={time}
                   description={description}
                   setShowModal={setShowEventModal}
                   setSelectedSpeaker={setSelectedEvent}

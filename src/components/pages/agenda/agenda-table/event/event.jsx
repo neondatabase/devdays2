@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const Event = ({
   speaker,
   company,
+  time,
   event,
   description = null,
   setShowModal,
@@ -24,7 +25,7 @@ const Event = ({
       role={bio ? 'button' : 'row'}
       onClick={openModal}
     >
-      <td className="py-4 pr-4 sm:pr-0 sm:py-0 sm:mt-3.5">
+      <td className="py-4 pr-4 sm:pr-0 sm:py-0 sm:mt-3.5 sm:flex sm:justify-between sm:items-center xs:flex-col">
         <div
           className={clsx(
             'flex items-center gap-x-2.5 group sm:w-full',
@@ -45,13 +46,14 @@ const Event = ({
             {role && (
               <span className="mt-0.5 text-[13px] text-gray-80 font-light">
                 <span className="tracking-[-0.02em]">{role}</span>
-                <span className="hidden sm:inline" aria-hidden>
-                  , {company}
-                </span>
+                <span>, {company}</span>
               </span>
             )}
           </div>
         </div>
+        <span className="hidden text-gray-80 whitespace-pre sm:block xs:mt-3" aria-hidden>
+          {time ? `${time} PT` : ''}
+        </span>
       </td>
       <td
         className={clsx(
@@ -61,7 +63,9 @@ const Event = ({
       >
         {event}
       </td>
-      <td className="tracking-[-0.02em] py-4 font-semibold text-gray-80 sm:hidden">{company}</td>
+      <td className="text-lg py-4 font-semibold leading-dense text-gray-80 whitespace-pre lg:text-base sm:hidden">
+        {time ? `${time} PT` : ''}
+      </td>
     </tr>
   );
 };
@@ -75,6 +79,7 @@ Event.propTypes = {
   }).isRequired,
   event: PropTypes.string.isRequired,
   description: PropTypes.string,
+  time: PropTypes.string.isRequired,
   company: PropTypes.string.isRequired,
   setShowModal: PropTypes.func.isRequired,
   setSelectedSpeaker: PropTypes.func.isRequired,
