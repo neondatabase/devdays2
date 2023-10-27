@@ -36,7 +36,7 @@ const AgendaTable = () => {
               <tr>
                 <th className="tracking-[0.02em] pb-5 pr-4">Speaker</th>
                 <th className="tracking-[0.02em] pb-5 pr-4">Talk</th>
-                <th className="tracking-[0.02em] pb-5">Schedule (PT)</th>
+                <th className="tracking-[0.02em] pb-5">Company</th>
               </tr>
             </thead>
             <tbody className="text-lg leading-dense divide-y divide-gray-15 border-b border-gray-15 md:text-base">

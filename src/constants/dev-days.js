@@ -7,13 +7,10 @@ import georgeMacKerron from 'images/agenda/george-mackerron.png';
 import jacobLee from 'images/agenda/jacob-lee.png';
 import jamieBarton from 'images/agenda/jamie-barton.png';
 import kevinBlanco from 'images/agenda/kevin-blanco.png';
-import mattSilverlock from 'images/agenda/matt-silverlock.png';
-import ojas from 'images/agenda/ojas.png';
 import peterPistorius from 'images/agenda/peter-pistorius.png';
 import raoufChebri from 'images/agenda/raouf-chebri.png';
 import romaricPhilogene from 'images/agenda/romaric-philogene.png';
 import samAybar from 'images/agenda/sam-aybar.png';
-import stanGirard from 'images/agenda/stan-girard.png';
 import zachZaro from 'images/agenda/zach-zaro.png';
 
 // TODO: before merge change video id to actual
@@ -25,7 +22,7 @@ const DEV_DAYS_AGENDA = [
   {
     event: 'Learn about the latest new features and improvements we released',
     company: 'Neon',
-    time: '10:00',
+    time: '10:00 AM',
     speaker: { name: 'Keynote' },
   },
   {
@@ -33,7 +30,7 @@ const DEV_DAYS_AGENDA = [
     description: `Supporting extensions into a cloud-based PostgreSQL service is a non-trivial task and poses a series of challenges.
     In this talk we explain how we tackled these challenges with our latest Neon feature, “custom extensions support”.`,
     company: 'Neon',
-    time: '10:23',
+    time: '10:23 AM',
     speaker: {
       name: 'Anastasia Lubennikova',
       role: 'Software Engineer',
@@ -48,7 +45,7 @@ const DEV_DAYS_AGENDA = [
     description:
       "Edge serverless runtimes provide great power and introduce new challenges working with databases. In this talk, you'll learn how to use Prisma & Neon's serverless database driver on the edge to make your apps edge-compatible without breaking a sweat.",
     company: 'Prisma',
-    time: '10:35',
+    time: '10:35 AM',
     speaker: {
       name: 'Alex Ruheni',
       role: 'Developer Advocate',
@@ -63,7 +60,7 @@ const DEV_DAYS_AGENDA = [
     description:
       "LLMs are good at translation, and this applies to English to SQL too! In this talk, I'll show off some ways you can analyze data in your existing analytics databases using natural language.",
     company: 'LangChain',
-    time: '10:47',
+    time: '10:47 AM',
     speaker: {
       name: 'Jacob Lee',
       role: 'Maintainer',
@@ -77,7 +74,7 @@ const DEV_DAYS_AGENDA = [
     company: 'Drizzle',
     description:
       "I will talk a bit about what Drizzle is, where it's at right now and plans for the future.",
-    time: '11:10',
+    time: '11:10 AM',
     speaker: {
       name: 'Alex Blokh',
       role: 'Founder',
@@ -91,7 +88,7 @@ const DEV_DAYS_AGENDA = [
     description:
       "In this comprehensive talk, we will delve into how Appsmith, in collaboration with Neon's serverless PostgreSQL modern platform, can transform the way businesses harness the power of data and AI-driven insights.",
     company: 'Appsmith',
-    time: '11:21',
+    time: '11:21 AM',
     speaker: {
       name: 'Kevin Blanco',
       role: 'Senior DevRel Advocate',
@@ -107,7 +104,7 @@ const DEV_DAYS_AGENDA = [
     description:
       "In this talk I'll explain how bad data can make you build inaccurate features and make bug fixing terribly slow, and then I'll show you the alternatives!",
     company: 'Snaplet',
-    time: '11:54',
+    time: '11:54 AM',
     speaker: {
       name: 'Peter Pistorius',
       role: 'Founder',
@@ -121,7 +118,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'Discover how companies utilize edge computing to cache and extend data from any API using GraphQL, enhancing app performance and reliability.',
     company: 'Grafbase',
-    time: '12:05',
+    time: '12:05 PM',
     speaker: {
       name: 'Jamie Barton',
       role: 'DevRel Engineer',
@@ -135,7 +132,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'Database branching is one of the features that set Neon apart from other Postgres providers. Branching allows you to get a copy-on-write clone of your database that you can experiment with without compromising you main database. In this talk, I’ll show you how database branching help you collaborate and write safer code.',
     company: 'Neon',
-    time: '12:17',
+    time: '12:17 PM',
     speaker: {
       name: 'Raouf Chebri',
       role: 'Developer Advocate',
@@ -151,7 +148,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'During this lightning talk, we will walk through the different steps required to deploy a full stack app at the edge using Koyeb’s high-performance serverless platform and Neon.',
     company: 'Koyeb',
-    time: '12:35',
+    time: '12:35 PM',
     speaker: {
       name: 'Edouard Bonlieu',
       role: 'Co-Founder',
@@ -166,7 +163,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'We build a Neon-powered app on Airplane that leverages pgvector, and discuss how AI is used to accelerate the building process.',
     company: 'Airplane',
-    time: '12:41',
+    time: '12:41 PM',
     speaker: {
       name: 'George Du',
       role: 'Software Engineer',
@@ -178,7 +175,7 @@ const DEV_DAYS_AGENDA = [
     event: 'Fullstack Preview Environments with Neon and Qovery',
     description: 'Learn how to create a Neon branch for every preview deployment on Qovery.',
     company: 'Qovery',
-    time: '12:49',
+    time: '12:49 PM',
     speaker: {
       name: 'Romaric Philogene',
       role: 'CEO and Co-Founder',
@@ -192,7 +189,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'NPM is bursting with useful libraries. But many of them assume they’re running in Node.js, and throw errors elsewhere. Based on his experience developing Neon’s serverless driver, George shows how you can run NPM packages in other places — such as Vercel Edge Functions, or even web browsers — using a couple of simple techniques.',
     company: 'Neon',
-    time: '13:45',
+    time: '1:45 PM',
     speaker: {
       name: 'George MacKerron',
       role: 'Typescript Developer',
@@ -208,7 +205,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'Learn how PolyScale’s high performance Data Delivery Network (DDN) can accelerate your Neon databases. See how smart caching can be implemented in minutes to improve query performance, lower latency and make cached data available at the edge.',
     company: 'PolyScale',
-    time: '14:12',
+    time: '2:12 PM',
     speaker: {
       name: 'Sam Aybar',
       role: 'Developer Advocate',
@@ -223,7 +220,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'An overview of environments across the development lifecycle and how the development environment is evolving moving forward.',
     company: 'Coherence',
-    time: '14:36',
+    time: '2:36 PM',
     speaker: {
       name: 'Zach Zaro',
       role: 'CEO and Cofounder',
@@ -232,45 +229,46 @@ const DEV_DAYS_AGENDA = [
       xUrl: 'https://twitter.com/ZacharyZaro',
     },
   },
-  {
-    event: 'Development Workflows with Neon and Hasura',
-    description:
-      "What if you could get a new database and API on every feature branch, radically redefining the state of stateless development? Dive into the realm of dynamic database provisioning with Neon and GraphQL API creation with Hasura's Data Delivery Network",
-    company: 'Hasura',
-    speaker: {
-      name: 'Ojas',
-      role: 'Software Engineer',
-      avatar: ojas,
-      bio: "I'm Ojas, a skilled polyglot software engineer working at Hasura who has a strong passion for building innovative solutions and tinkering with various technologies in software development.",
-    },
-  },
-  {
-    event: 'Database protocols weren’t designed for serverless',
-    description:
-      'A dive into how database connection protocols & threading models work, why they don’t gel with serverless envs, and how we can work around their constraints (HTTP, WS, new pooling approaches)',
-    company: 'Cloudflare',
-    speaker: {
-      name: 'Matt Silverlock',
-      role: 'Director of Product',
-      avatar: mattSilverlock,
-      bio: 'Matt is the product lead for developer databases & messaging at Cloudflare — and is a long-time open-source contributor, including co-maintainer of the Gorilla Toolkit in Go & various HTTP projects.',
-      xUrl: 'https://twitter.com/elithrar',
-    },
-  },
-  {
-    event: 'How to wrongly store 2M vectors in pgvector',
-    description: 'Lets dive into the errors that were made on Quivr that cost us money and time.',
-    company: 'Quivr',
-    speaker: {
-      name: 'Stan Girard',
-      role: 'Creator',
-      avatar: stanGirard,
-      bio: 'Stan Girard is the creator of Quivr, an open-source Generative AI personal assistant, which gained remarkable traction in the tech community (20k+ stars on Github in 4 months).',
-      xUrl: 'https://twitter.com/_StanGirard',
-      linkedinUrl: 'https://www.linkedin.com/in/stanislas-girard/',
-      githubUrl: 'https://github.com/StanGirard',
-    },
-  },
+  // TODO: restore these talks if they confirm their participation and add time
+  // {
+  //   event: 'Development Workflows with Neon and Hasura',
+  //   description:
+  //     "What if you could get a new database and API on every feature branch, radically redefining the state of stateless development? Dive into the realm of dynamic database provisioning with Neon and GraphQL API creation with Hasura's Data Delivery Network",
+  //   company: 'Hasura',
+  //   speaker: {
+  //     name: 'Ojas',
+  //     role: 'Software Engineer',
+  //     avatar: ojas,
+  //     bio: "I'm Ojas, a skilled polyglot software engineer working at Hasura who has a strong passion for building innovative solutions and tinkering with various technologies in software development.",
+  //   },
+  // },
+  // {
+  //   event: 'Database protocols weren’t designed for serverless',
+  //   description:
+  //     'A dive into how database connection protocols & threading models work, why they don’t gel with serverless envs, and how we can work around their constraints (HTTP, WS, new pooling approaches)',
+  //   company: 'Cloudflare',
+  //   speaker: {
+  //     name: 'Matt Silverlock',
+  //     role: 'Director of Product',
+  //     avatar: mattSilverlock,
+  //     bio: 'Matt is the product lead for developer databases & messaging at Cloudflare — and is a long-time open-source contributor, including co-maintainer of the Gorilla Toolkit in Go & various HTTP projects.',
+  //     xUrl: 'https://twitter.com/elithrar',
+  //   },
+  // },
+  // {
+  //   event: 'How to wrongly store 2M vectors in pgvector',
+  //   description: 'Lets dive into the errors that were made on Quivr that cost us money and time.',
+  //   company: 'Quivr',
+  //   speaker: {
+  //     name: 'Stan Girard',
+  //     role: 'Creator',
+  //     avatar: stanGirard,
+  //     bio: 'Stan Girard is the creator of Quivr, an open-source Generative AI personal assistant, which gained remarkable traction in the tech community (20k+ stars on Github in 4 months).',
+  //     xUrl: 'https://twitter.com/_StanGirard',
+  //     linkedinUrl: 'https://www.linkedin.com/in/stanislas-girard/',
+  //     githubUrl: 'https://github.com/StanGirard',
+  //   },
+  // },
 ];
 
-export { DEV_DAYS_STAGE_VIDEO, DEV_DAYS_AGENDA };
+export { DEV_DAYS_AGENDA, DEV_DAYS_STAGE_VIDEO };

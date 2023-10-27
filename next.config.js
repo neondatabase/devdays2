@@ -11,11 +11,12 @@ module.exports = {
         destination: '/',
         permanent: true,
       },
-      {
-        source: '/speakers',
-        destination: '/agenda',
-        permanent: true,
-      },
+      // TODO: uncomment this redirect when removing the speakers page
+      // {
+      //   source: '/speakers',
+      //   destination: '/agenda',
+      //   permanent: true,
+      // },
       // @TODO: uncomment this when the event is live
       /*  {
         source: '/',
