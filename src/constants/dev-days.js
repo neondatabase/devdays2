@@ -192,7 +192,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'NPM is bursting with useful libraries. But many of them assume they’re running in Node.js, and throw errors elsewhere. Based on his experience developing Neon’s serverless driver, George shows how you can run NPM packages in other places — such as Vercel Edge Functions, or even web browsers — using a couple of simple techniques.',
     company: 'Neon',
-    time: '1:45',
+    time: '13:45',
     speaker: {
       name: 'George MacKerron',
       role: 'Typescript Developer',
@@ -208,7 +208,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'Learn how PolyScale’s high performance Data Delivery Network (DDN) can accelerate your Neon databases. See how smart caching can be implemented in minutes to improve query performance, lower latency and make cached data available at the edge.',
     company: 'PolyScale',
-    time: '2:12',
+    time: '14:12',
     speaker: {
       name: 'Sam Aybar',
       role: 'Developer Advocate',
@@ -223,7 +223,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'An overview of environments across the development lifecycle and how the development environment is evolving moving forward.',
     company: 'Coherence',
-    time: '2:36',
+    time: '14:36',
     speaker: {
       name: 'Zach Zaro',
       role: 'CEO and Cofounder',

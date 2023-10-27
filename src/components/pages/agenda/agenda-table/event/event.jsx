@@ -52,7 +52,7 @@ const Event = ({
           </div>
         </div>
         <span className="hidden text-gray-80 whitespace-pre sm:block xs:mt-3" aria-hidden>
-          {time ? `${time} PT` : ''}
+          {time ? `${time} PT` : 'TBA'}
         </span>
       </td>
       <td
@@ -64,7 +64,7 @@ const Event = ({
         {event}
       </td>
       <td className="text-lg py-4 font-semibold leading-dense text-gray-80 whitespace-pre lg:text-base sm:hidden">
-        {time ? `${time} PT` : ''}
+        {time ? `${time} PT` : 'TBA'}
       </td>
     </tr>
   );
