@@ -8,7 +8,7 @@ export const metadata = getMetadata(SEO_DATA.speakers);
 
 // TODO: remove this page and its related components from the components/speakers folder when restoring the redirect to the agenda
 
-const AgendaPage = () => (
+const SpeakersPage = () => (
   <Layout>
     <link rel="preload" crossOrigin="anonymous" href="/animations/input-lines.riv" as="fetch" />
     <link
@@ -49,4 +49,4 @@ const AgendaPage = () => (
   </Layout>
 );
 
-export default AgendaPage;
+export default SpeakersPage;
