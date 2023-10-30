@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import airplaneLogo from 'images/logos/airplane.svg';
 import appsmithLogo from 'images/logos/appsmith.svg';
-import cloudflareLogo from 'images/logos/cloudflare.svg';
+import coherenceLogo from 'images/logos/coherence.svg';
 import drizzleORMLogo from 'images/logos/drizzle-orm.svg';
 import grafbaseLogo from 'images/logos/grafbase.svg';
-import hasuraLogo from 'images/logos/hasura.svg';
+import koyebLogo from 'images/logos/koyeb.svg';
 import langchainLogo from 'images/logos/langchain.svg';
 import neonLogo from 'images/logos/neon.svg';
 import polyscaleLogo from 'images/logos/polyscale.svg';
@@ -22,21 +22,9 @@ const logos = [
     height: 32,
   },
   {
-    src: hasuraLogo,
-    alt: 'Hasura',
-    width: 88,
-    height: 32,
-  },
-  {
     src: prismaLogo,
     alt: 'Prisma',
     width: 95,
-    height: 32,
-  },
-  {
-    src: cloudflareLogo,
-    alt: 'CloudFlare',
-    width: 137,
     height: 32,
   },
   {
@@ -85,6 +73,18 @@ const logos = [
     src: neonLogo,
     alt: 'Neon',
     width: 100,
+    height: 32,
+  },
+  {
+    src: coherenceLogo,
+    alt: 'Coherence',
+    width: 130,
+    height: 32,
+  },
+  {
+    src: koyebLogo,
+    alt: 'Koyeb',
+    width: 120,
     height: 32,
   },
 ];
