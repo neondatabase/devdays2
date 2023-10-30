@@ -117,7 +117,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'Discover how companies utilize edge computing to cache and extend data from any API using GraphQL, enhancing app performance and reliability.',
     company: 'Grafbase',
-    time: '11:44 PM',
+    time: '11:44 AM',
     speaker: {
       name: 'Jamie Barton',
       role: 'DevRel Engineer',
@@ -131,7 +131,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'Database branching is one of the features that set Neon apart from other Postgres providers. Branching allows you to get a copy-on-write clone of your database that you can experiment with without compromising you main database. In this talk, I’ll show you how database branching help you collaborate and write safer code.',
     company: 'Neon',
-    time: '11:52 PM',
+    time: '11:52 AM',
     speaker: {
       name: 'Raouf Chebri',
       role: 'Developer Advocate',
