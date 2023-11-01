@@ -234,7 +234,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'Learn how you can combine Hasura, pgvector and Neon to build an AI-powered book recommendation app from scratch.',
     company: 'Hasura',
-    time: '1:39 PM',
+    time: '1:34 PM',
     speaker: {
       name: 'Simrat Hanspal',
       role: 'Technical Evangelist & AI Engineer',
