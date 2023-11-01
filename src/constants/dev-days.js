@@ -11,6 +11,7 @@ import peterPistorius from 'images/agenda/peter-pistorius.png';
 import raoufChebri from 'images/agenda/raouf-chebri.png';
 import romaricPhilogene from 'images/agenda/romaric-philogene.png';
 import samAybar from 'images/agenda/sam-aybar.png';
+import simratHanspal from 'images/agenda/simrat-hanspal.png';
 import zachZaro from 'images/agenda/zach-zaro.png';
 
 // TODO: before merge change video id to actual
@@ -226,6 +227,20 @@ const DEV_DAYS_AGENDA = [
       avatar: zachZaro,
       bio: 'Zach is the CEO and cofounder of Coherence. Previously Zach was the CTO at Quip and the founding CTO at Maven clinic. Coherence is the tool he wished he could have bought.',
       xUrl: 'https://twitter.com/ZacharyZaro',
+    },
+  },
+  {
+    event: 'Build an AI-powered book recommendation app using Hasura, pgvector and Neon',
+    description:
+      'Learn how you can combine Hasura, pgvector and Neon to build an AI-powered book recommendation app from scratch.',
+    company: 'Hasura',
+    time: '1:39 PM',
+    speaker: {
+      name: 'Simrat Hanspal',
+      role: 'Technical Evangelist & AI Engineer',
+      avatar: simratHanspal,
+      bio: "Simrat is a Technical Evangelist (CEO's office) and AI Engineer at Hasura. She has more than a decade of experience in the AI space, primarily with Natural Language Processing. She loves building products and solving engineering problems.",
+      xUrl: 'https://twitter.com/simsimsandy',
     },
   },
   // TODO: restore these talks if they confirm their participation and add time
