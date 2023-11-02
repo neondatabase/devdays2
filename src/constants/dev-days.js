@@ -60,7 +60,7 @@ const DEV_DAYS_AGENDA = [
     description:
       "LLMs are good at translation, and this applies to English to SQL too! In this talk, I'll show off some ways you can analyze data in your existing analytics databases using natural language.",
     company: 'LangChain',
-    time: '10:37 AM',
+    time: '10:38 AM',
     speaker: {
       name: 'Jacob Lee',
       role: 'Maintainer',
@@ -74,7 +74,7 @@ const DEV_DAYS_AGENDA = [
     company: 'Drizzle',
     description:
       "I will talk a bit about what Drizzle is, where it's at right now and plans for the future.",
-    time: '10:56 AM',
+    time: '10:57 AM',
     speaker: {
       name: 'Alex Blokh',
       role: 'Founder',
@@ -88,7 +88,7 @@ const DEV_DAYS_AGENDA = [
     description:
       "In this comprehensive talk, we will delve into how Appsmith, in collaboration with Neon's serverless PostgreSQL modern platform, can transform the way businesses harness the power of data and AI-driven insights.",
     company: 'Appsmith',
-    time: '11:03 AM',
+    time: '11:05 AM',
     speaker: {
       name: 'Kevin Blanco',
       role: 'Senior DevRel Advocate',
@@ -104,7 +104,7 @@ const DEV_DAYS_AGENDA = [
     description:
       "In this talk I'll explain how bad data can make you build inaccurate features and make bug fixing terribly slow, and then I'll show you the alternatives!",
     company: 'Snaplet',
-    time: '11:32 AM',
+    time: '11:34 AM',
     speaker: {
       name: 'Peter Pistorius',
       role: 'Founder',
@@ -118,7 +118,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'Discover how companies utilize edge computing to cache and extend data from any API using GraphQL, enhancing app performance and reliability.',
     company: 'Grafbase',
-    time: '11:39 AM',
+    time: '11:42 AM',
     speaker: {
       name: 'Jamie Barton',
       role: 'DevRel Engineer',
@@ -128,11 +128,11 @@ const DEV_DAYS_AGENDA = [
     },
   },
   {
-    event: 'Scenario analysis with database branching',
+    event: 'Optimizing your workflows with branching',
     description:
-      'Database branching allows you to create instant copy-on-write clones of your database that could be modified without compromising your data. One challenge in scenario analysis exploring multiple states of your database in parallel. In this talk, we will explore how to leverage Neon’s API and database branching to parallelize scenario analysis.',
+      'Database branching is one of the features that set Neon apart from other Postgres providers. Branching allows you to get a copy-on-write clone of your database that you can experiment with without compromising you main database. In this talk, I’ll show you how database branching help you collaborate and write safer code.',
     company: 'Neon',
-    time: '11:47 AM',
+    time: '11:51 AM',
     speaker: {
       name: 'Raouf Chebri',
       role: 'Developer Advocate',
@@ -148,7 +148,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'During this lightning talk, we will walk through the different steps required to deploy a full stack app at the edge using Koyeb’s high-performance serverless platform and Neon.',
     company: 'Koyeb',
-    time: '12:02 PM',
+    time: '12:06 PM',
     speaker: {
       name: 'Edouard Bonlieu',
       role: 'Co-Founder',
@@ -163,7 +163,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'We build a Neon-powered app on Airplane that leverages pgvector, and discuss how AI is used to accelerate the building process.',
     company: 'Airplane',
-    time: '12:09 PM',
+    time: '12:14 PM',
     speaker: {
       name: 'George Du',
       role: 'Software Engineer',
@@ -175,7 +175,7 @@ const DEV_DAYS_AGENDA = [
     event: 'Fullstack Preview Environments with Neon and Qovery',
     description: 'Learn how to create a Neon branch for every preview deployment on Qovery.',
     company: 'Qovery',
-    time: '12:14 PM',
+    time: '12:19 PM',
     speaker: {
       name: 'Romaric Philogene',
       role: 'CEO and Co-Founder',
@@ -189,7 +189,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'NPM is bursting with useful libraries. But many of them assume they’re running in Node.js, and throw errors elsewhere. Based on his experience developing Neon’s serverless driver, George shows how you can run NPM packages in other places — such as Vercel Edge Functions, or even web browsers — using a couple of simple techniques.',
     company: 'Neon',
-    time: '12:42 PM',
+    time: '12:47 PM',
     speaker: {
       name: 'George MacKerron',
       role: 'Typescript Developer',
@@ -205,7 +205,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'Learn how PolyScale’s high performance Data Delivery Network (DDN) can accelerate your Neon databases. See how smart caching can be implemented in minutes to improve query performance, lower latency and make cached data available at the edge.',
     company: 'PolyScale',
-    time: '1:06 PM',
+    time: '1:11 PM',
     speaker: {
       name: 'Sam Aybar',
       role: 'Developer Advocate',
@@ -220,7 +220,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'An overview of environments across the development lifecycle and how the development environment is evolving moving forward.',
     company: 'Coherence',
-    time: '1:26 PM',
+    time: '1:31 PM',
     speaker: {
       name: 'Zach Zaro',
       role: 'CEO and Cofounder',
@@ -234,7 +234,7 @@ const DEV_DAYS_AGENDA = [
     description:
       'Learn how you can combine Hasura, pgvector and Neon to build an AI-powered book recommendation app from scratch.',
     company: 'Hasura',
-    time: '1:34 PM',
+    time: '1:39 PM',
     speaker: {
       name: 'Simrat Hanspal',
       role: 'Technical Evangelist & AI Engineer',
