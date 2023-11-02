@@ -7,17 +7,11 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/stage',
-        destination: '/',
+        source: '/speakers',
+        destination: '/stage',
         permanent: true,
       },
       {
-        source: '/speakers',
-        destination: '/agenda',
-        permanent: true,
-      },
-      // @TODO: uncomment this when the event is live
-      /*  {
         source: '/',
         destination: '/stage',
         permanent: true,
@@ -32,7 +26,6 @@ module.exports = {
         destination: '/stage',
         permanent: true,
       },
-      */
     ];
   },
   images: {
