@@ -16,7 +16,7 @@ import zachZaro from 'images/agenda/zach-zaro.png';
 
 // TODO: before merge change video id to actual
 const DEV_DAYS_STAGE_VIDEO =
-  'https://www.youtube.com/embed/A74KeYh19jE?autoplay=1&mute=1&rel=0&start=';
+  'https://www.youtube.com/embed/Mz4OsXP6dvc?autoplay=1&mute=1&rel=0&start=';
 
 const DEV_DAYS_AGENDA = [
   {
@@ -24,6 +24,7 @@ const DEV_DAYS_AGENDA = [
     company: 'Neon',
     time: '10:00 AM',
     speaker: { name: 'Keynote' },
+    timestamp: '0',
   },
   {
     event: 'Custom extensions support',
@@ -39,6 +40,7 @@ const DEV_DAYS_AGENDA = [
       githubUrl: 'https://github.com/lubennikovaav',
       linkedinUrl: 'https://www.linkedin.com/in/anastasia-lubennikova-8a2295a0/',
     },
+    timestamp: '1200',
   },
   {
     event: "Prisma & Neon's Serverless driver on the Edge",
@@ -54,6 +56,7 @@ const DEV_DAYS_AGENDA = [
       xUrl: 'https://x.com/ruheni_alex',
       githubUrl: 'https://github.com/ruheni',
     },
+    timestamp: '1680',
   },
   {
     event: 'Using Natural Language to Query Postgres',
@@ -68,6 +71,7 @@ const DEV_DAYS_AGENDA = [
       bio: 'Passionate about bringing the power of LLMs to a wider audience!',
       xUrl: 'https://x.com/hacubu',
     },
+    timestamp: '2220',
   },
   {
     event: 'State of Drizzle 2023',
@@ -82,6 +86,7 @@ const DEV_DAYS_AGENDA = [
       bio: 'I’ve been a software engineer for the past 12 years.',
       xUrl: ' https://x.com/_alexblokh',
     },
+    timestamp: '3360',
   },
   {
     event: 'Revolutionizing business intelligence using Appsmith and Neon',
@@ -98,6 +103,7 @@ const DEV_DAYS_AGENDA = [
       linkedinUrl: 'https://www.linkedin.com/in/kevinblanco',
       githubUrl: 'https://github.com/kevinblanco',
     },
+    timestamp: '3780',
   },
   {
     event: "Don't let bad data block you",
@@ -112,6 +118,7 @@ const DEV_DAYS_AGENDA = [
       bio: 'Peter is a lifelong product developer obsessed with improving user-experience. Before building Snaplet he co-created RedwoodJS.',
       xUrl: 'https://x.com/appfactory',
     },
+    timestamp: '5520',
   },
   {
     event: 'Cache anything, everywhere',
@@ -126,6 +133,7 @@ const DEV_DAYS_AGENDA = [
       bio: "Around since the days of dial-up models and Flash websites. Despite my age (in tech years, at least), I'm always working with the latest tools like React and GraphQL to build functional web apps.",
       xUrl: 'https://x.com/notrab',
     },
+    timestamp: '5940',
   },
   {
     event: 'Optimizing your workflows with branching',
@@ -142,6 +150,7 @@ const DEV_DAYS_AGENDA = [
       linkedinUrl: 'https://www.linkedin.com/in/raoufchebri/',
       githubUrl: 'https://github.com/raoufchebri',
     },
+    timestamp: '6420',
   },
   {
     event: 'Deploy FullStack Apps Globally with Koyeb and Neon',
@@ -157,6 +166,7 @@ const DEV_DAYS_AGENDA = [
       xUrl: 'https://twitter.com/edouardb_',
       linkedinUrl: 'https://www.linkedin.com/in/ebonlieu',
     },
+    timestamp: '7320',
   },
   {
     event: 'Building internal apps with AI and Neon',
@@ -170,6 +180,7 @@ const DEV_DAYS_AGENDA = [
       avatar: georgeDu,
       bio: 'Engineering lead for Airplane Postgres',
     },
+    timestamp: '7740',
   },
   {
     event: 'Fullstack Preview Environments with Neon and Qovery',
@@ -183,6 +194,7 @@ const DEV_DAYS_AGENDA = [
       bio: 'Romaric has 10+ years of experience in R&D. From the Ad-Tech to the financial industry, he has deep expertise in highly-reliable and performant systems.',
       linkedinUrl: 'https://www.linkedin.com/in/romaricphilogene/',
     },
+    timestamp: '8040',
   },
   {
     event: 'How to use NPM packages outside of Node',
@@ -199,6 +211,7 @@ const DEV_DAYS_AGENDA = [
       linkedinUrl: 'https://www.linkedin.com/in/georgemackerron/',
       githubUrl: 'https://github.com/jawj/',
     },
+    timestamp: '9720',
   },
   {
     event: "Accelerating Neon with PolyScale's DDN",
@@ -214,6 +227,7 @@ const DEV_DAYS_AGENDA = [
       xUrl: 'https://twitter.com/saybar',
       linkedinUrl: 'https://www.linkedin.com/in/samaybar/',
     },
+    timestamp: '11160',
   },
   {
     event: 'The Future of Development Environments',
@@ -228,6 +242,7 @@ const DEV_DAYS_AGENDA = [
       bio: 'Zach is the CEO and cofounder of Coherence. Previously Zach was the CTO at Quip and the founding CTO at Maven clinic. Coherence is the tool he wished he could have bought.',
       xUrl: 'https://twitter.com/ZacharyZaro',
     },
+    timestamp: '12360',
   },
   {
     event: 'Build an AI-powered book recommendation app using Hasura, pgvector and Neon',
@@ -242,6 +257,7 @@ const DEV_DAYS_AGENDA = [
       bio: "Simrat is a Technical Evangelist (CEO's office) and AI Engineer at Hasura. She has more than a decade of experience in the AI space, primarily with Natural Language Processing. She loves building products and solving engineering problems.",
       xUrl: 'https://twitter.com/simsimsandy',
     },
+    timestamp: '12840',
   },
   // TODO: restore these talks if they confirm their participation and add time
   // {

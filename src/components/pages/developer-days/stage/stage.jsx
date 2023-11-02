@@ -1,15 +1,15 @@
 'use client';
 
-// import clsx from 'clsx';
-// import Image from 'next/image';
+import clsx from 'clsx';
+import Image from 'next/image';
 import { useState } from 'react';
 
-// import Button from 'components/shared/button';
+import Button from 'components/shared/button';
 import TwitterShareButton from 'components/shared/social-share/twitter-share-button';
-import { DEV_DAYS_STAGE_VIDEO } from 'constants/dev-days';
+import { DEV_DAYS_STAGE_VIDEO, DEV_DAYS_AGENDA } from 'constants/dev-days';
 
 const Stage = () => {
-  const [videoSource] = useState(DEV_DAYS_STAGE_VIDEO);
+  const [videoSource, setVideoSource] = useState(DEV_DAYS_STAGE_VIDEO);
 
   return (
     <>
@@ -44,20 +44,11 @@ const Stage = () => {
       </div>
       <div className="relative max-h-[calc(100vh-71px)] overflow-y-auto bg-gray-0 px-4 py-6 xl:max-h-[calc(100vh-91px)] lg:max-h-none lg:px-11 md:px-8 sm:px-4">
         <h2 className="text-2xl font-semibold leading-dense tracking-tighter text-white md:text-xl">
-          Schedule
+          Schedule (PT)
         </h2>
-        {/* <ul className="mt-4 flex flex-col gap-5 md:gap-4">
+        <ul className="mt-4 flex flex-col gap-5 md:gap-4">
           {DEV_DAYS_AGENDA.map((item, index) => {
-            const {
-              time,
-              title,
-              speaker,
-              speakerImage,
-              speakerBackground,
-              blogPostUrl,
-              timeStamp,
-            } = item;
-
+            const { event, company, time, speaker, blogPostUrl, timestamp } = item;
             return (
               <li key={index}>
                 <div className="flex items-center">
@@ -83,47 +74,39 @@ const Stage = () => {
                 <button
                   className={clsx(
                     'mt-2 w-full rounded-[6px] border border-gray-10 py-3 px-4 text-left transition-colors duration-200',
-                    timeStamp
-                      ? 'hover:cursor-pointer hover:border-[#797D86]'
-                      : 'hover:cursor-default'
+                    time ? 'hover:cursor-pointer hover:border-[#797D86]' : 'hover:cursor-default'
                   )}
                   type="button"
                   onClick={() =>
-                    timeStamp
-                      ? setVideoSource(DEV_DAYS_STAGE_VIDEO.replace('&mute=1', '') + timeStamp)
+                    timestamp
+                      ? setVideoSource(DEV_DAYS_STAGE_VIDEO.replace('&mute=1', '') + timestamp)
                       : false
                   }
                 >
                   <h3 className="text-base font-medium leading-[1.25] tracking-tighter text-white">
-                    {title}
+                    {event}
                   </h3>
                   <figure className="mt-3 flex items-center">
-                    <span
-                      className={clsx('h-7 w-7 shrink-0 rounded-full', {
-                        'bg-[#F0F075]': speakerBackground === 'yellow',
-                        'bg-[#ADE0EB]': speakerBackground === 'blue',
-                        'bg-[#FFCCE6]': speakerBackground === 'pink',
-                      })}
-                    >
-                      {speakerImage && (
-                        <Image
-                          width={28}
-                          height={28}
-                          quality={100}
-                          src={speakerImage}
-                          alt="Speaker photo"
-                        />
-                      )}
-                    </span>
-                    <figcaption className="ml-2 font-mono text-sm font-light leading-[1.25] tracking-tight text-gray-5">
-                      {speaker}
+                    {speaker.avatar && (
+                      <Image
+                        className="mr-2"
+                        width={28}
+                        height={28}
+                        quality={100}
+                        src={speaker.avatar}
+                        alt={speaker.name}
+                      />
+                    )}
+
+                    <figcaption className="font-mono text-sm font-light leading-[1.25] tracking-tight text-gray-5">
+                      {speaker.name}, {company}
                     </figcaption>
                   </figure>
                 </button>
               </li>
             );
           })}
-        </ul> */}
+        </ul>
       </div>
     </>
   );
