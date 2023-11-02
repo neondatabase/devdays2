@@ -8,11 +8,10 @@ module.exports = {
     return [
       {
         source: '/speakers',
-        destination: '/agenda',
+        destination: '/stage',
         permanent: true,
       },
-      // @TODO: uncomment this when the event is live
-      /*  {
+      {
         source: '/',
         destination: '/stage',
         permanent: true,
@@ -27,7 +26,6 @@ module.exports = {
         destination: '/stage',
         permanent: true,
       },
-      */
     ];
   },
   images: {
