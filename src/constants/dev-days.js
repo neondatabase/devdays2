@@ -130,7 +130,7 @@ const DEV_DAYS_AGENDA = [
   {
     event: 'Optimizing your workflows with branching',
     description:
-      'Database branching is one of the features that set Neon apart from other Postgres providers. Branching allows you to get a copy-on-write clone of your database that you can experiment with without compromising you main database.',
+      'Database branching is one of the features that set Neon apart from other Postgres providers. Branching allows you to get a copy-on-write clone of your database that you can experiment with without compromising you main database. In this talk, I’ll show you how database branching help you collaborate and write safer code.',
     company: 'Neon',
     time: '11:51 AM',
     speaker: {
