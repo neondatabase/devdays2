@@ -14,7 +14,6 @@ import samAybar from 'images/agenda/sam-aybar.png';
 import simratHanspal from 'images/agenda/simrat-hanspal.png';
 import zachZaro from 'images/agenda/zach-zaro.png';
 
-// TODO: before merge change video id to actual
 const DEV_DAYS_STAGE_VIDEO =
   'https://www.youtube.com/embed/Mz4OsXP6dvc?autoplay=1&vq=hd1080&mute=1&rel=0&start=';
 
@@ -166,7 +165,7 @@ const DEV_DAYS_AGENDA = [
       xUrl: 'https://twitter.com/edouardb_',
       linkedinUrl: 'https://www.linkedin.com/in/ebonlieu',
     },
-    timestamp: '7320',
+    timestamp: '7595',
   },
   {
     event: 'Building internal apps with AI and Neon',
